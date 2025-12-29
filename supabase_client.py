@@ -16,4 +16,23 @@ def upsert_previous_close(symbol, label, close_value, snapshot_date, daily_chang
         "snapshot_date": snapshot_date,
         "daily_change": round(daily_change, 2) if daily_change is not None else None
     }
-    supabase.table("previous_close").upsert(data, on_conflict=["symbol", "snapshot_date"]).execute()
+
+    # 1. Controllo se esiste già una riga per symbol + snapshot_date
+    existing = supabase.table("previous_close") \
+        .select("*") \
+        .eq("symbol", symbol) \
+        .eq("snapshot_date", snapshot_date) \
+        .execute()
+
+    # 2. Se esiste → UPDATE
+    if existing.data:
+        supabase.table("previous_close") \
+            .update(data) \
+            .eq("symbol", symbol) \
+            .eq("snapshot_date", snapshot_date) \
+            .execute()
+    else:
+        # 3. Se non esiste → INSERT
+        supabase.table("previous_close") \
+            .insert(data) \
+            .execute()
