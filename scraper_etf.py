@@ -48,9 +48,10 @@ def update_all_etf():
             continue
 
         prev = get_previous_close(symbol)
-        daily_change = None
-        if prev and market_open:
-            daily_change = round(((price - prev) / prev) * 100, 2)
+	daily_change = None
+	if prev:
+    	    daily_change = round(((price - prev) / prev) * 100, 2)
+
 
         if market_open:
             upsert_previous_close(
