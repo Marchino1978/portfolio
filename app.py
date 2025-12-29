@@ -80,7 +80,7 @@ def market_status():
 
     # Ora in fuso orario Europe/Rome + formato leggibile
     now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-    readable = now_rome.strftime("%d/%m/%Y %H:%M:%S")
+    readable = now_rome.strftime("%H:%M %d-%m-%Y")
 
     return jsonify({
         "datetime": now_rome.isoformat(),
