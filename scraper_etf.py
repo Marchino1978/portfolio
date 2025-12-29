@@ -48,11 +48,13 @@ def update_all_etf():
             continue
 
         prev = get_previous_close(symbol)
-	daily_change = None
-	if prev:
-    	    daily_change = round(((price - prev) / prev) * 100, 2)
 
+        # Soluzione A: calcolare SEMPRE la daily_change se prev esiste
+        daily_change = None
+        if prev:
+            daily_change = round(((price - prev) / prev) * 100, 2)
 
+        # Salvataggio solo se mercato aperto (come da tua logica)
         if market_open:
             upsert_previous_close(
                 symbol=symbol,
