@@ -77,8 +77,8 @@
             <td>${etf.symbol}</td>
             <td>${etf.label}</td>
             <td>${etf.price != null ? Number(etf.price).toFixed(2) : "-"} €</td>
-            <td>${etf.previousClose != null ? Number(etf.previousClose).toFixed(2) : "-"} €</td>
-            <td>${etf.dailyChange != null ? Number(etf.dailyChange).toFixed(2) : "-"} %</td>
+            <td>${etf.previousClose != null ? Number(etf.previous_close).toFixed(2) : "-"} €</td>
+            <td>${etf.dailyChange != null ? Number(etf.daily_change).toFixed(2) : "-"} %</td>
           `;
           tbody.appendChild(row);
         });
