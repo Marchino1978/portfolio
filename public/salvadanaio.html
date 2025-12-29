@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALVADANAIO</title>
+    <style>
+        /* Contenitore principale della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Titolo della pagina */
+        h1 {
+            color: red;
+            font-size: 36px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Vaso cilindrico in vetro con tappo */
+        #jar {
+            position: relative;
+            width: 180px;
+            height: 400px;
+            margin: 20px auto;
+            background-color: transparent;
+            border: 5px solid #000;
+            border-radius: 20px;
+            background: linear-gradient(to bottom, #d1d1d1 0%, #b3b3b3 100%);
+            overflow: hidden;
+        }
+
+        /* Tappo sopra il vaso */
+        #lid {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 210px;
+            height: 25px;
+            margin-left: -105px;
+            background-color: #7a7a7a;
+            border-radius: 5px;
+            box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Stile per il riempimento del vaso */
+        .fill-level {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            opacity: 0.7;
+            transition: height 0.5s ease-in-out;
+        }
+
+        /* Stile per il valore in euro */
+        #value {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Stile per la percentuale di riempimento */
+        #percentage {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>SALVADANAIO</h1>
+
+    <!-- Il vaso cilindrico con tappo -->
+    <div id="jar">
+        <div id="lid"></div>
+        <div id="fill-level" class="fill-level"></div>
+    </div>
+
+    <div id="value">Valore: 0€</div> <!-- Valore senza decimali, simbolo € dopo -->
+    <div id="percentage">Riempimento: 0.0%</div> <!-- Percentuale di riempimento -->
+
+    <script>
+        // Funzione per caricare il valore dal file CSV
+        async function loadValueFromCSV() {
+            try {
+                // Usare il percorso corretto per accedere al file CSV nella cartella data
+                const response = await fetch('/salvadanaio.csv');
+                if (!response.ok) {
+                    throw new Error('Errore nel caricamento del file CSV');
+                }
+
+                const text = await response.text();
+
+                // Verifica che il CSV contenga solo un valore numerico
+                const rows = text.split('\n');
+                const value = parseFloat(rows[0].trim());
+
+                if (isNaN(value)) {
+                    throw new Error('Il valore nel CSV non è un numero valido');
+                }
+
+                return value;
+
+            } catch (error) {
+                console.error('Errore:', error.message);
+                document.getElementById('value').textContent = 'Errore nel caricamento del valore.';
+                document.getElementById('percentage').textContent = 'Riempimento: N/A';
+                return NaN; // Ritorna NaN per segnalare che c'è stato un errore
+            }
+        }
+
+        // Funzione per determinare il colore in base alla percentuale di riempimento
+        function getColorBasedOnPercentage(percentage) {
+            if (percentage <= 33) {
+                return 'red'; // Colore rosso per 0% - 33%
+            } else if (percentage <= 66) {
+                return 'yellow'; // Colore giallo per 33.1% - 66%
+            } else if (percentage < 100) {
+                return 'green'; // Colore verde per 66.1% - 99%
+            } else {
+                return 'blue'; // Colore blu per 99.1% - 100%
+            }
+        }
+
+        // Funzione per calcolare il livello di riempimento del vaso
+        function updateFillLevel(valueInEuro) {
+            const maxVolume = 4500; // Impostato il valore massimo di riempimento a 4500€
+
+            // Verifica che il valore sia positivo
+            if (valueInEuro < 0 || isNaN(valueInEuro)) {
+                valueInEuro = 0;
+            }
+
+            // Calcolare la percentuale di riempimento in base al valore effettivo
+            const fillPercentage = Math.min((valueInEuro / maxVolume) * 100, 100);
+
+            // Determinare il colore in base alla percentuale
+            const fillColor = getColorBasedOnPercentage(fillPercentage);
+
+            // Impostare il livello di riempimento
+            const fillLevelElement = document.getElementById('fill-level');
+            fillLevelElement.style.height = fillPercentage + '%'; // Cambia l'altezza in base alla percentuale
+            fillLevelElement.style.backgroundColor = fillColor; // Cambia il colore in base alla percentuale
+
+            // Mostrare la percentuale con una cifra decimale
+            const percentageElement = document.getElementById('percentage');
+            percentageElement.textContent = `Riempimento: ${fillPercentage.toFixed(1)}%`;  // Limitato a 1 cifra decimale
+        }
+
+        // Funzione per caricare e visualizzare il valore
+        async function displayValue() {
+            const value = await loadValueFromCSV();
+            if (!isNaN(value)) {
+                document.getElementById('value').textContent = `Valore: ${value.toFixed(0)}€`; // Visualizza senza decimali
+                updateFillLevel(value); // Usa il valore originale per il calcolo del riempimento
+            } else {
+                // Se c'è un errore, non aggiorniamo il riempimento
+                document.getElementById('value').textContent = 'Valore: N/A';
+                document.getElementById('percentage').textContent = 'Riempimento: N/A';
+            }
+        }
+
+        // Carica e visualizza il valore iniziale
+        displayValue();
+    </script>
+</body>
+</html>

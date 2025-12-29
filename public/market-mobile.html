@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>ETF Service - Market Status (Mobile)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+      font-size: 1.4em;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+    th {
+      background: #eee;
+    }
+    .open {
+      color: green;
+      font-weight: bold;
+    }
+    .closed {
+      color: red;
+      font-weight: bold;
+    }
+    tbody tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+    /* Ottimizzazione mobile */
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        display: none;
+      }
+      tr {
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        padding: 8px;
+        background: #fff;
+      }
+      td {
+        border: none;
+        text-align: left;
+        padding: 4px 0;
+      }
+      td::before {
+        font-weight: bold;
+        display: inline-block;
+        width: 120px;
+      }
+      td:nth-of-type(1)::before { content: "Simbolo:"; }
+      td:nth-of-type(2)::before { content: "Nome:"; }
+      td:nth-of-type(3)::before { content: "Prezzo:"; }
+      td:nth-of-type(4)::before { content: "PreviousClose:"; }
+      td:nth-of-type(5)::before { content: "DailyChange:"; }
+    }
+  </style>
+</head>
+<body>
+  <h1>ETF Market Status</h1>
+  <div id="status"></div>
+  <table id="etf-table">
+    <thead>
+      <tr>
+        <th scope="col">Simbolo</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col">PreviousClose</th>
+        <th scope="col">DailyChange</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadMarketStatus() {
+      try {
+        const res = await fetch("/api/market-status");
+        const json = await res.json();
+
+        const statusDiv = document.getElementById("status");
+        statusDiv.innerHTML = `
+          <p>${json.datetime}</p>
+          <p>Mercato: <span class="${json.open ? "open" : "closed"}">${json.status}</span></p>
+        `;
+
+        const tbody = document.querySelector("#etf-table tbody");
+        tbody.innerHTML = "";
+
+        const data = json.values?.data ?? [];
+        data.forEach(etf => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${etf.symbol}</td>
+            <td>${etf.label}</td>
+            <td>${etf.price != null ? Number(etf.price).toFixed(2) : "-"} €</td>
+            <td>${etf.previousClose != null ? Number(etf.previousClose).toFixed(2) : "-"} €</td>
+            <td>${etf.dailyChange != null ? Number(etf.dailyChange).toFixed(2) : "-"} %</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } catch (err) {
+        document.getElementById("status").innerHTML =
+          "<p style='color:red'>Errore nel caricamento dati: " + err.message + "</p>";
+      }
+    }
+
+    // Carica subito e aggiorna ogni 30 secondi
+    loadMarketStatus();
+    setInterval(loadMarketStatus, 30000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "VUAA",
+    "item_id": "1045562",
+    "label": "S&P 500",
+    "ISIN": "IE00BFMXXD54"
+  },
+  {
+    "symbol": "VNGA80",
+    "item_id": "1376226",
+    "label": "LifeStrategy 80",
+    "ISIN": "IE00BMVB5R75"
+  },
+  {
+    "symbol": "GOLD",
+    "item_id": "979663",
+    "label": "Physical Gold",
+    "ISIN": "FR0013416716"
+  },
+  {
+    "symbol": "XEON",
+    "item_id": "58124",
+    "label": "XEON",
+    "ISIN": "LU0290358497"
+  },
+  {
+    "symbol": "VWCE",
+    "item_id": "1045625",
+    "label": "FTSE All World",
+    "ISIN": "IE00BK5BQT80"
+  },
+  {
+    "symbol": "EXUS",
+    "item_id": "3167313",
+    "label": "MSCI World Ex-USA",
+    "ISIN": "IE0006WW1TQ4"
+  }
+]

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elenco Fondi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Elenco Fondi</h1>
+  <table>
+    <thead>
+      <tr id="table-headers">
+        <!-- Intestazioni dinamiche -->
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Dati dinamici -->
+    </tbody>
+  </table>
+
+  <script>
+    // Funzione per caricare e mostrare i dati CSV in tabella
+    fetch('/fondi.csv')
+      .then(response => {
+        if (!response.ok) throw new Error('Impossibile caricare il file CSV');
+        return response.text();
+      })
+      .then(csvText => {
+        const rows = csvText.trim().split('\n');
+        if (rows.length < 2) {
+          document.body.innerHTML += '<p>Nessun dato disponibile nel CSV.</p>';
+          return;
+        }
+
+        // Intestazioni
+        const headers = rows[0].split(',').map(h => h.trim());
+        const headerRow = document.getElementById('table-headers');
+        headers.forEach(header => {
+          const th = document.createElement('th');
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+
+        // Dati
+        const tbody = document.getElementById('table-body');
+        for (let i = 1; i < rows.length; i++) {
+          const cols = rows[i].split(',').map(c => c.trim());
+          const tr = document.createElement('tr');
+          cols.forEach(col => {
+            const td = document.createElement('td');
+            td.textContent = col;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        }
+      })
+      .catch(err => {
+        document.body.innerHTML += '<p style="color:red;">Errore caricamento CSV: ' + err.message + '</p>';
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+flask==3.0.0
+requests==2.32.3
+beautifulsoup4==4.12.3
+gunicorn==23.0.0
+supabase==2.7.0
+python-dotenv==1.0.1
+python-dateutil==2.9.0.post0   # per relativedelta (usato in testDateVar e future variazioni 1m/3m)
+pytest==8.3.3                 # per eseguire i test (pytest tests/)

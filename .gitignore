@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-delete-this-directory.txt
+pip-wheel-metadata/
+.share/
+
+# Virtual environment
+.env
+venv*/
+ENV/
+
+# Supabase secrets
+.env.local
+
+# Fly.io
+.fly/
+fly.toml.bak
+
+# Logs
+*.log
+logs/
+
+# Data locali (non pushare dati sensibili)
+data/*.csv.bak
+data/*.json.bak
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Build / Deploy
+dist/
+build/
+*.egg-info/
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
