@@ -38,7 +38,7 @@ def market_status():
             "price": info.get("price"),
             "previousClose": info.get("previous_close"),
             "dailyChange": info.get("daily_change"),
-            "snapshot_date": info.get("snapshot_date"),
+            "snapshotDate": info.get("snapshot_date"),
             "status": info.get("status", "unavailable")
         })
 
