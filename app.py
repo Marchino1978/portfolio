@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, Response
 from scraper_etf import update_all_etf
 from scraper_fondi import main as scrape_fondi
 from config import is_market_open
@@ -11,6 +11,14 @@ app = Flask(__name__, static_folder="public", static_url_path="")
 def index():
     return send_from_directory("public", "market.html")
 
+@app.route("/market-mobile")
+def market_mobile():
+    return send_from_directory("public", "market-mobile.html")
+
+@app.route("/salvadanaio")
+def salvadanaio():
+    return send_from_directory("public", "salvadanaio.html")
+
 @app.route("/health")
 @app.route("/ping")
 def health():
@@ -20,6 +28,10 @@ def health():
 def update_etf():
     threading.Thread(target=update_all_etf).start()
     return jsonify({"status": "etf update started"})
+
+@app.get("/salvadanaio.csv")
+def get_csv():
+    return send_from_directory("data", "salvadanaio.csv", mimetype="text/csv")
 
 @app.route("/update-fondi")
 def update_fondi():
