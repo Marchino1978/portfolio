@@ -29,17 +29,26 @@ def update_fondi():
 @app.route("/api/market-status")
 def market_status():
     results, market_open = update_all_etf()  # sync per risposta immediata
+
     data = []
     for symbol, info in results.items():
-data.append({
-    "symbol": symbol,
-    "label": info.get("label", symbol),
-    "price": info.get("price"),
-    "close_value": info.get("close_value"),
-    "daily_change": info.get("daily_change"),
-    "snapshot_date": info.get("snapshot_date"),
-    "status": info.get("status", "unavailable")
-})
+        data.append({
+            "symbol": symbol,
+            "label": info.get("label", symbol),
+            "price": info.get("price"),
+            "previous_close": info.get("previous_close"),
+            "daily_change": info.get("daily_change"),
+            "snapshot_date": info.get("snapshot_date"),
+            "status": info.get("status", "unavailable")
+        })
+
+    return jsonify({
+        "datetime": datetime.now().isoformat(),
+        "status": "APERTO" if market_open else "CHIUSO",
+        "open": market_open,
+        "values": {"source": "live", "data": data}
+    })
+
 
     return jsonify({
         "datetime": datetime.now().isoformat(),
