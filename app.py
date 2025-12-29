@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, jsonify, send_from_directory
 from scraper_etf import update_all_etf
 from scraper_fondi import main as scrape_fondi
