@@ -49,13 +49,5 @@ def market_status():
         "values": {"source": "live", "data": data}
     })
 
-
-    return jsonify({
-        "datetime": datetime.now().isoformat(),
-        "status": "APERTO" if market_open else "CHIUSO",
-        "open": market_open,
-        "values": {"source": "live", "data": data}
-    })
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
