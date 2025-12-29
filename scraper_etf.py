@@ -31,6 +31,7 @@ def scrape_price(item_id):
 
 # ---------------------------------------------------------
 # LETTURA PREVIOUS CLOSE (solo date < oggi)
+# FIX: usare filter() per confronto DATE corretto
 # ---------------------------------------------------------
 def get_previous_close(symbol):
     today = date.today().isoformat()
@@ -39,7 +40,7 @@ def get_previous_close(symbol):
         supabase.table("previous_close")
         .select("close_value")
         .eq("symbol", symbol)
-        .lt("snapshot_date", today)          # < oggi (corretto)
+        .filter("snapshot_date", "lt", today)   # FIX DEFINITIVO
         .order("snapshot_date", desc=True)
         .limit(1)
         .execute()
