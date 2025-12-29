@@ -96,7 +96,7 @@
 
         const statusDiv = document.getElementById("status");
         statusDiv.innerHTML = `
-          <p>${json.datetime}</p>
+          <p>${json.datetime_readable}</p>
           <p>Mercato: <span class="${json.open ? "open" : "closed"}">${json.status}</span></p>
         `;
 
