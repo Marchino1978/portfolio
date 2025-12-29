@@ -11,6 +11,10 @@ with open("etfs.json", "r") as f:
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
+
+# ---------------------------------------------------------
+# SCRAPING PREZZO
+# ---------------------------------------------------------
 def scrape_price(item_id):
     url = f"https://www.ls-tc.de/de/etf/{item_id}"
     try:
@@ -24,54 +28,76 @@ def scrape_price(item_id):
         log_error(f"Errore scraping {item_id}: {e}")
     return None
 
+
+# ---------------------------------------------------------
+# LETTURA PREVIOUS CLOSE (solo date < oggi)
+# ---------------------------------------------------------
 def get_previous_close(symbol):
     today = date.today().isoformat()
-    resp = supabase.table("previous_close") \
-        .select("close_value") \
-        .eq("symbol", symbol) \
-        .lt("snapshot_date", today) \
-        .order("snapshot_date", desc=True) \
-        .limit(1) \
-        .execute()
-    return resp.data[0]["close_value"] if resp.data else None
 
+    resp = (
+        supabase.table("previous_close")
+        .select("close_value")
+        .eq("symbol", symbol)
+        .lt("snapshot_date", today)          # < oggi (corretto)
+        .order("snapshot_date", desc=True)
+        .limit(1)
+        .execute()
+    )
+
+    if resp.data:
+        return resp.data[0]["close_value"]
+
+    log_info(f"[WARN] Nessun previous_close trovato per {symbol} prima di {today}")
+    return None
+
+
+# ---------------------------------------------------------
+# AGGIORNAMENTO COMPLETO ETF
+# ---------------------------------------------------------
 def update_all_etf():
     today_str = date.today().isoformat()
     market_open = is_market_open()
 
     results = {}
+
     for etf in ETFS:
         symbol = etf["symbol"]
+        label = etf["label"]
+
+        # 1. Scraping prezzo
         price = scrape_price(etf["item_id"])
         if price is None:
             results[symbol] = {"status": "unavailable"}
             continue
 
+        # 2. Lettura previous close
         prev = get_previous_close(symbol)
 
-        # Soluzione A: calcolare SEMPRE la daily_change se prev esiste
+        # 3. Calcolo daily_change SOLO se prev esiste
         daily_change = None
-        if prev:
+        if prev is not None:
             daily_change = round(((price - prev) / prev) * 100, 2)
 
-        # Salvataggio solo se mercato aperto (come da tua logica)
+        # 4. Salvataggio SOLO se mercato aperto
         if market_open:
             upsert_previous_close(
                 symbol=symbol,
-                label=etf["label"],
+                label=label,
                 close_value=price,
                 snapshot_date=today_str,
                 daily_change=daily_change
             )
 
+        # 5. Risultato finale
         results[symbol] = {
             "symbol": symbol,
-            "label": etf["label"],
+            "label": label,
             "price": price,
             "previous_close": prev,
             "daily_change": daily_change,
             "snapshot_date": today_str,
-            "status": "open"
+            "status": "open" if market_open else "closed"
         }
 
     log_info(f"Aggiornamento ETF completato: {len(results)} simboli")
