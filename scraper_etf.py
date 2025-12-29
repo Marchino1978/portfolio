@@ -61,12 +61,15 @@ def update_all_etf():
                 daily_change=daily_change
             )
 
-        results[symbol] = {
-            "price": price,
-            "dailyChange": daily_change,
-            "status": "open",
-            "label": etf["label"]
-        }
+results[symbol] = {
+    "symbol": symbol,
+    "label": etf["label"],
+    "price": price,
+    "previous_close": prev,
+    "daily_change": daily_change,
+    "snapshot_date": today_str,
+    "status": "open"
+}
 
     log_info(f"Aggiornamento ETF completato: {len(results)} simboli")
     return results, market_open
