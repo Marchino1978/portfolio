@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
 
-from supabase_client import supabase, upsert_previous_close
+from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
 from utils.logger import log_info, log_error
 
@@ -87,7 +87,7 @@ def scrape_price(item_id):
 # ---------------------------------------------------------
 # PREVIOUS CLOSE
 # ---------------------------------------------------------
-def get_previous_close(symbol):
+def get_previous_close(symbol, supabase):
     today = date.today().isoformat()
 
     resp = (
@@ -109,7 +109,7 @@ def get_previous_close(symbol):
 # ---------------------------------------------------------
 # VARIAZIONI MULTI-PERIODO
 # ---------------------------------------------------------
-def get_price_on_or_before(symbol, target_date):
+def get_price_on_or_before(symbol, target_date, supabase):
     try:
         target_str = target_date.isoformat()
         resp = (
@@ -145,11 +145,11 @@ def fmt_variation(value, suffix):
     sign = "+" if value >= 0 else ""
     return f"{sign}{value:.2f}%{suffix}"
 
-def compute_all_variations(symbol, price_today, today_date):
+def compute_all_variations(symbol, price_today, today_date, supabase):
     results = {}
     for code, (days, suffix) in PERIODS.items():
         target_date = today_date - timedelta(days=days)
-        past_price = get_price_on_or_before(symbol, target_date)
+        past_price = get_price_on_or_before(symbol, target_date, supabase)
         variation = calc_variation(price_today, past_price)
         results[code] = fmt_variation(variation, suffix)
     return results
@@ -259,6 +259,8 @@ def update_all_etf():
     today_str = today_date.isoformat()
     market_open = is_market_open()
 
+    supabase = get_supabase()  # <-- CLIENT CREATO QUI
+
     ETFS = load_etfs()
     variation_config = load_variation_config()
 
@@ -273,7 +275,7 @@ def update_all_etf():
             results[symbol] = {"status": "unavailable"}
             continue
 
-        prev = get_previous_close(symbol)
+        prev = get_previous_close(symbol, supabase)
 
         daily_change = None
         if prev is not None:
@@ -291,7 +293,7 @@ def update_all_etf():
                 daily_change=daily_change
             )
 
-        all_variations = compute_all_variations(symbol, price, today_date)
+        all_variations = compute_all_variations(symbol, price, today_date, supabase)
 
         v1_code = variation_config.get("v1", "D")
         v2_code = variation_config.get("v2", "W")
