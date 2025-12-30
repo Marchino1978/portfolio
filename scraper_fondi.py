@@ -5,6 +5,7 @@ from datetime import datetime
 import re
 import os
 from io import StringIO  # Per ricostruire il CSV pulito
+import base64  # per commit GitHub
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
@@ -86,6 +87,53 @@ def normalize(value_it):
     return s
 
 # -----------------------------
+# Commit CSV su GitHub
+# -----------------------------
+def commit_csv_to_github(path, message):
+    try:
+        token = os.environ.get("GITHUB_TOKEN")
+        if not token:
+            print("GITHUB_TOKEN non impostato")
+            return
+
+        repo = "Marchino1978/portfolio"
+        api_url = f"https://api.github.com/repos/{repo}/contents/{path}"
+
+        with open(path, "rb") as f:
+            content = f.read()
+
+        encoded = base64.b64encode(content).decode("utf-8")
+
+        sha = None
+        get_resp = requests.get(api_url, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json"
+        })
+        if get_resp.status_code == 200:
+            sha = get_resp.json().get("sha")
+
+        payload = {
+            "message": message,
+            "content": encoded,
+            "branch": "main"
+        }
+        if sha:
+            payload["sha"] = sha
+
+        put_resp = requests.put(api_url, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json"
+        }, json=payload)
+
+        if put_resp.status_code in (200, 201):
+            print(f"Commit GitHub OK: {path}")
+        else:
+            print(f"Errore GitHub {path}: {put_resp.status_code} - {put_resp.text}")
+
+    except Exception as e:
+        print(f"Errore commit CSV {path}: {e}")
+
+# -----------------------------
 # Main di aggiornamento fondi
 # -----------------------------
 def main():
@@ -157,3 +205,9 @@ def main():
             except Exception as e:
                 writer.writerow([datetime.now().isoformat(), nome, isin, "ERRORE", ""])
                 print(f"{nome} ({isin}): errore {repr(e)}")
+
+    # Dopo aver scritto il CSV, commit su GitHub
+    # Percorso relativo dal root del repo, come per market.json
+    commit_csv_to_github("data/fondi_nav.csv", "Update fondi_nav.csv")
+    # Se vuoi anche fondi.csv, decommenta:
+    # commit_csv_to_github("data/fondi.csv", "Update fondi.csv")
