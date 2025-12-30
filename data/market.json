@@ -5,44 +5,44 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 112.6825,
-        "dailyChange": "-0.08",
-        "value": 112.6825
+        "price": 112.7475,
+        "dailyChange": "-0.03",
+        "value": 112.7475
       },
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.3575,
-        "dailyChange": "-0.06",
-        "value": 39.3575
+        "price": 39.3625,
+        "dailyChange": "-0.04",
+        "value": 39.3625
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 147.1,
-        "dailyChange": "0.89",
-        "value": 147.1
+        "price": 147.275,
+        "dailyChange": "1.01",
+        "value": 147.275
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 148.0435,
+        "price": 148.0375,
         "dailyChange": "0.02",
-        "value": 148.0435
+        "value": 148.0375
       },
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 145.11,
-        "dailyChange": "-0.05",
-        "value": 145.11
+        "price": 145.2,
+        "dailyChange": "0.01",
+        "value": 145.2
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 35.08,
-        "dailyChange": "-0.02",
-        "value": 35.08
+        "price": 35.1175,
+        "dailyChange": "0.09",
+        "value": 35.1175
       }
     ]
   }
