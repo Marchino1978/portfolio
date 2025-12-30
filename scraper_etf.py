@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -6,10 +7,30 @@ from supabase_client import supabase, upsert_previous_close
 from config import is_market_open
 from utils.logger import log_info, log_error
 
+# ---------------------------------------------------------
+# CARICAMENTO LISTA ETF
+# ---------------------------------------------------------
 with open("etfs.json", "r") as f:
     ETFS = json.load(f)
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
+
+
+# ---------------------------------------------------------
+# SALVATAGGIO market.json STATICO
+# ---------------------------------------------------------
+def save_market_json(results):
+    try:
+        os.makedirs("data", exist_ok=True)
+        path = os.path.join("data", "market.json")
+
+        with open(path, "w") as f:
+            json.dump(results, f, indent=2)
+
+        log_info(f"market.json aggiornato in {path}")
+
+    except Exception as e:
+        log_error(f"Errore salvataggio market.json: {e}")
 
 
 # ---------------------------------------------------------
@@ -31,7 +52,6 @@ def scrape_price(item_id):
 
 # ---------------------------------------------------------
 # LETTURA PREVIOUS CLOSE (solo date < oggi)
-# FIX: usare filter() per confronto DATE corretto
 # ---------------------------------------------------------
 def get_previous_close(symbol):
     today = date.today().isoformat()
@@ -40,7 +60,7 @@ def get_previous_close(symbol):
         supabase.table("previous_close")
         .select("close_value")
         .eq("symbol", symbol)
-        .filter("snapshot_date", "lt", today)   # FIX DEFINITIVO
+        .filter("snapshot_date", "lt", today)
         .order("snapshot_date", desc=True)
         .limit(1)
         .execute()
@@ -102,4 +122,10 @@ def update_all_etf():
         }
 
     log_info(f"Aggiornamento ETF completato: {len(results)} simboli")
+
+    # ---------------------------------------------------------
+    # 6. SALVATAGGIO market.json STATICO
+    # ---------------------------------------------------------
+    save_market_json(results)
+
     return results, market_open
