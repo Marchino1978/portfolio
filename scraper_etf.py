@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import subprocess
 from bs4 import BeautifulSoup
 from datetime import date
 from supabase_client import supabase, upsert_previous_close
@@ -24,10 +25,12 @@ def save_market_json(results, market_open):
         os.makedirs("data", exist_ok=True)
         path = os.path.join("data", "market.json")
 
-        # Convertiamo results nel formato richiesto dall’ESP32
         data_array = []
 
         for symbol, etf in results.items():
+            if etf.get("status") == "unavailable":
+                continue
+
             entry = {
                 "symbol": etf["symbol"],
                 "label": etf["label"],
@@ -37,7 +40,7 @@ def save_market_json(results, market_open):
                     if etf["daily_change"] is not None
                     else "-"
                 ),
-                "value": etf["price"]  # fallback richiesto dal firmware
+                "value": etf["price"]
             }
             data_array.append(entry)
 
@@ -55,6 +58,40 @@ def save_market_json(results, market_open):
 
     except Exception as e:
         log_error(f"Errore salvataggio market.json: {e}")
+
+
+# ---------------------------------------------------------
+# COMMIT AUTOMATICO SU GITHUB
+# ---------------------------------------------------------
+def commit_to_github():
+    try:
+        token = os.environ.get("GITHUB_TOKEN")
+        if not token:
+            log_error("GITHUB_TOKEN non impostato nelle variabili d'ambiente")
+            return
+
+        repo_url = "https://github.com/Marchino1978/portfolio.git"
+        push_url = repo_url.replace("https://", f"https://{token}@")
+
+        subprocess.run(["git", "config", "user.email", "bot@local"], check=True)
+        subprocess.run(["git", "config", "user.name", "AutoBot"], check=True)
+
+        subprocess.run(["git", "add", "data/market.json"], check=True)
+
+        commit_proc = subprocess.run(
+            ["git", "commit", "-m", "Update market.json"],
+            check=False
+        )
+        if commit_proc.returncode != 0:
+            log_info("Nessuna modifica da committare su GitHub")
+            return
+
+        subprocess.run(["git", "push", push_url, "main"], check=True)
+
+        log_info("Commit e push su GitHub completati")
+
+    except subprocess.CalledProcessError as e:
+        log_error(f"Errore durante commit/push GitHub: {e}")
 
 
 # ---------------------------------------------------------
@@ -110,21 +147,17 @@ def update_all_etf():
         symbol = etf["symbol"]
         label = etf["label"]
 
-        # 1. Scraping prezzo
         price = scrape_price(etf["item_id"])
         if price is None:
             results[symbol] = {"status": "unavailable"}
             continue
 
-        # 2. Lettura previous close
         prev = get_previous_close(symbol)
 
-        # 3. Calcolo daily_change
         daily_change = None
         if prev is not None:
             daily_change = round(((price - prev) / prev) * 100, 2)
 
-        # 4. Salvataggio su Supabase se mercato aperto
         if market_open:
             upsert_previous_close(
                 symbol=symbol,
@@ -134,7 +167,6 @@ def update_all_etf():
                 daily_change=daily_change
             )
 
-        # 5. Risultato finale
         results[symbol] = {
             "symbol": symbol,
             "label": label,
@@ -147,7 +179,7 @@ def update_all_etf():
 
     log_info(f"Aggiornamento ETF completato: {len(results)} simboli")
 
-    # 6. SALVATAGGIO market.json PER ESP32
     save_market_json(results, market_open)
+    commit_to_github()
 
     return results, market_open
