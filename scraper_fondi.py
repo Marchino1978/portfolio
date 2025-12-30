@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import re
 import os
-from io import StringIO  # <-- Aggiunto per ricostruire il CSV pulito
+from io import StringIO  # Per ricostruire il CSV pulito
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
@@ -86,10 +86,10 @@ def normalize(value_it):
     return s
 
 # -----------------------------
-# Main
+# Main di aggiornamento fondi
 # -----------------------------
 def main():
-    # ⚠️ Nessun controllo orario: il cron esterno decide QUANDO eseguire
+    # Il cron esterno / endpoint decide QUANDO eseguire
 
     # Legge lista fondi da CSV (con supporto per commenti # e righe vuote)
     fondi = []
@@ -157,6 +157,3 @@ def main():
             except Exception as e:
                 writer.writerow([datetime.now().isoformat(), nome, isin, "ERRORE", ""])
                 print(f"{nome} ({isin}): errore {repr(e)}")
-
-if __name__ == "__main__":
-    main()
