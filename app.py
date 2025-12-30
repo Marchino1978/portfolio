@@ -54,12 +54,12 @@ def get_csv():
 
 
 # ---------------------------------------------------------
-# AGGIORNAMENTO FONDI (async)
+# AGGIORNAMENTO FONDI (UNIFORME, SENZA THREAD)
 # ---------------------------------------------------------
 @app.route("/api/update-fondi")
 def update_fondi():
-    threading.Thread(target=scraper_fondi.main).start()
-    return jsonify({"status": "fondi update started"})
+    scraper_fondi.main()   # <-- ESECUZIONE DIRETTA, COME ETF NEL PROCESSO PRINCIPALE
+    return jsonify({"status": "fondi update completed"})
 
 
 # ---------------------------------------------------------
