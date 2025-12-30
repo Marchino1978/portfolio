@@ -1,10 +1,12 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from flask import Flask, jsonify, send_from_directory, Response
-from scraper_etf import update_all_etf
-from scraper_fondi import main as scrape_fondi
-from config import is_market_open
+from flask import Flask, jsonify, send_from_directory
 import threading
+
+# Import dei moduli (NON delle funzioni)
+import scraper_etf
+import scraper_fondi
+from config import is_market_open
 
 app = Flask(__name__, static_folder="public", static_url_path="")
 
@@ -38,7 +40,7 @@ def health():
 # ---------------------------------------------------------
 @app.route("/api/update-all")
 def update_etf():
-    threading.Thread(target=update_all_etf).start()
+    threading.Thread(target=scraper_etf.update_all_etf).start()
     return jsonify({"status": "etf update started"})
 
 
@@ -55,7 +57,7 @@ def get_csv():
 # ---------------------------------------------------------
 @app.route("/api/update-fondi")
 def update_fondi():
-    threading.Thread(target=scrape_fondi).start()
+    threading.Thread(target=scraper_fondi.main).start()
     return jsonify({"status": "fondi update started"})
 
 
@@ -64,7 +66,8 @@ def update_fondi():
 # ---------------------------------------------------------
 @app.route("/api/market-status")
 def market_status():
-    results, market_open = update_all_etf()  # sync per risposta immediata
+    # Eseguito in modo sincrono per risposta immediata
+    results, market_open = scraper_etf.update_all_etf()
 
     data = []
     for symbol, info in results.items():

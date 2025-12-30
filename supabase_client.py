@@ -1,14 +1,22 @@
-from supabase import create_client, Client
 import os
+from supabase import create_client, Client
 from dotenv import load_dotenv
 
-load_dotenv()
+# ---------------------------------------------------------
+# FACTORY: crea il client solo quando serve
+# ---------------------------------------------------------
+def get_supabase() -> Client:
+    load_dotenv()  # sicuro, leggero, e non pesa se già chiamato
+    url = os.environ.get("SUPABASE_URL")
+    key = os.environ.get("SUPABASE_ANON_KEY")
+    return create_client(url, key)
 
-url = os.environ.get("SUPABASE_URL")
-key = os.environ.get("SUPABASE_ANON_KEY")
-supabase: Client = create_client(url, key)
-
+# ---------------------------------------------------------
+# UPSERT PREVIOUS CLOSE
+# ---------------------------------------------------------
 def upsert_previous_close(symbol, label, close_value, snapshot_date, daily_change=None):
+    supabase = get_supabase()  # <-- creato SOLO quando serve
+
     data = {
         "symbol": symbol,
         "label": label,
@@ -18,11 +26,13 @@ def upsert_previous_close(symbol, label, close_value, snapshot_date, daily_chang
     }
 
     # 1. Controllo se esiste già una riga per symbol + snapshot_date
-    existing = supabase.table("previous_close") \
-        .select("*") \
-        .eq("symbol", symbol) \
-        .eq("snapshot_date", snapshot_date) \
+    existing = (
+        supabase.table("previous_close")
+        .select("*")
+        .eq("symbol", symbol)
+        .eq("snapshot_date", snapshot_date)
         .execute()
+    )
 
     # 2. Se esiste → UPDATE
     if existing.data:
