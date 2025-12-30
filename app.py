@@ -53,7 +53,7 @@ def get_csv():
 # ---------------------------------------------------------
 # AGGIORNAMENTO FONDI (async)
 # ---------------------------------------------------------
-@app.route("/update-fondi")
+@app.route("/api/update-fondi")
 def update_fondi():
     threading.Thread(target=scrape_fondi).start()
     return jsonify({"status": "fondi update started"})
