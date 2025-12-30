@@ -3,7 +3,8 @@ import json
 import base64
 import requests
 from bs4 import BeautifulSoup
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from zoneinfo import ZoneInfo
 
 from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
@@ -26,7 +27,7 @@ PERIODS = {
 }
 
 # ---------------------------------------------------------
-# CARICAMENTO ETF (inerte all'import)
+# CARICAMENTO ETF
 # ---------------------------------------------------------
 def load_etfs():
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -155,12 +156,15 @@ def compute_all_variations(symbol, price_today, today_date, supabase):
     return results
 
 # ---------------------------------------------------------
-# SALVATAGGIO market.json
+# SALVATAGGIO market.json (CON TIMESTAMP)
 # ---------------------------------------------------------
 def save_market_json(results, market_open):
     try:
         os.makedirs("data", exist_ok=True)
         path = os.path.join("data", "market.json")
+
+        now = datetime.now(ZoneInfo("Europe/Rome"))
+        readable = now.strftime("%H:%M %d-%m-%Y")
 
         data_array = []
 
@@ -190,11 +194,15 @@ def save_market_json(results, market_open):
 
         json_output = {
             "status": "APERTO" if market_open else "CHIUSO",
-            "values": {"data": data_array}
+            "values": {"data": data_array},
+            "last_updated": {
+                "iso": now.isoformat(),
+                "readable": readable
+            }
         }
 
         with open(path, "w") as f:
-            json.dump(json_output, f, indent=2)
+            json.dump(json_output, f, indent=2, ensure_ascii=False)
 
         log_info(f"market.json aggiornato in {path}")
 
@@ -259,7 +267,7 @@ def update_all_etf():
     today_str = today_date.isoformat()
     market_open = is_market_open()
 
-    supabase = get_supabase()  # <-- CLIENT CREATO QUI
+    supabase = get_supabase()
 
     ETFS = load_etfs()
     variation_config = load_variation_config()
