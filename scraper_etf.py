@@ -17,15 +17,39 @@ HEADERS = {"User-Agent": "Mozilla/5.0"}
 
 
 # ---------------------------------------------------------
-# SALVATAGGIO market.json STATICO
+# SALVATAGGIO market.json STATICO (FORMATO ESP32)
 # ---------------------------------------------------------
-def save_market_json(results):
+def save_market_json(results, market_open):
     try:
         os.makedirs("data", exist_ok=True)
         path = os.path.join("data", "market.json")
 
+        # Convertiamo results nel formato richiesto dall’ESP32
+        data_array = []
+
+        for symbol, etf in results.items():
+            entry = {
+                "symbol": etf["symbol"],
+                "label": etf["label"],
+                "price": etf["price"],
+                "dailyChange": (
+                    f"{etf['daily_change']:.2f}"
+                    if etf["daily_change"] is not None
+                    else "-"
+                ),
+                "value": etf["price"]  # fallback richiesto dal firmware
+            }
+            data_array.append(entry)
+
+        json_output = {
+            "status": "APERTO" if market_open else "CHIUSO",
+            "values": {
+                "data": data_array
+            }
+        }
+
         with open(path, "w") as f:
-            json.dump(results, f, indent=2)
+            json.dump(json_output, f, indent=2)
 
         log_info(f"market.json aggiornato in {path}")
 
@@ -51,7 +75,7 @@ def scrape_price(item_id):
 
 
 # ---------------------------------------------------------
-# LETTURA PREVIOUS CLOSE (solo date < oggi)
+# LETTURA PREVIOUS CLOSE
 # ---------------------------------------------------------
 def get_previous_close(symbol):
     today = date.today().isoformat()
@@ -95,12 +119,12 @@ def update_all_etf():
         # 2. Lettura previous close
         prev = get_previous_close(symbol)
 
-        # 3. Calcolo daily_change SOLO se prev esiste
+        # 3. Calcolo daily_change
         daily_change = None
         if prev is not None:
             daily_change = round(((price - prev) / prev) * 100, 2)
 
-        # 4. Salvataggio SOLO se mercato aperto
+        # 4. Salvataggio su Supabase se mercato aperto
         if market_open:
             upsert_previous_close(
                 symbol=symbol,
@@ -123,9 +147,7 @@ def update_all_etf():
 
     log_info(f"Aggiornamento ETF completato: {len(results)} simboli")
 
-    # ---------------------------------------------------------
-    # 6. SALVATAGGIO market.json STATICO
-    # ---------------------------------------------------------
-    save_market_json(results)
+    # 6. SALVATAGGIO market.json PER ESP32
+    save_market_json(results, market_open)
 
     return results, market_open
