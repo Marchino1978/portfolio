@@ -2,11 +2,12 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Flask, jsonify, send_from_directory
 import threading
+import os
+import json
 
 # Import dei moduli (NON delle funzioni)
 import scraper_etf
 import scraper_fondi
-from config import is_market_open
 
 app = Flask(__name__, static_folder="public", static_url_path="")
 
@@ -62,40 +63,59 @@ def update_fondi():
 
 
 # ---------------------------------------------------------
-# MARKET STATUS (endpoint principale)
+# MARKET STATUS (endpoint principale, SOLO LETTURA)
 # ---------------------------------------------------------
 @app.route("/api/market-status")
 def market_status():
-    # Eseguito in modo sincrono per risposta immediata
-    results, market_open = scraper_etf.update_all_etf()
+    """
+    NON fa scraping.
+    NON chiama update_all_etf.
+    Legge SOLO data/market.json scritto da scraper_etf.update_all_etf().
+    """
 
-    data = []
-    for symbol, info in results.items():
-        data.append({
-            "symbol": symbol,
-            "label": info.get("label", symbol),
-            "price": info.get("price"),
-            "previousClose": info.get("previous_close"),
-            "dailyChange": info.get("daily_change"),
-            "snapshotDate": info.get("snapshot_date"),
-            "status": info.get("status", "unavailable")
-        })
+    market_path = os.path.join("data", "market.json")
 
-    # Ora in fuso orario Europe/Rome + formato leggibile
-    now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-    readable = now_rome.strftime("%H:%M %d-%m-%Y")
+    if not os.path.exists(market_path):
+        # Nessun dato ancora disponibile
+        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+        readable = now_rome.strftime("%H:%M %d-%m-%Y")
+        return jsonify({
+            "datetime": now_rome.isoformat(),
+            "datetime_readable": readable,
+            "status": "CHIUSO",
+            "open": False,
+            "values": {"source": "none", "data": []},
+            "error": "market.json non trovato"
+        }), 200
 
-    return jsonify({
-        "datetime": now_rome.isoformat(),
-        "datetime_readable": readable,
-        "status": "APERTO" if market_open else "CHIUSO",
-        "open": market_open,
-        "values": {"source": "live", "data": data}
-    })
+    try:
+        with open(market_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        # Aggiungo solo timestamp lato server per coerenza
+        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+        readable = now_rome.strftime("%H:%M %d-%m-%Y")
+
+        data["datetime"] = now_rome.isoformat()
+        data["datetime_readable"] = readable
+
+        return jsonify(data), 200
+
+    except Exception as e:
+        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+        readable = now_rome.strftime("%H:%M %d-%m-%Y")
+        return jsonify({
+            "datetime": now_rome.isoformat(),
+            "datetime_readable": readable,
+            "status": "CHIUSO",
+            "open": False,
+            "values": {"source": "error", "data": []},
+            "error": f"Errore lettura market.json: {e}"
+        }), 500
 
 
 # ---------------------------------------------------------
-# AVVIO SERVER
+# AVVIO SERVER (solo in locale)
 # ---------------------------------------------------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
