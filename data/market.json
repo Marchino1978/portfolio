@@ -1,0 +1,49 @@
+{
+  "status": "APERTO",
+  "values": {
+    "data": [
+      {
+        "symbol": "VUAA",
+        "label": "S&P 500",
+        "price": 112.7425,
+        "dailyChange": "-0.03",
+        "value": 112.7425
+      },
+      {
+        "symbol": "VNGA80",
+        "label": "LifeStrategy 80",
+        "price": 39.3575,
+        "dailyChange": "-0.06",
+        "value": 39.3575
+      },
+      {
+        "symbol": "GOLD",
+        "label": "Physical Gold",
+        "price": 147.15,
+        "dailyChange": "0.92",
+        "value": 147.15
+      },
+      {
+        "symbol": "XEON",
+        "label": "XEON",
+        "price": 148.0335,
+        "dailyChange": "0.01",
+        "value": 148.0335
+      },
+      {
+        "symbol": "VWCE",
+        "label": "FTSE All World",
+        "price": 145.15,
+        "dailyChange": "-0.02",
+        "value": 145.15
+      },
+      {
+        "symbol": "EXUS",
+        "label": "MSCI World Ex-USA",
+        "price": 35.065,
+        "dailyChange": "-0.06",
+        "value": 35.065
+      }
+    ]
+  }
+}
