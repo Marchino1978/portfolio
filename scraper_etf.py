@@ -1,7 +1,7 @@
 import os
 import json
+import base64
 import requests
-import subprocess
 from bs4 import BeautifulSoup
 from datetime import date
 from supabase_client import supabase, upsert_previous_close
@@ -61,7 +61,7 @@ def save_market_json(results, market_open):
 
 
 # ---------------------------------------------------------
-# COMMIT AUTOMATICO SU GITHUB
+# COMMIT AUTOMATICO SU GITHUB (API)
 # ---------------------------------------------------------
 def commit_to_github():
     try:
@@ -70,28 +70,49 @@ def commit_to_github():
             log_error("GITHUB_TOKEN non impostato nelle variabili d'ambiente")
             return
 
-        repo_url = "https://github.com/Marchino1978/portfolio.git"
-        push_url = repo_url.replace("https://", f"https://{token}@")
+        repo = "Marchino1978/portfolio"
+        path = "data/market.json"
+        api_url = f"https://api.github.com/repos/{repo}/contents/{path}"
 
-        subprocess.run(["git", "config", "user.email", "bot@local"], check=True)
-        subprocess.run(["git", "config", "user.name", "AutoBot"], check=True)
+        # 1. Leggi il file locale
+        with open(path, "rb") as f:
+            content = f.read()
 
-        subprocess.run(["git", "add", "data/market.json"], check=True)
+        encoded = base64.b64encode(content).decode("utf-8")
 
-        commit_proc = subprocess.run(
-            ["git", "commit", "-m", "Update market.json"],
-            check=False
-        )
-        if commit_proc.returncode != 0:
-            log_info("Nessuna modifica da committare su GitHub")
-            return
+        # 2. Recupera SHA del file esistente (se c’è)
+        sha = None
+        get_resp = requests.get(api_url, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json"
+        })
 
-        subprocess.run(["git", "push", push_url, "main"], check=True)
+        if get_resp.status_code == 200:
+            sha = get_resp.json().get("sha")
 
-        log_info("Commit e push su GitHub completati")
+        # 3. Prepara payload
+        payload = {
+            "message": "Update market.json",
+            "content": encoded,
+            "branch": "main"
+        }
 
-    except subprocess.CalledProcessError as e:
-        log_error(f"Errore durante commit/push GitHub: {e}")
+        if sha:
+            payload["sha"] = sha
+
+        # 4. PUT → commit automatico
+        put_resp = requests.put(api_url, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json"
+        }, json=payload)
+
+        if put_resp.status_code in (200, 201):
+            log_info("Commit su GitHub completato via API")
+        else:
+            log_error(f"Errore GitHub API: {put_resp.status_code} - {put_resp.text}")
+
+    except Exception as e:
+        log_error(f"Errore commit GitHub API: {e}")
 
 
 # ---------------------------------------------------------
