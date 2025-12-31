@@ -1,6 +1,7 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Flask, jsonify, send_from_directory
+import threading
 import os
 import json
 
@@ -8,7 +9,11 @@ import json
 import scraper_etf
 import scraper_fondi
 
+# Import logger per tracciare bene cosa succede
+from utils.logger import log_info, log_error
+
 app = Flask(__name__, static_folder="public", static_url_path="")
+
 
 # ---------------------------------------------------------
 # PAGINE STATICHE
@@ -40,11 +45,27 @@ def health():
 # ---------------------------------------------------------
 @app.route("/api/update-all")
 def update_etf():
-    results, market_open = scraper_etf.update_all_etf()   # <-- SINCRONO
-    return jsonify({
-        "status": "etf update completed",
-        "market_open": market_open
-    })
+    log_info("Richiesta /api/update-all ricevuta - avvio aggiornamento ETF SINCRONO")
+    try:
+        results, market_open = scraper_etf.update_all_etf()  # Esecuzione bloccante
+        count = len(results) if results else 0
+        log_info(f"Aggiornamento ETF completato: {count} ETF processati, market_open={market_open}")
+
+        return jsonify({
+            "status": "etf update completed",
+            "updated_symbols": count,
+            "market_open": market_open,
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat(),
+            "results": results  # opzionale: restituisci i dati per debug
+        }), 200
+
+    except Exception as e:
+        log_error(f"Errore durante aggiornamento ETF: {e}")
+        return jsonify({
+            "status": "error",
+            "message": str(e),
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
+        }), 500
 
 
 # ---------------------------------------------------------
@@ -56,12 +77,27 @@ def get_csv():
 
 
 # ---------------------------------------------------------
-# AGGIORNAMENTO FONDI (SINCRONO, COME ETF)
+# AGGIORNAMENTO FONDI (SINCRONO)
 # ---------------------------------------------------------
 @app.route("/api/update-fondi")
 def update_fondi():
-    scraper_fondi.main()   # <-- SINCRONO
-    return jsonify({"status": "fondi update completed"})
+    log_info("Richiesta /api/update-fondi ricevuta - avvio aggiornamento fondi SINCRONO")
+    try:
+        scraper_fondi.main()  # Già sincrono per natura
+        log_info("Aggiornamento fondi completato con successo")
+
+        return jsonify({
+            "status": "fondi update completed",
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
+        }), 200
+
+    except Exception as e:
+        log_error(f"Errore durante aggiornamento fondi: {e}")
+        return jsonify({
+            "status": "error",
+            "message": str(e),
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
+        }), 500
 
 
 # ---------------------------------------------------------
@@ -69,11 +105,16 @@ def update_fondi():
 # ---------------------------------------------------------
 @app.route("/api/market-status")
 def market_status():
+    """
+    Legge SOLO data/market.json scritto da scraper_etf.update_all_etf().
+    Non fa scraping né aggiornamenti.
+    """
     market_path = os.path.join("data", "market.json")
 
+    now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+    readable = now_rome.strftime("%H:%M %d-%m-%Y")
+
     if not os.path.exists(market_path):
-        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-        readable = now_rome.strftime("%H:%M %d-%m-%Y")
         return jsonify({
             "datetime": now_rome.isoformat(),
             "datetime_readable": readable,
@@ -87,17 +128,12 @@ def market_status():
         with open(market_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-        readable = now_rome.strftime("%H:%M %d-%m-%Y")
-
         data["datetime"] = now_rome.isoformat()
         data["datetime_readable"] = readable
 
         return jsonify(data), 200
 
     except Exception as e:
-        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-        readable = now_rome.strftime("%H:%M %d-%m-%Y")
         return jsonify({
             "datetime": now_rome.isoformat(),
             "datetime_readable": readable,
