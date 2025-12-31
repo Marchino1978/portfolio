@@ -59,8 +59,8 @@ def update_etf():
         }), 200
 
     except Exception as e:
-        # <<< FIX DEBUG: logga tipo eccezione + messaggio completo >>>
-        log_error(f"Errore durante aggiornamento ETF: {type(e).__name__}: {e}")
+        # FIX: logga tipo eccezione + messaggio completo per debug preciso
+        log_error(f"Errore durante aggiornamento ETF - Tipo: {type(e).__name__} - Messaggio: {e}")
         return jsonify({
             "status": "error",
             "message": f"{type(e).__name__}: {str(e)}",
@@ -92,7 +92,7 @@ def update_fondi():
         }), 200
 
     except Exception as e:
-        log_error(f"Errore durante aggiornamento fondi: {type(e).__name__}: {e}")
+        log_error(f"Errore durante aggiornamento fondi - Tipo: {type(e).__name__} - Messaggio: {e}")
         return jsonify({
             "status": "error",
             "message": f"{type(e).__name__}: {str(e)}",
