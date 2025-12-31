@@ -156,7 +156,7 @@ def compute_all_variations(symbol, price_today, today_date, supabase):
     return results
 
 # ---------------------------------------------------------
-# SALVATAGGIO market.json (CON TIMESTAMP)
+# SALVATAGGIO market.json
 # ---------------------------------------------------------
 def save_market_json(results, market_open):
     try:
@@ -210,7 +210,7 @@ def save_market_json(results, market_open):
         log_error(f"Errore salvataggio market.json: {e}")
 
 # ---------------------------------------------------------
-# COMMIT GITHUB
+# COMMIT GITHUB (CON TIMEOUT)
 # ---------------------------------------------------------
 def commit_to_github():
     try:
@@ -229,10 +229,14 @@ def commit_to_github():
         encoded = base64.b64encode(content).decode("utf-8")
 
         sha = None
-        get_resp = requests.get(api_url, headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json"
-        })
+        get_resp = requests.get(
+            api_url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json"
+            },
+            timeout=10
+        )
 
         if get_resp.status_code == 200:
             sha = get_resp.json().get("sha")
@@ -246,10 +250,15 @@ def commit_to_github():
         if sha:
             payload["sha"] = sha
 
-        put_resp = requests.put(api_url, headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json"
-        }, json=payload)
+        put_resp = requests.put(
+            api_url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json"
+            },
+            json=payload,
+            timeout=10
+        )
 
         if put_resp.status_code in (200, 201):
             log_info("Commit su GitHub completato")

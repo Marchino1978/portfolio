@@ -87,7 +87,7 @@ def normalize(value_it):
     return s
 
 # -----------------------------
-# Commit CSV su GitHub
+# Commit CSV su GitHub (CON TIMEOUT)
 # -----------------------------
 def commit_csv_to_github(path, message):
     try:
@@ -105,10 +105,14 @@ def commit_csv_to_github(path, message):
         encoded = base64.b64encode(content).decode("utf-8")
 
         sha = None
-        get_resp = requests.get(api_url, headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json"
-        })
+        get_resp = requests.get(
+            api_url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json"
+            },
+            timeout=10
+        )
         if get_resp.status_code == 200:
             sha = get_resp.json().get("sha")
 
@@ -120,10 +124,15 @@ def commit_csv_to_github(path, message):
         if sha:
             payload["sha"] = sha
 
-        put_resp = requests.put(api_url, headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json"
-        }, json=payload)
+        put_resp = requests.put(
+            api_url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json"
+            },
+            json=payload,
+            timeout=10
+        )
 
         if put_resp.status_code in (200, 201):
             print(f"Commit GitHub OK: {path}")
@@ -137,14 +146,10 @@ def commit_csv_to_github(path, message):
 # Main di aggiornamento fondi
 # -----------------------------
 def main():
-    # Il cron esterno / endpoint decide QUANDO eseguire
-
-    # Legge lista fondi da CSV (con supporto per commenti # e righe vuote)
     fondi = []
     with open(fondi_path, newline="", encoding="utf-8") as f:
         lines = f.readlines()
 
-    # Filtra righe vuote e commenti (quelli che iniziano con #)
     clean_lines = []
     for line in lines:
         stripped = line.strip()
@@ -152,29 +157,22 @@ def main():
             continue
         clean_lines.append(line)
 
-    # Ricostruisci un file-like object pulito per DictReader
     clean_csv = StringIO("".join(clean_lines))
-
     reader = csv.DictReader(clean_csv)
 
-    # Pulizia fieldnames (rimuove BOM e spazi)
     if reader.fieldnames:
         reader.fieldnames = [fn.strip().lstrip("\ufeff") for fn in reader.fieldnames]
 
     for row in reader:
-        # Pulizia chiavi e valori
         clean_row = {k.strip(): v.strip() for k, v in row.items() if k is not None}
-        # Salta righe completamente vuote dopo la pulizia
         if not any(clean_row.values()):
             continue
         fondi.append(clean_row)
 
-    # Scrive output una sola volta (sovrascrive ogni run)
     with open(fondi_nav_path, "w", newline="", encoding="utf-8") as f_out:
         writer = csv.writer(f_out, delimiter=";")
         writer.writerow(["timestamp", "nome", "ISIN", "nav_text_it", "nav_float"])
 
-        # Loop sui fondi
         for fondo in fondi:
             nome = fondo.get("nome", "")
             url = fondo.get("url", "")
@@ -206,8 +204,4 @@ def main():
                 writer.writerow([datetime.now().isoformat(), nome, isin, "ERRORE", ""])
                 print(f"{nome} ({isin}): errore {repr(e)}")
 
-    # Dopo aver scritto il CSV, commit su GitHub
-    # Percorso relativo dal root del repo, come per market.json
     commit_csv_to_github("data/fondi_nav.csv", "Update fondi_nav.csv")
-    # Se vuoi anche fondi.csv, decommenta:
-    # commit_csv_to_github("data/fondi.csv", "Update fondi.csv")
