@@ -75,8 +75,8 @@ def is_market_open(now=None):
         return False
 
     # 31 dicembre (ultimo dell’anno)
-    if now.month == 12 and now.day == 31:
-        return False
+    #if now.month == 12 and now.day == 31:
+        #return False
 
     # Orari di apertura/chiusura
     open_hour, open_minute = map(int, MARKET_HOURS["open"].split(":"))
