@@ -1,0 +1,39 @@
+.
+├── config/
+│   └── variations.conf
+├── data/
+│   ├── fondi.csv
+│   ├── fondi_nav.csv
+│   ├── market.json
+│   └── salvadanaio.csv
+├── public/
+│   ├── fondi.html
+│   ├── market.html
+│   ├── market-mobile.html
+│   └── salvadanaio.html
+├── tests/
+│   ├── testDateVar.py
+│   ├── testEaster.py
+│   ├── test_etf.py
+│   └── test_fondi.py
+├── utils/
+│   ├── colors.h
+│   ├── holidays.py
+│   └── logger.py
+├── app.py
+├── config.py
+├── Dockerfile
+├── .env
+├── etfs.json
+├── fly.toml
+├── .gitignore
+├── project-tree.txt
+├── push.sh*
+├── requirements.txt
+├── schema.sql
+├── scraper_etf.py
+├── scraper_fondi.py
+├── snapshot_all.sh*
+└── supabase_client.py
+
+5 directories, 31 files
