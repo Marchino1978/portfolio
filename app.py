@@ -1,7 +1,6 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Flask, jsonify, send_from_directory
-import threading
 import os
 import json
 
@@ -56,14 +55,15 @@ def update_etf():
             "updated_symbols": count,
             "market_open": market_open,
             "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat(),
-            "results": results  # opzionale: restituisci i dati per debug
+            "results": results  # opzionale, utile per debug
         }), 200
 
     except Exception as e:
-        log_error(f"Errore durante aggiornamento ETF: {e}")
+        # <<< FIX DEBUG: logga tipo eccezione + messaggio completo >>>
+        log_error(f"Errore durante aggiornamento ETF: {type(e).__name__}: {e}")
         return jsonify({
             "status": "error",
-            "message": str(e),
+            "message": f"{type(e).__name__}: {str(e)}",
             "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
         }), 500
 
@@ -83,7 +83,7 @@ def get_csv():
 def update_fondi():
     log_info("Richiesta /api/update-fondi ricevuta - avvio aggiornamento fondi SINCRONO")
     try:
-        scraper_fondi.main()  # Già sincrono per natura
+        scraper_fondi.main()
         log_info("Aggiornamento fondi completato con successo")
 
         return jsonify({
@@ -92,10 +92,10 @@ def update_fondi():
         }), 200
 
     except Exception as e:
-        log_error(f"Errore durante aggiornamento fondi: {e}")
+        log_error(f"Errore durante aggiornamento fondi: {type(e).__name__}: {e}")
         return jsonify({
             "status": "error",
-            "message": str(e),
+            "message": f"{type(e).__name__}: {str(e)}",
             "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
         }), 500
 
