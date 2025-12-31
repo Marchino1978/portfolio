@@ -3,7 +3,6 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Flask, jsonify, send_from_directory
-import threading
 import os
 import json
 
@@ -11,7 +10,11 @@ import json
 import scraper_etf
 import scraper_fondi
 
+# Import logger per tracciare bene cosa succede
+from utils.logger import log_info, log_error
+
 app = Flask(__name__, static_folder="public", static_url_path="")
+
 
 # ---------------------------------------------------------
 # PAGINE STATICHE
@@ -39,12 +42,32 @@ def health():
 
 
 # ---------------------------------------------------------
-# AGGIORNAMENTO ETF (async)
+# AGGIORNAMENTO ETF (SINCRONO)
 # ---------------------------------------------------------
 @app.route("/api/update-all")
 def update_etf():
-    threading.Thread(target=scraper_etf.update_all_etf).start()
-    return jsonify({"status": "etf update started"})
+    log_info("Richiesta /api/update-all ricevuta - avvio aggiornamento ETF SINCRONO")
+    try:
+        results, market_open = scraper_etf.update_all_etf()  # Esecuzione bloccante
+        count = len(results) if results else 0
+        log_info(f"Aggiornamento ETF completato: {count} ETF processati, market_open={market_open}")
+
+        return jsonify({
+            "status": "etf update completed",
+            "updated_symbols": count,
+            "market_open": market_open,
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat(),
+            "results": results  # opzionale, utile per debug
+        }), 200
+
+    except Exception as e:
+        # FIX: logga tipo eccezione + messaggio completo per debug preciso
+        log_error(f"Errore durante aggiornamento ETF - Tipo: {type(e).__name__} - Messaggio: {e}")
+        return jsonify({
+            "status": "error",
+            "message": f"{type(e).__name__}: {str(e)}",
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
+        }), 500
 
 
 # ---------------------------------------------------------
@@ -56,12 +79,27 @@ def get_csv():
 
 
 # ---------------------------------------------------------
-# AGGIORNAMENTO FONDI (UNIFORME, SENZA THREAD)
+# AGGIORNAMENTO FONDI (SINCRONO)
 # ---------------------------------------------------------
 @app.route("/api/update-fondi")
 def update_fondi():
-    scraper_fondi.main()   # <-- ESECUZIONE DIRETTA, COME ETF NEL PROCESSO PRINCIPALE
-    return jsonify({"status": "fondi update completed"})
+    log_info("Richiesta /api/update-fondi ricevuta - avvio aggiornamento fondi SINCRONO")
+    try:
+        scraper_fondi.main()
+        log_info("Aggiornamento fondi completato con successo")
+
+        return jsonify({
+            "status": "fondi update completed",
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
+        }), 200
+
+    except Exception as e:
+        log_error(f"Errore durante aggiornamento fondi - Tipo: {type(e).__name__} - Messaggio: {e}")
+        return jsonify({
+            "status": "error",
+            "message": f"{type(e).__name__}: {str(e)}",
+            "timestamp": datetime.now(ZoneInfo("Europe/Rome")).isoformat()
+        }), 500
 
 
 # ---------------------------------------------------------
@@ -70,17 +108,15 @@ def update_fondi():
 @app.route("/api/market-status")
 def market_status():
     """
-    NON fa scraping.
-    NON chiama update_all_etf.
     Legge SOLO data/market.json scritto da scraper_etf.update_all_etf().
+    Non fa scraping né aggiornamenti.
     """
-
     market_path = os.path.join("data", "market.json")
 
+    now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+    readable = now_rome.strftime("%H:%M %d-%m-%Y")
+
     if not os.path.exists(market_path):
-        # Nessun dato ancora disponibile
-        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-        readable = now_rome.strftime("%H:%M %d-%m-%Y")
         return jsonify({
             "datetime": now_rome.isoformat(),
             "datetime_readable": readable,
@@ -94,18 +130,12 @@ def market_status():
         with open(market_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        # Aggiungo solo timestamp lato server per coerenza
-        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-        readable = now_rome.strftime("%H:%M %d-%m-%Y")
-
         data["datetime"] = now_rome.isoformat()
         data["datetime_readable"] = readable
 
         return jsonify(data), 200
 
     except Exception as e:
-        now_rome = datetime.now(ZoneInfo("Europe/Rome"))
-        readable = now_rome.strftime("%H:%M %d-%m-%Y")
         return jsonify({
             "datetime": now_rome.isoformat(),
             "datetime_readable": readable,
@@ -121,7 +151,6 @@ def market_status():
 # ---------------------------------------------------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
-
 
 # ./config.py
 ----------------------------------------
@@ -202,8 +231,8 @@ def is_market_open(now=None):
         return False
 
     # 31 dicembre (ultimo dell’anno)
-    #if now.month == 12 and now.day == 31:
-        #return False
+    if now.month == 12 and now.day == 31:
+        return False
 
     # Orari di apertura/chiusura
     open_hour, open_minute = map(int, MARKET_HOURS["open"].split(":"))
@@ -227,8 +256,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ENV PORT=8080
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "--timeout", "180", "app:app"]
+ENV PYTHONUNBUFFERED=1
 
+# Timeout alto per update lunghi
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "--timeout", "600", "--log-level", "info", "app:app"]
 
 # ./etfs.json
 ----------------------------------------
@@ -273,7 +304,7 @@ CMD ["gunicorn", "-b", "0.0.0.0:8080", "--timeout", "180", "app:app"]
 
 # ./fly.toml
 ----------------------------------------
-app = "portfolio-phyton"
+app = "portfolio-python"
 primary_region = "fra"
 
 [http_service]
@@ -283,10 +314,63 @@ primary_region = "fra"
   auto_start_machines = true
   min_machines_running = 0
 
+  # Sintassi vecchia ma ancora perfettamente funzionante
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 25
+    hard_limit = 50
+
 [[vm]]
-  memory = "512mb"
+  memory = "256mb"
   cpu_kind = "shared"
   cpus = 1
+
+[env]
+  PYTHONUNBUFFERED = "1"
+  TZ = "Europe/Rome"
+
+# ./project-tree.txt
+----------------------------------------
+.
+├── config/
+│   └── variations.conf
+├── data/
+│   ├── fondi.csv
+│   ├── fondi_nav.csv
+│   ├── market.json
+│   └── salvadanaio.csv
+├── public/
+│   ├── fondi.html
+│   ├── market.html
+│   ├── market-mobile.html
+│   └── salvadanaio.html
+├── tests/
+│   ├── testDateVar.py
+│   ├── testEaster.py
+│   ├── test_etf.py
+│   └── test_fondi.py
+├── utils/
+│   ├── colors.h
+│   ├── holidays.py
+│   └── logger.py
+├── app.py
+├── config.py
+├── Dockerfile
+├── .env
+├── etfs.json
+├── fly.toml
+├── .gitignore
+├── project-tree.txt
+├── push.sh*
+├── requirements.txt
+├── schema.sql
+├── scraper_etf.py
+├── scraper_fondi.py
+├── snapshot_all.sh*
+└── supabase_client.py
+
+5 directories, 31 files
+
 
 # ./push.sh
 ----------------------------------------
@@ -364,7 +448,7 @@ from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
 from utils.logger import log_info, log_error
 
-HEADERS = {"User-Agent": "Mozilla/5.0"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 
 # ---------------------------------------------------------
 # PERIODI MULTI-VARIAZIONE
@@ -387,8 +471,10 @@ def load_etfs():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     path = os.path.join(base_dir, "etfs.json")
     try:
-        with open(path, "r") as f:
-            return json.load(f)
+        with open(path, "r", encoding="utf-8") as f:
+            etfs = json.load(f)
+        log_info(f"Caricati {len(etfs)} ETF da etfs.json")
+        return etfs
     except Exception as e:
         log_error(f"Errore lettura etfs.json: {e}")
         return []
@@ -404,9 +490,9 @@ def load_variation_config():
 
         if not os.path.exists(path):
             log_error(f"File variazioni non trovato: {path}")
-            return config
+            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M"}  # fallback sicuri
 
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith("#"):
@@ -429,41 +515,38 @@ def load_variation_config():
 def scrape_price(item_id):
     url = f"https://www.ls-tc.de/de/etf/{item_id}"
     try:
-        r = requests.get(url, headers=HEADERS, timeout=15)
+        r = requests.get(url, headers=HEADERS, timeout=20)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
         mid = soup.find("span", attrs={"field": "mid", "item": f"{item_id}@1"})
-        if mid:
+        if mid and mid.text.strip():
             return float(mid.text.strip().replace(",", "."))
+        log_error(f"Prezzo non trovato per item_id {item_id}")
     except Exception as e:
         log_error(f"Errore scraping {item_id}: {e}")
     return None
 
 # ---------------------------------------------------------
-# PREVIOUS CLOSE
+# PREVIOUS CLOSE & VARIAZIONI
 # ---------------------------------------------------------
 def get_previous_close(symbol, supabase):
     today = date.today().isoformat()
-
-    resp = (
-        supabase.table("previous_close")
-        .select("close_value")
-        .eq("symbol", symbol)
-        .filter("snapshot_date", "lt", today)
-        .order("snapshot_date", desc=True)
-        .limit(1)
-        .execute()
-    )
-
-    if resp.data:
-        return resp.data[0]["close_value"]
-
-    log_info(f"[WARN] Nessun previous_close trovato per {symbol} prima di {today}")
+    try:
+        resp = (
+            supabase.table("previous_close")
+            .select("close_value")
+            .eq("symbol", symbol)
+            .filter("snapshot_date", "lt", today)
+            .order("snapshot_date", desc=True)
+            .limit(1)
+            .execute()
+        )
+        if resp.data:
+            return resp.data[0]["close_value"]
+    except Exception as e:
+        log_error(f"Errore query previous_close {symbol}: {e}")
     return None
 
-# ---------------------------------------------------------
-# VARIAZIONI MULTI-PERIODO
-# ---------------------------------------------------------
 def get_price_on_or_before(symbol, target_date, supabase):
     try:
         target_str = target_date.isoformat()
@@ -476,23 +559,16 @@ def get_price_on_or_before(symbol, target_date, supabase):
             .limit(1)
             .execute()
         )
-
         if resp.data:
             return float(resp.data[0]["close_value"])
-
-        log_info(f"[WARN] Nessun prezzo storico trovato per {symbol} fino a {target_str}")
-        return None
     except Exception as e:
         log_error(f"Errore get_price_on_or_before({symbol}, {target_date}): {e}")
-        return None
+    return None
 
 def calc_variation(price_today, price_past):
-    if price_today is None or price_past is None:
+    if price_today is None or price_past is None or price_past == 0:
         return None
-    try:
-        return ((price_today - price_past) / price_past) * 100.0
-    except ZeroDivisionError:
-        return None
+    return ((price_today - price_past) / price_past) * 100.0
 
 def fmt_variation(value, suffix):
     if value is None:
@@ -521,23 +597,20 @@ def save_market_json(results, market_open):
         readable = now.strftime("%H:%M %d-%m-%Y")
 
         data_array = []
-
         for symbol, etf in results.items():
             if etf.get("status") == "unavailable":
                 continue
 
             daily_change_str = (
-                f"{etf['daily_change']:.2f}"
-                if etf.get("daily_change") is not None
-                else "-"
+                f"{etf['daily_change']:+.2f}" if etf.get("daily_change") is not None else "-"
             )
 
             entry = {
                 "symbol": etf["symbol"],
                 "label": etf["label"],
-                "price": etf["price"],
+                "price": round(etf["price"], 4),
                 "dailyChange": daily_change_str,
-                "value": etf["price"],
+                "value": round(etf["price"], 4),
             }
 
             for key in ("v1", "v2", "v3", "v_led"):
@@ -548,91 +621,80 @@ def save_market_json(results, market_open):
 
         json_output = {
             "status": "APERTO" if market_open else "CHIUSO",
-            "values": {"data": data_array},
+            "open": market_open,
+            "values": {"source": "ls-tc.de", "data": data_array},
             "last_updated": {
                 "iso": now.isoformat(),
                 "readable": readable
             }
         }
 
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             json.dump(json_output, f, indent=2, ensure_ascii=False)
 
-        log_info(f"market.json aggiornato in {path}")
+        log_info(f"market.json salvato con {len(data_array)} ETF")
 
     except Exception as e:
         log_error(f"Errore salvataggio market.json: {e}")
 
 # ---------------------------------------------------------
-# COMMIT GITHUB (CON TIMEOUT)
+# COMMIT GITHUB
 # ---------------------------------------------------------
 def commit_to_github():
+    path = "data/market.json"
     try:
         token = os.environ.get("GITHUB_TOKEN")
         if not token:
-            log_error("GITHUB_TOKEN non impostato")
+            log_error("GITHUB_TOKEN non impostato – commit GitHub saltato")
             return
 
         repo = "Marchino1978/portfolio"
-        path = "data/market.json"
         api_url = f"https://api.github.com/repos/{repo}/contents/{path}"
 
         with open(path, "rb") as f:
-            content = f.read()
-
-        encoded = base64.b64encode(content).decode("utf-8")
+            content = base64.b64encode(f.read()).decode("utf-8")
 
         sha = None
-        get_resp = requests.get(
-            api_url,
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Accept": "application/vnd.github+json"
-            },
-            timeout=10
-        )
-
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json"
+        }
+        get_resp = requests.get(api_url, headers=headers, timeout=10)
         if get_resp.status_code == 200:
             sha = get_resp.json().get("sha")
 
         payload = {
-            "message": "Update market.json",
-            "content": encoded,
+            "message": "Update market.json [auto]",
+            "content": content,
             "branch": "main"
         }
-
         if sha:
             payload["sha"] = sha
 
-        put_resp = requests.put(
-            api_url,
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Accept": "application/vnd.github+json"
-            },
-            json=payload,
-            timeout=10
-        )
-
+        put_resp = requests.put(api_url, headers=headers, json=payload, timeout=10)
         if put_resp.status_code in (200, 201):
-            log_info("Commit su GitHub completato")
+            log_info("Commit market.json su GitHub completato")
         else:
-            log_error(f"Errore GitHub API: {put_resp.status_code} - {put_resp.text}")
+            log_error(f"Errore commit GitHub: {put_resp.status_code} – {put_resp.text}")
 
     except Exception as e:
-        log_error(f"Errore commit GitHub API: {e}")
+        log_error(f"Errore durante commit GitHub: {e}")
 
 # ---------------------------------------------------------
 # FUNZIONE PRINCIPALE
 # ---------------------------------------------------------
 def update_all_etf():
+    log_info("=== INIZIO aggiornamento ETF ===")
     today_date = date.today()
     today_str = today_date.isoformat()
     market_open = is_market_open()
 
     supabase = get_supabase()
-
     ETFS = load_etfs()
+    if not ETFS:
+        log_error("Nessun ETF caricato – aggiornamento interrotto")
+        return {}, market_open
+
     variation_config = load_variation_config()
 
     results = {}
@@ -640,20 +702,17 @@ def update_all_etf():
     for etf in ETFS:
         symbol = etf["symbol"]
         label = etf["label"]
+        item_id = etf["item_id"]
 
-        price = scrape_price(etf["item_id"])
+        log_info(f"Scraping {symbol} ({label}) – item_id {item_id}")
+        price = scrape_price(item_id)
+
         if price is None:
-            results[symbol] = {"status": "unavailable"}
+            results[symbol] = {"status": "unavailable", "symbol": symbol, "label": label}
             continue
 
         prev = get_previous_close(symbol, supabase)
-
-        daily_change = None
-        if prev is not None:
-            try:
-                daily_change = round(((price - prev) / prev) * 100, 2)
-            except ZeroDivisionError:
-                daily_change = None
+        daily_change = calc_variation(price, prev) if prev else None
 
         if market_open:
             upsert_previous_close(
@@ -666,11 +725,6 @@ def update_all_etf():
 
         all_variations = compute_all_variations(symbol, price, today_date, supabase)
 
-        v1_code = variation_config.get("v1", "D")
-        v2_code = variation_config.get("v2", "W")
-        v3_code = variation_config.get("v3", "M")
-        v_led_code = variation_config.get("v_led", "M")
-
         results[symbol] = {
             "symbol": symbol,
             "label": label,
@@ -679,19 +733,17 @@ def update_all_etf():
             "daily_change": daily_change,
             "snapshot_date": today_str,
             "status": "open" if market_open else "closed",
-            "v1": all_variations.get(v1_code, "N/A"),
-            "v2": all_variations.get(v2_code, "N/A"),
-            "v3": all_variations.get(v3_code, "N/A"),
-            "v_led": all_variations.get(v_led_code, "N/A"),
+            "v1": all_variations.get(variation_config.get("v1", "D"), "N/A"),
+            "v2": all_variations.get(variation_config.get("v2", "W"), "N/A"),
+            "v3": all_variations.get(variation_config.get("v3", "M"), "N/A"),
+            "v_led": all_variations.get(variation_config.get("v_led", "M"), "N/A"),
         }
-
-    log_info(f"Aggiornamento ETF completato: {len(results)} simboli")
 
     save_market_json(results, market_open)
     commit_to_github()
 
+    log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
-
 
 # ./scraper_fondi.py
 ----------------------------------------
@@ -701,208 +753,147 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import re
 import os
-from io import StringIO  # Per ricostruire il CSV pulito
-import base64  # per commit GitHub
+from io import StringIO
+import base64
+
+from utils.logger import log_info, log_error
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 }
 
-# -----------------------------
-# Percorsi robusti
-# -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
-
 fondi_path = os.path.join(DATA_DIR, "fondi.csv")
 fondi_nav_path = os.path.join(DATA_DIR, "fondi_nav.csv")
 
 # -----------------------------
-# Fetch HTML con gestione errori
+# Fetch & Parser
 # -----------------------------
 def fetch_html(url):
     try:
-        r = requests.get(url, headers=HEADERS, timeout=10)
+        r = requests.get(url, headers=HEADERS, timeout=15)
         r.raise_for_status()
-        if not r.text or len(r.text.strip()) == 0:
-            raise ValueError("HTML vuoto da " + url)
         return r.text
     except Exception as e:
-        print(f"Errore fetch {url}: {e}")
+        log_error(f"Errore fetch {url}: {e}")
         return None
 
-# -----------------------------
-# Parser Eurizon
-# -----------------------------
 def parse_eurizon(html):
-    if not html:
-        return None
     soup = BeautifulSoup(html, "html.parser")
-    span = soup.find("span", class_="product-dashboard-token-value-bold color-green")
+    span = soup.find("span", class_="product-dashboard-token-value-bold")
     if span and span.get_text(strip=True):
         return span.get_text(strip=True)
-    text = soup.get_text(" ", strip=True)
-    match = re.search(r"\b\d{1,3}(\.\d{3})*,\d{2}\b|\b\d+,\d{2}\b", text)
-    if match:
-        return match.group(0)
-    return None
+    match = re.search(r"\d{1,3}(\.\d{3})*,\d{2}", soup.get_text())
+    return match.group(0) if match else None
 
-# -----------------------------
-# Parser Teleborsa
-# -----------------------------
 def parse_teleborsa(html):
-    if not html:
-        return None
     soup = BeautifulSoup(html, "html.parser")
     price_span = soup.find("span", id="ctl00_phContents_ctlHeader_lblPrice")
-    if price_span:
-        raw = price_span.get_text(strip=True)
-        if raw:
-            return raw
+    if price_span and price_span.get_text(strip=True):
+        return price_span.get_text(strip=True)
     alt = soup.find("span", id=re.compile(r"lblPrice", re.I))
-    if alt:
-        raw = alt.get_text(strip=True)
-        if raw:
-            return raw
-    text = soup.get_text(" ", strip=True)
-    match = re.search(r"\b\d{1,3}(\.\d{3})*,\d{2}\b|\b\d{1,3}(\.\d{3})*\b", text)
-    if match:
-        return match.group(0)
-    return None
+    if alt and alt.get_text(strip=True):
+        return alt.get_text(strip=True)
+    match = re.search(r"\d{1,3}(\.\d{3})*,\d{2}", soup.get_text())
+    return match.group(0) if match else None
 
-# -----------------------------
-# Normalizzazione valori IT -> EN
-# -----------------------------
 def normalize(value_it):
     if not value_it:
         return None
-    s = value_it.strip()
-    if "," in s:
-        s = s.replace(".", "").replace(",", ".")
-    else:
-        s = s.replace(".", "")
+    s = value_it.strip().replace(".", "").replace(",", ".")
     return s
 
 # -----------------------------
-# Commit CSV su GitHub (CON TIMEOUT)
+# Commit GitHub
 # -----------------------------
 def commit_csv_to_github(path, message):
     try:
         token = os.environ.get("GITHUB_TOKEN")
         if not token:
-            print("GITHUB_TOKEN non impostato")
+            log_info("GITHUB_TOKEN non impostato – commit saltato")
             return
 
         repo = "Marchino1978/portfolio"
         api_url = f"https://api.github.com/repos/{repo}/contents/{path}"
 
         with open(path, "rb") as f:
-            content = f.read()
-
-        encoded = base64.b64encode(content).decode("utf-8")
+            content = base64.b64encode(f.read()).decode()
 
         sha = None
-        get_resp = requests.get(
-            api_url,
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Accept": "application/vnd.github+json"
-            },
-            timeout=10
-        )
-        if get_resp.status_code == 200:
-            sha = get_resp.json().get("sha")
+        headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+        resp = requests.get(api_url, headers=headers, timeout=10)
+        if resp.status_code == 200:
+            sha = resp.json().get("sha")
 
-        payload = {
-            "message": message,
-            "content": encoded,
-            "branch": "main"
-        }
+        payload = {"message": message, "content": content, "branch": "main"}
         if sha:
             payload["sha"] = sha
 
-        put_resp = requests.put(
-            api_url,
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Accept": "application/vnd.github+json"
-            },
-            json=payload,
-            timeout=10
-        )
-
+        put_resp = requests.put(api_url, headers=headers, json=payload, timeout=10)
         if put_resp.status_code in (200, 201):
-            print(f"Commit GitHub OK: {path}")
+            log_info(f"Commit GitHub OK: {path}")
         else:
-            print(f"Errore GitHub {path}: {put_resp.status_code} - {put_resp.text}")
-
+            log_error(f"Errore commit GitHub: {put_resp.status_code} – {put_resp.text}")
     except Exception as e:
-        print(f"Errore commit CSV {path}: {e}")
+        log_error(f"Errore commit fondi_nav.csv: {e}")
 
 # -----------------------------
-# Main di aggiornamento fondi
+# Main
 # -----------------------------
 def main():
-    fondi = []
+    log_info("=== INIZIO aggiornamento fondi ===")
+    os.makedirs(DATA_DIR, exist_ok=True)
+
+    if not os.path.exists(fondi_path):
+        log_error(f"File fondi.csv non trovato: {fondi_path}")
+        return
+
     with open(fondi_path, newline="", encoding="utf-8") as f:
-        lines = f.readlines()
+        lines = [line for line in f if line.strip() and not line.strip().startswith("#")]
 
-    clean_lines = []
-    for line in lines:
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            continue
-        clean_lines.append(line)
-
-    clean_csv = StringIO("".join(clean_lines))
+    clean_csv = StringIO("".join(lines))
     reader = csv.DictReader(clean_csv)
+    reader.fieldnames = [fn.strip().lstrip("\ufeff") for fn in reader.fieldnames]
 
-    if reader.fieldnames:
-        reader.fieldnames = [fn.strip().lstrip("\ufeff") for fn in reader.fieldnames]
-
-    for row in reader:
-        clean_row = {k.strip(): v.strip() for k, v in row.items() if k is not None}
-        if not any(clean_row.values()):
-            continue
-        fondi.append(clean_row)
+    fondi = [row for row in reader if any(row.values())]
 
     with open(fondi_nav_path, "w", newline="", encoding="utf-8") as f_out:
         writer = csv.writer(f_out, delimiter=";")
         writer.writerow(["timestamp", "nome", "ISIN", "nav_text_it", "nav_float"])
 
         for fondo in fondi:
-            nome = fondo.get("nome", "")
-            url = fondo.get("url", "")
-            isin = fondo.get("ISIN", "")
-            try:
-                html = fetch_html(url)
-                if not html:
-                    raise ValueError("HTML non disponibile")
+            nome = fondo.get("nome", "").strip()
+            url = fondo.get("url", "").strip()
+            isin = fondo.get("ISIN", "").strip()
 
-                if "eurizoncapital.com" in url:
-                    nav_text = parse_eurizon(html)
-                elif "teleborsa.it" in url:
-                    nav_text = parse_teleborsa(html)
-                else:
-                    nav_text = None
+            if not url:
+                writer.writerow([datetime.now().isoformat(), nome, isin, "NO_URL", ""])
+                log_error(f"{nome} ({isin}): URL mancante")
+                continue
 
-                nav_float = normalize(nav_text)
+            html = fetch_html(url)
+            if "eurizoncapital.com" in url:
+                nav_text = parse_eurizon(html) if html else None
+            elif "teleborsa.it" in url:
+                nav_text = parse_teleborsa(html) if html else None
+            else:
+                nav_text = None
 
-                writer.writerow([
-                    datetime.now().isoformat(),
-                    nome,
-                    isin,
-                    nav_text or "N/D",
-                    nav_float or "N/D"
-                ])
-                print(f"{nome} ({isin}): {nav_text or 'N/D'}")
+            nav_float = normalize(nav_text)
 
-            except Exception as e:
-                writer.writerow([datetime.now().isoformat(), nome, isin, "ERRORE", ""])
-                print(f"{nome} ({isin}): errore {repr(e)}")
+            writer.writerow([
+                datetime.now().isoformat(),
+                nome,
+                isin,
+                nav_text or "N/D",
+                nav_float or "N/D"
+            ])
+            status = nav_text or "N/D"
+            log_info(f"{nome} ({isin}): {status}")
 
-    commit_csv_to_github("data/fondi_nav.csv", "Update fondi_nav.csv")
-
+    commit_csv_to_github("data/fondi_nav.csv", "Update fondi_nav.csv [auto]")
+    log_info("=== FINE aggiornamento fondi ===")
 
 # ./snapshot_all.sh
 ----------------------------------------
