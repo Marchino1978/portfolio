@@ -1,4 +1,4 @@
-app = "portfolio-phyton"
+app = "portfolio-python"
 primary_region = "fra"
 
 [http_service]
@@ -8,7 +8,17 @@ primary_region = "fra"
   auto_start_machines = true
   min_machines_running = 0
 
+  # Sintassi vecchia ma ancora perfettamente funzionante
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 25
+    hard_limit = 50
+
 [[vm]]
   memory = "256mb"
   cpu_kind = "shared"
   cpus = 1
+
+[env]
+  PYTHONUNBUFFERED = "1"
+  TZ = "Europe/Rome"
