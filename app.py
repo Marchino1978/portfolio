@@ -78,9 +78,9 @@ def update_etf():
 def get_csv():
     return send_from_directory("data", "salvadanaio.csv", mimetype="text/csv")
 
-@app.get("/fondi_nav.csv")
+@app.get("/fondi.csv")
 def get_fondi_csv():
-    return send_from_directory("data", "fondi_nav.csv", mimetype="text/csv")
+    return send_from_directory("data", "fondi.csv", mimetype="text/csv")
 
 
 # ---------------------------------------------------------
