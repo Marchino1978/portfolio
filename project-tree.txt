@@ -8,6 +8,7 @@
 │   └── salvadanaio.csv
 ├── public/
 │   ├── fondi.html
+│   ├── index.html
 │   ├── market.html
 │   ├── market-mobile.html
 │   └── salvadanaio.html
@@ -36,4 +37,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 31 files
+5 directories, 32 files

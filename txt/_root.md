@@ -20,18 +20,22 @@ app = Flask(__name__, static_folder="public", static_url_path="")
 # PAGINE STATICHE
 # ---------------------------------------------------------
 @app.route("/")
+def index():
+    return send_from_directory("public", "index.html")
+
+@app.route("/market")
 def market():
     return send_from_directory("public", "market.html")
 
-@app.route("/")
+@app.route("/market-mobile")
 def market_mobile():
     return send_from_directory("public", "market-mobile.html")
 
-@app.route("/")
+@app.route("/salvadanaio")
 def salvadanaio():
     return send_from_directory("public", "salvadanaio.html")
 
-@app.route("/")
+@app.route("/fondi")
 def fondi():
     return send_from_directory("public", "fondi.html")
 
@@ -80,9 +84,9 @@ def update_etf():
 def get_csv():
     return send_from_directory("data", "salvadanaio.csv", mimetype="text/csv")
 
-@app.get("/fondi_nav.csv")
+@app.get("/fondi.csv")
 def get_fondi_csv():
-    return send_from_directory("data", "fondi_nav.csv", mimetype="text/csv")
+    return send_from_directory("data", "fondi.csv", mimetype="text/csv")
 
 
 # ---------------------------------------------------------
@@ -348,6 +352,7 @@ primary_region = "fra"
 │   └── salvadanaio.csv
 ├── public/
 │   ├── fondi.html
+│   ├── index.html
 │   ├── market.html
 │   ├── market-mobile.html
 │   └── salvadanaio.html
@@ -376,7 +381,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 31 files
+5 directories, 32 files
 
 
 # ./push.sh
