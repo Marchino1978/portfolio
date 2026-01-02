@@ -17,20 +17,20 @@ app = Flask(__name__, static_folder="public", static_url_path="")
 # ---------------------------------------------------------
 # PAGINE STATICHE
 # ---------------------------------------------------------
-@app.route("/market")
+@app.route("/")
 def index():
     return send_from_directory("public", "market.html")
 
-@app.route("/market-mobile")
+@app.route("/")
 def market_mobile():
     return send_from_directory("public", "market-mobile.html")
 
-@app.route("/salvadanaio")
+@app.route("/")
 def salvadanaio():
     return send_from_directory("public", "salvadanaio.html")
 
-@app.route("/fondi")
-def salvadanaio():
+@app.route("/")
+def fondi():
     return send_from_directory("public", "fondi.html")
 
 # ---------------------------------------------------------
