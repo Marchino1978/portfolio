@@ -17,7 +17,7 @@ app = Flask(__name__, static_folder="public", static_url_path="")
 # ---------------------------------------------------------
 # PAGINE STATICHE
 # ---------------------------------------------------------
-@app.route("/")
+@app.route("/market")
 def index():
     return send_from_directory("public", "market.html")
 
@@ -29,6 +29,9 @@ def market_mobile():
 def salvadanaio():
     return send_from_directory("public", "salvadanaio.html")
 
+@app.route("/fondi")
+def salvadanaio():
+    return send_from_directory("public", "fondi.html")
 
 # ---------------------------------------------------------
 # HEALTHCHECK
