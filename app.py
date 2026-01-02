@@ -18,18 +18,22 @@ app = Flask(__name__, static_folder="public", static_url_path="")
 # PAGINE STATICHE
 # ---------------------------------------------------------
 @app.route("/")
+def index():
+    return send_from_directory("public", "index.html")
+
+@app.route("/market")
 def market():
     return send_from_directory("public", "market.html")
 
-@app.route("/")
+@app.route("/market-mobile")
 def market_mobile():
     return send_from_directory("public", "market-mobile.html")
 
-@app.route("/")
+@app.route("/salvadanaio")
 def salvadanaio():
     return send_from_directory("public", "salvadanaio.html")
 
-@app.route("/")
+@app.route("/fondi")
 def fondi():
     return send_from_directory("public", "fondi.html")
 
