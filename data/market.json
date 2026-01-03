@@ -1,6 +1,6 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
@@ -73,7 +73,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-03T14:12:44.894443+01:00",
-    "readable": "14:12 03-01-2026"
+    "iso": "2026-01-03T23:51:04.617499+01:00",
+    "readable": "23:51 03-01-2026"
   }
 }
