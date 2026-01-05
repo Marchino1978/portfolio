@@ -7,42 +7,42 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 113.5775,
+        "price": 113.57,
         "dailyChange": "+1.27",
-        "value": 113.5775,
+        "value": 113.57,
         "v1": "+1.27%D",
-        "v2": "+0.71%W",
-        "v3": "+0.71%W",
-        "v_led": "+0.71%W"
+        "v2": "+0.70%W",
+        "v3": "+0.70%W",
+        "v_led": "+0.70%W"
       },
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.68,
-        "dailyChange": "+0.81",
-        "value": 39.68,
-        "v1": "+0.81%D",
-        "v2": "+0.76%W",
-        "v3": "+0.76%W",
-        "v_led": "+0.76%W"
+        "price": 39.6675,
+        "dailyChange": "+0.78",
+        "value": 39.6675,
+        "v1": "+0.78%D",
+        "v2": "+0.73%W",
+        "v3": "+0.73%W",
+        "v_led": "+0.73%W"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 150.03,
-        "dailyChange": "+1.99",
-        "value": 150.03,
-        "v1": "+1.99%D",
-        "v2": "+2.90%W",
-        "v3": "+2.90%W",
-        "v_led": "+2.90%W"
+        "price": 150.37,
+        "dailyChange": "+2.22",
+        "value": 150.37,
+        "v1": "+2.22%D",
+        "v2": "+3.13%W",
+        "v3": "+3.13%W",
+        "v_led": "+3.13%W"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 148.086,
+        "price": 148.0855,
         "dailyChange": "-0.03",
-        "value": 148.086,
+        "value": 148.0855,
         "v1": "-0.03%D",
         "v2": "+0.05%W",
         "v3": "+0.05%W",
@@ -51,29 +51,29 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 147.0,
-        "dailyChange": "+1.08",
-        "value": 147.0,
-        "v1": "+1.08%D",
-        "v2": "+1.25%W",
-        "v3": "+1.25%W",
-        "v_led": "+1.25%W"
+        "price": 147.11,
+        "dailyChange": "+1.16",
+        "value": 147.11,
+        "v1": "+1.16%D",
+        "v2": "+1.33%W",
+        "v3": "+1.33%W",
+        "v_led": "+1.33%W"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 35.6025,
-        "dailyChange": "+0.66",
-        "value": 35.6025,
-        "v1": "+0.66%D",
-        "v2": "+1.47%W",
-        "v3": "+1.47%W",
-        "v_led": "+1.47%W"
+        "price": 35.6325,
+        "dailyChange": "+0.74",
+        "value": 35.6325,
+        "v1": "+0.74%D",
+        "v2": "+1.55%W",
+        "v3": "+1.55%W",
+        "v_led": "+1.55%W"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-01-05T15:30:40.944675+01:00",
-    "readable": "15:30 05-01-2026"
+    "iso": "2026-01-05T15:45:25.027885+01:00",
+    "readable": "15:45 05-01-2026"
   }
 }
