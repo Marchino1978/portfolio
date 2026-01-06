@@ -18,31 +18,31 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.725,
-        "dailyChange": "+0.24",
-        "value": 39.725,
-        "v1": "+0.24%D",
-        "v2": "+0.88%W",
-        "v3": "+0.88%W",
-        "v_led": "+0.88%W"
+        "price": 39.73,
+        "dailyChange": "+0.25",
+        "value": 39.73,
+        "v1": "+0.25%D",
+        "v2": "+0.89%W",
+        "v3": "+0.89%W",
+        "v_led": "+0.89%W"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 150.66,
-        "dailyChange": "+0.17",
-        "value": 150.66,
-        "v1": "+0.17%D",
-        "v2": "+1.48%W",
-        "v3": "+1.48%W",
-        "v_led": "+1.48%W"
+        "price": 150.695,
+        "dailyChange": "+0.19",
+        "value": 150.695,
+        "v1": "+0.19%D",
+        "v2": "+1.51%W",
+        "v3": "+1.51%W",
+        "v_led": "+1.51%W"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 148.097,
+        "price": 148.096,
         "dailyChange": "+0.01",
-        "value": 148.097,
+        "value": 148.096,
         "v1": "+0.01%D",
         "v2": "+0.02%W",
         "v3": "+0.02%W",
@@ -62,18 +62,18 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 35.77,
-        "dailyChange": "-0.33",
-        "value": 35.77,
-        "v1": "-0.33%D",
-        "v2": "+1.65%W",
-        "v3": "+1.65%W",
-        "v_led": "+1.65%W"
+        "price": 35.775,
+        "dailyChange": "-0.32",
+        "value": 35.775,
+        "v1": "-0.32%D",
+        "v2": "+1.66%W",
+        "v3": "+1.66%W",
+        "v_led": "+1.66%W"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-01-06T11:45:18.730709+01:00",
-    "readable": "11:45 06-01-2026"
+    "iso": "2026-01-06T12:00:43.116389+01:00",
+    "readable": "12:00 06-01-2026"
   }
 }
