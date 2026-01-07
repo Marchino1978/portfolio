@@ -3,7 +3,7 @@ import pendulum
 # Orari mercato LS-TC
 MARKET_HOURS = {
     "timezone": "Europe/Rome",
-    "open": "07:20",
+    "open": "07:30",
     "close": "23:00"
 }
 
@@ -49,7 +49,7 @@ def easter_date(year):
 def is_market_open(now=None):
     # Se non viene passato un datetime, usa quello attuale
     if now is None:
-        now = pendulum.now(MARKET_HOURS["timezone"])
+        now = pendulum.instance(datetime.now(ZoneInfo("Europe/Rome")))
     else:
         now = now.in_timezone(MARKET_HOURS["timezone"])
 
