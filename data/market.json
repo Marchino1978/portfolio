@@ -8,9 +8,9 @@
         "symbol": "VUAA",
         "label": "S&P 500",
         "price": 113.94,
-        "dailyChange": "-0.21",
+        "dailyChange": "+0.05",
         "value": 113.94,
-        "v1": "-0.21%D",
+        "v1": "+0.05%D",
         "v2": "+1.00%W",
         "v3": "+1.00%W",
         "v_led": "+1.00%W"
@@ -19,9 +19,9 @@
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
         "price": 39.8425,
-        "dailyChange": "-0.59",
+        "dailyChange": "+0.01",
         "value": 39.8425,
-        "v1": "-0.59%D",
+        "v1": "+0.01%D",
         "v2": "+1.17%W",
         "v3": "+1.17%W",
         "v_led": "+1.17%W"
@@ -30,9 +30,9 @@
         "symbol": "GOLD",
         "label": "Physical Gold",
         "price": 151.77,
-        "dailyChange": "-0.56",
+        "dailyChange": "+0.17",
         "value": 151.77,
-        "v1": "-0.56%D",
+        "v1": "+0.17%D",
         "v2": "+2.23%W",
         "v3": "+2.23%W",
         "v_led": "+2.23%W"
@@ -41,9 +41,9 @@
         "symbol": "XEON",
         "label": "XEON",
         "price": 148.087,
-        "dailyChange": "-0.01",
+        "dailyChange": "-0.00",
         "value": 148.087,
-        "v1": "-0.01%D",
+        "v1": "-0.00%D",
         "v2": "+0.02%W",
         "v3": "+0.02%W",
         "v_led": "+0.02%W"
@@ -52,9 +52,9 @@
         "symbol": "VWCE",
         "label": "FTSE All World",
         "price": 147.93,
-        "dailyChange": "-0.22",
+        "dailyChange": "+0.22",
         "value": 147.93,
-        "v1": "-0.22%D",
+        "v1": "+0.22%D",
         "v2": "+1.75%W",
         "v3": "+1.75%W",
         "v_led": "+1.75%W"
@@ -63,9 +63,9 @@
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
         "price": 35.8225,
-        "dailyChange": "-0.52",
+        "dailyChange": "+0.01",
         "value": 35.8225,
-        "v1": "-0.52%D",
+        "v1": "+0.01%D",
         "v2": "+1.80%W",
         "v3": "+1.80%W",
         "v_led": "+1.80%W"
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-07T23:58:03.063038+01:00",
-    "readable": "23:58 07-01-2026"
+    "iso": "2026-01-08T00:08:56.075468+01:00",
+    "readable": "00:08 08-01-2026"
   }
 }
