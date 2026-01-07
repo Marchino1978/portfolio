@@ -34,5 +34,11 @@
     "item_id": "3167313",
     "label": "MSCI World Ex-USA",
     "ISIN": "IE0006WW1TQ4"
+  },
+  {
+    "symbol": "EIMI",
+    "item_id": "49598",
+    "label": "Emerging Markets",
+    "ISIN": "IE00BKM4GZ66"
   }
 ]
