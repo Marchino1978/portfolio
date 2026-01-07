@@ -1,4 +1,7 @@
 import pendulum
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from utils.logger import log_info, log_error
 
 # Orari mercato LS-TC
 MARKET_HOURS = {
@@ -26,7 +29,6 @@ def easter_date(year):
     if year in _cached_easter:
         return _cached_easter[year]
 
-    # Algoritmo di Meeus
     a = year % 19
     b = year // 100
     c = year % 100
@@ -46,12 +48,26 @@ def easter_date(year):
     _cached_easter[year] = pasqua
     return pasqua
 
+
 def is_market_open(now=None):
-    # Se non viene passato un datetime, usa quello attuale
+    """
+    Determina se il mercato è aperto.
+    Ora corretta: SEMPRE quella reale del sistema (Europe/Rome),
+    convertita in oggetto Pendulum senza conversioni errate.
+    """
+
+    # FIX: usa l’ora reale del sistema, non pendulum.now("Europe/Rome")
     if now is None:
         now = pendulum.instance(datetime.now(ZoneInfo("Europe/Rome")))
     else:
-        now = now.in_timezone(MARKET_HOURS["timezone"])
+        now = pendulum.instance(now).in_timezone("Europe/Rome")
+
+    # DEBUG LOG COMPLETI
+    log_info(f"[DEBUG] datetime.now() = {datetime.now()}")
+    log_info(f"[DEBUG] datetime.now(ZoneInfo('Europe/Rome')) = {datetime.now(ZoneInfo('Europe/Rome'))}")
+    log_info(f"[DEBUG] pendulum.now() = {pendulum.now()}")
+    log_info(f"[DEBUG] pendulum.now('Europe/Rome') = {pendulum.now('Europe/Rome')}")
+    log_info(f"[DEBUG] now (final) = {now}  tz={now.timezone_name}")
 
     # Weekend (Pendulum: Monday=1 ... Sunday=7)
     if now.day_of_week in [6, 7]:  # Sabato=6, Domenica=7
@@ -84,5 +100,9 @@ def is_market_open(now=None):
 
     open_time = now.replace(hour=open_hour, minute=open_minute, second=0)
     close_time = now.replace(hour=close_hour, minute=close_minute, second=0)
+
+    # DEBUG LOG ORARI
+    log_info(f"[DEBUG] open_time = {open_time}")
+    log_info(f"[DEBUG] close_time = {close_time}")
 
     return open_time <= now <= close_time
