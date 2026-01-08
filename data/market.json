@@ -7,13 +7,13 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 114.18,
-        "dailyChange": "+0.26",
-        "value": 114.18,
-        "v1": "+0.26%D",
-        "v2": "+1.21%W",
-        "v3": "+1.21%W",
-        "v_led": "+1.21%W"
+        "price": 114.155,
+        "dailyChange": "+0.24",
+        "value": 114.155,
+        "v1": "+0.24%D",
+        "v2": "+1.19%W",
+        "v3": "+1.19%W",
+        "v_led": "+1.19%W"
       },
       {
         "symbol": "VNGA80",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 152.21,
-        "dailyChange": "+0.46",
-        "value": 152.21,
-        "v1": "+0.46%D",
-        "v2": "+2.53%W",
-        "v3": "+2.53%W",
-        "v_led": "+2.53%W"
+        "price": 152.345,
+        "dailyChange": "+0.55",
+        "value": 152.345,
+        "v1": "+0.55%D",
+        "v2": "+2.62%W",
+        "v3": "+2.62%W",
+        "v_led": "+2.62%W"
       },
       {
         "symbol": "XEON",
@@ -51,31 +51,31 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 147.89,
-        "dailyChange": "+0.19",
-        "value": 147.89,
-        "v1": "+0.19%D",
-        "v2": "+1.73%W",
-        "v3": "+1.73%W",
-        "v_led": "+1.73%W"
+        "price": 147.87,
+        "dailyChange": "+0.18",
+        "value": 147.87,
+        "v1": "+0.18%D",
+        "v2": "+1.71%W",
+        "v3": "+1.71%W",
+        "v_led": "+1.71%W"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 35.9275,
-        "dailyChange": "+0.30",
-        "value": 35.9275,
-        "v1": "+0.30%D",
-        "v2": "+2.10%W",
-        "v3": "+2.10%W",
-        "v_led": "+2.10%W"
+        "price": 35.9425,
+        "dailyChange": "+0.34",
+        "value": 35.9425,
+        "v1": "+0.34%D",
+        "v2": "+2.14%W",
+        "v3": "+2.14%W",
+        "v_led": "+2.14%W"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 39.9805,
+        "price": 39.983,
         "dailyChange": "-",
-        "value": 39.9805,
+        "value": 39.983,
         "v1": "N/A",
         "v2": "N/A",
         "v3": "N/A",
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-08T21:30:36.326243+01:00",
-    "readable": "21:30 08-01-2026"
+    "iso": "2026-01-08T21:45:22.352934+01:00",
+    "readable": "21:45 08-01-2026"
   }
 }
