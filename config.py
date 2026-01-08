@@ -6,8 +6,8 @@ from utils.logger import log_info, log_error
 # Orari mercato LS-TC
 MARKET_HOURS = {
     "timezone": "Europe/Rome",
-    "open": "07:30",
-    "close": "23:00"
+    "open": "07:10",
+    "close": "22:55"
 }
 
 # Festività italiane fisse
