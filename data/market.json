@@ -7,13 +7,13 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 114.31,
-        "dailyChange": "-0.04",
-        "value": 114.31,
-        "v1": "-0.04%D",
-        "v2": "+1.61%W",
-        "v3": "+1.61%W",
-        "v_led": "+1.61%W"
+        "price": 114.3375,
+        "dailyChange": "-0.02",
+        "value": 114.3375,
+        "v1": "-0.02%D",
+        "v2": "+1.63%W",
+        "v3": "+1.63%W",
+        "v_led": "+1.63%W"
       },
       {
         "symbol": "VNGA80",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 152.285,
-        "dailyChange": "-0.02",
-        "value": 152.285,
-        "v1": "-0.02%D",
-        "v2": "+3.79%W",
-        "v3": "+3.79%W",
-        "v_led": "+3.79%W"
+        "price": 152.245,
+        "dailyChange": "-0.04",
+        "value": 152.245,
+        "v1": "-0.04%D",
+        "v2": "+3.77%W",
+        "v3": "+3.77%W",
+        "v_led": "+3.77%W"
       },
       {
         "symbol": "XEON",
@@ -51,32 +51,32 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.06,
-        "dailyChange": "-0.07",
-        "value": 148.06,
-        "v1": "-0.07%D",
-        "v2": "+1.46%W",
-        "v3": "+1.46%W",
-        "v_led": "+1.46%W"
+        "price": 148.09,
+        "dailyChange": "-0.05",
+        "value": 148.09,
+        "v1": "-0.05%D",
+        "v2": "+1.48%W",
+        "v3": "+1.48%W",
+        "v_led": "+1.48%W"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 35.925,
-        "dailyChange": "-0.15",
-        "value": 35.925,
-        "v1": "-0.15%D",
-        "v2": "+1.43%W",
-        "v3": "+1.43%W",
-        "v_led": "+1.43%W"
+        "price": 35.93,
+        "dailyChange": "-0.14",
+        "value": 35.93,
+        "v1": "-0.14%D",
+        "v2": "+1.44%W",
+        "v3": "+1.44%W",
+        "v_led": "+1.44%W"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 39.939,
-        "dailyChange": "-0.23",
-        "value": 39.939,
-        "v1": "-0.23%D",
+        "price": 39.953,
+        "dailyChange": "-0.19",
+        "value": 39.953,
+        "v1": "-0.19%D",
         "v2": "N/A",
         "v3": "N/A",
         "v_led": "N/A"
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-09T10:40:24.975837+01:00",
-    "readable": "10:40 09-01-2026"
+    "iso": "2026-01-09T10:55:22.735245+01:00",
+    "readable": "10:55 09-01-2026"
   }
 }
