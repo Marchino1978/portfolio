@@ -1,19 +1,19 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 115.015,
-        "dailyChange": "+0.57",
-        "value": 115.015,
-        "v1": "+0.57%D",
-        "v2": "+2.24%W",
-        "v3": "+2.24%W",
-        "v_led": "+2.24%W"
+        "price": 115.03,
+        "dailyChange": "+0.59",
+        "value": 115.03,
+        "v1": "+0.59%D",
+        "v2": "+2.25%W",
+        "v3": "+2.25%W",
+        "v_led": "+2.25%W"
       },
       {
         "symbol": "VNGA80",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 153.435,
-        "dailyChange": "+0.74",
-        "value": 153.435,
-        "v1": "+0.74%D",
-        "v2": "+4.58%W",
-        "v3": "+4.58%W",
-        "v_led": "+4.58%W"
+        "price": 153.505,
+        "dailyChange": "+0.78",
+        "value": 153.505,
+        "v1": "+0.78%D",
+        "v2": "+4.62%W",
+        "v3": "+4.62%W",
+        "v_led": "+4.62%W"
       },
       {
         "symbol": "XEON",
@@ -51,24 +51,24 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 149.06,
-        "dailyChange": "+0.61",
-        "value": 149.06,
-        "v1": "+0.61%D",
-        "v2": "+2.14%W",
-        "v3": "+2.14%W",
-        "v_led": "+2.14%W"
+        "price": 149.08,
+        "dailyChange": "+0.62",
+        "value": 149.08,
+        "v1": "+0.62%D",
+        "v2": "+2.16%W",
+        "v3": "+2.16%W",
+        "v_led": "+2.16%W"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.2925,
-        "dailyChange": "+0.87",
-        "value": 36.2925,
-        "v1": "+0.87%D",
-        "v2": "+2.46%W",
-        "v3": "+2.46%W",
-        "v_led": "+2.46%W"
+        "price": 36.285,
+        "dailyChange": "+0.85",
+        "value": 36.285,
+        "v1": "+0.85%D",
+        "v2": "+2.44%W",
+        "v3": "+2.44%W",
+        "v_led": "+2.44%W"
       },
       {
         "symbol": "EIMI",
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-09T22:40:26.758045+01:00",
-    "readable": "22:40 09-01-2026"
+    "iso": "2026-01-09T22:55:15.685960+01:00",
+    "readable": "22:55 09-01-2026"
   }
 }
