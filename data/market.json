@@ -1,19 +1,19 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 114.92,
-        "dailyChange": "-0.09",
-        "value": 114.92,
-        "v1": "-0.09%D",
-        "v2": "+1.62%W",
-        "v3": "+1.62%W",
-        "v_led": "+1.62%W"
+        "price": 114.825,
+        "dailyChange": "-0.17",
+        "value": 114.825,
+        "v1": "-0.17%D",
+        "v2": "+1.53%W",
+        "v3": "+1.53%W",
+        "v_led": "+1.53%W"
       },
       {
         "symbol": "VNGA80",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 156.285,
+        "price": 156.28,
         "dailyChange": "+1.85",
-        "value": 156.285,
+        "value": 156.28,
         "v1": "+1.85%D",
-        "v2": "+3.91%W",
-        "v3": "+3.91%W",
-        "v_led": "+3.91%W"
+        "v2": "+3.90%W",
+        "v3": "+3.90%W",
+        "v_led": "+3.90%W"
       },
       {
         "symbol": "XEON",
@@ -51,13 +51,13 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 149.34,
-        "dailyChange": "+0.19",
-        "value": 149.34,
-        "v1": "+0.19%D",
-        "v2": "+1.67%W",
-        "v3": "+1.67%W",
-        "v_led": "+1.67%W"
+        "price": 149.2,
+        "dailyChange": "+0.09",
+        "value": 149.2,
+        "v1": "+0.09%D",
+        "v2": "+1.58%W",
+        "v3": "+1.58%W",
+        "v_led": "+1.58%W"
       },
       {
         "symbol": "EXUS",
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-12T22:40:19.960795+01:00",
-    "readable": "22:40 12-01-2026"
+    "iso": "2026-01-12T22:55:20.049391+01:00",
+    "readable": "22:55 12-01-2026"
   }
 }
