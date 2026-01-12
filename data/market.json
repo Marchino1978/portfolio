@@ -7,20 +7,20 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 113.855,
-        "dailyChange": "-1.01",
-        "value": 113.855,
-        "v1": "-1.01%D",
-        "v2": "+0.68%W",
-        "v3": "+0.68%W",
-        "v_led": "+0.68%W"
+        "price": 113.8975,
+        "dailyChange": "-0.98",
+        "value": 113.8975,
+        "v1": "-0.98%D",
+        "v2": "+0.71%W",
+        "v3": "+0.71%W",
+        "v_led": "+0.71%W"
       },
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.99,
+        "price": 39.9925,
         "dailyChange": "-0.42",
-        "value": 39.99,
+        "value": 39.9925,
         "v1": "-0.42%D",
         "v2": "+0.91%W",
         "v3": "+0.91%W",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 155.605,
-        "dailyChange": "+1.41",
-        "value": 155.605,
-        "v1": "+1.41%D",
-        "v2": "+3.45%W",
-        "v3": "+3.45%W",
-        "v_led": "+3.45%W"
+        "price": 155.795,
+        "dailyChange": "+1.53",
+        "value": 155.795,
+        "v1": "+1.53%D",
+        "v2": "+3.58%W",
+        "v3": "+3.58%W",
+        "v_led": "+3.58%W"
       },
       {
         "symbol": "XEON",
@@ -51,13 +51,13 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.04,
-        "dailyChange": "-0.68",
-        "value": 148.04,
-        "v1": "-0.68%D",
-        "v2": "+0.79%W",
-        "v3": "+0.79%W",
-        "v_led": "+0.79%W"
+        "price": 148.07,
+        "dailyChange": "-0.66",
+        "value": 148.07,
+        "v1": "-0.66%D",
+        "v2": "+0.81%W",
+        "v3": "+0.81%W",
+        "v_led": "+0.81%W"
       },
       {
         "symbol": "EXUS",
@@ -73,10 +73,10 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 40.1215,
-        "dailyChange": "-0.59",
-        "value": 40.1215,
-        "v1": "-0.59%D",
+        "price": 40.133,
+        "dailyChange": "-0.56",
+        "value": 40.133,
+        "v1": "-0.56%D",
         "v2": "N/A",
         "v3": "N/A",
         "v_led": "N/A"
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-12T12:25:18.438326+01:00",
-    "readable": "12:25 12-01-2026"
+    "iso": "2026-01-12T12:40:26.339556+01:00",
+    "readable": "12:40 12-01-2026"
   }
 }
