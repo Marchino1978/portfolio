@@ -7,13 +7,13 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 114.455,
-        "dailyChange": "-0.37",
-        "value": 114.455,
-        "v1": "-0.37%D",
-        "v2": "+0.50%W",
-        "v3": "+2.69%M",
-        "v_led": "+2.69%M"
+        "price": 114.4425,
+        "dailyChange": "-0.38",
+        "value": 114.4425,
+        "v1": "-0.38%D",
+        "v2": "+0.49%W",
+        "v3": "+2.68%M",
+        "v_led": "+2.68%M"
       },
       {
         "symbol": "VNGA80",
@@ -29,9 +29,9 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 157.605,
+        "price": 157.595,
         "dailyChange": "+1.05",
-        "value": 157.605,
+        "value": 157.595,
         "v1": "+1.05%D",
         "v2": "+4.02%W",
         "v3": "+8.22%M",
@@ -51,32 +51,32 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.81,
+        "price": 148.8,
         "dailyChange": "-0.21",
-        "value": 148.81,
+        "value": 148.8,
         "v1": "-0.21%D",
         "v2": "+0.81%W",
-        "v3": "+3.74%M",
-        "v_led": "+3.74%M"
+        "v3": "+3.73%M",
+        "v_led": "+3.73%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.38,
-        "dailyChange": "-1.06",
-        "value": 36.38,
-        "v1": "-1.06%D",
-        "v2": "+1.56%W",
-        "v3": "+4.59%M",
-        "v_led": "+4.59%M"
+        "price": 36.375,
+        "dailyChange": "-1.07",
+        "value": 36.375,
+        "v1": "-1.07%D",
+        "v2": "+1.55%W",
+        "v3": "+4.57%M",
+        "v_led": "+4.57%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 40.4195,
-        "dailyChange": "-0.30",
-        "value": 40.4195,
-        "v1": "-0.30%D",
+        "price": 40.423,
+        "dailyChange": "-0.29",
+        "value": 40.423,
+        "v1": "-0.29%D",
         "v2": "N/A",
         "v3": "N/A",
         "v_led": "N/A"
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-14T12:40:24.983126+01:00",
-    "readable": "12:40 14-01-2026"
+    "iso": "2026-01-14T12:55:25.251544+01:00",
+    "readable": "12:55 14-01-2026"
   }
 }
