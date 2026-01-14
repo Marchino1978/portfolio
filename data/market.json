@@ -7,9 +7,9 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 114.0725,
+        "price": 114.0775,
         "dailyChange": "-0.70",
-        "value": 114.0725,
+        "value": 114.0775,
         "v1": "-0.70%D",
         "v2": "+0.17%W",
         "v3": "+2.35%M",
@@ -29,9 +29,9 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 158.07,
+        "price": 158.065,
         "dailyChange": "+1.35",
-        "value": 158.07,
+        "value": 158.065,
         "v1": "+1.35%D",
         "v2": "+4.33%W",
         "v3": "+8.54%M",
@@ -51,31 +51,31 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.62,
-        "dailyChange": "-0.34",
-        "value": 148.62,
-        "v1": "-0.34%D",
-        "v2": "+0.68%W",
-        "v3": "+3.60%M",
-        "v_led": "+3.60%M"
+        "price": 148.68,
+        "dailyChange": "-0.30",
+        "value": 148.68,
+        "v1": "-0.30%D",
+        "v2": "+0.72%W",
+        "v3": "+3.65%M",
+        "v_led": "+3.65%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.3475,
-        "dailyChange": "-1.15",
-        "value": 36.3475,
-        "v1": "-1.15%D",
-        "v2": "+1.47%W",
-        "v3": "+4.49%M",
-        "v_led": "+4.49%M"
+        "price": 36.3575,
+        "dailyChange": "-1.12",
+        "value": 36.3575,
+        "v1": "-1.12%D",
+        "v2": "+1.50%W",
+        "v3": "+4.52%M",
+        "v_led": "+4.52%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 40.675,
+        "price": 40.6735,
         "dailyChange": "+0.33",
-        "value": 40.675,
+        "value": 40.6735,
         "v1": "+0.33%D",
         "v2": "N/A",
         "v3": "N/A",
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-14T20:40:28.423074+01:00",
-    "readable": "20:40 14-01-2026"
+    "iso": "2026-01-14T20:55:18.712906+01:00",
+    "readable": "20:55 14-01-2026"
   }
 }
