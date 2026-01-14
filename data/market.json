@@ -7,9 +7,9 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 113.6975,
+        "price": 113.6925,
         "dailyChange": "-1.03",
-        "value": 113.6975,
+        "value": 113.6925,
         "v1": "-1.03%D",
         "v2": "-0.16%W",
         "v3": "+2.01%M",
@@ -18,31 +18,31 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.9425,
-        "dailyChange": "-0.71",
-        "value": 39.9425,
-        "v1": "-0.71%D",
-        "v2": "+0.26%W",
-        "v3": "+2.57%M",
-        "v_led": "+2.57%M"
+        "price": 39.94,
+        "dailyChange": "-0.72",
+        "value": 39.94,
+        "v1": "-0.72%D",
+        "v2": "+0.25%W",
+        "v3": "+2.56%M",
+        "v_led": "+2.56%M"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 156.84,
-        "dailyChange": "+0.56",
-        "value": 156.84,
-        "v1": "+0.56%D",
-        "v2": "+3.52%W",
-        "v3": "+7.70%M",
-        "v_led": "+7.70%M"
+        "price": 156.99,
+        "dailyChange": "+0.66",
+        "value": 156.99,
+        "v1": "+0.66%D",
+        "v2": "+3.62%W",
+        "v3": "+7.80%M",
+        "v_led": "+7.80%M"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 148.1515,
+        "price": 148.152,
         "dailyChange": "+0.01",
-        "value": 148.1515,
+        "value": 148.152,
         "v1": "+0.01%D",
         "v2": "+0.04%W",
         "v3": "+0.17%M",
@@ -73,10 +73,10 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 40.53,
-        "dailyChange": "-0.02",
-        "value": 40.53,
-        "v1": "-0.02%D",
+        "price": 40.5365,
+        "dailyChange": "-0.01",
+        "value": 40.5365,
+        "v1": "-0.01%D",
         "v2": "N/A",
         "v3": "N/A",
         "v_led": "N/A"
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-14T18:40:19.743491+01:00",
-    "readable": "18:40 14-01-2026"
+    "iso": "2026-01-14T18:55:22.141249+01:00",
+    "readable": "18:55 14-01-2026"
   }
 }
