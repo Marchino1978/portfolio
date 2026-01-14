@@ -7,13 +7,13 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 114.665,
+        "price": 114.66,
         "dailyChange": "-0.19",
-        "value": 114.665,
+        "value": 114.66,
         "v1": "-0.19%D",
-        "v2": "+0.69%W",
-        "v3": "+2.88%M",
-        "v_led": "+2.88%M"
+        "v2": "+0.68%W",
+        "v3": "+2.87%M",
+        "v_led": "+2.87%M"
       },
       {
         "symbol": "VNGA80",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 157.425,
-        "dailyChange": "+0.94",
-        "value": 157.425,
-        "v1": "+0.94%D",
-        "v2": "+3.90%W",
-        "v3": "+8.10%M",
-        "v_led": "+8.10%M"
+        "price": 157.6,
+        "dailyChange": "+1.05",
+        "value": 157.6,
+        "v1": "+1.05%D",
+        "v2": "+4.02%W",
+        "v3": "+8.22%M",
+        "v_led": "+8.22%M"
       },
       {
         "symbol": "XEON",
@@ -51,13 +51,13 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 149.01,
-        "dailyChange": "-0.07",
-        "value": 149.01,
-        "v1": "-0.07%D",
-        "v2": "+0.95%W",
-        "v3": "+3.88%M",
-        "v_led": "+3.88%M"
+        "price": 149.06,
+        "dailyChange": "-0.04",
+        "value": 149.06,
+        "v1": "-0.04%D",
+        "v2": "+0.98%W",
+        "v3": "+3.91%M",
+        "v_led": "+3.91%M"
       },
       {
         "symbol": "EXUS",
@@ -73,10 +73,10 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 40.577,
-        "dailyChange": "+0.09",
-        "value": 40.577,
-        "v1": "+0.09%D",
+        "price": 40.574,
+        "dailyChange": "+0.08",
+        "value": 40.574,
+        "v1": "+0.08%D",
         "v2": "N/A",
         "v3": "N/A",
         "v_led": "N/A"
@@ -84,7 +84,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-14T08:10:19.539874+01:00",
-    "readable": "08:10 14-01-2026"
+    "iso": "2026-01-14T08:25:19.720076+01:00",
+    "readable": "08:25 14-01-2026"
   }
 }
