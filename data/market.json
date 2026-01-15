@@ -7,13 +7,13 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 115.06,
-        "dailyChange": "+0.71",
-        "value": 115.06,
-        "v1": "+0.71%D",
-        "v2": "+0.61%W",
-        "v3": "+3.69%M",
-        "v_led": "+3.69%M"
+        "price": 115.025,
+        "dailyChange": "+0.68",
+        "value": 115.025,
+        "v1": "+0.68%D",
+        "v2": "+0.58%W",
+        "v3": "+3.66%M",
+        "v_led": "+3.66%M"
       },
       {
         "symbol": "VNGA80",
@@ -29,13 +29,13 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 157.495,
-        "dailyChange": "+0.05",
-        "value": 157.495,
-        "v1": "+0.05%D",
-        "v2": "+3.40%W",
-        "v3": "+8.55%M",
-        "v_led": "+8.55%M"
+        "price": 157.58,
+        "dailyChange": "+0.11",
+        "value": 157.58,
+        "v1": "+0.11%D",
+        "v2": "+3.46%W",
+        "v3": "+8.60%M",
+        "v_led": "+8.60%M"
       },
       {
         "symbol": "XEON",
@@ -51,13 +51,13 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 149.76,
-        "dailyChange": "+0.65",
-        "value": 149.76,
-        "v1": "+0.65%D",
-        "v2": "+1.08%W",
-        "v3": "+4.98%M",
-        "v_led": "+4.98%M"
+        "price": 149.7,
+        "dailyChange": "+0.60",
+        "value": 149.7,
+        "v1": "+0.60%D",
+        "v2": "+1.04%W",
+        "v3": "+4.94%M",
+        "v_led": "+4.94%M"
       },
       {
         "symbol": "EXUS",
@@ -73,18 +73,18 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 41.1485,
+        "price": 41.149,
         "dailyChange": "+0.98",
-        "value": 41.1485,
+        "value": 41.149,
         "v1": "+0.98%D",
-        "v2": "+2.79%W",
+        "v2": "+2.80%W",
         "v3": "N/A",
         "v_led": "N/A"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-01-15T22:10:26.140491+01:00",
-    "readable": "22:10 15-01-2026"
+    "iso": "2026-01-15T22:25:21.511438+01:00",
+    "readable": "22:25 15-01-2026"
   }
 }
