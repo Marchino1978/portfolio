@@ -52,7 +52,7 @@ def load_variation_config():
 
         if not os.path.exists(path):
             log_error(f"File variazioni non trovato: {path}")
-            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M"}  # fallback sicuri
+            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}  # fallback sicuri
 
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
@@ -175,7 +175,7 @@ def save_market_json(results, market_open):
                 "value": round(etf["price"], 4),
             }
 
-            for key in ("v1", "v2", "v3", "v_led"):
+            for key in ("v1", "v2", "v3", "v_led", "v_alert", "v_bot"):
                 if key in etf:
                     entry[key] = etf[key]
 
@@ -299,6 +299,8 @@ def update_all_etf():
             "v2": all_variations.get(variation_config.get("v2", "W"), "N/A"),
             "v3": all_variations.get(variation_config.get("v3", "M"), "N/A"),
             "v_led": all_variations.get(variation_config.get("v_led", "M"), "N/A"),
+            "v_alert": all_variations.get(variation_config.get("v_alert", "M"), "N/A"),
+            "v_bot": all_variations.get(variation_config.get("v_bot", "M"), "N/A"),
         }
 
     save_market_json(results, market_open)
