@@ -17,7 +17,8 @@ bot = telebot.TeleBot(TOKEN)
 
 def send_monthly_report():
     """
-    Invia il report basato sui valori v_bot presenti in market.json con icone colorate
+    Invia il report basato sui valori v_bot presenti in market.json
+    Colori: Verde (+), Rosso (-), Bianco (0), Azzurro (N/A)
     """
     # Costruisce il percorso del file market.json (cartella data nella root)
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -56,30 +57,31 @@ def send_monthly_report():
             variazione_str = etf.get("v_bot", "N/A")
             prezzo = etf.get("price", 0.0)
             
-            # --- LOGICA ICONA COLORE ---
-            icona = "⚪" # Default se N/A
+            # --- LOGICA COLORI ALLINEATA A ESP32 ---
+            icona = "🔵" # AZZURRO per N/A o Errori
+            
             if variazione_str != "N/A":
                 try:
-                    # Pulizia della stringa (toglie % e +) per convertirla in numero
+                    # Pulizia della stringa (toglie % e +)
                     val_pulito = variazione_str.replace('%', '').replace('+', '').strip()
                     val_num = float(val_pulito)
                     
-                    if val_num > 0.05:     # Più di +0.05%
-                        icona = "🟢"
-                    elif val_num < -0.05:  # Meno di -0.05%
-                        icona = "🔴"
-                    else:                  # Vicino allo zero
-                        icona = "🟡"
+                    if val_num > 0:
+                        icona = "🟢" # VERDE per Positivo
+                    elif val_num < 0:
+                        icona = "🔴" # ROSSO per Negativo
+                    else:
+                        icona = "⚪" # BIANCO per Zero
                 except Exception:
-                    icona = "⚪"
+                    icona = "🔵" # AZZURRO in caso di errore conversione
             
-            # Formattazione riga con icona dinamica
+            # Formattazione riga con icona allineata
             messaggio += f"{icona} *{nome}*\n"
             messaggio += f"   Ultimo: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
 
         # Invio effettivo a Telegram
         bot.send_message(CHAT_ID, messaggio, parse_mode="Markdown")
-        log_info(f"Telegram: Report mensile {nomi_mesi[mese_index]} inviato con icone colorate.")
+        log_info(f"Telegram: Report mensile {nomi_mesi[mese_index]} inviato con logica colori ESP32.")
 
     except Exception as e:
         log_error(f"Errore durante l'invio del report Telegram: {e}")
@@ -87,4 +89,3 @@ def send_monthly_report():
 if __name__ == "__main__":
     log_info("Avvio manuale bot_telegram.py per test...")
     send_monthly_report()
-
