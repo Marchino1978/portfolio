@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 
+import bot_telegram
 from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
 from utils.logger import log_info, log_error
@@ -305,6 +306,33 @@ def update_all_etf():
 
     save_market_json(results, market_open)
     commit_to_github()
+
+    # ---------------------------------------------------------
+    # REPORT TELEGRAM (Logica per weekend e giorni feriali)
+    # ---------------------------------------------------------
+    now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+    giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
+
+    # Definiamo se dobbiamo inviare il report oggi
+    invia_oggi = False
+
+    # CASO 1: Oggi è il 1° del mese ed è un giorno lavorativo (Lun-Ven)
+    if now_rome.day == 1 and giorno_settimana < 5:
+        invia_oggi = True
+
+    # CASO 2: Il 1° era Sabato o Domenica e oggi è Lunedì (2 o 3 del mese)
+    elif giorno_settimana == 0 and (now_rome.day == 2 or now_rome.day == 3):
+        invia_oggi = True
+
+    # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
+    if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
+        log_info(f"Condizione report soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
+        try:
+            import bot_telegram
+            bot_telegram.send_monthly_report()
+            log_info("Report Telegram inviato con successo.")
+        except Exception as e:
+            log_error(f"Errore invio Telegram: {e}")
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
