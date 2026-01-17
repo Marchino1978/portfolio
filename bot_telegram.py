@@ -17,7 +17,7 @@ bot = telebot.TeleBot(TOKEN)
 
 def send_monthly_report():
     """
-    Invia il report basato sui valori v_bot presenti in market.json
+    Invia il report basato sui valori v_bot presenti in market.json con icone colorate
     """
     # Costruisce il percorso del file market.json (cartella data nella root)
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -36,15 +36,13 @@ def send_monthly_report():
             log_error("Bot Telegram: Nessun dato ETF trovato nel JSON.")
             return
 
-        # Gestione date per il titolo del report (riferito al mese appena concluso)
+        # Gestione date per il titolo del report
         now = datetime.now(ZoneInfo("Europe/Rome"))
         
-        # Se oggi è il 1 Febbraio, il report è relativo a GENNAIO
         nomi_mesi = [
             "DICEMBRE", "GENNAIO", "FEBBRAIO", "MARZO", "APRILE", "MAGGIO", 
             "GIUGNO", "LUGLIO", "AGOSTO", "SETTEMBRE", "OTTOBRE", "NOVEMBRE"
         ]
-        # Se siamo a Gennaio (1), l'indice punterà a Dicembre (0) dell'anno prima
         mese_index = (now.month - 1) 
         anno = now.year if now.month > 1 else now.year - 1
         
@@ -55,21 +53,38 @@ def send_monthly_report():
         messaggio = titolo
         for etf in etfs:
             nome = etf.get("label", etf["symbol"])
-            variazione = etf.get("v_bot", "N/A")
+            variazione_str = etf.get("v_bot", "N/A")
             prezzo = etf.get("price", 0.0)
             
-            # Formattazione riga: Nome ETF in grassetto, variazioni in codice
-            messaggio += f"🔹 *{nome}*\n"
-            messaggio += f"   Ultimo: €{prezzo:.2f} | Var: `{variazione}`\n\n"
+            # --- LOGICA ICONA COLORE ---
+            icona = "⚪" # Default se N/A
+            if variazione_str != "N/A":
+                try:
+                    # Pulizia della stringa (toglie % e +) per convertirla in numero
+                    val_pulito = variazione_str.replace('%', '').replace('+', '').strip()
+                    val_num = float(val_pulito)
+                    
+                    if val_num > 0.05:     # Più di +0.05%
+                        icona = "🟢"
+                    elif val_num < -0.05:  # Meno di -0.05%
+                        icona = "🔴"
+                    else:                  # Vicino allo zero
+                        icona = "🟡"
+                except Exception:
+                    icona = "⚪"
+            
+            # Formattazione riga con icona dinamica
+            messaggio += f"{icona} *{nome}*\n"
+            messaggio += f"   Ultimo: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
 
         # Invio effettivo a Telegram
         bot.send_message(CHAT_ID, messaggio, parse_mode="Markdown")
-        log_info(f"Telegram: Report mensile {nomi_mesi[mese_index]} inviato a CHAT_ID {CHAT_ID}")
+        log_info(f"Telegram: Report mensile {nomi_mesi[mese_index]} inviato con icone colorate.")
 
     except Exception as e:
         log_error(f"Errore durante l'invio del report Telegram: {e}")
 
 if __name__ == "__main__":
-    # Se lo lanci a mano (python bot_telegram.py), invia un test
     log_info("Avvio manuale bot_telegram.py per test...")
     send_monthly_report()
+
