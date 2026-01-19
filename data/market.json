@@ -1,6 +1,6 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
@@ -33,22 +33,22 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 159.56,
+        "price": 159.55,
         "dailyChange": "+1.59",
-        "value": 159.56,
+        "value": 159.55,
         "v1": "+1.59%D",
-        "v2": "+2.10%W",
-        "v3": "+8.76%M",
-        "v_led": "+8.76%M",
-        "v_alert": "+8.76%M",
-        "v_bot": "+8.76%M"
+        "v2": "+2.09%W",
+        "v3": "+8.75%M",
+        "v_led": "+8.75%M",
+        "v_alert": "+8.75%M",
+        "v_bot": "+8.75%M"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 148.181,
+        "price": 148.1815,
         "dailyChange": "-0.01",
-        "value": 148.181,
+        "value": 148.1815,
         "v1": "-0.01%D",
         "v2": "+0.03%W",
         "v3": "+0.15%M",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-19T22:40:25.599479+01:00",
-    "readable": "22:40 19-01-2026"
+    "iso": "2026-01-19T22:55:16.845311+01:00",
+    "readable": "22:55 19-01-2026"
   }
 }
