@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 
+import check_alert
 import bot_telegram
 from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
@@ -306,6 +307,15 @@ def update_all_etf():
 
     save_market_json(results, market_open)
     commit_to_github()
+
+    # ---------------------------------------------------------
+    # ALERT su AMAZON ALEXA
+    # ---------------------------------------------------------
+    try:
+        check_alert.check_alert()
+        log_info("Controllo alert Alexa eseguito.")
+    except Exception as e:
+        log_error(f"Errore controllo alert Alexa: {e}")
 
     # ---------------------------------------------------------
     # REPORT TELEGRAM (Logica per weekend e giorni feriali)

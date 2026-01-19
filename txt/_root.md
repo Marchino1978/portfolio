@@ -163,6 +163,101 @@ def market_status():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
 
+# ./bot_telegram.py
+----------------------------------------
+import os
+import json
+from datetime import datetime
+import telebot
+from zoneinfo import ZoneInfo
+from dotenv import load_dotenv
+from utils.logger import log_info, log_error
+
+# Carica le variabili dal file .env (per sicurezza sul server)
+load_dotenv()
+
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+# Inizializza il bot
+bot = telebot.TeleBot(TOKEN)
+
+def send_monthly_report():
+    """
+    Invia il report basato sui valori v_bot presenti in market.json
+    Colori: Verde (+), Rosso (-), Bianco (0), Azzurro (N/A)
+    """
+    # Costruisce il percorso del file market.json (cartella data nella root)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    market_path = os.path.join(base_dir, "data", "market.json")
+    
+    if not os.path.exists(market_path):
+        log_error(f"Bot Telegram: file non trovato in {market_path}")
+        return
+
+    try:
+        with open(market_path, "r", encoding="utf-8") as f:
+            market_data = json.load(f)
+        
+        etfs = market_data.get("values", {}).get("data", [])
+        if not etfs:
+            log_error("Bot Telegram: Nessun dato ETF trovato nel JSON.")
+            return
+
+        # Gestione date per il titolo del report
+        now = datetime.now(ZoneInfo("Europe/Rome"))
+        
+        nomi_mesi = [
+            "DICEMBRE", "GENNAIO", "FEBBRAIO", "MARZO", "APRILE", "MAGGIO", 
+            "GIUGNO", "LUGLIO", "AGOSTO", "SETTEMBRE", "OTTOBRE", "NOVEMBRE"
+        ]
+        mese_index = (now.month - 1) 
+        anno = now.year if now.month > 1 else now.year - 1
+        
+        titolo = f"📊 *REPORT ETF - {nomi_mesi[mese_index]} {anno}*\n"
+        titolo += f"Variazione Periodo (`v_bot`)\n"
+        titolo += "---------------------------\n\n"
+
+        messaggio = titolo
+        for etf in etfs:
+            nome = etf.get("label", etf["symbol"])
+            variazione_str = etf.get("v_bot", "N/A")
+            prezzo = etf.get("price", 0.0)
+            
+            # --- LOGICA COLORI ALLINEATA A ESP32 ---
+            icona = "🔵" # AZZURRO per N/A o Errori
+            
+            if variazione_str != "N/A":
+                try:
+                    # Pulizia della stringa (toglie % e +)
+                    val_pulito = variazione_str.replace('%', '').replace('+', '').strip()
+                    val_num = float(val_pulito)
+                    
+                    if val_num > 0:
+                        icona = "🟢" # VERDE per Positivo
+                    elif val_num < 0:
+                        icona = "🔴" # ROSSO per Negativo
+                    else:
+                        icona = "⚪" # BIANCO per Zero
+                except Exception:
+                    icona = "🔵" # AZZURRO in caso di errore conversione
+            
+            # Formattazione riga con icona allineata
+            messaggio += f"{icona} *{nome}*\n"
+            messaggio += f"   Ultimo: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
+
+        # Invio effettivo a Telegram
+        bot.send_message(CHAT_ID, messaggio, parse_mode="Markdown")
+        log_info(f"Telegram: Report mensile {nomi_mesi[mese_index]} inviato con logica colori ESP32.")
+
+    except Exception as e:
+        log_error(f"Errore durante l'invio del report Telegram: {e}")
+
+if __name__ == "__main__":
+    log_info("Avvio manuale bot_telegram.py per test...")
+    send_monthly_report()
+
+
 # ./config.py
 ----------------------------------------
 import pendulum
@@ -392,6 +487,7 @@ primary_region = "fra"
 │   ├── holidays.py
 │   └── logger.py
 ├── app.py
+├── bot_telegram.py
 ├── config.py
 ├── Dockerfile
 ├── .env
@@ -407,7 +503,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 32 files
+5 directories, 33 files
 
 
 # ./push.sh
@@ -450,6 +546,8 @@ python-dotenv==1.0.1
 python-dateutil==2.9.0.post0   # per relativedelta (usato in testDateVar e future variazioni 1m/3m)
 pytest==8.3.3                 # per eseguire i test (pytest tests/)
 pendulum
+pyTelegramBotAPI
+python-dotenv
 
 # ./schema.sql
 ----------------------------------------
@@ -482,6 +580,7 @@ from bs4 import BeautifulSoup
 from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 
+import bot_telegram
 from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
 from utils.logger import log_info, log_error
@@ -528,7 +627,7 @@ def load_variation_config():
 
         if not os.path.exists(path):
             log_error(f"File variazioni non trovato: {path}")
-            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M"}  # fallback sicuri
+            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}  # fallback sicuri
 
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
@@ -651,7 +750,7 @@ def save_market_json(results, market_open):
                 "value": round(etf["price"], 4),
             }
 
-            for key in ("v1", "v2", "v3", "v_led"):
+            for key in ("v1", "v2", "v3", "v_led", "v_alert", "v_bot"):
                 if key in etf:
                     entry[key] = etf[key]
 
@@ -775,10 +874,39 @@ def update_all_etf():
             "v2": all_variations.get(variation_config.get("v2", "W"), "N/A"),
             "v3": all_variations.get(variation_config.get("v3", "M"), "N/A"),
             "v_led": all_variations.get(variation_config.get("v_led", "M"), "N/A"),
+            "v_alert": all_variations.get(variation_config.get("v_alert", "M"), "N/A"),
+            "v_bot": all_variations.get(variation_config.get("v_bot", "M"), "N/A"),
         }
 
     save_market_json(results, market_open)
     commit_to_github()
+
+    # ---------------------------------------------------------
+    # REPORT TELEGRAM (Logica per weekend e giorni feriali)
+    # ---------------------------------------------------------
+    now_rome = datetime.now(ZoneInfo("Europe/Rome"))
+    giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
+
+    # Definiamo se dobbiamo inviare il report oggi
+    invia_oggi = False
+
+    # CASO 1: Oggi è il 1° del mese ed è un giorno lavorativo (Lun-Ven)
+    if now_rome.day == 1 and giorno_settimana < 5:
+        invia_oggi = True
+
+    # CASO 2: Il 1° era Sabato o Domenica e oggi è Lunedì (2 o 3 del mese)
+    elif giorno_settimana == 0 and (now_rome.day == 2 or now_rome.day == 3):
+        invia_oggi = True
+
+    # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
+    if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
+        log_info(f"Condizione report soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
+        try:
+            import bot_telegram
+            bot_telegram.send_monthly_report()
+            log_info("Report Telegram inviato con successo.")
+        except Exception as e:
+            log_error(f"Errore invio Telegram: {e}")
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open

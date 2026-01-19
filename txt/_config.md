@@ -2,8 +2,10 @@
 ----------------------------------------
 v1 = D      # prima variazione visualizzata
 v2 = W      # seconda variazione visualizzata
-v3 = W      # terza variazione visualizzata
-v_led = W   # variazione per gestione LED
+v3 = M      # terza variazione visualizzata
+v_led = M   # variazione per gestione LED
+v_alert = M # variazione per gestire notifiche ALEXA
+v_bot = M   # variazione per gestire report TELEGRAM
 
 # LEGENDA
 # D = 1 DAY
