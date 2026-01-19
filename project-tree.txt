@@ -23,6 +23,7 @@
 │   └── logger.py
 ├── app.py
 ├── bot_telegram.py
+├── check_alert.py
 ├── config.py
 ├── Dockerfile
 ├── .env
@@ -38,4 +39,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 33 files
+5 directories, 34 files
