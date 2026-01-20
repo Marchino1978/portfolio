@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 111.5575,
-        "dailyChange": "-1.72",
-        "value": 111.5575,
-        "v1": "-1.72%D",
-        "v2": "-2.89%W",
-        "v3": "-0.43%M",
-        "v_led": "-0.43%M",
-        "v_alert": "-0.43%M",
-        "v_bot": "-0.43%M"
+        "price": 111.595,
+        "dailyChange": "-1.69",
+        "value": 111.595,
+        "v1": "-1.69%D",
+        "v2": "-2.86%W",
+        "v3": "-0.40%M",
+        "v_led": "-0.40%M",
+        "v_alert": "-0.40%M",
+        "v_bot": "-0.40%M"
       },
       {
         "symbol": "VNGA80",
@@ -33,9 +33,9 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 161.23,
+        "price": 161.235,
         "dailyChange": "+1.05",
-        "value": 161.23,
+        "value": 161.235,
         "v1": "+1.05%D",
         "v2": "+3.38%W",
         "v3": "+9.84%M",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 145.65,
-        "dailyChange": "-1.77",
-        "value": 145.65,
-        "v1": "-1.77%D",
-        "v2": "-2.33%W",
-        "v3": "+0.96%M",
-        "v_led": "+0.96%M",
-        "v_alert": "+0.96%M",
-        "v_bot": "+0.96%M"
+        "price": 145.71,
+        "dailyChange": "-1.73",
+        "value": 145.71,
+        "v1": "-1.73%D",
+        "v2": "-2.29%W",
+        "v3": "+1.01%M",
+        "v_led": "+1.01%M",
+        "v_alert": "+1.01%M",
+        "v_bot": "+1.01%M"
       },
       {
         "symbol": "EXUS",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-20T22:40:24.136662+01:00",
-    "readable": "22:40 20-01-2026"
+    "iso": "2026-01-20T22:55:20.352842+01:00",
+    "readable": "22:55 20-01-2026"
   }
 }
