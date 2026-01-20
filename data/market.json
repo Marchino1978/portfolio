@@ -7,15 +7,15 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 111.59,
-        "dailyChange": "-1.69",
-        "value": 111.59,
-        "v1": "-1.69%D",
-        "v2": "-2.86%W",
-        "v3": "-0.40%M",
-        "v_led": "-0.40%M",
-        "v_alert": "-0.40%M",
-        "v_bot": "-0.40%M"
+        "price": 111.5575,
+        "dailyChange": "-1.72",
+        "value": 111.5575,
+        "v1": "-1.72%D",
+        "v2": "-2.89%W",
+        "v3": "-0.43%M",
+        "v_led": "-0.43%M",
+        "v_alert": "-0.43%M",
+        "v_bot": "-0.43%M"
       },
       {
         "symbol": "VNGA80",
@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 161.295,
-        "dailyChange": "+1.09",
-        "value": 161.295,
-        "v1": "+1.09%D",
-        "v2": "+3.42%W",
-        "v3": "+9.89%M",
-        "v_led": "+9.89%M",
-        "v_alert": "+9.89%M",
-        "v_bot": "+9.89%M"
+        "price": 161.23,
+        "dailyChange": "+1.05",
+        "value": 161.23,
+        "v1": "+1.05%D",
+        "v2": "+3.38%W",
+        "v3": "+9.84%M",
+        "v_led": "+9.84%M",
+        "v_alert": "+9.84%M",
+        "v_bot": "+9.84%M"
       },
       {
         "symbol": "XEON",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 145.69,
-        "dailyChange": "-1.75",
-        "value": 145.69,
-        "v1": "-1.75%D",
-        "v2": "-2.30%W",
-        "v3": "+0.99%M",
-        "v_led": "+0.99%M",
-        "v_alert": "+0.99%M",
-        "v_bot": "+0.99%M"
+        "price": 145.65,
+        "dailyChange": "-1.77",
+        "value": 145.65,
+        "v1": "-1.77%D",
+        "v2": "-2.33%W",
+        "v3": "+0.96%M",
+        "v_led": "+0.96%M",
+        "v_alert": "+0.96%M",
+        "v_bot": "+0.96%M"
       },
       {
         "symbol": "EXUS",
@@ -85,9 +85,9 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 40.2445,
+        "price": 40.245,
         "dailyChange": "-2.18",
-        "value": 40.2445,
+        "value": 40.245,
         "v1": "-2.18%D",
         "v2": "-0.73%W",
         "v3": "N/A",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-20T22:25:20.583263+01:00",
-    "readable": "22:25 20-01-2026"
+    "iso": "2026-01-20T22:40:24.136662+01:00",
+    "readable": "22:40 20-01-2026"
   }
 }
