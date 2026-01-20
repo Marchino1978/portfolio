@@ -35,4 +35,8 @@ for dir in */; do
   esac
 done
 
+# Genera l'alberatura del progetto escludendo le cartelle pesanti o inutili
+tree -a -F -I 'node_modules|.git|txt' --dirsfirst > project-tree.txt
+
+echo "Progetto mappato in project-tree.txt"
 echo "Snapshot .md generati in txt"

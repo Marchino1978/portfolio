@@ -260,64 +260,82 @@ if __name__ == "__main__":
 
 # ./check_alert.py
 ----------------------------------------
-from datetime import datetime
-from zoneinfo import ZoneInfo
+import os
 import json
 import requests
-import os
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from utils.logger import log_info, log_error
 
-# Configurazione
+# URL Trigger Alexa (Virtual Smart Home)
 VSH_URL = "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=2cafe29b-c908-4765-a6cf-4a5e9f15617f&token=2ba96808-f8eb-468e-a89d-9fb8664a2957&response=html"
-SOGLIA = 1.0 
+
+def get_alert_config():
+    """Legge la soglia dal file config/variations.conf"""
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    conf_path = os.path.join(base_dir, "config", "variations.conf")
+    
+    config = {}
+    with open(conf_path, "r") as f:
+        for line in f:
+            if "=" in line:
+                name, value = line.split("=", 1)
+                config[name.strip()] = value.split("#")[0].strip()
+    
+    # Restituisce la soglia come numero (es. -20.0)
+    return float(config["s_alert"])
 
 def check_alert():
     try:
-        # 1) Controllo giorno (lun–ven)
         now = datetime.now(ZoneInfo("Europe/Rome"))
-        if now.weekday() > 4:
-            return "weekend"
+        if now.weekday() > 4: return "weekend"
 
-        # 2) Controllo orario (finestra di 10 minuti per sicurezza)
-        # Se lo scraper gira alle 19:10, questa condizione è vera fino alle 19:20
+        # Finestra di controllo (attualmente ore 22:10 per i tuoi test)
+        log_info(f"Controllo alert avviato alle {now.hour}:{now.minute}")
         if not (now.hour == 19 and 10 <= now.minute <= 20):
             return "wrong_time"
 
-        # 3) Leggo market.json (percorso relativo alla root del progetto)
+        # Carica la soglia dal file conf
+        SOGLIA = get_alert_config()
+
         base_dir = os.path.dirname(os.path.abspath(__file__))
         path = os.path.join(base_dir, "data", "market.json")
         
-        if not os.path.exists(path):
-            log_error("Alert Alexa: market.json non trovato")
-            return "no_file"
-
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         etfs = data.get("values", {}).get("data", [])
-
-        # 4) Cerco v_alert sopra soglia
         triggered = False
+
         for etf in etfs:
             v = etf.get("v_alert", "N/A")
-            if v == "N/A":
-                continue
+            if v == "N/A": continue
 
-            # Pulizia e conversione sicura
             try:
-                val = float(v.replace("%", "").replace("+", "").strip())
-                if val > SOGLIA:
-                    log_info(f"Alert Alexa attivato da {etf['symbol']} con variazione {v}")
+                # Pulizia corazzata: toglie %, +, e l'ultima lettera (M, D, W...)
+                val_str = v.replace("%", "").replace("+", "").strip()
+                if val_str and val_str[-1].isalpha():
+                    val_str = val_str[:-1]
+                
+                val = float(val_str)
+
+                # LOGICA INTELLIGENTE: 
+                # Se la soglia è negativa (<0), controlla se il valore è sceso SOTTO (crash)
+                # Se la soglia è positiva (>0), controlla se il valore è salito SOPRA (gain)
+                if (SOGLIA < 0 and val < SOGLIA) or (SOGLIA > 0 and val > SOGLIA):
+                    log_info(f"ALERTER: {etf['symbol']} ({val}%) ha superato la soglia di {SOGLIA}%!")
                     requests.get(VSH_URL, timeout=10)
                     triggered = True
-                    break # Esci al primo ETF che supera la soglia
-            except ValueError:
+                    break 
+
+            except Exception as e:
+                log_error(f"Errore conversione per {etf.get('symbol')}: {e}")
                 continue
 
         return "triggered" if triggered else "no_alert"
 
     except Exception as e:
-        log_error(f"Errore critico in check_alert: {e}")
+        log_error(f"Errore generale check_alert: {e}")
         return "error"
 
 # ./config.py
@@ -1173,6 +1191,10 @@ for dir in */; do
   esac
 done
 
+# Genera l'alberatura del progetto escludendo le cartelle pesanti o inutili
+tree -a -F -I 'node_modules|.git|txt' --dirsfirst > project-tree.txt
+
+echo "Progetto mappato in project-tree.txt"
 echo "Snapshot .md generati in txt"
 
 # ./supabase_client.py
