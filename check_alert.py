@@ -21,7 +21,7 @@ def check_alert():
         log_info(f"Controllo alert avviato alle {now.hour}:{now.minute}")
         
         # Impostato per le 22:10 - 22:25 come hai chiesto
-        if not (now.hour == 22 and 10 <= now.minute <= 20):
+        if not (now.hour == 19 and 10 <= now.minute <= 20):
             return "wrong_time"
 
         # 3) Percorso assoluto (sistema identico al bot_telegram che funziona)
