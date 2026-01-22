@@ -25,13 +25,13 @@ def check_alert():
         conf = get_config()
         
         urls = [
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=10a11bd1-4e03-4d43-90b6-50eb8acf4ba6&token=6a0b8cab-6042-4131-a13c-3aa0353a3576&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=a4e68b99-76fb-43a1-b9b9-6428412fb64f&token=3e015bc8-9a10-4007-bd67-f77bdf39c426&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=9f3fe9e8-246c-454b-a327-84b29a2be979&token=ff7788c2-3aeb-4466-ac58-b848c1ebced4&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=46fdcd85-a9bd-41ba-9496-e354cccd21d3&token=6c59acd4-a3cc-414f-b34b-1ff991cef44a&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=3b5d291e-ba34-402d-aa9f-f515af9bf753&token=6dd14228-6683-4f79-9f3e-7babe533b01e&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=e80933c5-1ba6-43ef-a6b0-76de38ea2843&token=d1935f71-d39a-4ca5-9546-75a211c997ec&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=24ca9054-8114-40de-b2cc-7e8e8dcc719f&token=96ac76f1-7a1f-4629-9240-c76be1c8a17b&response=html"
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ca398444-ff26-4158-a877-4081007ef4ab&token=02cbbd5e-7717-4cdb-9b68-6522bf9920ea&response=html",
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ee507dd2-aa02-4021-91cc-4e92f7fc9edd&token=1e5a73b6-732d-4636-a9d6-9e6c565a7639&response=html",
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=cdf03dcc-c35d-4e31-bc37-c11d0ed389ec&token=8d450f96-5535-4432-8daa-dcef305c60d4&response=html",
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=f4f7ae99-0eac-4aae-97cf-a5f0841fb0c1&token=e1effc48-e25d-4ec7-987a-3bb8dcd536e4&response=html",
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=32094a58-cdaa-4484-9bfe-4c031b11c9e8&token=1e7e9bd3-e05b-4e2f-a8b6-93ce33e968e9&response=html",
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=1cddc615-9d94-4ef8-bd52-f252caeb72bb&token=306d120e-a999-4e28-aa94-9673073f155a&response=html",
+            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=301554c6-6677-4cfb-b29a-b404c60e414f&token=753488a9-1b9a-42d8-af20-e8bb63642df8&response=html"
         ]
 
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "market.json")
