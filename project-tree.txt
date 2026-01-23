@@ -10,6 +10,7 @@
 │   ├── fondi.html
 │   ├── index.html
 │   ├── market.html
+│   ├── market-live.html
 │   ├── market-mobile.html
 │   └── salvadanaio.html
 ├── tests/
@@ -39,4 +40,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 34 files
+5 directories, 35 files
