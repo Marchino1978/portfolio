@@ -37,6 +37,10 @@ def salvadanaio():
 def fondi():
     return send_from_directory("public", "fondi.html")
 
+@app.route("/market-live")
+def market_live():
+    return send_from_directory("public", "market-live.html")
+
 # ---------------------------------------------------------
 # HEALTHCHECK
 # ---------------------------------------------------------

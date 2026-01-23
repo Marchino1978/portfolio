@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARKET LIVE - GLOBAL ROMA SYNC</title>
+    <style>
+        body { 
+            background-color: #000; color: #fff; font-family: 'Courier New', monospace; 
+            margin: 0; padding: 0; overflow: hidden; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; 
+        }
+
+        /* ########################################
+           # LOGICA COLORI DINAMICI (GIORNO/NOTTE)
+           # Qui puoi cambiare le palette colori
+           ######################################## */
+        :root {
+            /* COLORI STANDARD (GIORNO) */
+            --color-pos: #00ff41;    /* VERDE GIORNO */
+            --color-neg: #ff0000;    /* ROSSO GIORNO */
+            --color-na:  #00ffff;    /* CIANO GIORNO */
+            --color-btn: #ff8c00;    /* ARANCIO BOTTONI */
+            --btn-bg:    #221500;    /* SFONDO BOTTONI PREMUTI */
+        }
+
+        .bloomberg-mode {
+            /* COLORI BLOOMBERG (NOTTE 23-07) */
+            --color-pos: #ffb000;    /* AMBRA (Positivi) */
+            --color-neg: #00ffff;    /* CIANO (Negativi) */
+            --color-na:  #888888;    /* GRIGIO PERLA (Dati mancanti N/A) */
+            --color-btn: #8a2be2;    /* VIOLA PROFONDO (Bottoni Notte) */
+            --btn-bg:    #120024;    /* SFONDO VIOLA SCURO */
+        }
+
+        /* ########################################
+           # STILE PULSANTI (IN LINEA)
+           ######################################## */
+        .controls { 
+            margin-bottom: 25px; display: flex; flex-direction: row; 
+            gap: 15px; justify-content: center; width: 100%;
+        }
+
+        .btn {
+            background: #111; border: 2px solid #333; color: #555;            
+            padding: 12px 24px; cursor: pointer; font-weight: bold; 
+            border-radius: 6px; font-size: 32px; text-transform: uppercase; white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .btn.active { 
+            border-color: var(--color-btn); 
+            color: var(--color-btn); 
+            box-shadow: 0 0 15px var(--color-btn); 
+            background: var(--btn-bg);   
+        }
+
+        /* ########################################
+           # FASCIA LED E GRIGLIA (OTTIMIZZATA PI 400)
+           ######################################## */
+        .ticker-container {
+            width: 100%; height: 220px; background: #000; 
+            border-top: 4px solid #1a1a1a; border-bottom: 4px solid #1a1a1a;
+            display: flex; align-items: center; overflow: hidden; position: relative;
+            background-image: radial-gradient(circle, #111 1px, transparent 1px); background-size: 10px 10px; 
+        }
+
+        .marquee {
+            white-space: nowrap; position: absolute; font-size: 85px; font-weight: bold;
+            display: flex; gap: 120px; padding-left: 20px;
+            will-change: transform; transform: translate3d(0,0,0);
+        }
+
+        /* ########################################
+           # VELOCITA' SCORRIMENTO (35s)
+           ######################################## */
+        .marquee-active { animation: scroll 35s linear infinite; }
+
+        @keyframes scroll { 
+            from { transform: translate3d(0, 0, 0); } 
+            to { transform: translate3d(-50%, 0, 0); } 
+        }
+
+        .item { display: flex; gap: 25px; align-items: center; }
+
+        .val-pos { color: var(--color-pos); text-shadow: 2px 2px 5px #000; }
+        .val-neg { color: var(--color-neg); text-shadow: 2px 2px 5px #000; }
+        .val-na  { color: var(--color-na);  text-shadow: 2px 2px 5px #000; }
+
+        .update-time { position: fixed; bottom: 20px; right: 25px; color: #222; font-size: 14px; }
+    </style>
+</head>
+<body id="main-body">
+
+    <div class="controls" id="buttons"></div>
+    <div class="ticker-container">
+        <div class="marquee" id="ticker-content">...</div>
+    </div>
+    <div class="update-time" id="last-update"></div>
+
+<script>
+    /* ########################################
+       # CONFIGURAZIONE API E NTP
+       ######################################## */
+    const url = 'https://raw.githubusercontent.com/Marchino1978/portfolio/refs/heads/main/data/market.json';
+    const ntpUrl = 'https://worldtimeapi.org/api/timezone/Europe/Rome';
+    const legenda = { 'D': '1 DAY', 'W': '1 WEEK', 'M': '1 MONTH', 'Q': '3 MONTHS', 'H': '6 MONTHS', 'Y': '1 YEAR', '3': '3 YEARS', '5': '5 YEARS' };
+    
+    let marketData = [];
+    let currentMode = 'v1'; 
+
+    // ########################################
+    // # CONTROLLO TEMA (ROMA TIME)
+    // ########################################
+    async function updateTheme() {
+        try {
+            const response = await fetch(ntpUrl);
+            const data = await response.json();
+            const romaTime = new Date(data.datetime);
+            const hour = romaTime.getHours();
+            
+            const body = document.getElementById('main-body');
+            // BLOOMBERG MODE attiva dalle 23 alle 07
+            if (hour >= 23 || hour < 7) {
+                body.classList.add('bloomberg-mode');
+            } else {
+                body.classList.remove('bloomberg-mode');
+            }
+        } catch (e) {
+            // PIANO B: Se NTP fallisce usa ora locale
+            const localHour = new Date().getHours();
+            if (localHour >= 23 || localHour < 7) document.getElementById('main-body').classList.add('bloomberg-mode');
+        }
+    }
+
+    async function fetchData() {
+        try {
+            await updateTheme();
+            const response = await fetch(url + '?t=' + Date.now());
+            const json = await response.json();
+            marketData = json.values.data;
+            document.getElementById('last-update').innerText = "SYNC: " + json.last_updated.readable;
+            
+            if (document.getElementById('buttons').innerHTML === "") { createButtons(); }
+            renderTicker();
+        } catch (e) { console.error("Data Load Error"); }
+    }
+
+    function createButtons() {
+        const first = marketData[0];
+        const modes = ['v1', 'v2', 'v3']; 
+        const btnCont = document.getElementById('buttons');
+        modes.forEach(m => {
+            if (first[m]) {
+                const char = first[m].slice(-1); 
+                const b = document.createElement('div');
+                b.className = `btn ${m === currentMode ? 'active' : ''}`;
+                b.innerText = legenda[char] || char;
+                b.onclick = () => {
+                    document.querySelectorAll('.btn').forEach(x => x.classList.remove('active'));
+                    b.classList.add('active');
+                    currentMode = m;
+                    renderTicker();
+                };
+                btnCont.appendChild(b);
+            }
+        });
+    }
+
+    function renderTicker() {
+        const ticker = document.getElementById('ticker-content');
+        ticker.classList.remove('marquee-active'); 
+        
+        let content = "";
+        marketData.forEach(item => {
+            let valRaw = item[currentMode];
+            let valClean = valRaw.includes("N/A") || (!valRaw.startsWith('+') && !valRaw.startsWith('-')) ? "N/A" : valRaw.slice(0, -1);
+            let colorClass = valClean === "N/A" ? "val-na" : (valClean.startsWith('+') ? "val-pos" : "val-neg");
+            content += `<div class="item ${colorClass}"><span>${item.label.toUpperCase()}:</span><span>${valClean}</span></div>`;
+        });
+        
+        ticker.innerHTML = content + content;
+        setTimeout(() => { ticker.classList.add('marquee-active'); }, 100);
+    }
+
+    fetchData();
+    setInterval(fetchData, 60000); 
+</script>
+</body>
+</html>
