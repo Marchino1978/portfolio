@@ -48,7 +48,7 @@ def send_monthly_report():
         anno = now.year if now.month > 1 else now.year - 1
         
         titolo = f"📊 *REPORT ETF - {nomi_mesi[mese_index]} {anno}*\n"
-        titolo += "-----------------------------------------------\n\n"
+        titolo += "--------------------------------------------------\n\n"
 
         messaggio = titolo
         for etf in etfs:
