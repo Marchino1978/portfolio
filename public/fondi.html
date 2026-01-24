@@ -42,7 +42,7 @@
 
   <script>
     // Funzione per caricare e mostrare i dati CSV in tabella
-    fetch('/fondi.csv')
+    fetch('https://raw.githubusercontent.com/Marchino1978/portfolio/refs/heads/main/data/fondi.csv')
       .then(response => {
         if (!response.ok) throw new Error('Impossibile caricare il file CSV');
         return response.text();
