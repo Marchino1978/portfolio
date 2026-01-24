@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARKET LIVE - GLOBAL ROMA SYNC</title>
+    <title>MARKET LIVE/title>
     <style>
         body { 
             background-color: #000; color: #fff; font-family: 'Courier New', monospace; 
@@ -11,12 +11,8 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; 
         }
 
-        /* ########################################
-           # LOGICA COLORI DINAMICI (GIORNO/NOTTE)
-           # Qui puoi cambiare le palette colori
-           ######################################## */
         :root {
-            /* COLORI STANDARD (GIORNO) */
+            /* COLORI STANDARD (MARKET OPEN) */
             --color-pos: #00ff41;    /* VERDE GIORNO */
             --color-neg: #ff0000;    /* ROSSO GIORNO */
             --color-na:  #00ffff;    /* CIANO GIORNO */
@@ -25,17 +21,28 @@
         }
 
         .bloomberg-mode {
-            /* COLORI BLOOMBERG (NOTTE 23-07) */
+            /* COLORI BLOOMBERG (MARKET CLOSED) */
             --color-pos: #ffb000;    /* AMBRA (Positivi) */
             --color-neg: #00ffff;    /* CIANO (Negativi) */
-            --color-na:  #888888;    /* GRIGIO PERLA (Dati mancanti N/A) */
-            --color-btn: #8a2be2;    /* VIOLA PROFONDO (Bottoni Notte) */
+            --color-na:  #888888;    /* GRIGIO PERLA */
+            --color-btn: #8a2be2;    /* VIOLA PROFONDO */
             --btn-bg:    #120024;    /* SFONDO VIOLA SCURO */
         }
 
-        /* ########################################
-           # STILE PULSANTI (IN LINEA)
-           ######################################## */
+        /* BANNER MARKET CLOSED */
+        #market-status-alert {
+            display: none;
+            position: fixed;
+            top: 20px;
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 3px solid red;
+            font-size: 24px;
+            z-index: 1000;
+        }
+
         .controls { 
             margin-bottom: 25px; display: flex; flex-direction: row; 
             gap: 15px; justify-content: center; width: 100%;
@@ -55,9 +62,6 @@
             background: var(--btn-bg);   
         }
 
-        /* ########################################
-           # FASCIA LED E GRIGLIA (OTTIMIZZATA PI 400)
-           ######################################## */
         .ticker-container {
             width: 100%; height: 220px; background: #000; 
             border-top: 4px solid #1a1a1a; border-bottom: 4px solid #1a1a1a;
@@ -71,9 +75,6 @@
             will-change: transform; transform: translate3d(0,0,0);
         }
 
-        /* ########################################
-           # VELOCITA' SCORRIMENTO (35s)
-           ######################################## */
         .marquee-active { animation: scroll 35s linear infinite; }
 
         @keyframes scroll { 
@@ -82,16 +83,15 @@
         }
 
         .item { display: flex; gap: 25px; align-items: center; }
-
         .val-pos { color: var(--color-pos); text-shadow: 2px 2px 5px #000; }
         .val-neg { color: var(--color-neg); text-shadow: 2px 2px 5px #000; }
         .val-na  { color: var(--color-na);  text-shadow: 2px 2px 5px #000; }
-
         .update-time { position: fixed; bottom: 20px; right: 25px; color: #222; font-size: 14px; }
     </style>
 </head>
 <body id="main-body">
 
+    <div id="market-status-alert">MARKET CLOSED</div>
     <div class="controls" id="buttons"></div>
     <div class="ticker-container">
         <div class="marquee" id="ticker-content">...</div>
@@ -99,43 +99,70 @@
     <div class="update-time" id="last-update"></div>
 
 <script>
-    /* ########################################
-       # CONFIGURAZIONE API E NTP
-       ######################################## */
     const url = 'https://raw.githubusercontent.com/Marchino1978/portfolio/refs/heads/main/data/market.json';
-    const ntpUrl = 'https://worldtimeapi.org/api/timezone/Europe/Rome';
     const legenda = { 'D': '1 DAY', 'W': '1 WEEK', 'M': '1 MONTH', 'Q': '3 MONTHS', 'H': '6 MONTHS', 'Y': '1 YEAR', '3': '3 YEARS', '5': '5 YEARS' };
     
     let marketData = [];
     let currentMode = 'v1'; 
 
-    // ########################################
-    // # CONTROLLO TEMA (ROMA TIME)
-    // ########################################
-    async function updateTheme() {
-        try {
-            const response = await fetch(ntpUrl);
-            const data = await response.json();
-            const romaTime = new Date(data.datetime);
-            const hour = romaTime.getHours();
-            
-            const body = document.getElementById('main-body');
-            // BLOOMBERG MODE attiva dalle 23 alle 07
-            if (hour >= 23 || hour < 7) {
-                body.classList.add('bloomberg-mode');
-            } else {
-                body.classList.remove('bloomberg-mode');
-            }
-        } catch (e) {
-            // PIANO B: Se NTP fallisce usa ora locale
-            const localHour = new Date().getHours();
-            if (localHour >= 23 || localHour < 7) document.getElementById('main-body').classList.add('bloomberg-mode');
+    // ######################################################
+    // # LOGICA CHIUSURA
+    // ######################################################
+    function checkMarketClosed() {
+        const now = new Date();
+        const roma = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Rome"}));
+        
+        const wday = roma.getDay(); // 0=Dom, 6=Sab
+        const day = roma.getDate();
+        const month = roma.getMonth() + 1;
+        const year = roma.getFullYear();
+        const currentMin = roma.getHours() * 60 + roma.getMinutes();
+
+        // 1. Weekend
+        if (wday === 0 || wday === 6) return true;
+
+        // 2. Orari (07:10 - 22:55) -> 430 e 1375 minuti
+        if (currentMin < 430 || currentMin > 1375) return true;
+
+        // 3. Festività Fisse
+        const holidays = ["1-1", "25-4", "1-5", "2-6", "15-8", "25-12", "26-12"];
+        if (holidays.includes(`${day}-${month}`)) return true;
+
+        // 4. Pasqua e Pasquetta
+        const a = year % 19, b = Math.floor(year / 100), c = year % 100;
+        const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+        const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+        const i = Math.floor(c / 4), k = c % 4;
+        const l = (32 + 2 * e + 2 * i - h - k) % 7;
+        const m = Math.floor((a + 11 * h + 22 * l) / 451);
+        const pMonth = Math.floor((h + l - 7 * m + 114) / 31);
+        const pDay = ((h + l - 7 * m + 114) % 31) + 1;
+
+        if (day === pDay && month === pMonth) return true; // Pasqua
+        
+        const pNext = new Date(year, pMonth - 1, pDay + 1); // Pasquetta
+        if (day === pNext.getDate() && month === (pNext.getMonth() + 1)) return true;
+
+        return false;
+    }
+
+    function updateTheme() {
+        const isClosed = checkMarketClosed();
+        const body = document.getElementById('main-body');
+        const alertBanner = document.getElementById('market-status-alert');
+        
+        if (isClosed) {
+            body.classList.add('bloomberg-mode');
+            alertBanner.style.display = 'block';
+        } else {
+            body.classList.remove('bloomberg-mode');
+            alertBanner.style.display = 'none';
         }
     }
 
     async function fetchData() {
         try {
-            await updateTheme();
+            updateTheme();
             const response = await fetch(url + '?t=' + Date.now());
             const json = await response.json();
             marketData = json.values.data;
