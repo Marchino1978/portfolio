@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARKET LIVE/title>
+    <title>MARKET LIVE</title>
     <style>
         body { 
             background-color: #000; color: #fff; font-family: 'Courier New', monospace; 
@@ -11,6 +11,10 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; 
         }
 
+        /* ########################################
+           # LOGICA COLORI DINAMICI (OPEN/CLOSED)
+           # Qui puoi cambiare le palette colori
+           ######################################## */
         :root {
             /* COLORI STANDARD (MARKET OPEN) */
             --color-pos: #00ff41;    /* VERDE GIORNO */
@@ -29,20 +33,35 @@
             --btn-bg:    #120024;    /* SFONDO VIOLA SCURO */
         }
 
-        /* BANNER MARKET CLOSED */
+        /* ########################################
+           # BANNER MARKET CLOSED
+           ######################################## */
         #market-status-alert {
             display: none;
             position: fixed;
-            top: 20px;
+            bottom: 45px;
+            right: 25px;
             background-color: yellow;
             color: red;
             font-weight: bold;
-            padding: 10px 20px;
-            border: 3px solid red;
-            font-size: 24px;
+            padding: 5px 15px;
+            border: 2px solid red;
+            font-size: 18px;
             z-index: 1000;
+            text-transform: uppercase;
         }
 
+        .blink-text {
+            animation: blinker 1.2s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0.1; }
+        }
+
+        /* ########################################
+           # STILE PULSANTI (IN LINEA)
+           ######################################## */
         .controls { 
             margin-bottom: 25px; display: flex; flex-direction: row; 
             gap: 15px; justify-content: center; width: 100%;
@@ -62,6 +81,9 @@
             background: var(--btn-bg);   
         }
 
+        /* ########################################
+           # FASCIA LED E GRIGLIA (OTTIMIZZATA PI 400)
+           ######################################## */
         .ticker-container {
             width: 100%; height: 220px; background: #000; 
             border-top: 4px solid #1a1a1a; border-bottom: 4px solid #1a1a1a;
@@ -75,6 +97,9 @@
             will-change: transform; transform: translate3d(0,0,0);
         }
 
+        /* ########################################
+           # VELOCITA' SCORRIMENTO (35s)
+           ######################################## */
         .marquee-active { animation: scroll 35s linear infinite; }
 
         @keyframes scroll { 
@@ -86,12 +111,13 @@
         .val-pos { color: var(--color-pos); text-shadow: 2px 2px 5px #000; }
         .val-neg { color: var(--color-neg); text-shadow: 2px 2px 5px #000; }
         .val-na  { color: var(--color-na);  text-shadow: 2px 2px 5px #000; }
+
         .update-time { position: fixed; bottom: 20px; right: 25px; color: #222; font-size: 14px; }
     </style>
 </head>
 <body id="main-body">
 
-    <div id="market-status-alert">MARKET CLOSED</div>
+    <div id="market-status-alert"><span class="blink-text">MARKET CLOSED</span></div>
     <div class="controls" id="buttons"></div>
     <div class="ticker-container">
         <div class="marquee" id="ticker-content">...</div>
@@ -99,15 +125,18 @@
     <div class="update-time" id="last-update"></div>
 
 <script>
+    /* ########################################
+       # CONFIGURAZIONE API E NTP
+       ######################################## */
     const url = 'https://raw.githubusercontent.com/Marchino1978/portfolio/refs/heads/main/data/market.json';
     const legenda = { 'D': '1 DAY', 'W': '1 WEEK', 'M': '1 MONTH', 'Q': '3 MONTHS', 'H': '6 MONTHS', 'Y': '1 YEAR', '3': '3 YEARS', '5': '5 YEARS' };
     
     let marketData = [];
     let currentMode = 'v1'; 
 
-    // ######################################################
-    // # LOGICA CHIUSURA
-    // ######################################################
+    // ########################################
+    // # CONTROLLO TEMA & CHIUSURA (ROMA TIME)
+    // ########################################
     function checkMarketClosed() {
         const now = new Date();
         const roma = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Rome"}));
@@ -121,7 +150,7 @@
         // 1. Weekend
         if (wday === 0 || wday === 6) return true;
 
-        // 2. Orari (07:10 - 22:55) -> 430 e 1375 minuti
+        // 2. Orari (07:10 - 22:55) -> (430 e 1375 min)
         if (currentMin < 430 || currentMin > 1375) return true;
 
         // 3. Festività Fisse
@@ -138,9 +167,8 @@
         const pMonth = Math.floor((h + l - 7 * m + 114) / 31);
         const pDay = ((h + l - 7 * m + 114) % 31) + 1;
 
-        if (day === pDay && month === pMonth) return true; // Pasqua
-        
-        const pNext = new Date(year, pMonth - 1, pDay + 1); // Pasquetta
+        if (day === pDay && month === pMonth) return true;
+        const pNext = new Date(year, pMonth - 1, pDay + 1);
         if (day === pNext.getDate() && month === (pNext.getMonth() + 1)) return true;
 
         return false;
@@ -173,6 +201,9 @@
         } catch (e) { console.error("Data Load Error"); }
     }
 
+    // ########################################
+    // # CREAZIONE PULSANTI DINAMICI
+    // ########################################
     function createButtons() {
         const first = marketData[0];
         const modes = ['v1', 'v2', 'v3']; 
@@ -194,6 +225,9 @@
         });
     }
 
+    // ########################################
+    // # RENDER TICKER SCORREVOLE
+    // ########################################
     function renderTicker() {
         const ticker = document.getElementById('ticker-content');
         ticker.classList.remove('marquee-active'); 
