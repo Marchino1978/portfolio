@@ -48,7 +48,7 @@ def send_monthly_report():
         anno = now.year if now.month > 1 else now.year - 1
         
         titolo = f"📊 *REPORT ETF - {nomi_mesi[mese_index]} {anno}*\n"
-        titolo += "------------------------------\n\n"
+        titolo += "---------------------------------------------\n\n"
 
         messaggio = titolo
         for etf in etfs:
@@ -61,8 +61,9 @@ def send_monthly_report():
             
             if variazione_str != "N/A":
                 try:
-                    # Pulizia della stringa (toglie % e +)
-                    val_pulito = variazione_str.replace('%', '').replace('+', '').strip()
+                    # Pulizia della stringa
+                    parte_numerica = variazione_str.split('%')[0]
+                    val_pulito = parte_numerica.replace(',', '.').replace('+', '').strip()
                     val_num = float(val_pulito)
                     
                     if val_num > 0:
