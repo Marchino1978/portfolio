@@ -48,8 +48,7 @@ def send_monthly_report():
         anno = now.year if now.month > 1 else now.year - 1
         
         titolo = f"📊 *REPORT ETF - {nomi_mesi[mese_index]} {anno}*\n"
-        titolo += f"Variazione Periodo (`v_bot`)\n"
-        titolo += "---------------------------\n\n"
+        titolo += "------------------------------\n\n"
 
         messaggio = titolo
         for etf in etfs:
@@ -77,7 +76,7 @@ def send_monthly_report():
             
             # Formattazione riga con icona allineata
             messaggio += f"{icona} *{nome}*\n"
-            messaggio += f"   Ultimo: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
+            messaggio += f"   Price: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
 
         # Invio effettivo a Telegram
         bot.send_message(CHAT_ID, messaggio, parse_mode="Markdown")
