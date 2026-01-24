@@ -19,6 +19,8 @@
 │   ├── test_etf.py
 │   └── test_fondi.py
 ├── utils/
+│   ├── __pycache__/
+│   │   └── logger.cpython-39.pyc
 │   ├── colors.h
 │   ├── holidays.py
 │   └── logger.py
@@ -40,4 +42,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 35 files
+6 directories, 36 files

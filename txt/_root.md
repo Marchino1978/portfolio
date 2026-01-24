@@ -219,8 +219,7 @@ def send_monthly_report():
         anno = now.year if now.month > 1 else now.year - 1
         
         titolo = f"📊 *REPORT ETF - {nomi_mesi[mese_index]} {anno}*\n"
-        titolo += f"Variazione Periodo (`v_bot`)\n"
-        titolo += "---------------------------\n\n"
+        titolo += "--------------------------------------------------\n\n"
 
         messaggio = titolo
         for etf in etfs:
@@ -233,8 +232,9 @@ def send_monthly_report():
             
             if variazione_str != "N/A":
                 try:
-                    # Pulizia della stringa (toglie % e +)
-                    val_pulito = variazione_str.replace('%', '').replace('+', '').strip()
+                    # Pulizia della stringa
+                    parte_numerica = variazione_str.split('%')[0]
+                    val_pulito = parte_numerica.replace(',', '.').replace('+', '').strip()
                     val_num = float(val_pulito)
                     
                     if val_num > 0:
@@ -248,7 +248,7 @@ def send_monthly_report():
             
             # Formattazione riga con icona allineata
             messaggio += f"{icona} *{nome}*\n"
-            messaggio += f"   Ultimo: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
+            messaggio += f"   Price: €{prezzo:.2f} | Var: `{variazione_str}`\n\n"
 
         # Invio effettivo a Telegram
         bot.send_message(CHAT_ID, messaggio, parse_mode="Markdown")
@@ -554,6 +554,7 @@ primary_region = "fra"
 │   ├── fondi.html
 │   ├── index.html
 │   ├── market.html
+│   ├── market-live.html
 │   ├── market-mobile.html
 │   └── salvadanaio.html
 ├── tests/
@@ -583,7 +584,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 34 files
+5 directories, 35 files
 
 
 # ./push.sh
