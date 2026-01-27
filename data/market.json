@@ -1,6 +1,6 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 170.555,
-        "dailyChange": "+2.06",
-        "value": 170.555,
-        "v1": "+2.06%D",
-        "v2": "+5.78%W",
-        "v3": "+12.58%M",
-        "v_led": "+12.58%M",
-        "v_alert": "+12.58%M",
-        "v_bot": "+12.58%M"
+        "price": 170.575,
+        "dailyChange": "+2.07",
+        "value": 170.575,
+        "v1": "+2.07%D",
+        "v2": "+5.80%W",
+        "v3": "+12.59%M",
+        "v_led": "+12.59%M",
+        "v_alert": "+12.59%M",
+        "v_bot": "+12.59%M"
       },
       {
         "symbol": "XEON",
@@ -59,37 +59,37 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 146.3,
-        "dailyChange": "-0.74",
-        "value": 146.3,
-        "v1": "-0.74%D",
-        "v2": "+0.45%W",
-        "v3": "+1.00%M",
-        "v_led": "+1.00%M",
-        "v_alert": "+1.00%M",
-        "v_bot": "+1.00%M"
+        "price": 146.29,
+        "dailyChange": "-0.75",
+        "value": 146.29,
+        "v1": "-0.75%D",
+        "v2": "+0.44%W",
+        "v3": "+0.99%M",
+        "v_led": "+0.99%M",
+        "v_alert": "+0.99%M",
+        "v_bot": "+0.99%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.505,
-        "dailyChange": "+0.95",
-        "value": 36.505,
-        "v1": "+0.95%D",
-        "v2": "+1.97%W",
-        "v3": "+4.03%M",
-        "v_led": "+4.03%M",
-        "v_alert": "+4.03%M",
-        "v_bot": "+4.03%M"
+        "price": 36.535,
+        "dailyChange": "+1.04",
+        "value": 36.535,
+        "v1": "+1.04%D",
+        "v2": "+2.05%W",
+        "v3": "+4.12%M",
+        "v_led": "+4.12%M",
+        "v_alert": "+4.12%M",
+        "v_bot": "+4.12%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 41.2925,
-        "dailyChange": "+0.86",
-        "value": 41.2925,
-        "v1": "+0.86%D",
-        "v2": "+2.62%W",
+        "price": 41.313,
+        "dailyChange": "+0.91",
+        "value": 41.313,
+        "v1": "+0.91%D",
+        "v2": "+2.67%W",
         "v3": "N/A",
         "v_led": "N/A",
         "v_alert": "N/A",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-01-27T22:40:28.385477+01:00",
-    "readable": "22:40 27-01-2026"
+    "iso": "2026-01-27T22:55:16.114993+01:00",
+    "readable": "22:55 27-01-2026"
   }
 }
