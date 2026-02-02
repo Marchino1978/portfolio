@@ -7,6 +7,7 @@ from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 
 import check_alert
+import backup_manager
 import bot_telegram
 from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
@@ -318,7 +319,7 @@ def update_all_etf():
         log_error(f"Errore controllo alert Alexa: {e}")
 
     # ---------------------------------------------------------
-    # REPORT TELEGRAM (Logica per weekend e giorni feriali)
+    # REPORT TELEGRAM + BACKUP SUPABASE
     # ---------------------------------------------------------
     now_rome = datetime.now(ZoneInfo("Europe/Rome"))
     giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
@@ -337,12 +338,20 @@ def update_all_etf():
     # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
     if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
         log_info(f"Condizione report soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
+
+        try:
+            import backup_manager
+            backup_manager.run_supabase_backup()
+        except Exception as e:
+            log_error(f"Errore esecuzione backup: {e}")
+
         try:
             import bot_telegram
             bot_telegram.send_monthly_report()
             log_info("Report Telegram inviato con successo.")
         except Exception as e:
             log_error(f"Errore invio Telegram: {e}")
+
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
