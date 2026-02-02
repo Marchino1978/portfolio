@@ -177,9 +177,9 @@ from supabase_client import get_supabase
 from utils.logger import log_info, log_error
 
 def run_supabase_backup():
-    """Estrae i dati da Supabase e salva un file .sql in /data."""
+    # ... (questa funzione rimane identica a prima) ...
     table_name = "previous_close"
-    filename = f"backup_supabase_{datetime.now().strftime('%Y_%m')}.sql"
+    filename = f"backup_supabase_{datetime.now().strftime('%Y_%m_%d')}.sql"
     file_path = os.path.join("data", filename)
     
     log_info(f"Inizio generazione backup SQL: {filename}")
@@ -188,83 +188,67 @@ def run_supabase_backup():
         supabase = get_supabase()
         resp = supabase.table(table_name).select("*").order("snapshot_date", desc=True).execute()
         rows = resp.data
-
-        if not rows:
-            log_error("Backup fallito: nessun dato trovato nella tabella.")
-            return None # Restituiamo None per indicare fallimento
-
+        if not rows: return None
         os.makedirs("data", exist_ok=True)
-
         with open(file_path, "w", encoding="utf-8") as f:
-            f.write(f"-- BACKUP AUTOMATICO: {table_name}\n")
-            f.write(f"-- DATA: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+            f.write(f"-- BACKUP AUTOMATICO: {table_name}\n\n")
             f.write(f"TRUNCATE TABLE {table_name};\n\n")
-
             for row in rows:
                 cols = ", ".join(row.keys())
-                vals = []
-                for v in row.values():
-                    if v is None: vals.append("NULL")
-                    elif isinstance(v, (int, float)): vals.append(str(v))
-                    else:
-                        clean_v = str(v).replace("'", "''")
-                        vals.append(f"'{clean_v}'")
+                vals = [f"'{str(v).replace("'", "''")}'" if v is not None and not isinstance(v, (int, float)) else str(v) if v is not None else "NULL" for v in row.values()]
                 f.write(f"INSERT INTO {table_name} ({cols}) VALUES ({', '.join(vals)});\n")
-        
         log_info(f"Backup locale completato: {file_path}")
-        return file_path # Restituiamo il percorso del file creato
-        
+        return file_path
     except Exception as e:
-        log_error(f"Errore critico durante il backup SQL: {e}")
+        log_error(f"Errore generazione backup: {e}")
         return None
 
 def upload_backup_to_github(file_path):
-    """Carica il file SQL su GitHub via API."""
+    """Carica il backup e mantiene solo gli ultimi 3 file su GitHub."""
     token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        log_error("GITHUB_TOKEN mancante, upload backup saltato.")
-        return False
-
     repo = "Marchino1978/portfolio"
+    headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+    
     file_name = os.path.basename(file_path)
-    # Il percorso nel repo sarà data/nome_file.sql
-    api_url = f"https://api.github.com/repos/{repo}/contents/data/{file_name}"
-
+    api_url_base = f"https://api.github.com/repos/{repo}/contents/data"
+    
     try:
+        # 1. Carica il nuovo file
         with open(file_path, "rb") as f:
             content = base64.b64encode(f.read()).decode("utf-8")
-
-        headers = {
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json"
-        }
-
-        # Controlliamo se esiste già (opzionale per i backup mensili)
-        get_resp = requests.get(api_url, headers=headers, timeout=10)
-        sha = get_resp.json().get("sha") if get_resp.status_code == 200 else None
-
-        payload = {
-            "message": f"Backup mensile database {file_name} [auto]",
+        
+        requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
+            "message": f"Backup mensile {file_name}",
             "content": content,
             "branch": "main"
-        }
-        if sha: payload["sha"] = sha
+        }, timeout=10)
+        log_info(f"Nuovo backup {file_name} caricato.")
 
-        put_resp = requests.put(api_url, headers=headers, json=payload, timeout=10)
-        if put_resp.status_code in (200, 201):
-            log_info(f"File {file_name} caricato con successo su GitHub.")
-            return True
-        else:
-            log_error(f"Errore upload GitHub: {put_resp.text}")
-            return False
+        # 2. Ottieni la lista dei file per la rotazione
+        resp = requests.get(api_url_base, headers=headers, timeout=10)
+        if resp.status_code == 200:
+            files = resp.json()
+            # Filtra solo i file di backup e ordinali per nome (che contiene anno_mese)
+            backups = sorted([f for f in files if f['name'].startswith("backup_supabase_")], 
+                            key=lambda x: x['name'], reverse=True)
+
+            # 3. Se sono più di 3, cancella i più vecchi
+            if len(backups) > 3:
+                for old_file in backups[3:]:
+                    del_url = f"https://api.github.com/repos/{repo}/contents/{old_file['path']}"
+                    requests.delete(del_url, headers=headers, json={
+                        "message": f"Rotazione backup: rimosso {old_file['name']}",
+                        "sha": old_file['sha'],
+                        "branch": "main"
+                    }, timeout=10)
+                    log_info(f"Rimosso vecchio backup: {old_file['name']}")
+
     except Exception as e:
-        log_error(f"Errore durante l'upload del backup: {e}")
-        return False
+        log_error(f"Errore durante rotazione backup su GitHub: {e}")
 
 if __name__ == "__main__":
     path = run_supabase_backup()
-    if path:
-        upload_backup_to_github(path)
+    if path: upload_backup_to_github(path)
 
 # ./bot_telegram.py
 ----------------------------------------
@@ -662,12 +646,11 @@ primary_region = "fra"
 │   ├── test_etf.py
 │   └── test_fondi.py
 ├── utils/
-│   ├── __pycache__/
-│   │   └── logger.cpython-39.pyc
 │   ├── colors.h
 │   ├── holidays.py
 │   └── logger.py
 ├── app.py
+├── backup_manager.py
 ├── bot_telegram.py
 ├── check_alert.py
 ├── config.py
@@ -685,7 +668,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-6 directories, 36 files
+5 directories, 36 files
 
 
 # ./push.sh
@@ -1075,11 +1058,23 @@ def update_all_etf():
         log_error(f"Errore controllo alert Alexa: {e}")
 
     # ---------------------------------------------------------
-    # REPORT TELEGRAM + BACKUP SUPABASE
+    # BACKUP SUPABASE (settimanale) + REPORT TELEGRAM (mensile)
     # ---------------------------------------------------------
     now_rome = datetime.now(ZoneInfo("Europe/Rome"))
     giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
 
+    # 1. BACKUP SUPABASE (settimanale)
+    if giorno_settimana == 0 and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
+        log_info(f"Avvio backup settimanale ({now_rome.day}/{now_rome.month})...")
+        try:
+            path_sql = backup_manager.run_supabase_backup()
+            if path_sql:
+                # Se il backup è riuscito, caricalo su GitHub (gestisce la rotazione a 3 file)
+                backup_manager.upload_backup_to_github(path_sql)
+        except Exception as e:
+            log_error(f"Errore esecuzione backup/upload settimanale: {e}")
+
+    # 2. REPORT TELEGRAM (mensile)
     # Definiamo se dobbiamo inviare il report oggi
     invia_oggi = False
 
@@ -1093,25 +1088,13 @@ def update_all_etf():
 
     # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
     if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
-        log_info(f"Condizione report soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
-
-        try:
-            import backup_manager
-            success = backup_manager.run_supabase_backup()
-            if success:
-                # Se il backup è riuscito, caricalo su GitHub
-                filename = f"data/backup_supabase_{datetime.now().strftime('%Y_%m')}.sql"
-                backup_manager.upload_backup_to_github(filename)
-        except Exception as e:
-            log_error(f"Errore esecuzione backup/upload: {e}")
-
+        log_info(f"Condizione report mensile soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
         try:
             import bot_telegram
             bot_telegram.send_monthly_report()
             log_info("Report Telegram inviato con successo.")
         except Exception as e:
             log_error(f"Errore invio Telegram: {e}")
-
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open

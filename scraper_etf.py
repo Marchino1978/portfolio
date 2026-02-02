@@ -319,11 +319,23 @@ def update_all_etf():
         log_error(f"Errore controllo alert Alexa: {e}")
 
     # ---------------------------------------------------------
-    # REPORT TELEGRAM + BACKUP SUPABASE
+    # BACKUP SUPABASE (settimanale) + REPORT TELEGRAM (mensile)
     # ---------------------------------------------------------
     now_rome = datetime.now(ZoneInfo("Europe/Rome"))
     giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
 
+    # 1. BACKUP SUPABASE (settimanale)
+    if giorno_settimana == 0 and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
+        log_info(f"Avvio backup settimanale ({now_rome.day}/{now_rome.month})...")
+        try:
+            path_sql = backup_manager.run_supabase_backup()
+            if path_sql:
+                # Se il backup è riuscito, caricalo su GitHub (gestisce la rotazione a 3 file)
+                backup_manager.upload_backup_to_github(path_sql)
+        except Exception as e:
+            log_error(f"Errore esecuzione backup/upload settimanale: {e}")
+
+    # 2. REPORT TELEGRAM (mensile)
     # Definiamo se dobbiamo inviare il report oggi
     invia_oggi = False
 
@@ -337,25 +349,13 @@ def update_all_etf():
 
     # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
     if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
-        log_info(f"Condizione report soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
-
-        try:
-            import backup_manager
-            success = backup_manager.run_supabase_backup()
-            if success:
-                # Se il backup è riuscito, caricalo su GitHub
-                filename = f"data/backup_supabase_{datetime.now().strftime('%Y_%m')}.sql"
-                backup_manager.upload_backup_to_github(filename)
-        except Exception as e:
-            log_error(f"Errore esecuzione backup/upload: {e}")
-
+        log_info(f"Condizione report mensile soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
         try:
             import bot_telegram
             bot_telegram.send_monthly_report()
             log_info("Report Telegram inviato con successo.")
         except Exception as e:
             log_error(f"Errore invio Telegram: {e}")
-
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
