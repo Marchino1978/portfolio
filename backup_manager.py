@@ -6,7 +6,7 @@ from utils.logger import log_info, log_error
 def run_supabase_backup():
     """Estrae i dati da Supabase e salva un file .sql in /data."""
     table_name = "previous_close"
-    # Nome file con mese e anno per avere uno storico su GitHub
+    # Nome file con mese e anno
     filename = f"backup_supabase_{datetime.now().strftime('%Y_%m')}.sql"
     file_path = os.path.join("data", filename)
     
@@ -16,13 +16,13 @@ def run_supabase_backup():
         supabase = get_supabase()
         # Recupero dati ordinati
         resp = supabase.table(table_name).select("*").order("snapshot_date", desc=True).execute()
-        rows = resp.data
+        rows = resp.data  # Qui usiamo 'rows'
 
         if not rows:
             log_error("Backup fallito: nessun dato trovato nella tabella.")
             return False
 
-        # Crea la cartella data se non esiste (sicurezza extra)
+        # Crea la cartella data se non esiste
         os.makedirs("data", exist_ok=True)
 
         with open(file_path, "w", encoding="utf-8") as f:
@@ -30,7 +30,7 @@ def run_supabase_backup():
             f.write(f"-- DATA: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
             f.write(f"TRUNCATE TABLE {table_name};\n\n")
 
-            for row in data:
+            for row in rows:  # Qui deve corrispondere a 'rows'
                 cols = ", ".join(row.keys())
                 vals = []
                 for v in row.values():
@@ -53,5 +53,5 @@ def run_supabase_backup():
         return False
 
 if __name__ == "__main__":
-    # Test rapido se lanciato manualmente: python backup_manager.py
+    # Test rapido se lanciato manualmente
     run_supabase_backup()
