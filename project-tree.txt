@@ -2,6 +2,7 @@
 ├── config/
 │   └── variations.conf
 ├── data/
+│   ├── backup_supabase_2026_02.sql
 │   ├── fondi.csv
 │   ├── fondi_nav.csv
 │   ├── market.json
@@ -13,6 +14,8 @@
 │   ├── market-live.html
 │   ├── market-mobile.html
 │   └── salvadanaio.html
+├── __pycache__/
+│   └── supabase_client.cpython-39.pyc
 ├── tests/
 │   ├── testDateVar.py
 │   ├── testEaster.py
@@ -25,6 +28,7 @@
 │   ├── holidays.py
 │   └── logger.py
 ├── app.py
+├── backup_manager.py
 ├── bot_telegram.py
 ├── check_alert.py
 ├── config.py
@@ -42,4 +46,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-6 directories, 36 files
+7 directories, 39 files

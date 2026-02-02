@@ -341,9 +341,13 @@ def update_all_etf():
 
         try:
             import backup_manager
-            backup_manager.run_supabase_backup()
+            success = backup_manager.run_supabase_backup()
+            if success:
+                # Se il backup è riuscito, caricalo su GitHub
+                filename = f"data/backup_supabase_{datetime.now().strftime('%Y_%m')}.sql"
+                backup_manager.upload_backup_to_github(filename)
         except Exception as e:
-            log_error(f"Errore esecuzione backup: {e}")
+            log_error(f"Errore esecuzione backup/upload: {e}")
 
         try:
             import bot_telegram
