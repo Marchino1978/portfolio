@@ -1,5 +1,5 @@
 -- BACKUP AUTOMATICO: previous_close
--- DATA: 2026-02-02 23:44:29
+-- DATA: 2026-02-02 23:48:31
 
 TRUNCATE TABLE previous_close;
 
