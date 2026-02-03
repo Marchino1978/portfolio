@@ -11,7 +11,7 @@ echo "➡️  Pull dal remoto (merge, no rebase)..."
 git pull origin "$CURRENT_BRANCH" --no-rebase
 
 # Aggiunge tutte le modifiche (nuovi, modificati, eliminati)
-git add --all
+git add --all -- :!backup_SQL/*
 
 # Commit fisso "fix"
 git commit -m "fix" 2>/dev/null || echo "ℹ️  Nessuna modifica da commitare"
