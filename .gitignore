@@ -49,4 +49,4 @@ build/
 htmlcov/
 
 # SQL backups
-backup_SQL/*
+backup_SQL/
