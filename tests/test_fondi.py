@@ -14,3 +14,4 @@ def test_scrape_fondi_eurizon(mock_get):
         scrape_fondi()
         # Verifica che abbia scritto correttamente
         # (aggiungi assert su output se vuoi)
+#

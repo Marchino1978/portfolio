@@ -25,3 +25,4 @@ def is_holiday(d):
     if d == easter or d == easter + timedelta(days=1):
         return True
     return False
+//

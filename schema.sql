@@ -15,3 +15,4 @@ create unique index if not exists unique_symbol_date
 -- Indice per query veloci per simbolo e data
 create index if not exists idx_previous_close_symbol_date
   on previous_close(symbol, snapshot_date desc);
+--
