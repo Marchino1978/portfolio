@@ -30,7 +30,6 @@ logs/
 # Data locali (non pushare dati sensibili)
 data/*.csv.bak
 data/*.json.bak
-data/*.sql
 
 # IDE / Editor
 .vscode/
@@ -48,3 +47,6 @@ build/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# SQL backups
+backup_SQL/*

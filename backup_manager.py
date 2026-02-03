@@ -6,10 +6,10 @@ from supabase_client import get_supabase
 from utils.logger import log_info, log_error
 
 def run_supabase_backup():
-    # ... (questa funzione rimane identica a prima) ...
     table_name = "previous_close"
+    folder = "backup_SQL" # Nuova cartella dedicata
     filename = f"backup_supabase_{datetime.now().strftime('%Y_%m_%d')}.sql"
-    file_path = os.path.join("data", filename)
+    file_path = os.path.join(folder, filename)
     
     log_info(f"Inizio generazione backup SQL: {filename}")
     
@@ -18,7 +18,8 @@ def run_supabase_backup():
         resp = supabase.table(table_name).select("*").order("snapshot_date", desc=True).execute()
         rows = resp.data
         if not rows: return None
-        os.makedirs("data", exist_ok=True)
+        
+        os.makedirs(folder, exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(f"-- BACKUP AUTOMATICO: {table_name}\n\n")
             f.write(f"TRUNCATE TABLE {table_name};\n\n")
@@ -26,6 +27,7 @@ def run_supabase_backup():
                 cols = ", ".join(row.keys())
                 vals = [f"'{str(v).replace("'", "''")}'" if v is not None and not isinstance(v, (int, float)) else str(v) if v is not None else "NULL" for v in row.values()]
                 f.write(f"INSERT INTO {table_name} ({cols}) VALUES ({', '.join(vals)});\n")
+        
         log_info(f"Backup locale completato: {file_path}")
         return file_path
     except Exception as e:
@@ -33,32 +35,38 @@ def run_supabase_backup():
         return None
 
 def upload_backup_to_github(file_path):
-    """Carica il backup e mantiene solo gli ultimi 3 file su GitHub."""
+    """Carica il backup e mantiene solo gli ultimi 3 file nella cartella backup_SQL."""
     token = os.environ.get("GITHUB_TOKEN")
     repo = "Marchino1978/portfolio"
     headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
     
     file_name = os.path.basename(file_path)
-    api_url_base = f"https://api.github.com/repos/{repo}/contents/data"
+    # Puntiamo alla nuova cartella anche su GitHub
+    api_url_base = f"https://api.github.com/repos/{repo}/contents/backup_SQL"
     
     try:
         # 1. Carica il nuovo file
         with open(file_path, "rb") as f:
             content = base64.b64encode(f.read()).decode("utf-8")
         
-        requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
+        # Carichiamo il file nel nuovo percorso
+        put_resp = requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
             "message": f"Backup mensile {file_name}",
             "content": content,
             "branch": "main"
         }, timeout=10)
-        log_info(f"Nuovo backup {file_name} caricato.")
+        
+        if put_resp.status_code in [200, 201]:
+            log_info(f"Nuovo backup {file_name} caricato in backup_SQL.")
+        else:
+            log_error(f"Errore upload GitHub: {put_resp.text}")
 
-        # 2. Ottieni la lista dei file per la rotazione
+        # 2. Ottieni la lista dei file per la rotazione (solo dentro backup_SQL)
         resp = requests.get(api_url_base, headers=headers, timeout=10)
         if resp.status_code == 200:
             files = resp.json()
-            # Filtra solo i file di backup e ordinali per nome (che contiene anno_mese)
-            backups = sorted([f for f in files if f['name'].startswith("backup_supabase_")], 
+            # Filtra i file .sql e ordinali (dal più recente al più vecchio)
+            backups = sorted([f for f in files if f['name'].endswith(".sql")], 
                             key=lambda x: x['name'], reverse=True)
 
             # 3. Se sono più di 3, cancella i più vecchi
@@ -70,11 +78,12 @@ def upload_backup_to_github(file_path):
                         "sha": old_file['sha'],
                         "branch": "main"
                     }, timeout=10)
-                    log_info(f"Rimosso vecchio backup: {old_file['name']}")
+                    log_info(f"Rimosso vecchio backup da GitHub: {old_file['name']}")
 
     except Exception as e:
         log_error(f"Errore durante rotazione backup su GitHub: {e}")
 
 if __name__ == "__main__":
     path = run_supabase_backup()
-    if path: upload_backup_to_github(path)
+    if path: 
+        upload_backup_to_github(path)
