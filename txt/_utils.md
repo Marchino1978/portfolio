@@ -24,7 +24,6 @@
 
 #endif
 
-
 # utils//holidays.py
 ----------------------------------------
 from datetime import date

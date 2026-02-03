@@ -222,7 +222,7 @@ def upload_backup_to_github(file_path):
         
         # Carichiamo il file nel nuovo percorso
         put_resp = requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
-            "message": f"Backup mensile {file_name}",
+            "message": "fix",
             "content": content,
             "branch": "main"
         }, timeout=10)
@@ -635,6 +635,7 @@ primary_region = "fra"
 # ./project-tree.txt
 ----------------------------------------
 .
+├── backup_SQL/
 ├── config/
 │   └── variations.conf
 ├── data/
@@ -677,7 +678,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-5 directories, 36 files
+6 directories, 36 files
 
 
 # ./push.sh
@@ -742,7 +743,6 @@ create unique index if not exists unique_symbol_date
 -- Indice per query veloci per simbolo e data
 create index if not exists idx_previous_close_symbol_date
   on previous_close(symbol, snapshot_date desc);
-
 
 # ./scraper_etf.py
 ----------------------------------------
@@ -1262,7 +1262,7 @@ def main():
 ----------------------------------------
 #!/bin/bash
 # snapshot_all.sh - genera un file .md per ogni cartella (txt/_<cartella>.md)
-# Esclude: txt/, .git/, node_modules, data, public, .venv
+# Esclude: txt/, .git/, node_modules, data, public, backup_SQL, .venv
 
 mkdir -p txt
 
@@ -1292,7 +1292,7 @@ for dir in */; do
   [ -d "$dir" ] || continue
   foldername=$(basename "$dir")
   case "$foldername" in
-    txt|.git|node_modules|data|public|.venv|__pycache__) continue ;;
+    txt|.git|node_modules|data|public|backup_SQL|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done

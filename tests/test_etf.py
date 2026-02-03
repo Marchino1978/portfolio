@@ -66,4 +66,3 @@ def test_update_all_etf(mock_upsert, mock_market, mock_prev, mock_scrape):
 if __name__ == "__main__":
     import pytest
     pytest.main(["-v"])
-#

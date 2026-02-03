@@ -32,4 +32,3 @@ if __name__ == "__main__":
     test_pasquetta_year(2027, "2027-03-29")
 
     print("Test Pasqua/Pasquetta completati.")
-#

@@ -51,7 +51,7 @@ def upload_backup_to_github(file_path):
         
         # Carichiamo il file nel nuovo percorso
         put_resp = requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
-            "message": f"Backup mensile {file_name}",
+            "message": "fix",
             "content": content,
             "branch": "main"
         }, timeout=10)

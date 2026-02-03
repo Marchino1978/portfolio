@@ -48,4 +48,3 @@ if __name__ == "__main__":
     pasquetta = easter + timedelta(days=1)
     print(f"Pasqua {year}: {easter}")
     print(f"Pasquetta {year}: {pasquetta}")
-#

@@ -1,6 +1,6 @@
 #!/bin/bash
 # snapshot_all.sh - genera un file .md per ogni cartella (txt/_<cartella>.md)
-# Esclude: txt/, .git/, node_modules, data, public, .venv
+# Esclude: txt/, .git/, node_modules, data, public, backup_SQL, .venv
 
 mkdir -p txt
 
@@ -30,7 +30,7 @@ for dir in */; do
   [ -d "$dir" ] || continue
   foldername=$(basename "$dir")
   case "$foldername" in
-    txt|.git|node_modules|data|public|.venv|__pycache__) continue ;;
+    txt|.git|node_modules|data|public|backup_SQL|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done
