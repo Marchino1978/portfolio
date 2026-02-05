@@ -351,7 +351,7 @@ def update_all_etf():
     if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
         log_info(f"Condizione report mensile soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
         try:
-            import bot_telegram
+            # import bot_telegram
             bot_telegram.send_monthly_report()
             log_info("Report Telegram inviato con successo.")
         except Exception as e:
