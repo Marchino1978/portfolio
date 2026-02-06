@@ -1,6 +1,5 @@
-# tests/testEaster.py
 from datetime import date
-from utils.holidays import easter_date  # assumiamo che la funzione sia in utils/holidays.py
+from utils.holidays import easter_date
 
 def test_easter_year(year, expected_date_str):
     expected = date.fromisoformat(expected_date_str)

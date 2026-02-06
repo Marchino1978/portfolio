@@ -1,7 +1,6 @@
-# tests/testDateVar.py
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
-from utils.holidays import easter_date, is_holiday  # assumiamo funzioni in utils/holidays.py
+from utils.holidays import easter_date, is_holiday
 
 def is_weekend(d):
     return d.weekday() >= 5  # sabato = 5, domenica = 6

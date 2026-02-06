@@ -32,16 +32,13 @@
   <table>
     <thead>
       <tr id="table-headers">
-        <!-- Intestazioni dinamiche -->
       </tr>
     </thead>
     <tbody id="table-body">
-      <!-- Dati dinamici -->
     </tbody>
   </table>
 
   <script>
-    // Funzione per caricare e mostrare i dati CSV in tabella
     fetch('https://raw.githubusercontent.com/Marchino1978/portfolio/refs/heads/main/data/fondi.csv')
       .then(response => {
         if (!response.ok) throw new Error('Impossibile caricare il file CSV');

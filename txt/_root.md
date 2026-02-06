@@ -183,19 +183,36 @@ def run_supabase_backup():
     log_info(f"Inizio generazione backup SQL: {filename}")
     
     try:
+        # Recupero dati da Supabase
         supabase = get_supabase()
         resp = supabase.table(table_name).select("*").order("snapshot_date", desc=True).execute()
         rows = resp.data
-        if not rows: return None
+        if not rows: 
+            return None
         
         os.makedirs(folder, exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(f"-- BACKUP AUTOMATICO: {table_name}\n\n")
             f.write(f"TRUNCATE TABLE {table_name};\n\n")
+            
             for row in rows:
                 cols = ", ".join(row.keys())
-                vals = [f"'{str(v).replace("'", "''")}'" if v is not None and not isinstance(v, (int, float)) else str(v) if v is not None else "NULL" for v in row.values()]
-                f.write(f"INSERT INTO {table_name} ({cols}) VALUES ({', '.join(vals)});\n")
+                
+                # --- PARTE CORRETTA (Ex riga 28) ---
+                vals_list = []
+                for v in row.values():
+                    if v is None:
+                        vals_list.append("NULL")
+                    elif isinstance(v, (int, float)):
+                        vals_list.append(str(v))
+                    else:
+                        # Raddoppia gli apici per SQL e avvolge tra apici singoli
+                        safe_v = str(v).replace("'", "''")
+                        vals_list.append(f"'{safe_v}'")
+                
+                vals_string = ", ".join(vals_list)
+                f.write(f"INSERT INTO {table_name} ({cols}) VALUES ({vals_string});\n")
+                # ----------------------------------
         
         log_info(f"Backup locale completato: {file_path}")
         return file_path
@@ -227,6 +244,7 @@ def upload_backup_to_github(file_path):
         else:
             log_error(f"Errore upload GitHub: {put_resp.text}")
 
+        # Rotazione backup (ne tiene 3)
         resp = requests.get(api_url_base, headers=headers, timeout=10)
         if resp.status_code == 200:
             files = resp.json()
