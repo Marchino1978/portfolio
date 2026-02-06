@@ -51,6 +51,6 @@ htmlcov/
 # SQL backups
 backup_SQL/
 
-# Sistema / Temporanei
+# System / Temp
 .goutputstream-*
 .nfs*
