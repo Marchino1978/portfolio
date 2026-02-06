@@ -1,6 +1,4 @@
 #!/bin/bash
-# snapshot_all.sh - genera un file .md per ogni cartella (txt/_<cartella>.md)
-# Esclude: txt/, .git/, node_modules, data, public, backup_SQL, .venv
 
 mkdir -p txt
 
@@ -22,10 +20,8 @@ dump_folder() {
   done
 }
 
-# Dump della root
 dump_folder "." "root"
 
-# Dump di ogni sottocartella, esclusioni aggiornate per Python
 for dir in */; do
   [ -d "$dir" ] || continue
   foldername=$(basename "$dir")
@@ -35,7 +31,6 @@ for dir in */; do
   esac
 done
 
-# Genera l'alberatura del progetto escludendo le cartelle pesanti o inutili
 tree -a -F -I 'node_modules|.git|txt' --dirsfirst > project-tree.txt
 
 echo "Progetto mappato in project-tree.txt"
