@@ -27,7 +27,7 @@ fly.toml.bak
 *.log
 logs/
 
-# Data locali (non pushare dati sensibili)
+# Data locali
 data/*.csv.bak
 data/*.json.bak
 
@@ -50,3 +50,7 @@ htmlcov/
 
 # SQL backups
 backup_SQL/
+
+# Sistema / Temporanei
+.goutputstream-*
+.nfs*

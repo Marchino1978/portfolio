@@ -400,7 +400,8 @@ def check_alert():
         best_idx = -1
 
         for etf in etfs:
-            v = etf.get(conf["v_alert"], "N/A")
+            # v = etf.get(conf["v_alert"], "N/A")
+            v = etf.get("v_alert", "N/A")
             if v == "N/A": continue
             
             val_str = v.replace("%", "").replace("+", "").strip()
@@ -1099,7 +1100,7 @@ def update_all_etf():
     if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
         log_info(f"Condizione report mensile soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
         try:
-            import bot_telegram
+            # import bot_telegram
             bot_telegram.send_monthly_report()
             log_info("Report Telegram inviato con successo.")
         except Exception as e:
