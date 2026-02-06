@@ -659,14 +659,6 @@ primary_region = "fra"
 │   ├── market-live.html
 │   ├── market-mobile.html
 │   └── salvadanaio.html
-├── __pycache__/
-│   ├── backup_manager.cpython-39.pyc
-│   ├── bot_telegram.cpython-39.pyc
-│   ├── check_alert.cpython-39.pyc
-│   ├── config.cpython-39.pyc
-│   ├── scraper_etf.cpython-39.pyc
-│   ├── scraper_fondi.cpython-39.pyc
-│   └── supabase_client.cpython-39.pyc
 ├── tests/
 │   ├── testDateVar.py
 │   └── testEaster.py
@@ -695,7 +687,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-8 directories, 42 files
+7 directories, 35 files
 
 
 # ./push.sh
