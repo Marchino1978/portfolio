@@ -7,11 +7,11 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 112.5075,
-        "dailyChange": "+1.87",
-        "value": 112.5075,
-        "v1": "+1.87%D",
-        "v2": "+0.09%W",
+        "price": 112.4975,
+        "dailyChange": "+1.86",
+        "value": 112.4975,
+        "v1": "+1.86%D",
+        "v2": "+0.08%W",
         "v3": "-1.21%M",
         "v_led": "-1.21%M",
         "v_alert": "-1.21%M",
@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 166.225,
-        "dailyChange": "+3.69",
-        "value": 166.225,
-        "v1": "+3.69%D",
-        "v2": "+3.01%W",
-        "v3": "+9.71%M",
-        "v_led": "+9.71%M",
-        "v_alert": "+9.71%M",
-        "v_bot": "+9.71%M"
+        "price": 165.935,
+        "dailyChange": "+3.51",
+        "value": 165.935,
+        "v1": "+3.51%D",
+        "v2": "+2.83%W",
+        "v3": "+9.52%M",
+        "v_led": "+9.52%M",
+        "v_alert": "+9.52%M",
+        "v_bot": "+9.52%M"
       },
       {
         "symbol": "XEON",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.15,
+        "price": 148.14,
         "dailyChange": "+1.86",
-        "value": 148.15,
+        "value": 148.14,
         "v1": "+1.86%D",
         "v2": "+0.62%W",
-        "v3": "+0.37%M",
-        "v_led": "+0.37%M",
-        "v_alert": "+0.37%M",
-        "v_bot": "+0.37%M"
+        "v3": "+0.36%M",
+        "v_led": "+0.36%M",
+        "v_alert": "+0.36%M",
+        "v_bot": "+0.36%M"
       },
       {
         "symbol": "EXUS",
@@ -85,11 +85,11 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 41.5955,
-        "dailyChange": "+1.92",
-        "value": 41.5955,
-        "v1": "+1.92%D",
-        "v2": "+1.60%W",
+        "price": 41.6025,
+        "dailyChange": "+1.94",
+        "value": 41.6025,
+        "v1": "+1.94%D",
+        "v2": "+1.62%W",
         "v3": "N/A",
         "v_led": "N/A",
         "v_alert": "N/A",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-02-06T20:55:19.044877+01:00",
-    "readable": "20:55 06-02-2026"
+    "iso": "2026-02-06T21:10:23.064061+01:00",
+    "readable": "21:10 06-02-2026"
   }
 }
