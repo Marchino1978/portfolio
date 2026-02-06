@@ -4,11 +4,9 @@ from flask import Flask, jsonify, send_from_directory
 import os
 import json
 
-# Import dei moduli (NON delle funzioni)
 import scraper_etf
 import scraper_fondi
 
-# Import logger per tracciare bene cosa succede
 from utils.logger import log_info, log_error
 
 app = Flask(__name__, static_folder="public", static_url_path="")

@@ -6,11 +6,9 @@ from flask import Flask, jsonify, send_from_directory
 import os
 import json
 
-# Import dei moduli (NON delle funzioni)
 import scraper_etf
 import scraper_fondi
 
-# Import logger per tracciare bene cosa succede
 from utils.logger import log_info, log_error
 
 app = Flask(__name__, static_folder="public", static_url_path="")
@@ -178,7 +176,7 @@ from utils.logger import log_info, log_error
 
 def run_supabase_backup():
     table_name = "previous_close"
-    folder = "backup_SQL" # Nuova cartella dedicata
+    folder = "backup_SQL"
     filename = f"backup_supabase_{datetime.now().strftime('%Y_%m_%d')}.sql"
     file_path = os.path.join(folder, filename)
     
@@ -212,15 +210,12 @@ def upload_backup_to_github(file_path):
     headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
     
     file_name = os.path.basename(file_path)
-    # Puntiamo alla nuova cartella anche su GitHub
     api_url_base = f"https://api.github.com/repos/{repo}/contents/backup_SQL"
     
     try:
-        # 1. Carica il nuovo file
         with open(file_path, "rb") as f:
             content = base64.b64encode(f.read()).decode("utf-8")
         
-        # Carichiamo il file nel nuovo percorso
         put_resp = requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
             "message": "fix",
             "content": content,
@@ -232,15 +227,12 @@ def upload_backup_to_github(file_path):
         else:
             log_error(f"Errore upload GitHub: {put_resp.text}")
 
-        # 2. Ottieni la lista dei file per la rotazione (solo dentro backup_SQL)
         resp = requests.get(api_url_base, headers=headers, timeout=10)
         if resp.status_code == 200:
             files = resp.json()
-            # Filtra i file .sql e ordinali (dal più recente al più vecchio)
             backups = sorted([f for f in files if f['name'].endswith(".sql")], 
                             key=lambda x: x['name'], reverse=True)
 
-            # 3. Se sono più di 3, cancella i più vecchi
             if len(backups) > 3:
                 for old_file in backups[3:]:
                     del_url = f"https://api.github.com/repos/{repo}/contents/{old_file['path']}"
@@ -269,7 +261,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 from utils.logger import log_info, log_error
 
-# Carica le variabili dal file .env (per sicurezza sul server)
+# Carica le variabili dal file .env
 load_dotenv()
 
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -319,7 +311,7 @@ def send_monthly_report():
             variazione_str = etf.get("v_bot", "N/A")
             prezzo = etf.get("price", 0.0)
             
-            # --- LOGICA COLORI ALLINEATA A ESP32 ---
+            # --- LOGICA COLORI ---
             icona = "🔵" # AZZURRO per N/A o Errori
             
             if variazione_str != "N/A":
@@ -336,7 +328,7 @@ def send_monthly_report():
                     else:
                         icona = "⚪" # BIANCO per Zero
                 except Exception:
-                    icona = "🔵" # AZZURRO in caso di errore conversione
+                    icona = "🔵" # AZZURRO per N/A o Errori
             
             # Formattazione riga con icona allineata
             messaggio += f"{icona} *{nome}*\n"
@@ -400,7 +392,6 @@ def check_alert():
         best_idx = -1
 
         for etf in etfs:
-            # v = etf.get(conf["v_alert"], "N/A")
             v = etf.get("v_alert", "N/A")
             if v == "N/A": continue
             
@@ -618,7 +609,6 @@ primary_region = "fra"
   auto_start_machines = true
   min_machines_running = 0
 
-  # Sintassi vecchia ma ancora perfettamente funzionante
   [http_service.concurrency]
     type = "requests"
     soft_limit = 25
@@ -804,7 +794,7 @@ def load_variation_config():
 
         if not os.path.exists(path):
             log_error(f"File variazioni non trovato: {path}")
-            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}  # fallback sicuri
+            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}
 
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
@@ -1085,7 +1075,6 @@ def update_all_etf():
             log_error(f"Errore esecuzione backup/upload settimanale: {e}")
 
     # 2. REPORT TELEGRAM (mensile)
-    # Definiamo se dobbiamo inviare il report oggi
     invia_oggi = False
 
     # CASO 1: Oggi è il 1° del mese ed è un giorno lavorativo (Lun-Ven)

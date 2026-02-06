@@ -42,7 +42,6 @@ def check_alert():
         best_idx = -1
 
         for etf in etfs:
-            # v = etf.get(conf["v_alert"], "N/A")
             v = etf.get("v_alert", "N/A")
             if v == "N/A": continue
             

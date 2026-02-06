@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 from utils.logger import log_info, log_error
 
-# Carica le variabili dal file .env (per sicurezza sul server)
+# Carica le variabili dal file .env
 load_dotenv()
 
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -56,7 +56,7 @@ def send_monthly_report():
             variazione_str = etf.get("v_bot", "N/A")
             prezzo = etf.get("price", 0.0)
             
-            # --- LOGICA COLORI ALLINEATA A ESP32 ---
+            # --- LOGICA COLORI ---
             icona = "🔵" # AZZURRO per N/A o Errori
             
             if variazione_str != "N/A":
@@ -73,7 +73,7 @@ def send_monthly_report():
                     else:
                         icona = "⚪" # BIANCO per Zero
                 except Exception:
-                    icona = "🔵" # AZZURRO in caso di errore conversione
+                    icona = "🔵" # AZZURRO per N/A o Errori
             
             # Formattazione riga con icona allineata
             messaggio += f"{icona} *{nome}*\n"

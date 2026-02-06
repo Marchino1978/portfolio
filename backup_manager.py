@@ -7,7 +7,7 @@ from utils.logger import log_info, log_error
 
 def run_supabase_backup():
     table_name = "previous_close"
-    folder = "backup_SQL" # Nuova cartella dedicata
+    folder = "backup_SQL"
     filename = f"backup_supabase_{datetime.now().strftime('%Y_%m_%d')}.sql"
     file_path = os.path.join(folder, filename)
     
@@ -41,15 +41,12 @@ def upload_backup_to_github(file_path):
     headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
     
     file_name = os.path.basename(file_path)
-    # Puntiamo alla nuova cartella anche su GitHub
     api_url_base = f"https://api.github.com/repos/{repo}/contents/backup_SQL"
     
     try:
-        # 1. Carica il nuovo file
         with open(file_path, "rb") as f:
             content = base64.b64encode(f.read()).decode("utf-8")
         
-        # Carichiamo il file nel nuovo percorso
         put_resp = requests.put(f"{api_url_base}/{file_name}", headers=headers, json={
             "message": "fix",
             "content": content,
@@ -61,15 +58,12 @@ def upload_backup_to_github(file_path):
         else:
             log_error(f"Errore upload GitHub: {put_resp.text}")
 
-        # 2. Ottieni la lista dei file per la rotazione (solo dentro backup_SQL)
         resp = requests.get(api_url_base, headers=headers, timeout=10)
         if resp.status_code == 200:
             files = resp.json()
-            # Filtra i file .sql e ordinali (dal più recente al più vecchio)
             backups = sorted([f for f in files if f['name'].endswith(".sql")], 
                             key=lambda x: x['name'], reverse=True)
 
-            # 3. Se sono più di 3, cancella i più vecchi
             if len(backups) > 3:
                 for old_file in backups[3:]:
                     del_url = f"https://api.github.com/repos/{repo}/contents/{old_file['path']}"

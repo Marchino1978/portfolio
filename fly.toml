@@ -8,7 +8,6 @@ primary_region = "fra"
   auto_start_machines = true
   min_machines_running = 0
 
-  # Sintassi vecchia ma ancora perfettamente funzionante
   [http_service.concurrency]
     type = "requests"
     soft_limit = 25

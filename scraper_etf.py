@@ -55,7 +55,7 @@ def load_variation_config():
 
         if not os.path.exists(path):
             log_error(f"File variazioni non trovato: {path}")
-            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}  # fallback sicuri
+            return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}
 
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
@@ -336,7 +336,6 @@ def update_all_etf():
             log_error(f"Errore esecuzione backup/upload settimanale: {e}")
 
     # 2. REPORT TELEGRAM (mensile)
-    # Definiamo se dobbiamo inviare il report oggi
     invia_oggi = False
 
     # CASO 1: Oggi è il 1° del mese ed è un giorno lavorativo (Lun-Ven)
