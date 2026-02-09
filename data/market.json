@@ -1,47 +1,47 @@
 {
-  "status": "CHIUSO",
-  "open": false,
+  "status": "APERTO",
+  "open": true,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 112.6075,
-        "dailyChange": "+1.96",
-        "value": 112.6075,
-        "v1": "+1.96%D",
-        "v2": "+0.18%W",
-        "v3": "-1.12%M",
-        "v_led": "-1.12%M",
-        "v_alert": "-1.12%M",
-        "v_bot": "-1.12%M"
+        "price": 112.755,
+        "dailyChange": "+0.13",
+        "value": 112.755,
+        "v1": "+0.13%D",
+        "v2": "-0.92%W",
+        "v3": "-1.97%M",
+        "v_led": "-1.97%M",
+        "v_alert": "-1.97%M",
+        "v_bot": "-1.97%M"
       },
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 40.0,
-        "dailyChange": "+1.14",
-        "value": 40.0,
-        "v1": "+1.14%D",
-        "v2": "+0.48%W",
-        "v3": "+0.40%M",
-        "v_led": "+0.40%M",
-        "v_alert": "+0.40%M",
-        "v_bot": "+0.40%M"
+        "price": 40.0025,
+        "dailyChange": "+0.01",
+        "value": 40.0025,
+        "v1": "+0.01%D",
+        "v2": "+0.06%W",
+        "v3": "-0.39%M",
+        "v_led": "-0.39%M",
+        "v_alert": "-0.39%M",
+        "v_bot": "-0.39%M"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 166.205,
-        "dailyChange": "+3.68",
-        "value": 166.205,
-        "v1": "+3.68%D",
-        "v2": "+3.00%W",
-        "v3": "+9.70%M",
-        "v_led": "+9.70%M",
-        "v_alert": "+9.70%M",
-        "v_bot": "+9.70%M"
+        "price": 166.29,
+        "dailyChange": "+0.13",
+        "value": 166.29,
+        "v1": "+0.13%D",
+        "v2": "+5.62%W",
+        "v3": "+8.37%M",
+        "v_led": "+8.37%M",
+        "v_alert": "+8.37%M",
+        "v_bot": "+8.37%M"
       },
       {
         "symbol": "XEON",
@@ -50,55 +50,55 @@
         "dailyChange": "+0.00",
         "value": 148.355,
         "v1": "+0.00%D",
-        "v2": "+0.04%W",
-        "v3": "+0.18%M",
-        "v_led": "+0.18%M",
-        "v_alert": "+0.18%M",
-        "v_bot": "+0.18%M"
+        "v2": "+0.01%W",
+        "v3": "+0.15%M",
+        "v_led": "+0.15%M",
+        "v_alert": "+0.15%M",
+        "v_bot": "+0.15%M"
       },
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.26,
-        "dailyChange": "+1.94",
-        "value": 148.26,
-        "v1": "+1.94%D",
-        "v2": "+0.70%W",
-        "v3": "+0.44%M",
-        "v_led": "+0.44%M",
-        "v_alert": "+0.44%M",
-        "v_bot": "+0.44%M"
+        "price": 148.45,
+        "dailyChange": "+0.12",
+        "value": 148.45,
+        "v1": "+0.12%D",
+        "v2": "-0.20%W",
+        "v3": "-0.41%M",
+        "v_led": "-0.41%M",
+        "v_alert": "-0.41%M",
+        "v_bot": "-0.41%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.9225,
-        "dailyChange": "+1.71",
-        "value": 36.9225,
-        "v1": "+1.71%D",
-        "v2": "+1.94%W",
-        "v3": "+3.08%M",
-        "v_led": "+3.08%M",
-        "v_alert": "+3.08%M",
-        "v_bot": "+3.08%M"
+        "price": 36.9675,
+        "dailyChange": "-0.01",
+        "value": 36.9675,
+        "v1": "-0.01%D",
+        "v2": "+0.81%W",
+        "v3": "+1.87%M",
+        "v_led": "+1.87%M",
+        "v_alert": "+1.87%M",
+        "v_bot": "+1.87%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
         "price": 41.6685,
-        "dailyChange": "+2.10",
+        "dailyChange": "-0.00",
         "value": 41.6685,
-        "v1": "+2.10%D",
-        "v2": "+1.78%W",
-        "v3": "N/A",
-        "v_led": "N/A",
-        "v_alert": "N/A",
-        "v_bot": "N/A"
+        "v1": "-0.00%D",
+        "v2": "+0.87%W",
+        "v3": "+3.24%M",
+        "v_led": "+3.24%M",
+        "v_alert": "+3.24%M",
+        "v_bot": "+3.24%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-02-06T22:55:15.461580+01:00",
-    "readable": "22:55 06-02-2026"
+    "iso": "2026-02-09T07:10:21.020977+01:00",
+    "readable": "07:10 09-02-2026"
   }
 }
