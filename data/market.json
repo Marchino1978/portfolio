@@ -1,6 +1,6 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 166.35,
-        "dailyChange": "-1.04",
-        "value": 166.35,
-        "v1": "-1.04%D",
-        "v2": "-1.29%W",
-        "v3": "+5.91%M",
-        "v_led": "+5.91%M",
-        "v_alert": "+5.91%M",
-        "v_bot": "+5.91%M"
+        "price": 166.365,
+        "dailyChange": "-1.03",
+        "value": 166.365,
+        "v1": "-1.03%D",
+        "v2": "-1.28%W",
+        "v3": "+5.92%M",
+        "v_led": "+5.92%M",
+        "v_alert": "+5.92%M",
+        "v_bot": "+5.92%M"
       },
       {
         "symbol": "XEON",
@@ -72,22 +72,22 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 37.2925,
-        "dailyChange": "-0.15",
-        "value": 37.2925,
-        "v1": "-0.15%D",
-        "v2": "+0.06%W",
-        "v3": "+1.64%M",
-        "v_led": "+1.64%M",
-        "v_alert": "+1.64%M",
-        "v_bot": "+1.64%M"
+        "price": 37.305,
+        "dailyChange": "-0.12",
+        "value": 37.305,
+        "v1": "-0.12%D",
+        "v2": "+0.09%W",
+        "v3": "+1.68%M",
+        "v_led": "+1.68%M",
+        "v_alert": "+1.68%M",
+        "v_bot": "+1.68%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 42.498,
+        "price": 42.4975,
         "dailyChange": "+0.63",
-        "value": 42.498,
+        "value": 42.4975,
         "v1": "+0.63%D",
         "v2": "+1.77%W",
         "v3": "+3.91%M",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-02-16T22:40:23.463846+01:00",
-    "readable": "22:40 16-02-2026"
+    "iso": "2026-02-16T22:55:15.075787+01:00",
+    "readable": "22:55 16-02-2026"
   }
 }
