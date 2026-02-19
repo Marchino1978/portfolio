@@ -977,7 +977,7 @@ def commit_to_github():
             sha = get_resp.json().get("sha")
 
         payload = {
-            "message": "Update market.json [auto]",
+            "message": "fix",
             "content": content,
             "branch": "main"
         }
@@ -1254,7 +1254,7 @@ def main():
             status = nav_text or "N/D"
             log_info(f"{nome} ({isin}): {status}")
 
-    commit_csv_to_github("data/fondi_nav.csv", "Update fondi_nav.csv [auto]")
+    commit_csv_to_github("data/fondi_nav.csv", "fix")
     log_info("=== FINE aggiornamento fondi ===")
 
 # ./snapshot_all.sh

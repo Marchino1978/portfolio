@@ -8,13 +8,13 @@ v_bot = M   # variazione per gestire report TELEGRAM
 v_alert = M # variazione per gestire notifiche ALEXA
 
 # soglie per notifiche ALEXA
-s_alert_6 = -15.0
-s_alert_5 = -10.0
-s_alert_4 = -5.0
-s_alert_3 = -4.0
-s_alert_2 = -3.0
-s_alert_1 = -2.0
-s_alert_0 = -1.0
+s_alert_6 = -40.0
+s_alert_5 = -35.0
+s_alert_4 = -30.0
+s_alert_3 = -25.0
+s_alert_2 = -20.0
+s_alert_1 = -15.0
+s_alert_0 = -10.0
 
 # LEGENDA
 # D = 1 DAY
