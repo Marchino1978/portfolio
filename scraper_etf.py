@@ -229,7 +229,7 @@ def commit_to_github():
             sha = get_resp.json().get("sha")
 
         payload = {
-            "message": "Update market.json [auto]",
+            "message": "fix",
             "content": content,
             "branch": "main"
         }
