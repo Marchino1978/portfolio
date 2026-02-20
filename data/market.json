@@ -1,15 +1,15 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 112.8075,
+        "price": 112.8025,
         "dailyChange": "+0.52",
-        "value": 112.8075,
+        "value": 112.8025,
         "v1": "+0.52%D",
         "v2": "+1.90%W",
         "v3": "-0.42%M",
@@ -85,20 +85,20 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 43.3545,
-        "dailyChange": "+1.53",
-        "value": 43.3545,
-        "v1": "+1.53%D",
-        "v2": "+2.66%W",
-        "v3": "+5.95%M",
-        "v_led": "+5.95%M",
-        "v_alert": "+5.95%M",
-        "v_bot": "+5.95%M"
+        "price": 43.3415,
+        "dailyChange": "+1.50",
+        "value": 43.3415,
+        "v1": "+1.50%D",
+        "v2": "+2.63%W",
+        "v3": "+5.92%M",
+        "v_led": "+5.92%M",
+        "v_alert": "+5.92%M",
+        "v_bot": "+5.92%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-02-20T22:40:23.855291+01:00",
-    "readable": "22:40 20-02-2026"
+    "iso": "2026-02-20T22:55:20.825208+01:00",
+    "readable": "22:55 20-02-2026"
   }
 }
