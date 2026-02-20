@@ -645,6 +645,8 @@ primary_region = "fra"
 ----------------------------------------
 .
 ├── backup_SQL/
+│   ├── backup_supabase_2026_02_09.sql
+│   └── backup_supabase_2026_02_16.sql
 ├── config/
 │   └── variations.conf
 ├── data/
@@ -685,7 +687,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-6 directories, 34 files
+6 directories, 36 files
 
 
 # ./push.sh
@@ -722,7 +724,7 @@ python-dateutil==2.9.0.post0
 pytest==8.3.3
 pendulum
 pyTelegramBotAPI
-python-dotenv
+
 
 # ./schema.sql
 ----------------------------------------
