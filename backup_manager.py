@@ -29,7 +29,6 @@ def run_supabase_backup():
             for row in rows:
                 cols = ", ".join(row.keys())
                 
-                # --- PARTE CORRETTA (Ex riga 28) ---
                 vals_list = []
                 for v in row.values():
                     if v is None:
@@ -86,7 +85,7 @@ def upload_backup_to_github(file_path):
                 for old_file in backups[3:]:
                     del_url = f"https://api.github.com/repos/{repo}/contents/{old_file['path']}"
                     requests.delete(del_url, headers=headers, json={
-                        "message": f"Rotazione backup: rimosso {old_file['name']}",
+                        "message": "fix",
                         "sha": old_file['sha'],
                         "branch": "main"
                     }, timeout=10)

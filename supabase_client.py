@@ -3,10 +3,10 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 
 # ---------------------------------------------------------
-# FACTORY: crea il client solo quando serve
+# FACTORY
 # ---------------------------------------------------------
 def get_supabase() -> Client:
-    load_dotenv()  # sicuro, leggero, e non pesa se già chiamato
+    load_dotenv()
     url = os.environ.get("SUPABASE_URL")
     key = os.environ.get("SUPABASE_ANON_KEY")
     return create_client(url, key)
@@ -15,7 +15,7 @@ def get_supabase() -> Client:
 # UPSERT PREVIOUS CLOSE
 # ---------------------------------------------------------
 def upsert_previous_close(symbol, label, close_value, snapshot_date, daily_change=None):
-    supabase = get_supabase()  # <-- creato SOLO quando serve
+    supabase = get_supabase() 
 
     data = {
         "symbol": symbol,
