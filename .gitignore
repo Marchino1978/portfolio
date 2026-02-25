@@ -56,4 +56,4 @@ backup_SQL/
 .nfs*
 
 # ESP32
-esp32/EFT.ino
+esp32/ETF.ino
