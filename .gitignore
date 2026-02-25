@@ -54,3 +54,6 @@ backup_SQL/
 # System / Temp
 .goutputstream-*
 .nfs*
+
+# ESP32
+esp32/EFT.ino

@@ -645,7 +645,8 @@ primary_region = "fra"
 .
 ├── backup_SQL/
 │   ├── backup_supabase_2026_02_09.sql
-│   └── backup_supabase_2026_02_16.sql
+│   ├── backup_supabase_2026_02_16.sql
+│   └── backup_supabase_2026_02_23.sql
 ├── config/
 │   └── variations.conf
 ├── data/
@@ -686,7 +687,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-6 directories, 36 files
+6 directories, 37 files
 
 
 # ./push.sh
