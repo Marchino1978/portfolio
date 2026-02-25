@@ -10,6 +10,8 @@ dump_folder() {
   for file in "$folder"/*; do
     [ -f "$file" ] || continue
 
+    [[ "$(basename "$file")" == "ETF.ino" ]] && continue
+
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
 

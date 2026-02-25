@@ -654,6 +654,9 @@ primary_region = "fra"
 │   ├── fondi_nav.csv
 │   ├── market.json
 │   └── salvadanaio.csv
+├── esp32/
+│   ├── ETF.ino
+│   └── .gitkeep
 ├── public/
 │   ├── fondi.html
 │   ├── index.html
@@ -687,7 +690,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-6 directories, 37 files
+7 directories, 39 files
 
 
 # ./push.sh
@@ -1272,6 +1275,8 @@ dump_folder() {
 
   for file in "$folder"/*; do
     [ -f "$file" ] || continue
+
+    [[ "$(basename "$file")" == "ETF.ino" ]] && continue
 
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
