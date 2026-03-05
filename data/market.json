@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 113.115,
-        "dailyChange": "-0.28",
-        "value": 113.115,
-        "v1": "-0.28%D",
-        "v2": "+0.51%W",
-        "v3": "+0.60%M",
-        "v_led": "+0.60%M",
-        "v_alert": "+0.60%M",
-        "v_bot": "+0.60%M"
+        "price": 113.1325,
+        "dailyChange": "-0.26",
+        "value": 113.1325,
+        "v1": "-0.26%D",
+        "v2": "+0.53%W",
+        "v3": "+0.62%M",
+        "v_led": "+0.62%M",
+        "v_alert": "+0.62%M",
+        "v_bot": "+0.62%M"
       },
       {
         "symbol": "VNGA80",
@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 173.28,
-        "dailyChange": "-0.97",
-        "value": 173.28,
-        "v1": "-0.97%D",
-        "v2": "-0.41%W",
-        "v3": "+4.52%M",
-        "v_led": "+4.52%M",
-        "v_alert": "+4.52%M",
-        "v_bot": "+4.52%M"
+        "price": 173.46,
+        "dailyChange": "-0.86",
+        "value": 173.46,
+        "v1": "-0.86%D",
+        "v2": "-0.31%W",
+        "v3": "+4.63%M",
+        "v_led": "+4.63%M",
+        "v_alert": "+4.63%M",
+        "v_bot": "+4.63%M"
       },
       {
         "symbol": "XEON",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 147.8,
-        "dailyChange": "-1.02",
-        "value": 147.8,
-        "v1": "-1.02%D",
-        "v2": "-1.84%W",
-        "v3": "+0.09%M",
-        "v_led": "+0.09%M",
-        "v_alert": "+0.09%M",
-        "v_bot": "+0.09%M"
+        "price": 147.84,
+        "dailyChange": "-1.00",
+        "value": 147.84,
+        "v1": "-1.00%D",
+        "v2": "-1.81%W",
+        "v3": "+0.12%M",
+        "v_led": "+0.12%M",
+        "v_alert": "+0.12%M",
+        "v_bot": "+0.12%M"
       },
       {
         "symbol": "EXUS",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-03-05T22:40:23.309323+01:00",
-    "readable": "22:40 05-03-2026"
+    "iso": "2026-03-05T22:55:19.227398+01:00",
+    "readable": "22:55 05-03-2026"
   }
 }
