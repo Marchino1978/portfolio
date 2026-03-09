@@ -325,7 +325,7 @@ def update_all_etf():
     giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
 
     # 1. BACKUP SUPABASE (settimanale)
-    if giorno_settimana == 0 and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
+    if giorno_settimana == 0 and 5 <= now_rome.minute <= 25 and now_rome.hour == 7:
         log_info(f"Avvio backup settimanale ({now_rome.day}/{now_rome.month})...")
         try:
             path_sql = backup_manager.run_supabase_backup()
@@ -347,7 +347,7 @@ def update_all_etf():
         invia_oggi = True
 
     # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
-    if invia_oggi and 10 <= now_rome.minute <= 20 and now_rome.hour == 7:
+    if invia_oggi and 5 <= now_rome.minute <= 25 and now_rome.hour == 7:
         log_info(f"Condizione report mensile soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
         try:
             # import bot_telegram
