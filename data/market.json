@@ -20,15 +20,15 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.8025,
-        "dailyChange": "+0.84",
-        "value": 39.8025,
-        "v1": "+0.84%D",
-        "v2": "+0.89%W",
-        "v3": "-0.09%M",
-        "v_led": "-0.09%M",
-        "v_alert": "-0.09%M",
-        "v_bot": "-0.09%M"
+        "price": 39.8075,
+        "dailyChange": "+0.86",
+        "value": 39.8075,
+        "v1": "+0.86%D",
+        "v2": "+0.91%W",
+        "v3": "-0.08%M",
+        "v_led": "-0.08%M",
+        "v_alert": "-0.08%M",
+        "v_bot": "-0.08%M"
       },
       {
         "symbol": "GOLD",
@@ -59,11 +59,11 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 147.33,
+        "price": 147.32,
         "dailyChange": "+0.68",
-        "value": 147.33,
+        "value": 147.32,
         "v1": "+0.68%D",
-        "v2": "-0.25%W",
+        "v2": "-0.26%W",
         "v3": "+0.03%M",
         "v_led": "+0.03%M",
         "v_alert": "+0.03%M",
@@ -72,33 +72,33 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.4875,
-        "dailyChange": "+1.13",
-        "value": 36.4875,
-        "v1": "+1.13%D",
-        "v2": "-0.88%W",
-        "v3": "-2.31%M",
-        "v_led": "-2.31%M",
-        "v_alert": "-2.31%M",
-        "v_bot": "-2.31%M"
+        "price": 36.4975,
+        "dailyChange": "+1.16",
+        "value": 36.4975,
+        "v1": "+1.16%D",
+        "v2": "-0.85%W",
+        "v3": "-2.28%M",
+        "v_led": "-2.28%M",
+        "v_alert": "-2.28%M",
+        "v_bot": "-2.28%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 41.492,
-        "dailyChange": "+2.10",
-        "value": 41.492,
-        "v1": "+2.10%D",
-        "v2": "+0.22%W",
-        "v3": "-1.75%M",
-        "v_led": "-1.75%M",
-        "v_alert": "-1.75%M",
-        "v_bot": "-1.75%M"
+        "price": 41.53,
+        "dailyChange": "+2.19",
+        "value": 41.53,
+        "v1": "+2.19%D",
+        "v2": "+0.31%W",
+        "v3": "-1.66%M",
+        "v_led": "-1.66%M",
+        "v_alert": "-1.66%M",
+        "v_bot": "-1.66%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-03-16T21:55:27.945136+01:00",
-    "readable": "21:55 16-03-2026"
+    "iso": "2026-03-16T22:10:28.994972+01:00",
+    "readable": "22:10 16-03-2026"
   }
 }
