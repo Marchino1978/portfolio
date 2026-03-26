@@ -3,27 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>ETF charts</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; padding: 20px; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px dotted #30363d; padding-bottom: 15px; }
         .info-panel h2 { margin: 0; color: #58a6ff; font-size: 20px; letter-spacing: 0.5px; }
-        
         .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
         @media (max-width: 1100px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .grid-container { grid-template-columns: 1fr; } }
-        
         .card { background: #161b22; border-radius: 6px; padding: 12px; border: 1px solid #30363d; height: 190px; display: flex; flex-direction: column; }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
         .card h3 { margin: 0; font-size: 13px; letter-spacing: 1px; color: #8b949e; }
         .price-label { font-size: 12px; font-weight: bold; font-family: 'Courier New', Courier, monospace; }
-        
         .controls { display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
         button { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: 600; min-width: 35px; }
         button:hover { background: #30363d; }
         button.active { background: #1f6feb; border-color: #58a6ff; color: white; }
-        
         canvas { flex-grow: 1; width: 100% !important; }
     </style>
 </head>
@@ -44,36 +38,37 @@
 
 <div id="grid" class="grid-container"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
     const SB_URL = 'https://guachqkrfatfuahckyqp.supabase.co';
     const SB_KEY = 'sb_publishable_XrSS9bV3k8x-rlV4zMtPcw_IN3bczvN';
     let supabaseClient;
-
     const mieiETF = ["VUAA", "VNGA80", "GOLD", "XEON", "VWCE", "EXUS", "EIMI"];
 
-    function inizializzaSupabase() {
-        if (typeof supabase !== 'undefined') {
-            supabaseClient = supabase.createClient(SB_URL, SB_KEY);
-            console.log("Supabase pronto!");
-            caricaDashboard(30); 
+    function inizializzaDashboard() {
+        // Controllo brutale: se supabase non esiste nel window, lo cerchiamo ovunque
+        const sb = window.supabase || supabase;
+        
+        if (sb) {
+            supabaseClient = sb.createClient(SB_URL, SB_KEY);
+            caricaDashboard(30);
         } else {
-            console.log("In attesa di libreria Supabase...");
-            setTimeout(inizializzaSupabase, 100);
+            console.log("Riprovo caricamento...");
+            setTimeout(inizializzaDashboard, 200);
         }
     }
 
     async function caricaDashboard(giorni, btn) {
         if (!supabaseClient) return;
-
         if(btn) {
             document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
-
         const dataInizio = new Date();
         dataInizio.setDate(dataInizio.getDate() - giorni);
         const isoData = dataInizio.toISOString().split('T')[0];
-
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
 
@@ -89,24 +84,15 @@
         mieiETF.forEach(sym => {
             const datiETF = data.filter(d => d.symbol === sym);
             if (datiETF.length === 0) return;
-
             const primo = datiETF[0].close_value;
             const ultimo = datiETF[datiETF.length - 1].close_value;
             const colore = ultimo >= primo ? '#3fb950' : '#f85149';
             const segno = ultimo >= primo ? '+' : '';
             const perc = (((ultimo - primo) / primo) * 100).toFixed(2);
-
             const card = document.createElement('div');
             card.className = 'card';
-            card.innerHTML = `
-                <div class="card-header">
-                    <h3>${sym}</h3>
-                    <span class="price-label" style="color: ${colore}">${ultimo.toFixed(2)} € (${segno}${perc}%)</span>
-                </div>
-                <canvas id="chart-${sym}"></canvas>
-            `;
+            card.innerHTML = `<div class="card-header"><h3>${sym}</h3><span class="price-label" style="color: ${colore}">${ultimo.toFixed(2)} € (${segno}${perc}%)</span></div><canvas id="chart-${sym}"></canvas>`;
             grid.appendChild(card);
-
             renderMiniChart(sym, datiETF, colore);
         });
     }
@@ -119,42 +105,19 @@
                 labels: dati.map(d => d.snapshot_date),
                 datasets: [{
                     data: dati.map(d => d.close_value),
-                    borderColor: colore,
-                    borderWidth: 1.5,
-                    pointRadius: 0,
-                    tension: 0.1,
-                    fill: true,
-                    backgroundColor: colore + '10'
+                    borderColor: colore, borderWidth: 1.5, pointRadius: 0, tension: 0.1, fill: true, backgroundColor: colore + '10'
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { 
-                    legend: { display: false },
-                    tooltip: { 
-                        intersect: false, 
-                        mode: 'index',
-                        callbacks: { label: (ctx) => ctx.parsed.y.toFixed(2) + ' €' }
-                    } 
-                },
-                scales: {
-                    x: { display: false },
-                    y: { 
-                        grid: { color: '#21262d' },
-                        ticks: { 
-                            color: '#484f58', 
-                            font: { size: 10, family: 'monospace' },
-                            callback: (v) => v.toFixed(2) + ' €'
-                        }
-                    }
-                }
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { intersect: false, mode: 'index', callbacks: { label: (ctx) => ctx.parsed.y.toFixed(2) + ' €' } } },
+                scales: { x: { display: false }, y: { grid: { color: '#21262d' }, ticks: { color: '#484f58', font: { size: 10, family: 'monospace' }, callback: (v) => v.toFixed(2) + ' €' } } }
             }
         });
     }
 
-    window.onload = inizializzaSupabase;
+    // Facciamo partire il tutto
+    inizializzaDashboard();
 </script>
-
 </body>
 </html>
