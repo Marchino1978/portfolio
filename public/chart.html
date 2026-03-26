@@ -47,11 +47,24 @@
 <script>
     const SB_URL = 'https://guachqkrfatfuahckyqp.supabase.co';
     const SB_KEY = 'sb_publishable_XrSS9bV3k8x-rlV4zMtPcw_IN3bczvN';
-    const supabaseClient = supabase.createClient(SB_URL, SB_KEY);
+    let supabaseClient;
 
     const mieiETF = ["VUAA", "VNGA80", "GOLD", "XEON", "VWCE", "EXUS", "EIMI"];
 
+    function inizializzaSupabase() {
+        if (typeof supabase !== 'undefined') {
+            supabaseClient = supabase.createClient(SB_URL, SB_KEY);
+            console.log("Supabase pronto!");
+            caricaDashboard(30); 
+        } else {
+            console.log("In attesa di libreria Supabase...");
+            setTimeout(inizializzaSupabase, 100);
+        }
+    }
+
     async function caricaDashboard(giorni, btn) {
+        if (!supabaseClient) return;
+
         if(btn) {
             document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -140,7 +153,7 @@
         });
     }
 
-    window.onload = () => caricaDashboard(30);
+    window.onload = inizializzaSupabase;
 </script>
 
 </body>
