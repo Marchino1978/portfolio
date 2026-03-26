@@ -658,6 +658,7 @@ primary_region = "fra"
 │   ├── ETF.ino
 │   └── .gitkeep
 ├── public/
+│   ├── chart.html
 │   ├── fondi.html
 │   ├── index.html
 │   ├── market.html
@@ -690,7 +691,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 39 files
+7 directories, 40 files
 
 
 # ./push.sh

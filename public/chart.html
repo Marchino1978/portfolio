@@ -48,7 +48,6 @@
     const mieiETF = ["VUAA", "VNGA80", "GOLD", "XEON", "VWCE", "EXUS", "EIMI"];
 
     function inizializzaDashboard() {
-        // Controllo brutale: se supabase non esiste nel window, lo cerchiamo ovunque
         const sb = window.supabase || supabase;
         
         if (sb) {
@@ -116,7 +115,6 @@
         });
     }
 
-    // Facciamo partire il tutto
     inizializzaDashboard();
 </script>
 </body>
