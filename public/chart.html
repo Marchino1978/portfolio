@@ -26,13 +26,9 @@
 <div class="header">
     <div class="info-panel"><h2>ETF charts</h2></div>
     <div class="controls">
-        <button onclick="caricaDashboard(7, this)">W</button>
-        <button onclick="caricaDashboard(30, this)" class="active">M</button>
-        <button onclick="caricaDashboard(90, this)">Q</button>
-        <button onclick="caricaDashboard(182, this)">H</button>
-        <button onclick="caricaDashboard(365, this)">Y</button>
-        <button onclick="caricaDashboard(1095, this)">3</button>
-        <button onclick="caricaDashboard(1825, this)">5</button>
+        <button onclick="caricaDashboard(7, 'v2', this)">W</button>
+        <button onclick="caricaDashboard(30, 'v3', this)" class="active">M</button>
+        <button onclick="caricaDashboard(365, 'Y', this)">Y</button>
     </div>
 </div>
 
@@ -45,72 +41,97 @@
     const SB_URL = 'https://guachqkrfatfuahckyqp.supabase.co';
     const SB_KEY = 'sb_publishable_XrSS9bV3k8x-rlV4zMtPcw_IN3bczvN';
     let supabaseClient;
-    const mieiETF = ["VUAA", "VNGA80", "GOLD", "XEON", "VWCE", "EXUS", "EIMI"];
+    let chartInstances = {}; 
+    let marketData = []; // Dati da market.json
 
-    function inizializzaDashboard() {
-        const sb = window.supabase || supabase;
-        
-        if (sb) {
-            supabaseClient = sb.createClient(SB_URL, SB_KEY);
-            caricaDashboard(30);
-        } else {
-            console.log("Riprovo caricamento...");
-            setTimeout(inizializzaDashboard, 200);
+    async function inizializzaDashboard() {
+        // 1. Carichiamo i dati "ufficiali" dal tuo market.json
+        try {
+            const response = await fetch('/api/market-status');
+            const json = await response.json();
+            marketData = json.values.data;
+        } catch (e) {
+            console.error("Errore caricamento market.json", e);
+        }
+
+        if (window.supabase) {
+            supabaseClient = window.supabase.createClient(SB_URL, SB_KEY);
+            caricaDashboard(30, 'v3'); // Default M
         }
     }
 
-    async function caricaDashboard(giorni, btn) {
+    async function caricaDashboard(giorni, chiaveVariazione, btn) {
         if (!supabaseClient) return;
         if(btn) {
             document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
+
         const dataInizio = new Date();
         dataInizio.setDate(dataInizio.getDate() - giorni);
         const isoData = dataInizio.toISOString().split('T')[0];
+
+        const { data: dbData, error } = await supabaseClient
+            .from('previous_close')
+            .select('*')
+            .gte('snapshot_date', isoData) 
+            .order('snapshot_date', { ascending: true });
+
+        if (error) return;
+
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
 
-        const { data, error } = await supabaseClient
-            .from('previous_close')
-            .select('*')
-            .in('symbol', mieiETF)
-            .gt('snapshot_date', isoData)
-            .order('snapshot_date', { ascending: true });
+        // Usiamo l'ordine e i simboli presenti in marketData
+        marketData.forEach(etfJson => {
+            const sym = etfJson.symbol;
+            const history = dbData.filter(d => d.symbol === sym);
+            if (history.length < 1) return;
 
-        if (error) return console.error(error);
+            // PRENDIAMO IL VALORE DAL JSON (es: "-3.57%M")
+            const varUfficiale = etfJson[chiaveVariazione] || etfJson.dailyChange;
+            const colore = varUfficiale.includes('-') ? '#f85149' : '#3fb950';
 
-        mieiETF.forEach(sym => {
-            const datiETF = data.filter(d => d.symbol === sym);
-            if (datiETF.length === 0) return;
-            const primo = datiETF[0].close_value;
-            const ultimo = datiETF[datiETF.length - 1].close_value;
-            const colore = ultimo >= primo ? '#3fb950' : '#f85149';
-            const segno = ultimo >= primo ? '+' : '';
-            const perc = (((ultimo - primo) / primo) * 100).toFixed(2);
             const card = document.createElement('div');
             card.className = 'card';
-            card.innerHTML = `<div class="card-header"><h3>${sym}</h3><span class="price-label" style="color: ${colore}">${ultimo.toFixed(2)} € (${segno}${perc}%)</span></div><canvas id="chart-${sym}"></canvas>`;
+            card.innerHTML = `
+                <div class="card-header">
+                    <h3>${sym}</h3>
+                    <span class="price-label" style="color: ${colore}">
+                        ${etfJson.price.toFixed(2)} € (${varUfficiale.split('%')[0]}%)
+                    </span>
+                </div>
+                <canvas id="chart-${sym}"></canvas>
+            `;
             grid.appendChild(card);
-            renderMiniChart(sym, datiETF, colore);
+            renderMiniChart(sym, history, colore);
         });
     }
 
     function renderMiniChart(sym, dati, colore) {
+        if (chartInstances[sym]) chartInstances[sym].destroy();
         const ctx = document.getElementById(`chart-${sym}`).getContext('2d');
-        new Chart(ctx, {
+        chartInstances[sym] = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: dati.map(d => d.snapshot_date),
                 datasets: [{
                     data: dati.map(d => d.close_value),
-                    borderColor: colore, borderWidth: 1.5, pointRadius: 0, tension: 0.1, fill: true, backgroundColor: colore + '10'
+                    borderColor: colore, 
+                    borderWidth: 1.5, 
+                    pointRadius: 0, 
+                    tension: 0.1, 
+                    fill: true, 
+                    backgroundColor: colore + '10'
                 }]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { display: false }, tooltip: { intersect: false, mode: 'index', callbacks: { label: (ctx) => ctx.parsed.y.toFixed(2) + ' €' } } },
-                scales: { x: { display: false }, y: { grid: { color: '#21262d' }, ticks: { color: '#484f58', font: { size: 10, family: 'monospace' }, callback: (v) => v.toFixed(2) + ' €' } } }
+                plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                scales: { 
+                    x: { display: false }, 
+                    y: { grid: { color: '#21262d' }, ticks: { color: '#484f58', font: { size: 10 } } } 
+                }
             }
         });
     }
