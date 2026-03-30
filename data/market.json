@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 106.5425,
-        "dailyChange": "+0.24",
-        "value": 106.5425,
-        "v1": "-2.40%W",
-        "v2": "-4.69%M",
-        "v3": "-5.56%Q",
-        "v_led": "-4.69%M",
-        "v_alert": "-4.69%M",
-        "v_bot": "-4.69%M"
+        "price": 106.525,
+        "dailyChange": "+0.22",
+        "value": 106.525,
+        "v1": "-2.41%W",
+        "v2": "-4.70%M",
+        "v3": "-5.57%Q",
+        "v_led": "-4.70%M",
+        "v_alert": "-4.70%M",
+        "v_bot": "-4.70%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,12 +59,12 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 140.7,
-        "dailyChange": "+0.06",
-        "value": 140.7,
-        "v1": "-2.16%W",
+        "price": 140.69,
+        "dailyChange": "+0.05",
+        "value": 140.69,
+        "v1": "-2.17%W",
         "v2": "-5.99%M",
-        "v3": "-3.22%Q",
+        "v3": "-3.23%Q",
         "v_led": "-5.99%M",
         "v_alert": "-5.99%M",
         "v_bot": "-5.99%M"
@@ -72,15 +72,15 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 35.125,
-        "dailyChange": "-1.08",
-        "value": 35.125,
-        "v1": "-1.67%W",
-        "v2": "-7.93%M",
-        "v3": "-0.18%Q",
-        "v_led": "-7.93%M",
-        "v_alert": "-7.93%M",
-        "v_bot": "-7.93%M"
+        "price": 35.12,
+        "dailyChange": "-1.10",
+        "value": 35.12,
+        "v1": "-1.68%W",
+        "v2": "-7.94%M",
+        "v3": "-0.20%Q",
+        "v_led": "-7.94%M",
+        "v_alert": "-7.94%M",
+        "v_bot": "-7.94%M"
       },
       {
         "symbol": "EIMI",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-03-30T22:40:25.696547+02:00",
-    "readable": "22:40 30-03-2026"
+    "iso": "2026-03-30T22:55:21.164470+02:00",
+    "readable": "22:55 30-03-2026"
   }
 }
