@@ -655,6 +655,8 @@ primary_region = "fra"
 │   ├── market.json
 │   └── salvadanaio.csv
 ├── esp32/
+│   ├── case.gif
+│   ├── case.stl
 │   ├── ETF.ino
 │   └── .gitkeep
 ├── public/
@@ -691,7 +693,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 40 files
+7 directories, 42 files
 
 
 # ./push.sh

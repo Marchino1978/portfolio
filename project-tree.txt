@@ -12,6 +12,7 @@
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── case.gif
+│   ├── case.png
 │   ├── case.stl
 │   ├── ETF.ino
 │   └── .gitkeep
@@ -49,4 +50,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 42 files
+7 directories, 43 files
