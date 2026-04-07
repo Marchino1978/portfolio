@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 109.9775,
-        "dailyChange": "+0.05",
-        "value": 109.9775,
-        "v1": "+1.09%W",
-        "v2": "-1.56%M",
-        "v3": "-3.43%Q",
-        "v_led": "-1.56%M",
-        "v_alert": "-1.56%M",
-        "v_bot": "-1.56%M"
+        "price": 110.11,
+        "dailyChange": "+0.17",
+        "value": 110.11,
+        "v1": "+1.21%W",
+        "v2": "-1.44%M",
+        "v3": "-3.31%Q",
+        "v_led": "-1.44%M",
+        "v_alert": "-1.44%M",
+        "v_bot": "-1.44%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,28 +59,28 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 144.98,
-        "dailyChange": "-0.04",
-        "value": 144.98,
-        "v1": "+0.91%W",
-        "v2": "-1.08%M",
-        "v3": "-1.78%Q",
-        "v_led": "-1.08%M",
-        "v_alert": "-1.08%M",
-        "v_bot": "-1.08%M"
+        "price": 145.16,
+        "dailyChange": "+0.08",
+        "value": 145.16,
+        "v1": "+1.04%W",
+        "v2": "-0.96%M",
+        "v3": "-1.66%Q",
+        "v_led": "-0.96%M",
+        "v_alert": "-0.96%M",
+        "v_bot": "-0.96%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 36.2375,
-        "dailyChange": "-0.14",
-        "value": 36.2375,
-        "v1": "+1.39%W",
-        "v2": "-0.61%M",
-        "v3": "+1.17%Q",
-        "v_led": "-0.61%M",
-        "v_alert": "-0.61%M",
-        "v_bot": "-0.61%M"
+        "price": 36.285,
+        "dailyChange": "-0.01",
+        "value": 36.285,
+        "v1": "+1.52%W",
+        "v2": "-0.48%M",
+        "v3": "+1.30%Q",
+        "v_led": "-0.48%M",
+        "v_alert": "-0.48%M",
+        "v_bot": "-0.48%M"
       },
       {
         "symbol": "EIMI",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-04-07T22:40:28.911873+02:00",
-    "readable": "22:40 07-04-2026"
+    "iso": "2026-04-07T22:55:22.484774+02:00",
+    "readable": "22:55 07-04-2026"
   }
 }
