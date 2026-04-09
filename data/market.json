@@ -7,9 +7,9 @@
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 111.855,
-        "dailyChange": "-0.07",
-        "value": 111.855,
+        "price": 111.86,
+        "dailyChange": "-0.06",
+        "value": 111.86,
         "v1": "+1.76%W",
         "v2": "-0.75%M",
         "v3": "-2.75%Q",
@@ -20,28 +20,28 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 39.9725,
-        "dailyChange": "-0.12",
-        "value": 39.9725,
-        "v1": "+1.97%W",
-        "v2": "+0.18%M",
-        "v3": "-0.47%Q",
-        "v_led": "+0.18%M",
-        "v_alert": "+0.18%M",
-        "v_bot": "+0.18%M"
+        "price": 39.98,
+        "dailyChange": "-0.10",
+        "value": 39.98,
+        "v1": "+1.99%W",
+        "v2": "+0.20%M",
+        "v3": "-0.45%Q",
+        "v_led": "+0.20%M",
+        "v_alert": "+0.20%M",
+        "v_bot": "+0.20%M"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 160.31,
-        "dailyChange": "-0.12",
-        "value": 160.31,
-        "v1": "+0.13%W",
-        "v2": "-9.52%M",
-        "v3": "+4.48%Q",
-        "v_led": "-9.52%M",
-        "v_alert": "-9.52%M",
-        "v_bot": "-9.52%M"
+        "price": 160.255,
+        "dailyChange": "-0.16",
+        "value": 160.255,
+        "v1": "+0.10%W",
+        "v2": "-9.55%M",
+        "v3": "+4.44%Q",
+        "v_led": "-9.55%M",
+        "v_alert": "-9.55%M",
+        "v_bot": "-9.55%M"
       },
       {
         "symbol": "XEON",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 148.15,
-        "dailyChange": "-0.23",
-        "value": 148.15,
-        "v1": "+2.14%W",
-        "v2": "-0.01%M",
-        "v3": "-0.61%Q",
-        "v_led": "-0.01%M",
-        "v_alert": "-0.01%M",
-        "v_bot": "-0.01%M"
+        "price": 148.17,
+        "dailyChange": "-0.22",
+        "value": 148.17,
+        "v1": "+2.16%W",
+        "v2": "+0.00%M",
+        "v3": "-0.60%Q",
+        "v_led": "+0.00%M",
+        "v_alert": "+0.00%M",
+        "v_bot": "+0.00%M"
       },
       {
         "symbol": "EXUS",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-04-09T08:25:22.378630+02:00",
-    "readable": "08:25 09-04-2026"
+    "iso": "2026-04-09T08:40:28.998551+02:00",
+    "readable": "08:40 09-04-2026"
   }
 }
