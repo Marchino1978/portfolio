@@ -1,18 +1,18 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 112.055,
+        "price": 112.06,
         "dailyChange": "-0.19",
-        "value": 112.055,
-        "v1": "+1.94%W",
+        "value": 112.06,
+        "v1": "+1.95%W",
         "v2": "-0.42%M",
-        "v3": "-2.58%Q",
+        "v3": "-2.57%Q",
         "v_led": "-0.42%M",
         "v_alert": "-0.42%M",
         "v_bot": "-0.42%M"
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-04-10T22:40:29.088901+02:00",
-    "readable": "22:40 10-04-2026"
+    "iso": "2026-04-10T22:55:23.218242+02:00",
+    "readable": "22:55 10-04-2026"
   }
 }
