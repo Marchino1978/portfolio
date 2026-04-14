@@ -1,18 +1,18 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 113.81,
-        "dailyChange": "+0.92",
-        "value": 113.81,
-        "v1": "+3.48%W",
+        "price": 113.815,
+        "dailyChange": "+0.93",
+        "value": 113.815,
+        "v1": "+3.49%W",
         "v2": "+1.91%M",
-        "v3": "-0.39%Q",
+        "v3": "-0.38%Q",
         "v_led": "+1.91%M",
         "v_alert": "+1.91%M",
         "v_bot": "+1.91%M"
@@ -59,25 +59,25 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 150.59,
-        "dailyChange": "+0.66",
-        "value": 150.59,
-        "v1": "+3.87%W",
-        "v2": "+2.91%M",
-        "v3": "+1.20%Q",
-        "v_led": "+2.91%M",
-        "v_alert": "+2.91%M",
-        "v_bot": "+2.91%M"
+        "price": 150.6,
+        "dailyChange": "+0.67",
+        "value": 150.6,
+        "v1": "+3.88%W",
+        "v2": "+2.92%M",
+        "v3": "+1.21%Q",
+        "v_led": "+2.92%M",
+        "v_alert": "+2.92%M",
+        "v_bot": "+2.92%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 37.58,
-        "dailyChange": "+0.21",
-        "value": 37.58,
+        "price": 37.5825,
+        "dailyChange": "+0.22",
+        "value": 37.5825,
         "v1": "+3.70%W",
         "v2": "+4.16%M",
-        "v3": "+3.13%Q",
+        "v3": "+3.14%Q",
         "v_led": "+4.16%M",
         "v_alert": "+4.16%M",
         "v_bot": "+4.16%M"
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-04-14T22:40:27.402713+02:00",
-    "readable": "22:40 14-04-2026"
+    "iso": "2026-04-14T22:55:20.228807+02:00",
+    "readable": "22:55 14-04-2026"
   }
 }
