@@ -1,18 +1,18 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 117.51,
-        "dailyChange": "-0.28",
-        "value": 117.51,
+        "price": 117.5175,
+        "dailyChange": "-0.27",
+        "value": 117.5175,
         "v1": "+0.93%W",
         "v2": "+10.56%M",
-        "v3": "+4.51%Q",
+        "v3": "+4.52%Q",
         "v_led": "+10.56%M",
         "v_alert": "+10.56%M",
         "v_bot": "+10.56%M"
@@ -46,15 +46,15 @@
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 148.9925,
-        "dailyChange": "+0.01",
-        "value": 148.9925,
+        "price": 148.986,
+        "dailyChange": "+0.00",
+        "value": 148.986,
         "v1": "+0.06%W",
-        "v2": "+0.16%M",
+        "v2": "+0.15%M",
         "v3": "+0.47%Q",
-        "v_led": "+0.16%M",
-        "v_alert": "+0.16%M",
-        "v_bot": "+0.16%M"
+        "v_led": "+0.15%M",
+        "v_alert": "+0.15%M",
+        "v_bot": "+0.15%M"
       },
       {
         "symbol": "VWCE",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-04-28T22:40:26.949156+02:00",
-    "readable": "22:40 28-04-2026"
+    "iso": "2026-04-28T22:55:25.741225+02:00",
+    "readable": "22:55 28-04-2026"
   }
 }
