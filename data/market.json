@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 118.605,
-        "dailyChange": "+0.08",
-        "value": 118.605,
-        "v1": "+0.65%W",
-        "v2": "+7.90%M",
-        "v3": "+5.48%Q",
-        "v_led": "+7.90%M",
-        "v_alert": "+7.90%M",
-        "v_bot": "+7.90%M"
+        "price": 118.5925,
+        "dailyChange": "+0.07",
+        "value": 118.5925,
+        "v1": "+0.64%W",
+        "v2": "+7.89%M",
+        "v3": "+5.47%Q",
+        "v_led": "+7.89%M",
+        "v_alert": "+7.89%M",
+        "v_bot": "+7.89%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,28 +59,28 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 154.7,
-        "dailyChange": "-0.03",
-        "value": 154.7,
-        "v1": "+0.43%W",
-        "v2": "+6.66%M",
-        "v3": "+4.77%Q",
-        "v_led": "+6.66%M",
-        "v_alert": "+6.66%M",
-        "v_bot": "+6.66%M"
+        "price": 154.68,
+        "dailyChange": "-0.05",
+        "value": 154.68,
+        "v1": "+0.42%W",
+        "v2": "+6.65%M",
+        "v3": "+4.75%Q",
+        "v_led": "+6.65%M",
+        "v_alert": "+6.65%M",
+        "v_bot": "+6.65%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 37.085,
-        "dailyChange": "-0.87",
-        "value": 37.085,
-        "v1": "-0.31%W",
-        "v2": "+2.19%M",
+        "price": 37.0825,
+        "dailyChange": "-0.88",
+        "value": 37.0825,
+        "v1": "-0.32%W",
+        "v2": "+2.18%M",
         "v3": "+1.21%Q",
-        "v_led": "+2.19%M",
-        "v_alert": "+2.19%M",
-        "v_bot": "+2.19%M"
+        "v_led": "+2.18%M",
+        "v_alert": "+2.18%M",
+        "v_bot": "+2.18%M"
       },
       {
         "symbol": "EIMI",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-05-04T22:40:30.878944+02:00",
-    "readable": "22:40 04-05-2026"
+    "iso": "2026-05-04T22:55:20.579998+02:00",
+    "readable": "22:55 04-05-2026"
   }
 }
