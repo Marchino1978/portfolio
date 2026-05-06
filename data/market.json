@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 120.735,
-        "dailyChange": "+0.77",
-        "value": 120.735,
-        "v1": "+2.46%W",
-        "v2": "+9.84%M",
-        "v3": "+9.32%Q",
-        "v_led": "+9.84%M",
-        "v_alert": "+9.84%M",
-        "v_bot": "+9.84%M"
+        "price": 120.695,
+        "dailyChange": "+0.74",
+        "value": 120.695,
+        "v1": "+2.42%W",
+        "v2": "+9.80%M",
+        "v3": "+9.29%Q",
+        "v_led": "+9.80%M",
+        "v_alert": "+9.80%M",
+        "v_bot": "+9.80%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,35 +59,35 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 158.52,
-        "dailyChange": "+1.29",
-        "value": 158.52,
-        "v1": "+3.26%W",
-        "v2": "+9.29%M",
-        "v3": "+8.99%Q",
-        "v_led": "+9.29%M",
-        "v_alert": "+9.29%M",
-        "v_bot": "+9.29%M"
+        "price": 158.48,
+        "dailyChange": "+1.27",
+        "value": 158.48,
+        "v1": "+3.23%W",
+        "v2": "+9.27%M",
+        "v3": "+8.97%Q",
+        "v_led": "+9.27%M",
+        "v_alert": "+9.27%M",
+        "v_bot": "+9.27%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 38.3625,
-        "dailyChange": "+2.88",
-        "value": 38.3625,
-        "v1": "+4.53%W",
-        "v2": "+5.71%M",
-        "v3": "+5.68%Q",
-        "v_led": "+5.71%M",
-        "v_alert": "+5.71%M",
-        "v_bot": "+5.71%M"
+        "price": 38.3475,
+        "dailyChange": "+2.84",
+        "value": 38.3475,
+        "v1": "+4.49%W",
+        "v2": "+5.67%M",
+        "v3": "+5.64%Q",
+        "v_led": "+5.67%M",
+        "v_alert": "+5.67%M",
+        "v_bot": "+5.67%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 46.9165,
+        "price": 46.917,
         "dailyChange": "+2.17",
-        "value": 46.9165,
+        "value": 46.917,
         "v1": "+6.87%W",
         "v2": "+16.62%M",
         "v3": "+14.96%Q",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-05-06T22:40:23.067545+02:00",
-    "readable": "22:40 06-05-2026"
+    "iso": "2026-05-06T22:55:17.950660+02:00",
+    "readable": "22:55 06-05-2026"
   }
 }
