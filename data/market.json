@@ -1,6 +1,6 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
@@ -72,9 +72,9 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 37.7225,
-        "dailyChange": "+0.78",
-        "value": 37.7225,
+        "price": 37.725,
+        "dailyChange": "+0.79",
+        "value": 37.725,
         "v1": "+0.84%W",
         "v2": "+2.79%M",
         "v3": "+2.04%Q",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-05-08T22:40:26.739279+02:00",
-    "readable": "22:40 08-05-2026"
+    "iso": "2026-05-08T22:55:19.959871+02:00",
+    "readable": "22:55 08-05-2026"
   }
 }
