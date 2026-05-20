@@ -20,22 +20,22 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 42.1525,
-        "dailyChange": "-0.18",
-        "value": 42.1525,
-        "v1": "-0.47%W",
-        "v2": "+2.69%M",
-        "v3": "+4.80%Q",
-        "v_led": "+2.69%M",
-        "v_alert": "+2.69%M",
-        "v_bot": "+2.69%M"
+        "price": 42.1375,
+        "dailyChange": "-0.22",
+        "value": 42.1375,
+        "v1": "-0.50%W",
+        "v2": "+2.65%M",
+        "v3": "+4.77%Q",
+        "v_led": "+2.65%M",
+        "v_alert": "+2.65%M",
+        "v_bot": "+2.65%M"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 152.445,
+        "price": 152.45,
         "dailyChange": "-0.34",
-        "value": 152.445,
+        "value": 152.45,
         "v1": "-3.87%W",
         "v2": "-5.95%M",
         "v3": "-9.54%Q",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 158.31,
-        "dailyChange": "-0.11",
-        "value": 158.31,
-        "v1": "-1.01%W",
-        "v2": "+3.23%M",
-        "v3": "+6.10%Q",
-        "v_led": "+3.23%M",
-        "v_alert": "+3.23%M",
-        "v_bot": "+3.23%M"
+        "price": 158.33,
+        "dailyChange": "-0.09",
+        "value": 158.33,
+        "v1": "-1.00%W",
+        "v2": "+3.24%M",
+        "v3": "+6.11%Q",
+        "v_led": "+3.24%M",
+        "v_alert": "+3.24%M",
+        "v_bot": "+3.24%M"
       },
       {
         "symbol": "EXUS",
@@ -85,20 +85,20 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 44.918,
-        "dailyChange": "-0.29",
-        "value": 44.918,
-        "v1": "-4.53%W",
-        "v2": "+2.27%M",
-        "v3": "+5.19%Q",
-        "v_led": "+2.27%M",
-        "v_alert": "+2.27%M",
-        "v_bot": "+2.27%M"
+        "price": 44.891,
+        "dailyChange": "-0.35",
+        "value": 44.891,
+        "v1": "-4.59%W",
+        "v2": "+2.21%M",
+        "v3": "+5.13%Q",
+        "v_led": "+2.21%M",
+        "v_alert": "+2.21%M",
+        "v_bot": "+2.21%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-05-20T08:25:22.231183+02:00",
-    "readable": "08:25 20-05-2026"
+    "iso": "2026-05-20T08:40:25.308123+02:00",
+    "readable": "08:40 20-05-2026"
   }
 }
