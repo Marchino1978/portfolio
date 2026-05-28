@@ -653,7 +653,6 @@ primary_region = "fra"
 │   ├── fondi.csv
 │   ├── fondi_nav.csv
 │   ├── market.json
-│   ├── money.csv
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── case.gif
@@ -668,7 +667,6 @@ primary_region = "fra"
 │   ├── market.html
 │   ├── market-live.html
 │   ├── market-mobile.html
-│   ├── money.html
 │   └── salvadanaio.html
 ├── tests/
 │   ├── testDateVar.py
@@ -696,7 +694,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 45 files
+7 directories, 43 files
 
 
 # ./push.sh
