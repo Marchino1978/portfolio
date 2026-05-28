@@ -644,15 +644,16 @@ primary_region = "fra"
 ----------------------------------------
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_03_16.sql
-│   ├── backup_supabase_2026_03_23.sql
-│   └── backup_supabase_2026_03_30.sql
+│   ├── backup_supabase_2026_05_11.sql
+│   ├── backup_supabase_2026_05_18.sql
+│   └── backup_supabase_2026_05_25.sql
 ├── config/
 │   └── variations.conf
 ├── data/
 │   ├── fondi.csv
 │   ├── fondi_nav.csv
 │   ├── market.json
+│   ├── money.csv
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── case.gif
@@ -667,6 +668,7 @@ primary_region = "fra"
 │   ├── market.html
 │   ├── market-live.html
 │   ├── market-mobile.html
+│   ├── money.html
 │   └── salvadanaio.html
 ├── tests/
 │   ├── testDateVar.py
@@ -694,7 +696,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 43 files
+7 directories, 45 files
 
 
 # ./push.sh
