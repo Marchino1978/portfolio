@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvadanaio Automatico - Money</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f0f4f8; 
+            color: #333; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            max-width: 950px; 
+            width: 100%; 
+        }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 25px; text-align: center; }
+        th, td { padding: 12px; border: 1px solid #e2e8f0; }
+        th { background: #f7fafc; font-weight: 600; color: #4a5568; }
+        
+        input[type="number"] { 
+            width: 70px; 
+            padding: 8px; 
+            text-align: center; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 6px; 
+            font-size: 14px;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        .coin-label { font-weight: bold; color: #2d3748; font-size: 15px; }
+        
+        button { 
+            background: #38a169; 
+            color: white; 
+            border: none; 
+            padding: 14px 28px; 
+            font-size: 16px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            width: 100%; 
+            transition: background 0.2s, transform 0.1s; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button:hover { background: #2f855a; }
+        button:active { transform: scale(0.99); }
+        
+        .riepilogo { 
+            background: #edf2f7; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-top: 25px; 
+        }
+        .riepilogo h3 { margin-top: 0; color: #2d3748; border-bottom: 1px solid #cbd5e1; padding-bottom: 8px; }
+        .riepilogo p { margin: 10px 0; font-size: 16px; display: flex; justify-content: space-between; }
+        .grand-total { 
+            font-size: 22px !important; 
+            font-weight: bold; 
+            color: #1a202c; 
+            border-top: 2px solid #a0aec0; 
+            padding-top: 12px; 
+            margin-top: 15px !important; 
+        }
+        .status-message {
+            text-align: center;
+            font-weight: 500;
+            margin-top: 15px;
+            color: #4a5568;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🪙 Salvadanaio Cloud (money.html)</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>DEPOSITA</th>
+                <td><input type="number" id="in-2" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-1" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-0.5" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-0.2" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-0.1" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-0.05" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-0.02" min="0" placeholder="0"></td>
+                <td><input type="number" id="in-0.01" min="0" placeholder="0"></td>
+            </tr>
+            <tr>
+                <th>Moneta</th>
+                <td class="coin-label">2 €</td>
+                <td class="coin-label">1 €</td>
+                <td class="coin-label">0.50 €</td>
+                <td class="coin-label">0.20 €</td>
+                <td class="coin-label">0.10 €</td>
+                <td class="coin-label">0.05 €</td>
+                <td class="coin-label">0.02 €</td>
+                <td class="coin-label">0.01 €</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Quantità</th>
+                <td id="qta-2">0</td>
+                <td id="qta-1">0</td>
+                <td id="qta-0.5">0</td>
+                <td id="qta-0.2">0</td>
+                <td id="qta-0.1">0</td>
+                <td id="qta-0.05">0</td>
+                <td id="qta-0.02">0</td>
+                <td id="qta-0.01">0</td>
+            </tr>
+            <tr>
+                <th>Valore</th>
+                <td id="val-2">0.00 €</td>
+                <td id="val-1">0.00 €</td>
+                <td id="val-0.5">0.00 €</td>
+                <td id="val-0.2">0.00 €</td>
+                <td id="val-0.1">0.00 €</td>
+                <td id="val-0.05">0.00 €</td>
+                <td id="val-0.02">0.00 €</td>
+                <td id="val-0.01">0.00 €</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="effettuaVersamento()">💰 VERSA NEL SALVADANAIO</button>
+    <div id="status" class="status-message">Connessione a GitHub in corso...</div>
+
+    <div class="riepilogo">
+        <h3>Riepilogo Totali</h3>
+        <p>Totale Oro (2€, 1€): <span id="tot-gold">0.00 €</span></p>
+        <p>Totale Argento (50c, 20c, 10c): <span id="tot-silver">0.00 €</span></p>
+        <p>Totale Bronzo (5c, 2c, 1c): <span id="tot-bronze">0.00 €</span></p>
+        <p class="grand-total">TOTALE GENERALE: <span id="tot-all">0.00 €</span></p>
+    </div>
+</div>
+
+<script>
+    // --- CONFIGURAZIONE GITHUB ---
+    const GITHUB_TOKEN = "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"; 
+    const REPO_OWNER = "marchino1978";
+    const REPO_NAME = "portfolio";
+    const FILE_PATH = "data/money.csv";
+    
+    const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
+    const tagli = ["2", "1", "0.5", "0.2", "0.1", "0.05", "0.02", "0.01"];
+    
+    let datiAttuali = { "2":0, "1":0, "0.5":0, "0.2":0, "0.1":0, "0.05":0, "0.02":0, "0.01":0 };
+    let fileSha = ""; 
+
+    // 1. Scarica e decodifica il CSV all'apertura della pagina
+    async function scaricaDatiDaGitHub() {
+        try {
+            const response = await fetch(API_URL, {
+                headers: { "Authorization": `token ${GITHUB_TOKEN}` }
+            });
+            
+            if (response.status === 404) {
+                document.getElementById('status').innerText = "File data/money.csv non trovato. Assicurati che esista sul repo!";
+                return;
+            }
+
+            const json = await response.json();
+            fileSha = json.sha; 
+            
+            // Decodifica Base64 sicura per gestire correttamente i fine riga (\n)
+            const csvText = decodeURIComponent(atob(json.content).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            parseCsv(csvText);
+            aggiornaTabella();
+            document.getElementById('status').innerText = "Dati sincronizzati con data/money.csv ✅";
+        } catch (error) {
+            console.error(error);
+            document.getElementById('status').innerText = "Errore nel caricamento dati da GitHub ❌";
+        }
+    }
+
+    // Parsifica il testo del file CSV caricato
+    function parseCsv(text) {
+        const linee = text.trim().split("\n");
+        if(linee.length >= 2) {
+            const valori = linee[1].split(",");
+            tagli.forEach((taglio, index) => {
+                datiAttuali[taglio] = parseInt(valori[index]) || 0;
+            });
+        }
+    }
+
+    // Genera la stringa CSV da rimandare a GitHub
+    function generaCsvString() {
+        const riga1 = tagli.join(",");
+        const riga2 = tagli.map(t => datiAttuali[t]).join(",");
+        return `${riga1}\n${riga2}`;
+    }
+
+    // Aggiorna tutta l'interfaccia grafica e calcola i macro-totali
+    function aggiornaTabella() {
+        let totGold = 0, totSilver = 0, totBronze = 0;
+
+        tagli.forEach(taglio => {
+            const qta = datiAttuali[taglio];
+            const valore = qta * parseFloat(taglio);
+
+            document.getElementById(`qta-${taglio}`).innerText = qta;
+            document.getElementById(`val-${taglio}`).innerText = valore.toFixed(2) + " €";
+
+            if (taglio === "2" || taglio === "1") totGold += valore;
+            else if (taglio === "0.5" || taglio === "0.2" || taglio === "0.1") totSilver += valore;
+            else totBronze += valore;
+        });
+
+        const totaleGenerale = totGold + totSilver + totBronze;
+
+        document.getElementById('tot-gold').innerText = totGold.toFixed(2) + " €";
+        document.getElementById('tot-silver').innerText = totSilver.toFixed(2) + " €";
+        document.getElementById('tot-bronze').innerText = totBronze.toFixed(2) + " €";
+        document.getElementById('tot-all').innerText = totaleGenerale.toFixed(2) + " €";
+    }
+
+    // 2. Esegue l'azione del deposito e fa il push automatico delle modifiche
+    async function effettuaVersamento() {
+        document.getElementById('status').innerText = "Salvataggio e sincronizzazione su GitHub...";
+        
+        // Accumula i valori inseriti dall'utente
+        tagli.forEach(taglio => {
+            const inputField = document.getElementById(`in-${taglio}`);
+            const valoreDaAggiungere = parseInt(inputField.value) || 0;
+            datiAttuali[taglio] += valoreDaAggiungere;
+            
+            inputField.value = ""; // Svuota la cella di input
+        });
+
+        // Codifica in Base64 solida per impedire errori con caratteri UTF-8
+        const nuovoCsv = generaCsvString();
+        const utf8Bytes = new TextEncoder().encode(nuovoCsv);
+        const contentBase64 = btoa(String.fromCharCode(...utf8Bytes));
+
+        try {
+            const bodyPayload = {
+                message: "Nuovo deposito inserito nel file data/money.csv",
+                content: contentBase64
+            };
+            if (fileSha) {
+                bodyPayload.sha = fileSha; 
+            }
+
+            const response = await fetch(API_URL, {
+                method: "PUT",
+                headers: {
+                    "Authorization": `token ${GITHUB_TOKEN}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(bodyPayload)
+            });
+
+            const dataJson = await response.json();
+            if(response.ok) {
+                fileSha = dataJson.content.sha; // Aggiorna lo SHA col valore dell'ultimo commit
+                aggiornaTabella();
+                document.getElementById('status').innerText = "Versamento registrato su data/money.csv! 💰🚀";
+            } else {
+                document.getElementById('status').innerText = "Errore di scrittura: " + dataJson.message;
+            }
+        } catch (error) {
+            console.error(error);
+            document.getElementById('status').innerText = "Errore di rete durante il salvataggio ❌";
+        }
+    }
+
+    // Inizializzazione automatica
+    scaricaDatiDaGitHub();
+</script>
+</body>
+</html>
