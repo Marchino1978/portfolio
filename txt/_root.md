@@ -656,6 +656,7 @@ primary_region = "fra"
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── case.gif
+│   ├── case.png
 │   ├── case.stl
 │   ├── ETF.ino
 │   └── .gitkeep
@@ -693,7 +694,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 42 files
+7 directories, 43 files
 
 
 # ./push.sh
