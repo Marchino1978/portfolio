@@ -186,16 +186,6 @@
     <h1>MONEY</h1>
     <div class="subtitle">...</div>
 
-    <div class="config-box">
-        <strong>repository GitHub:</strong><br>
-        <input type="text" id="gh-owner" placeholder="user name">
-        <input type="text" id="gh-repo" placeholder="repository name">
-        <input type="password" id="gh-token" placeholder="personal access token" style="width: 280px;">
-        <button onclick="saveConfig()" style="padding: 6px 15px; font-size: 12px; background-color: #34495e;">Save</button>
-    </div>
-
-    <div id="loading-status" class="loading">syncing data with GitHub... please wait...</div>
-
     <div class="label-row" style="text-align: center; font-size: 14px; margin-bottom: 10px; color: #2c3e50;">
         DEPOSIT or WITHDRAW:
     </div>
@@ -270,7 +260,21 @@
             <span id="rip-totale">0.00 €</span>
         </div>
     </div>
+
+    <hr>
+
+    <div class="config-box">
+        <strong>repository GitHub:</strong><br>
+        <input type="text" id="gh-owner" placeholder="user name">
+        <input type="text" id="gh-repo" placeholder="repository name">
+        <input type="password" id="gh-token" placeholder="personal access token" style="width: 280px;">
+        <button onclick="saveConfig()" style="padding: 6px 15px; font-size: 12px; background-color: #34495e;">Save</button>
+    </div>
+
+    <div id="loading-status" class="loading">syncing data with GitHub... please wait...</div>
+
 </div>
+
 
 <script>
     const coinTypes = ["2", "1", "05", "02", "01", "005", "002", "001"];
