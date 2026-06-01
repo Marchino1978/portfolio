@@ -11,6 +11,9 @@ dump_folder() {
     [ -f "$file" ] || continue
 
     [[ "$(basename "$file")" == "ETF.ino" ]] && continue
+    [[ "$(basename "$file")" == "case.stl" ]] && continue
+    [[ "$(basename "$file")" == "case.gif" ]] && continue
+    [[ "$(basename "$file")" == "case.png" ]] && continue
 
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
