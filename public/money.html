@@ -187,17 +187,17 @@
     <div class="subtitle">...</div>
 
     <div class="config-box">
-        <strong>Impostazioni Repository GitHub:</strong><br>
-        <input type="text" id="gh-owner" placeholder="Nome Utente (es. tuoNome)">
-        <input type="text" id="gh-repo" placeholder="Nome Repository (es. mio-progetto)">
-        <input type="password" id="gh-token" placeholder="Incolla qui il tuo Personal Access Token" style="width: 280px;">
-        <button onclick="saveConfig()" style="padding: 6px 15px; font-size: 12px; background-color: #34495e;">Salva Credenziali</button>
+        <strong>repository GitHub:</strong><br>
+        <input type="text" id="gh-owner" placeholder="user name">
+        <input type="text" id="gh-repo" placeholder="repository name">
+        <input type="password" id="gh-token" placeholder="personal access token" style="width: 280px;">
+        <button onclick="saveConfig()" style="padding: 6px 15px; font-size: 12px; background-color: #34495e;">Save</button>
     </div>
 
-    <div id="loading-status" class="loading">Sincronizzazione dei dati con GitHub... Attendere...</div>
+    <div id="loading-status" class="loading">syncing data with GitHub... please wait...</div>
 
     <div class="label-row" style="text-align: center; font-size: 14px; margin-bottom: 10px; color: #2c3e50;">
-        Quantità da Depositare o Prelevare:
+        DEPOSIT or WITHDRAW:
     </div>
     <div class="grid-row">
         <input type="number" id="in-2" class="input-coin" min="0" placeholder="0" value="0">
@@ -211,8 +211,8 @@
     </div>
 
     <div class="actions">
-        <button class="btn-deposito" onclick="handleTransaction('deposit')">DEPOSITA</button>
-        <button class="btn-prelieva" onclick="handleTransaction('withdraw')">PRELEVA</button>
+        <button class="btn-deposito" onclick="handleTransaction('deposit')">(+) DEPOSIT</button>
+        <button class="btn-prelieva" onclick="handleTransaction('withdraw')">(-) WITHDRAW</button>
     </div>
 
     <div class="grid-row" style="margin-top: 35px;">
@@ -226,7 +226,7 @@
         <div class="coin-img coin-bronze">0,01€</div>
     </div>
 
-    <div class="label-row" style="margin-top: 15px;">NUMERO MONETE</div>
+    <div class="label-row" style="margin-top: 15px;">N</div>
     <div class="grid-row">
         <div id="qty-2" class="display-box">0</div>
         <div id="qty-1" class="display-box">0</div>
@@ -238,7 +238,7 @@
         <div id="qty-001" class="display-box">0</div>
     </div>
 
-    <div class="label-row">VALORE MONETE</div>
+    <div class="label-row">VALUE</div>
     <div class="grid-row">
         <div id="val-2" class="subtotal-box">0.00 €</div>
         <div id="val-1" class="subtotal-box">0.00 €</div>
@@ -254,19 +254,19 @@
 
     <div class="riepilogo">
         <div class="riepilogo-item">
-            <span>Totale valore monete 1 e 2 euro:</span>
+            <span>TOT 1 e 2 euro:</span>
             <span id="rip-alti" style="font-weight: bold;">0.00 €</span>
         </div>
         <div class="riepilogo-item">
-            <span>Totale valore monete 0.50, 0.20, 0.10 euro:</span>
+            <span>TOT 0.50, 0.20, 0.10 euro:</span>
             <span id="rip-medi" style="font-weight: bold;">0.00 €</span>
         </div>
         <div class="riepilogo-item">
-            <span>Totale valore monete 0.05, 0.02, 0.01 euro:</span>
+            <span>TOT 0.05, 0.02, 0.01 euro:</span>
             <span id="rip-bassi" style="font-weight: bold;">0.00 €</span>
         </div>
         <div class="riepilogo-item total">
-            <span>VALORE TOTALE MONETE:</span>
+            <span>TOTAL VALUE</span>
             <span id="rip-totale">0.00 €</span>
         </div>
     </div>
