@@ -644,9 +644,9 @@ primary_region = "fra"
 ----------------------------------------
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_05_11.sql
 │   ├── backup_supabase_2026_05_18.sql
-│   └── backup_supabase_2026_05_25.sql
+│   ├── backup_supabase_2026_05_25.sql
+│   └── backup_supabase_2026_06_01.sql
 ├── config/
 │   └── variations.conf
 ├── data/
