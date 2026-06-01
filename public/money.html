@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestione Monete Euro (GitHub Pages)</title>
+    <title>MONEY</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -171,8 +171,8 @@
 <body>
 
 <div class="container">
-    <h1>Gestione Salvadanaio Euro</h1>
-    <div class="subtitle">Sincronizzazione Diretta GitHub Cloud</div>
+    <h1>MONEY</h1>
+    <div class="subtitle">...</div>
 
     <div class="config-box">
         <strong>Impostazioni Repository GitHub:</strong><br>
@@ -214,7 +214,7 @@
         <div class="coin-img coin-bronze">1c</div>
     </div>
 
-    <div class="label-row" style="margin-top: 15px;">Quantità Attuali nel CSV:</div>
+    <div class="label-row" style="margin-top: 15px;">NUMERO MONETE</div>
     <div class="grid-row">
         <div id="qty-2" class="display-box">0</div>
         <div id="qty-1" class="display-box">0</div>
@@ -226,7 +226,7 @@
         <div id="qty-001" class="display-box">0</div>
     </div>
 
-    <div class="label-row">Valore Economico Parziale:</div>
+    <div class="label-row">VALORE MONETE</div>
     <div class="grid-row">
         <div id="val-2" class="subtotal-box">0.00 €</div>
         <div id="val-1" class="subtotal-box">0.00 €</div>
@@ -398,7 +398,7 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                message: `Salvadanaio Cloud: ${action === 'deposit' ? 'Deposito' : 'Prelievo'} automatico`,
+                message: `fix`,
                 content: btoa(unescape(encodeURIComponent(csvContent))), // Codifica sicura UTF-8 in Base64
                 sha: fileSha
             })
