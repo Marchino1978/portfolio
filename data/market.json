@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 153.27,
-        "dailyChange": "-0.83",
-        "value": 153.27,
-        "v1": "-1.30%W",
-        "v2": "-1.61%M",
-        "v3": "-11.66%Q",
-        "v_led": "-1.61%M",
-        "v_alert": "-1.61%M",
-        "v_bot": "-1.61%M"
+        "price": 153.165,
+        "dailyChange": "-0.90",
+        "value": 153.165,
+        "v1": "-1.37%W",
+        "v2": "-1.68%M",
+        "v3": "-11.72%Q",
+        "v_led": "-1.68%M",
+        "v_alert": "-1.68%M",
+        "v_bot": "-1.68%M"
       },
       {
         "symbol": "XEON",
@@ -59,46 +59,46 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 164.3,
-        "dailyChange": "+0.79",
-        "value": 164.3,
-        "v1": "+0.75%W",
-        "v2": "+6.17%M",
-        "v3": "+10.79%Q",
-        "v_led": "+6.17%M",
-        "v_alert": "+6.17%M",
-        "v_bot": "+6.17%M"
+        "price": 164.01,
+        "dailyChange": "+0.61",
+        "value": 164.01,
+        "v1": "+0.58%W",
+        "v2": "+5.98%M",
+        "v3": "+10.59%Q",
+        "v_led": "+5.98%M",
+        "v_alert": "+5.98%M",
+        "v_bot": "+5.98%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 38.68,
-        "dailyChange": "+0.44",
-        "value": 38.68,
-        "v1": "-0.72%W",
-        "v2": "+3.39%M",
-        "v3": "+4.29%Q",
-        "v_led": "+3.39%M",
-        "v_alert": "+3.39%M",
-        "v_bot": "+3.39%M"
+        "price": 38.6475,
+        "dailyChange": "+0.36",
+        "value": 38.6475,
+        "v1": "-0.80%W",
+        "v2": "+3.31%M",
+        "v3": "+4.20%Q",
+        "v_led": "+3.31%M",
+        "v_alert": "+3.31%M",
+        "v_bot": "+3.31%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 49.074,
-        "dailyChange": "+2.37",
-        "value": 49.074,
-        "v1": "+4.12%W",
-        "v2": "+9.79%M",
-        "v3": "+18.68%Q",
-        "v_led": "+9.79%M",
-        "v_alert": "+9.79%M",
-        "v_bot": "+9.79%M"
+        "price": 48.9895,
+        "dailyChange": "+2.19",
+        "value": 48.9895,
+        "v1": "+3.95%W",
+        "v2": "+9.60%M",
+        "v3": "+18.48%Q",
+        "v_led": "+9.60%M",
+        "v_alert": "+9.60%M",
+        "v_bot": "+9.60%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-01T08:25:20.246790+02:00",
-    "readable": "08:25 01-06-2026"
+    "iso": "2026-06-01T08:40:25.165985+02:00",
+    "readable": "08:40 01-06-2026"
   }
 }
