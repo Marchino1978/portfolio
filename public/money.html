@@ -265,9 +265,8 @@
     const coinValues = [2.00, 1.00, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01];
     
     let currentQuantities = [0, 0, 0, 0, 0, 0, 0, 0];
-    let fileSha = ""; // Hash univoco di sicurezza richiesto dall'API di GitHub
+    let fileSha = "";
 
-    // Recupera le credenziali memorizzate sul LocalStorage del browser al caricamento
     window.onload = function() {
         document.getElementById('gh-owner').value = localStorage.getItem('coin_gh_owner') || '';
         document.getElementById('gh-repo').value = localStorage.getItem('coin_gh_repo') || '';
@@ -286,7 +285,6 @@
         loadFromGitHub();
     }
 
-    // Effettua la lettura asincrona del CSV direttamente dal cloud di GitHub
     function loadFromGitHub() {
         const owner = localStorage.getItem('coin_gh_owner');
         const repo = localStorage.getItem('coin_gh_repo');
@@ -305,7 +303,6 @@
         })
         .then(data => {
             fileSha = data.sha;
-            // Decodifica il contenuto binario Base64 ritornato da GitHub
             const csvText = decodeURIComponent(escape(atob(data.content)));
             parseCSV(csvText);
             document.getElementById('loading-status').style.display = 'none';
@@ -335,7 +332,6 @@
             document.getElementById(`qty-${type}`).innerText = qty;
             document.getElementById(`val-${type}`).innerText = subTotal.toFixed(2) + " €";
 
-            // Calcolo riepiloghi per gruppi
             if (index <= 1) totAlti += subTotal;      // 2€ e 1€
             else if (index <= 4) totMedi += subTotal; // 0.50€, 0.20€, 0.10€
             else totBassi += subTotal;                // 0.05€, 0.02€, 0.01€
@@ -347,7 +343,6 @@
         document.getElementById('rip-totale').innerText = (totAlti + totMedi + totBassi).toFixed(2) + " €";
     }
 
-    // Calcola lo spostamento ed esegue l'auto-commit di aggiornamento sul repository
     function handleTransaction(action) {
         const owner = localStorage.getItem('coin_gh_owner');
         const repo = localStorage.getItem('coin_gh_repo');
@@ -386,11 +381,9 @@
             return;
         }
 
-        // Ricostruisce il corpo del file CSV
         const csvHeader = "2.00,1.00,0.50,0.20,0.10,0.05,0.02,0.01";
         const csvContent = `${csvHeader}\n${newQuantities.join(',')}`;
 
-        // Esegue la chiamata PUT di modifica file alle API di GitHub
         fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/money.csv`, {
             method: 'PUT',
             headers: {
@@ -399,7 +392,7 @@
             },
             body: JSON.stringify({
                 message: `fix`,
-                content: btoa(unescape(encodeURIComponent(csvContent))), // Codifica sicura UTF-8 in Base64
+                content: btoa(unescape(encodeURIComponent(csvContent))),
                 sha: fileSha
             })
         })
@@ -408,12 +401,10 @@
             return response.json();
         })
         .then(data => {
-            // Aggiorna i dati locali con la risposta del server
             fileSha = data.content.sha;
             currentQuantities = newQuantities;
             updateUI(currentQuantities);
             
-            // Ripristina a zero le caselle di movimento
             coinTypes.forEach(type => document.getElementById(`in-${type}`).value = 0);
             document.getElementById('loading-status').style.display = 'none';
             alert("Salvadanaio aggiornato e sincronizzato istantaneamente su GitHub!");
