@@ -59,10 +59,10 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 161.62,
-        "dailyChange": "+1.22",
-        "value": 161.62,
-        "v1": "-1.66%W",
+        "price": 161.63,
+        "dailyChange": "+1.23",
+        "value": 161.63,
+        "v1": "-1.65%W",
         "v2": "+2.17%M",
         "v3": "+9.08%Q",
         "v_led": "+2.17%M",
@@ -72,33 +72,33 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 38.275,
-        "dailyChange": "+1.53",
-        "value": 38.275,
-        "v1": "-0.92%W",
-        "v2": "+1.47%M",
-        "v3": "+4.46%Q",
-        "v_led": "+1.47%M",
-        "v_alert": "+1.47%M",
-        "v_bot": "+1.47%M"
+        "price": 38.28,
+        "dailyChange": "+1.54",
+        "value": 38.28,
+        "v1": "-0.91%W",
+        "v2": "+1.48%M",
+        "v3": "+4.48%Q",
+        "v_led": "+1.48%M",
+        "v_alert": "+1.48%M",
+        "v_bot": "+1.48%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 46.6535,
-        "dailyChange": "+2.15",
-        "value": 46.6535,
-        "v1": "-4.98%W",
-        "v2": "-1.07%M",
-        "v3": "+12.53%Q",
-        "v_led": "-1.07%M",
-        "v_alert": "-1.07%M",
-        "v_bot": "-1.07%M"
+        "price": 46.5675,
+        "dailyChange": "+1.97",
+        "value": 46.5675,
+        "v1": "-5.16%W",
+        "v2": "-1.26%M",
+        "v3": "+12.32%Q",
+        "v_led": "-1.26%M",
+        "v_alert": "-1.26%M",
+        "v_bot": "-1.26%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-08T20:10:32.209743+02:00",
-    "readable": "20:10 08-06-2026"
+    "iso": "2026-06-08T20:25:24.502370+02:00",
+    "readable": "20:25 08-06-2026"
   }
 }
