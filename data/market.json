@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 123.1475,
-        "dailyChange": "+1.45",
-        "value": 123.1475,
-        "v1": "-2.21%W",
-        "v2": "+1.42%M",
-        "v3": "+10.27%Q",
-        "v_led": "+1.42%M",
-        "v_alert": "+1.42%M",
-        "v_bot": "+1.42%M"
+        "price": 123.1575,
+        "dailyChange": "+1.46",
+        "value": 123.1575,
+        "v1": "-2.20%W",
+        "v2": "+1.43%M",
+        "v3": "+10.28%Q",
+        "v_led": "+1.43%M",
+        "v_alert": "+1.43%M",
+        "v_bot": "+1.43%M"
       },
       {
         "symbol": "VNGA80",
@@ -33,15 +33,15 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 143.68,
-        "dailyChange": "+2.75",
-        "value": 143.68,
-        "v1": "-5.96%W",
-        "v2": "-9.74%M",
-        "v3": "-17.51%Q",
-        "v_led": "-9.74%M",
-        "v_alert": "-9.74%M",
-        "v_bot": "-9.74%M"
+        "price": 143.71,
+        "dailyChange": "+2.77",
+        "value": 143.71,
+        "v1": "-5.94%W",
+        "v2": "-9.72%M",
+        "v3": "-17.49%Q",
+        "v_led": "-9.72%M",
+        "v_alert": "-9.72%M",
+        "v_bot": "-9.72%M"
       },
       {
         "symbol": "XEON",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-06-11T22:40:30.950491+02:00",
-    "readable": "22:40 11-06-2026"
+    "iso": "2026-06-11T22:55:25.223888+02:00",
+    "readable": "22:55 11-06-2026"
   }
 }
