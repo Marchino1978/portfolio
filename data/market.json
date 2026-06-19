@@ -33,28 +33,28 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 143.605,
-        "dailyChange": "-1.50",
-        "value": 143.605,
+        "price": 143.615,
+        "dailyChange": "-1.49",
+        "value": 143.615,
         "v1": "-0.25%W",
-        "v2": "-7.25%M",
+        "v2": "-7.24%M",
         "v3": "-6.82%Q",
-        "v_led": "-7.25%M",
-        "v_alert": "-7.25%M",
-        "v_bot": "-7.25%M"
+        "v_led": "-7.24%M",
+        "v_alert": "-7.24%M",
+        "v_bot": "-7.24%M"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 149.447,
-        "dailyChange": "+0.04",
-        "value": 149.447,
-        "v1": "+0.05%W",
-        "v2": "+0.19%M",
-        "v3": "+0.52%Q",
-        "v_led": "+0.19%M",
-        "v_alert": "+0.19%M",
-        "v_bot": "+0.19%M"
+        "price": 149.433,
+        "dailyChange": "+0.03",
+        "value": 149.433,
+        "v1": "+0.04%W",
+        "v2": "+0.18%M",
+        "v3": "+0.51%Q",
+        "v_led": "+0.18%M",
+        "v_alert": "+0.18%M",
+        "v_bot": "+0.18%M"
       },
       {
         "symbol": "VWCE",
@@ -85,9 +85,9 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 49.79,
+        "price": 49.7915,
         "dailyChange": "-1.01",
-        "value": 49.79,
+        "value": 49.7915,
         "v1": "+4.10%W",
         "v2": "+8.31%M",
         "v3": "+26.02%Q",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-06-19T21:55:31.882423+02:00",
-    "readable": "21:55 19-06-2026"
+    "iso": "2026-06-19T22:10:39.875653+02:00",
+    "readable": "22:10 19-06-2026"
   }
 }
