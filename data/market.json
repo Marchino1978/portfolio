@@ -18,22 +18,22 @@
         "v_bot": "+0.15%M"
       },
       {
-        "symbol": "VWCE",
-        "label": "FTSE All World",
-        "price": 166.33,
-        "dailyChange": "+0.66",
-        "value": 166.33,
-        "v1": "+1.09%W",
-        "v2": "+3.22%M",
-        "v3": "+15.63%Q",
-        "v_led": "+3.22%M",
-        "v_alert": "+3.22%M",
-        "v_bot": "+3.22%M"
+        "symbol": "EIMI",
+        "label": "Emerging Markets",
+        "price": 50.755,
+        "dailyChange": "+1.90",
+        "value": 50.755,
+        "v1": "+3.12%W",
+        "v2": "+9.32%M",
+        "v3": "+25.41%Q",
+        "v_led": "+9.32%M",
+        "v_alert": "+9.32%M",
+        "v_bot": "+9.32%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-22T17:57:08.685005+02:00",
-    "readable": "17:57 22-06-2026"
+    "iso": "2026-06-22T18:12:15.826295+02:00",
+    "readable": "18:12 22-06-2026"
   }
 }
