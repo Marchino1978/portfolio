@@ -5,35 +5,48 @@
     "source": "ls-tc.de",
     "data": [
       {
+        "symbol": "XEON",
+        "label": "XEON",
+        "price": 149.434,
+        "dailyChange": "+0.00",
+        "value": 149.434,
+        "v1": "+0.04%W",
+        "v2": "+0.16%M",
+        "v3": "+0.48%Q",
+        "v_led": "+0.16%M",
+        "v_alert": "+0.16%M",
+        "v_bot": "+0.16%M"
+      },
+      {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 165.96,
-        "dailyChange": "+0.44",
-        "value": 165.96,
-        "v1": "+0.86%W",
-        "v2": "+2.99%M",
-        "v3": "+15.37%Q",
-        "v_led": "+2.99%M",
-        "v_alert": "+2.99%M",
-        "v_bot": "+2.99%M"
+        "price": 166.01,
+        "dailyChange": "+0.47",
+        "value": 166.01,
+        "v1": "+0.89%W",
+        "v2": "+3.02%M",
+        "v3": "+15.40%Q",
+        "v_led": "+3.02%M",
+        "v_alert": "+3.02%M",
+        "v_bot": "+3.02%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 50.371,
-        "dailyChange": "+1.13",
-        "value": 50.371,
-        "v1": "+2.34%W",
-        "v2": "+8.49%M",
-        "v3": "+24.47%Q",
-        "v_led": "+8.49%M",
-        "v_alert": "+8.49%M",
-        "v_bot": "+8.49%M"
+        "price": 50.391,
+        "dailyChange": "+1.17",
+        "value": 50.391,
+        "v1": "+2.38%W",
+        "v2": "+8.53%M",
+        "v3": "+24.51%Q",
+        "v_led": "+8.53%M",
+        "v_alert": "+8.53%M",
+        "v_bot": "+8.53%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-22T09:27:07.601747+02:00",
-    "readable": "09:27 22-06-2026"
+    "iso": "2026-06-22T09:41:58.408538+02:00",
+    "readable": "09:41 22-06-2026"
   }
 }
