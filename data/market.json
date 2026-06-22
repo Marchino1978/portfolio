@@ -5,22 +5,48 @@
     "source": "ls-tc.de",
     "data": [
       {
+        "symbol": "VWCE",
+        "label": "FTSE All World",
+        "price": 167.02,
+        "dailyChange": "+1.08",
+        "value": 167.02,
+        "v1": "+1.51%W",
+        "v2": "+3.65%M",
+        "v3": "+16.11%Q",
+        "v_led": "+3.65%M",
+        "v_alert": "+3.65%M",
+        "v_bot": "+3.65%M"
+      },
+      {
+        "symbol": "EXUS",
+        "label": "MSCI World Ex-USA",
+        "price": 39.6625,
+        "dailyChange": "+0.95",
+        "value": 39.6625,
+        "v1": "+1.39%W",
+        "v2": "+3.58%M",
+        "v3": "+11.32%Q",
+        "v_led": "+3.58%M",
+        "v_alert": "+3.58%M",
+        "v_bot": "+3.58%M"
+      },
+      {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 50.843,
-        "dailyChange": "+2.07",
-        "value": 50.843,
-        "v1": "+3.30%W",
-        "v2": "+9.50%M",
-        "v3": "+25.63%Q",
-        "v_led": "+9.50%M",
-        "v_alert": "+9.50%M",
-        "v_bot": "+9.50%M"
+        "price": 51.003,
+        "dailyChange": "+2.40",
+        "value": 51.003,
+        "v1": "+3.62%W",
+        "v2": "+9.85%M",
+        "v3": "+26.03%Q",
+        "v_led": "+9.85%M",
+        "v_alert": "+9.85%M",
+        "v_bot": "+9.85%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-22T15:57:27.683073+02:00",
-    "readable": "15:57 22-06-2026"
+    "iso": "2026-06-22T16:11:58.581205+02:00",
+    "readable": "16:11 22-06-2026"
   }
 }
