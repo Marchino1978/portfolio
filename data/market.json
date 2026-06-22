@@ -5,22 +5,22 @@
     "source": "ls-tc.de",
     "data": [
       {
-        "symbol": "EIMI",
-        "label": "Emerging Markets",
-        "price": 50.833,
-        "dailyChange": "+2.05",
-        "value": 50.833,
-        "v1": "+3.28%W",
-        "v2": "+9.48%M",
-        "v3": "+25.61%Q",
-        "v_led": "+9.48%M",
-        "v_alert": "+9.48%M",
-        "v_bot": "+9.48%M"
+        "symbol": "XEON",
+        "label": "XEON",
+        "price": 149.4175,
+        "dailyChange": "-0.01",
+        "value": 149.4175,
+        "v1": "+0.03%W",
+        "v2": "+0.15%M",
+        "v3": "+0.47%Q",
+        "v_led": "+0.15%M",
+        "v_alert": "+0.15%M",
+        "v_bot": "+0.15%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-22T16:27:26.766635+02:00",
-    "readable": "16:27 22-06-2026"
+    "iso": "2026-06-22T16:42:37.435308+02:00",
+    "readable": "16:42 22-06-2026"
   }
 }
