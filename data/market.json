@@ -3,10 +3,50 @@
   "open": true,
   "values": {
     "source": "ls-tc.de",
-    "data": []
+    "data": [
+      {
+        "symbol": "XEON",
+        "label": "XEON",
+        "price": 149.4315,
+        "dailyChange": "+0.00",
+        "value": 149.4315,
+        "v1": "+0.03%W",
+        "v2": "+0.16%M",
+        "v3": "+0.48%Q",
+        "v_led": "+0.16%M",
+        "v_alert": "+0.16%M",
+        "v_bot": "+0.16%M"
+      },
+      {
+        "symbol": "VWCE",
+        "label": "FTSE All World",
+        "price": 166.55,
+        "dailyChange": "+0.79",
+        "value": 166.55,
+        "v1": "+1.22%W",
+        "v2": "+3.36%M",
+        "v3": "+15.78%Q",
+        "v_led": "+3.36%M",
+        "v_alert": "+3.36%M",
+        "v_bot": "+3.36%M"
+      },
+      {
+        "symbol": "EIMI",
+        "label": "Emerging Markets",
+        "price": 50.83,
+        "dailyChange": "+2.05",
+        "value": 50.83,
+        "v1": "+3.27%W",
+        "v2": "+9.48%M",
+        "v3": "+25.60%Q",
+        "v_led": "+9.48%M",
+        "v_alert": "+9.48%M",
+        "v_bot": "+9.48%M"
+      }
+    ]
   },
   "last_updated": {
-    "iso": "2026-06-22T15:12:57.157745+02:00",
-    "readable": "15:12 22-06-2026"
+    "iso": "2026-06-22T15:26:50.597082+02:00",
+    "readable": "15:26 22-06-2026"
   }
 }
