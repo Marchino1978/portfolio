@@ -3,37 +3,10 @@
   "open": true,
   "values": {
     "source": "ls-tc.de",
-    "data": [
-      {
-        "symbol": "VWCE",
-        "label": "FTSE All World",
-        "price": 165.91,
-        "dailyChange": "+0.41",
-        "value": 165.91,
-        "v1": "+0.83%W",
-        "v2": "+2.96%M",
-        "v3": "+15.34%Q",
-        "v_led": "+2.96%M",
-        "v_alert": "+2.96%M",
-        "v_bot": "+2.96%M"
-      },
-      {
-        "symbol": "EIMI",
-        "label": "Emerging Markets",
-        "price": 50.514,
-        "dailyChange": "+1.41",
-        "value": 50.514,
-        "v1": "+2.63%W",
-        "v2": "+8.80%M",
-        "v3": "+24.82%Q",
-        "v_led": "+8.80%M",
-        "v_alert": "+8.80%M",
-        "v_bot": "+8.80%M"
-      }
-    ]
+    "data": []
   },
   "last_updated": {
-    "iso": "2026-06-22T12:27:07.793832+02:00",
-    "readable": "12:27 22-06-2026"
+    "iso": "2026-06-22T12:42:56.341247+02:00",
+    "readable": "12:42 22-06-2026"
   }
 }
