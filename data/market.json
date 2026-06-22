@@ -3,10 +3,24 @@
   "open": true,
   "values": {
     "source": "ls-tc.de",
-    "data": []
+    "data": [
+      {
+        "symbol": "VWCE",
+        "label": "FTSE All World",
+        "price": 166.1,
+        "dailyChange": "+0.52",
+        "value": 166.1,
+        "v1": "+0.95%W",
+        "v2": "+3.08%M",
+        "v3": "+15.47%Q",
+        "v_led": "+3.08%M",
+        "v_alert": "+3.08%M",
+        "v_bot": "+3.08%M"
+      }
+    ]
   },
   "last_updated": {
-    "iso": "2026-06-22T12:57:46.847632+02:00",
-    "readable": "12:57 22-06-2026"
+    "iso": "2026-06-22T13:12:37.081577+02:00",
+    "readable": "13:12 22-06-2026"
   }
 }
