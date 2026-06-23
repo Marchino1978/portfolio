@@ -3,10 +3,24 @@
   "open": true,
   "values": {
     "source": "ls-tc.de",
-    "data": []
+    "data": [
+      {
+        "symbol": "EIMI",
+        "label": "Emerging Markets",
+        "price": 48.3765,
+        "dailyChange": "-4.98",
+        "value": 48.3765,
+        "v1": "+0.14%W",
+        "v2": "+4.19%M",
+        "v3": "+18.69%Q",
+        "v_led": "+4.19%M",
+        "v_alert": "+4.19%M",
+        "v_bot": "+4.19%M"
+      }
+    ]
   },
   "last_updated": {
-    "iso": "2026-06-23T08:12:54.718624+02:00",
-    "readable": "08:12 23-06-2026"
+    "iso": "2026-06-23T08:27:27.527298+02:00",
+    "readable": "08:27 23-06-2026"
   }
 }
