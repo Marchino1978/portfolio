@@ -1,6 +1,6 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
@@ -72,33 +72,33 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 38.915,
-        "dailyChange": "-0.73",
-        "value": 38.915,
-        "v1": "-1.26%W",
-        "v2": "-0.12%M",
-        "v3": "+10.43%Q",
-        "v_led": "-0.12%M",
-        "v_alert": "-0.12%M",
-        "v_bot": "-0.12%M"
+        "price": 38.965,
+        "dailyChange": "-0.60",
+        "value": 38.965,
+        "v1": "-1.13%W",
+        "v2": "+0.01%M",
+        "v3": "+10.57%Q",
+        "v_led": "+0.01%M",
+        "v_alert": "+0.01%M",
+        "v_bot": "+0.01%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 48.616,
-        "dailyChange": "+0.90",
-        "value": 48.616,
-        "v1": "-0.03%W",
-        "v2": "+3.15%M",
-        "v3": "+22.46%Q",
-        "v_led": "+3.15%M",
-        "v_alert": "+3.15%M",
-        "v_bot": "+3.15%M"
+        "price": 48.628,
+        "dailyChange": "+0.93",
+        "value": 48.628,
+        "v1": "-0.00%W",
+        "v2": "+3.18%M",
+        "v3": "+22.49%Q",
+        "v_led": "+3.18%M",
+        "v_alert": "+3.18%M",
+        "v_bot": "+3.18%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-06-24T22:40:41.761503+02:00",
-    "readable": "22:40 24-06-2026"
+    "iso": "2026-06-24T22:55:33.191163+02:00",
+    "readable": "22:55 24-06-2026"
   }
 }
