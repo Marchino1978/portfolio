@@ -1105,8 +1105,8 @@ def update_all_etf():
     elif giorno_settimana == 0 and (now_rome.day == 2 or now_rome.day == 3):
         invia_oggi = True
 
-    # Esegui l'invio solo nella finestra oraria del primo cron (07:10 - 07:20)
-    if invia_oggi and 5 <= now_rome.minute <= 25 and now_rome.hour == 7:
+    # Esegui l'invio solo nella finestra oraria del primo cron (07:03 - 07:23)
+    if invia_oggi and 3 <= now_rome.minute <= 23 and now_rome.hour == 7:
         log_info(f"Condizione report mensile soddisfatta ({now_rome.day}/{now_rome.month}). Invio...")
         try:
             # import bot_telegram
