@@ -20,28 +20,28 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 43.7525,
-        "dailyChange": "+1.00",
-        "value": 43.7525,
-        "v1": "+0.67%M",
-        "v2": "+11.61%Q",
-        "v3": "+11.16%H",
-        "v_led": "+0.67%M",
-        "v_alert": "+0.67%M",
-        "v_bot": "+0.67%M"
+        "price": 43.7575,
+        "dailyChange": "+1.01",
+        "value": 43.7575,
+        "v1": "+0.68%M",
+        "v2": "+11.63%Q",
+        "v3": "+11.17%H",
+        "v_led": "+0.68%M",
+        "v_alert": "+0.68%M",
+        "v_bot": "+0.68%M"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 144.635,
-        "dailyChange": "+1.17",
-        "value": 144.635,
-        "v1": "-4.59%M",
-        "v2": "-9.66%Q",
-        "v3": "-1.68%H",
-        "v_led": "-4.59%M",
-        "v_alert": "-4.59%M",
-        "v_bot": "-4.59%M"
+        "price": 144.595,
+        "dailyChange": "+1.14",
+        "value": 144.595,
+        "v1": "-4.61%M",
+        "v2": "-9.68%Q",
+        "v3": "-1.70%H",
+        "v_led": "-4.61%M",
+        "v_alert": "-4.61%M",
+        "v_bot": "-4.61%M"
       },
       {
         "symbol": "XEON",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 166.01,
+        "price": 166.02,
         "dailyChange": "+0.70",
-        "value": 166.01,
-        "v1": "+1.37%M",
+        "value": 166.02,
+        "v1": "+1.38%M",
         "v2": "+14.46%Q",
-        "v3": "+14.15%H",
-        "v_led": "+1.37%M",
-        "v_alert": "+1.37%M",
-        "v_bot": "+1.37%M"
+        "v3": "+14.16%H",
+        "v_led": "+1.38%M",
+        "v_alert": "+1.38%M",
+        "v_bot": "+1.38%M"
       },
       {
         "symbol": "EXUS",
@@ -85,20 +85,20 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 48.3675,
+        "price": 48.3715,
         "dailyChange": "+2.63",
-        "value": 48.3675,
-        "v1": "-1.23%M",
-        "v2": "+20.23%Q",
+        "value": 48.3715,
+        "v1": "-1.22%M",
+        "v2": "+20.24%Q",
         "v3": "N/A",
-        "v_led": "-1.23%M",
-        "v_alert": "-1.23%M",
-        "v_bot": "-1.23%M"
+        "v_led": "-1.22%M",
+        "v_alert": "-1.22%M",
+        "v_bot": "-1.22%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-07-03T18:55:32.752380+02:00",
-    "readable": "18:55 03-07-2026"
+    "iso": "2026-07-03T19:11:05.682944+02:00",
+    "readable": "19:11 03-07-2026"
   }
 }
