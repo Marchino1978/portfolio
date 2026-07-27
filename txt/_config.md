@@ -3,7 +3,7 @@
 v1 = M      # prima   variazione visualizzata
 v2 = Q      # seconda variazione visualizzata
 v3 = H      # terza   variazione visualizzata
-v_led = M   # variazione per gestione LED
+v_led = H   # variazione per gestione LED
 v_bot = M   # variazione per gestione report TELEGRAM
 v_alert = M # variazione per gestione notifiche ALEXA
 

@@ -1,8 +1,8 @@
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_06_29.sql
 │   ├── backup_supabase_2026_07_06.sql
-│   └── backup_supabase_2026_07_13.sql
+│   ├── backup_supabase_2026_07_13.sql
+│   └── backup_supabase_2026_07_20.sql
 ├── config/
 │   └── variations.conf
 ├── data/
