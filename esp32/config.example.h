@@ -1,5 +1,3 @@
-# esp32//config.example.h
-----------------------------------------
 #ifndef CONFIG_H
 #define CONFIG_H
 
@@ -15,4 +13,3 @@ const char* pass_hotspot = "LA_TUA_PASSWORD_HOTSPOT";
 const char* serverUrl = "https://githubusercontent.com";
 
 #endif
-
