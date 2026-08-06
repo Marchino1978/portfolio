@@ -230,7 +230,7 @@ def commit_to_github():
 
         payload = {
 #           "message": "fix",
-            "message": "fix [skip ci]",
+            "message": "fix\n\n[skip ci]",
             "content": content,
             "branch": "main"
         }
