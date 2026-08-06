@@ -229,7 +229,8 @@ def commit_to_github():
             sha = get_resp.json().get("sha")
 
         payload = {
-            "message": "fix",
+#           "message": "fix",
+            "message": "fix [skip ci]",
             "content": content,
             "branch": "main"
         }

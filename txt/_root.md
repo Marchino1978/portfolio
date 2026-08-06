@@ -644,9 +644,9 @@ primary_region = "fra"
 ----------------------------------------
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_07_06.sql
 │   ├── backup_supabase_2026_07_13.sql
-│   └── backup_supabase_2026_07_20.sql
+│   ├── backup_supabase_2026_07_20.sql
+│   └── backup_supabase_2026_07_27.sql
 ├── config/
 │   └── variations.conf
 ├── data/
@@ -988,7 +988,8 @@ def commit_to_github():
             sha = get_resp.json().get("sha")
 
         payload = {
-            "message": "fix",
+#           "message": "fix",
+            "message": "fix [skip ci]",
             "content": content,
             "branch": "main"
         }
