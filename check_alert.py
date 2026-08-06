@@ -4,6 +4,9 @@ import requests
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from utils.logger import log_info, log_error
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_config():
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -25,13 +28,13 @@ def check_alert():
         conf = get_config()
         
         urls = [
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ca398444-ff26-4158-a877-4081007ef4ab&token=02cbbd5e-7717-4cdb-9b68-6522bf9920ea&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ee507dd2-aa02-4021-91cc-4e92f7fc9edd&token=1e5a73b6-732d-4636-a9d6-9e6c565a7639&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=cdf03dcc-c35d-4e31-bc37-c11d0ed389ec&token=8d450f96-5535-4432-8daa-dcef305c60d4&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=f4f7ae99-0eac-4aae-97cf-a5f0841fb0c1&token=e1effc48-e25d-4ec7-987a-3bb8dcd536e4&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=32094a58-cdaa-4484-9bfe-4c031b11c9e8&token=1e7e9bd3-e05b-4e2f-a8b6-93ce33e968e9&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=1cddc615-9d94-4ef8-bd52-f252caeb72bb&token=306d120e-a999-4e28-aa94-9673073f155a&response=html",
-            "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=301554c6-6677-4cfb-b29a-b404c60e414f&token=753488a9-1b9a-42d8-af20-e8bb63642df8&response=html"
+            os.getenv("URL_ALERT_0"),
+            os.getenv("URL_ALERT_1"),
+            os.getenv("URL_ALERT_2"),
+            os.getenv("URL_ALERT_3"),
+            os.getenv("URL_ALERT_4"),
+            os.getenv("URL_ALERT_5"),
+            os.getenv("URL_ALERT_6")
         ]
 
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "market.json")
