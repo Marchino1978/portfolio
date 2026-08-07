@@ -9,15 +9,21 @@ import matplotlib.pyplot as plt
 
 import telebot
 from zoneinfo import ZoneInfo
-from supabase_client import get_supabase
 from utils.logger import log_info, log_error
-from dotenv import load_dotenv
 
-load_dotenv()
+# Gestione di emergenza per dotenv mancante in locale
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ModuleNotFoundError:
+    pass
 
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 bot = telebot.TeleBot(TOKEN)
+
+# Spostato qui sotto per evitare che il crash blocchi l'avvio del file
+from supabase_client import get_supabase
 
 def genera_grafico_e_report(is_test=False):
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -66,7 +72,7 @@ def genera_grafico_e_report(is_test=False):
                 continue
 
             df = pd.DataFrame(response.data)
-            prezzo_inizio = float(df.iloc[0]['close_value'])
+            prezzo_inizio = float(df.iloc['close_value'])
             
             variazione_annuale = ((prezzo_attuale - prezzo_inizio) / prezzo_inizio) * 100
             
