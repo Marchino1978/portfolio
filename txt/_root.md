@@ -652,8 +652,6 @@ primary_region = "fra"
 │   ├── market-live.html
 │   ├── money.html
 │   └── salvadanaio.html
-├── __pycache__/
-│   └── supabase_client.cpython-39.pyc
 ├── tests/
 │   ├── testDateVar.py
 │   └── testEaster.py
@@ -683,7 +681,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-11 directories, 52 files
+10 directories, 51 files
 
 
 # ./push.sh
