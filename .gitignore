@@ -60,3 +60,9 @@ esp32/ETF.ino
 esp32/ETF.example.ino
 esp32/case.stl
 esp32/config.h
+
+# OLD
+old/index.html
+old/market.html
+old/market-live.html
+old/fondi.html

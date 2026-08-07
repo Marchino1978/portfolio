@@ -33,7 +33,7 @@ for dir in */; do
   [ -d "$dir" ] || continue
   foldername=$(basename "$dir")
   case "$foldername" in
-    txt|.git|node_modules|data|public|backup_SQL|.venv|__pycache__) continue ;;
+    txt|.git|node_modules|data|public|old|backup_SQL|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done

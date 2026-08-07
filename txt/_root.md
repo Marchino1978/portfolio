@@ -642,11 +642,7 @@ primary_region = "fra"
 │   └── .gitkeep
 ├── public/
 │   ├── chart.html
-│   ├── fondi.html
-│   ├── index.html
-│   ├── market.html
 │   ├── market-live.html
-│   ├── market-mobile.html
 │   ├── money.html
 │   └── salvadanaio.html
 ├── __pycache__/
@@ -680,7 +676,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-9 directories, 51 files
+9 directories, 47 files
 
 
 # ./push.sh
@@ -1412,7 +1408,7 @@ for dir in */; do
   [ -d "$dir" ] || continue
   foldername=$(basename "$dir")
   case "$foldername" in
-    txt|.git|node_modules|data|public|backup_SQL|.venv|__pycache__) continue ;;
+    txt|.git|node_modules|data|public|old|backup_SQL|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done
