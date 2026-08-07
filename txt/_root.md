@@ -636,11 +636,12 @@ primary_region = "fra"
 │   ├── config.example.h
 │   ├── config.h
 │   ├── ETF.example.ino
-│   ├── ETF.ino
-│   └── .gitkeep
+│   └── ETF.ino
 ├── gallery/
 │   ├── case.gif
-│   └── case.png
+│   ├── case.png
+│   ├── report_annuale.png
+│   └── report_mensile.png
 ├── old/
 │   ├── fondi.html
 │   ├── index.html
@@ -682,7 +683,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-11 directories, 51 files
+11 directories, 52 files
 
 
 # ./push.sh
