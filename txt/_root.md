@@ -632,14 +632,15 @@ primary_region = "fra"
 │   ├── money.csv
 │   └── salvadanaio.csv
 ├── esp32/
-│   ├── case.gif
-│   ├── case.png
 │   ├── case.stl
 │   ├── config.example.h
 │   ├── config.h
 │   ├── ETF.example.ino
 │   ├── ETF.ino
 │   └── .gitkeep
+├── gallery/
+│   ├── case.gif
+│   └── case.png
 ├── old/
 │   ├── fondi.html
 │   ├── index.html
@@ -681,7 +682,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-10 directories, 51 files
+11 directories, 51 files
 
 
 # ./push.sh
@@ -1413,7 +1414,7 @@ for dir in */; do
   [ -d "$dir" ] || continue
   foldername=$(basename "$dir")
   case "$foldername" in
-    txt|.git|node_modules|data|public|old|backup_SQL|.venv|__pycache__) continue ;;
+    txt|.git|node_modules|data|public|old|gallery|backup_SQL|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done

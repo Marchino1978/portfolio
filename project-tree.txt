@@ -12,14 +12,15 @@
 │   ├── money.csv
 │   └── salvadanaio.csv
 ├── esp32/
-│   ├── case.gif
-│   ├── case.png
 │   ├── case.stl
 │   ├── config.example.h
 │   ├── config.h
 │   ├── ETF.example.ino
 │   ├── ETF.ino
 │   └── .gitkeep
+├── gallery/
+│   ├── case.gif
+│   └── case.png
 ├── old/
 │   ├── fondi.html
 │   ├── index.html
@@ -61,4 +62,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-10 directories, 51 files
+11 directories, 51 files
