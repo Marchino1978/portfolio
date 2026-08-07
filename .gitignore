@@ -57,5 +57,6 @@ backup_SQL/
 
 # ESP32
 esp32/ETF.ino
+esp32/ETF.example.ino
 esp32/case.stl
 esp32/config.h

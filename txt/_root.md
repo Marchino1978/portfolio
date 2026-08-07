@@ -662,6 +662,9 @@ primary_region = "fra"
 │   ├── case.gif
 │   ├── case.png
 │   ├── case.stl
+│   ├── config.example.h
+│   ├── config.h
+│   ├── ETF.example.ino
 │   ├── ETF.ino
 │   └── .gitkeep
 ├── public/
@@ -699,7 +702,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 45 files
+7 directories, 48 files
 
 
 # ./push.sh
@@ -1287,6 +1290,7 @@ dump_folder() {
     [ -f "$file" ] || continue
 
     [[ "$(basename "$file")" == "ETF.ino" ]] && continue
+    [[ "$(basename "$file")" == "ETF.example.ino" ]] && continue
     [[ "$(basename "$file")" == "config.h" ]] && continue
     [[ "$(basename "$file")" == "case.stl" ]] && continue
     [[ "$(basename "$file")" == "case.gif" ]] && continue
