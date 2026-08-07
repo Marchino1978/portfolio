@@ -48,6 +48,7 @@
 ├── .gitignore
 ├── project-tree.txt
 ├── push.sh*
+├── report_annuale.py
 ├── requirements.txt
 ├── schema.sql
 ├── scraper_etf.py
@@ -55,4 +56,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-7 directories, 48 files
+7 directories, 49 files

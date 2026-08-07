@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 import check_alert
 import backup_manager
 import bot_telegram
+import report_annuale
 from supabase_client import get_supabase, upsert_previous_close
 from config import is_market_open
 from utils.logger import log_info, log_error
@@ -320,7 +321,7 @@ def update_all_etf():
         log_error(f"Errore controllo alert Alexa: {e}")
 
     # ---------------------------------------------------------
-    # BACKUP SUPABASE (settimanale) + REPORT TELEGRAM (mensile)
+    # BACKUP SUPABASE (settimanale) + REPORT TELEGRAM (mensile/annuale)
     # ---------------------------------------------------------
     now_rome = datetime.now(ZoneInfo("Europe/Rome"))
     giorno_settimana = now_rome.weekday() # 0=Lunedì, 6=Domenica
@@ -356,6 +357,24 @@ def update_all_etf():
             log_info("Report Telegram inviato con successo.")
         except Exception as e:
             log_error(f"Errore invio Telegram: {e}")
+
+    # 3. REPORT ANNUALE TELEGRAM CON GRAFICO
+    invia_annuale = False
+
+    # Verifica se è gennaio, se è lunedì (0) e se il giorno cade nella prima settimana (1-7)
+    if now_rome.month == 1 and giorno_settimana == 0 and 1 <= now_rome.day <= 7:
+        invia_annuale = True
+
+    # Esegui l'invio solo nella finestra oraria del primo cron (07:03 - 07:23)
+    if invia_annuale and 3 <= now_rome.minute <= 23 and now_rome.hour == 7:
+        log_info(f"Condizione report annuale soddisfatta ({now_rome.day}/{now_rome.month}). Generazione grafico...")
+        try:
+            # import report_anuale
+            report_annuale.genera_grafico_e_report()
+            log_info("Report annuale e grafico inviati con successo su Telegram.")
+        except Exception as e:
+            log_error(f"Errore invio report annuale con grafico: {e}")
+
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open

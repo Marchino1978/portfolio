@@ -8,3 +8,5 @@ python-dateutil==2.9.0.post0
 pytest==8.3.3
 pendulum
 pyTelegramBotAPI
+pandas
+matplotlib
