@@ -656,8 +656,6 @@ primary_region = "fra"
 │   ├── testDateVar.py
 │   └── testEaster.py
 ├── utils/
-│   ├── __pycache__/
-│   │   └── logger.cpython-39.pyc
 │   ├── colors.h
 │   ├── holidays.py
 │   └── logger.py
@@ -681,7 +679,7 @@ primary_region = "fra"
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-10 directories, 51 files
+9 directories, 50 files
 
 
 # ./push.sh
