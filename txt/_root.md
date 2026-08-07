@@ -764,12 +764,19 @@ def genera_grafico_e_report(is_test=False):
         if not etfs: return
 
         anno_corrente = datetime.now(ZoneInfo("Europe/Rome")).year
-        anno_precedente = anno_corrente if is_test else anno_corrente - 1
         
-        data_inizio_query = "2025-12-01" if is_test else f"{anno_precedente}-01-01"
-        data_fine_query = "2026-12-31" if is_test else f"{anno_precedente}-12-31"
+        if is_test:
+            anno_target = anno_corrente
+            data_inizio_query = f"{anno_corrente}-01-01"
+            data_fine_query = f"{anno_corrente}-12-31"
+            titolo_report = f"🏆 *REPORT PARZIALE {anno_target}*\n"
+        else:
+            anno_target = anno_corrente - 1
+            data_inizio_query = f"{anno_target}-01-01"
+            data_fine_query = f"{anno_target}-12-31"
+            titolo_report = f"🏆 *REPORT ANNO {anno_target}*\n"
         
-        testo_report = f"📊 *REPORT ANNO {anno_precedente}*\n"
+        testo_report = titolo_report
         testo_report += "```\n" 
 
         supabase = get_supabase()
@@ -817,7 +824,7 @@ def genera_grafico_e_report(is_test=False):
 
         if inviato:
             bot.send_message(CHAT_ID, testo_report, parse_mode="Markdown")
-            log_info(f"Report annuale testuale per il {anno_precedente} inviato su Telegram.")
+            log_info(f"Report per l'anno {anno_target} inviato su Telegram.")
         else:
             log_error("Report Annuale: Nessun dato trovato con i filtri impostati.")
 
