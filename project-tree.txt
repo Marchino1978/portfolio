@@ -22,11 +22,7 @@
 │   └── .gitkeep
 ├── public/
 │   ├── chart.html
-│   ├── fondi.html
-│   ├── index.html
-│   ├── market.html
 │   ├── market-live.html
-│   ├── market-mobile.html
 │   ├── money.html
 │   └── salvadanaio.html
 ├── __pycache__/
@@ -60,4 +56,4 @@
 ├── snapshot_all.sh*
 └── supabase_client.py
 
-9 directories, 51 files
+9 directories, 47 files

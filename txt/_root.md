@@ -11,35 +11,8 @@ import scraper_fondi
 
 from utils.logger import log_info, log_error
 
-app = Flask(__name__, static_folder="public", static_url_path="")
+app = Flask(__name__)
 
-
-# ---------------------------------------------------------
-# PAGINE STATICHE
-# ---------------------------------------------------------
-@app.route("/")
-def index():
-    return send_from_directory("public", "index.html")
-
-@app.route("/market")
-def market():
-    return send_from_directory("public", "market.html")
-
-@app.route("/market-mobile")
-def market_mobile():
-    return send_from_directory("public", "market-mobile.html")
-
-@app.route("/salvadanaio")
-def salvadanaio():
-    return send_from_directory("public", "salvadanaio.html")
-
-@app.route("/fondi")
-def fondi():
-    return send_from_directory("public", "fondi.html")
-
-@app.route("/market-live")
-def market_live():
-    return send_from_directory("public", "market-live.html")
 
 # ---------------------------------------------------------
 # HEALTHCHECK
