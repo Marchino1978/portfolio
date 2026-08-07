@@ -64,5 +64,5 @@ esp32/config.h
 # OLD
 old/index.html
 old/market.html
-old/market-live.html
+old/market-mobile.html
 old/fondi.html
