@@ -6,12 +6,12 @@ from bs4 import BeautifulSoup
 from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 
-import check_alert
-import backup_manager
-import bot_telegram
-import report_annuale
-from supabase_client import get_supabase, upsert_previous_close
-from config import is_market_open
+from src import check_alert
+from src import backup_manager
+from src import bot_telegram
+from src import report_annuale
+from src.supabase_client import get_supabase, upsert_previous_close
+from src.config import is_market_open
 from utils.logger import log_info, log_error
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}

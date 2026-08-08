@@ -189,6 +189,7 @@ primary_region = "fra"
 │   ├── backup_supabase_2026_07_27.sql
 │   └── backup_supabase_2026_08_03.sql
 ├── config/
+│   ├── schema.sql
 │   └── variations.conf
 ├── data/
 │   ├── etfs.json
@@ -245,8 +246,7 @@ primary_region = "fra"
 ├── fly.toml
 ├── .gitignore
 ├── project-tree.txt
-├── requirements.txt
-└── schema.sql
+└── requirements.txt
 
 11 directories, 52 files
 

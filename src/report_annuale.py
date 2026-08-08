@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 import telebot
 from zoneinfo import ZoneInfo
-from supabase_client import get_supabase
+from src.supabase_client import get_supabase
 from utils.logger import log_info, log_error
 from dotenv import load_dotenv
 

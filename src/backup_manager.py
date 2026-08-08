@@ -2,7 +2,7 @@ import os
 import base64
 import requests
 from datetime import datetime
-from supabase_client import get_supabase
+from src.supabase_client import get_supabase
 from utils.logger import log_info, log_error
 
 def run_supabase_backup():
