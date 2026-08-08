@@ -30,7 +30,7 @@ def health():
 def update_etf():
     log_info("Richiesta /api/update-all ricevuta - avvio aggiornamento ETF SINCRONO")
     try:
-        results, market_open = scraper_etf.update_all_etf()  # Esecuzione bloccante
+        results, market_open = scraper_etf.main()  # Esecuzione bloccante
         count = len(results) if results else 0
         log_info(f"Aggiornamento ETF completato: {count} ETF processati, market_open={market_open}")
 

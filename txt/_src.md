@@ -749,7 +749,7 @@ def commit_to_github():
 # ---------------------------------------------------------
 # FUNZIONE PRINCIPALE
 # ---------------------------------------------------------
-def update_all_etf():
+def main():
     log_info("=== INIZIO aggiornamento ETF ===")
     today_date = date.today()
     today_str = today_date.isoformat()
