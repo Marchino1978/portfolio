@@ -380,3 +380,6 @@ def update_all_etf():
 
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
+
+if __name__ == "__main__":if __name__ == "__main__":
+    main()

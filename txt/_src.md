@@ -878,6 +878,9 @@ def update_all_etf():
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
 
+if __name__ == "__main__":if __name__ == "__main__":
+    main()
+
 # src//scraper_fondi.py
 ----------------------------------------
 import csv
@@ -1035,6 +1038,9 @@ def main():
 
     commit_to_github()
     log_info("=== FINE aggiornamento fondi ===")
+
+if __name__ == "__main__":
+    main()
 
 # src//supabase_client.py
 ----------------------------------------
