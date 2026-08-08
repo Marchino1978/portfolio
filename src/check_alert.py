@@ -10,7 +10,7 @@ load_dotenv()
 
 def get_config():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    conf_path = os.path.join(base_dir, "config", "variations.conf")
+    conf_path = os.path.join(base_dir, "..", "config", "variations.conf")
     conf = {}
     with open(conf_path, "r") as f:
         for line in f:

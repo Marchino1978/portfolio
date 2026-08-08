@@ -210,7 +210,7 @@ load_dotenv()
 
 def get_config():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    conf_path = os.path.join(base_dir, "config", "variations.conf")
+    conf_path = os.path.join(base_dir, "..", "config", "variations.conf")
     conf = {}
     with open(conf_path, "r") as f:
         for line in f:
@@ -878,7 +878,7 @@ def update_all_etf():
     log_info(f"=== FINE aggiornamento ETF – {len([r for r in results.values() if r.get('status') != 'unavailable'])} ETF aggiornati ===")
     return results, market_open
 
-if __name__ == "__main__":if __name__ == "__main__":
+if __name__ == "__main__":
     main()
 
 # src//scraper_fondi.py
