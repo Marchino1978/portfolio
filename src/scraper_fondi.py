@@ -56,11 +56,11 @@ def normalize(value_it):
 # -----------------------------
 # Commit GitHub
 # -----------------------------
-def commit_csv_to_github(path, message):
+def commit_to_github():
     try:
         token = os.environ.get("GITHUB_TOKEN")
         if not token:
-            log_info("GITHUB_TOKEN non impostato – commit saltato")
+            log_error("GITHUB_TOKEN non impostato – commit GitHub saltato")
             return
 
         repo = "Marchino1978/portfolio"
@@ -68,7 +68,7 @@ def commit_csv_to_github(path, message):
         api_url = f"https://api.github.com/repos/{repo}/contents/{repo_path}"
 
         with open(fondi_nav_path, "rb") as f:
-            content = base64.b64encode(f.read()).decode()
+            content = base64.b64encode(f.read()).decode("utf-8")
 
         sha = None
         headers = {
