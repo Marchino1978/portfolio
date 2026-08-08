@@ -9,12 +9,10 @@ import base64
 
 from utils.logger import log_info, log_error
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "..", "data")
+DATA_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data"))
 fondi_path = os.path.join(DATA_DIR, "fondi.csv")
 fondi_nav_path = os.path.join(DATA_DIR, "fondi_nav.csv")
 
@@ -66,28 +64,38 @@ def commit_csv_to_github(path, message):
             return
 
         repo = "Marchino1978/portfolio"
-        api_url = f"https://api.github.com/repos/{repo}/contents/{path}"
+        repo_path = "data/fondi_nav.csv"
+        api_url = f"https://api.github.com/repos/{repo}/contents/{repo_path}"
 
-        with open(path, "rb") as f:
+        with open(fondi_nav_path, "rb") as f:
             content = base64.b64encode(f.read()).decode()
 
         sha = None
-        headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
-        resp = requests.get(api_url, headers=headers, timeout=10)
-        if resp.status_code == 200:
-            sha = resp.json().get("sha")
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json"
+        }
+        get_resp = requests.get(api_url, headers=headers, timeout=10)
+        if get_resp.status_code == 200:
+            sha = get_resp.json().get("sha")
 
-        payload = {"message": message, "content": content, "branch": "main"}
+        payload = {
+#           "message": "fix",
+            "message": "fix\n\n\n[skip ci]",
+            "content": content,
+            "branch": "main"
+        }
         if sha:
             payload["sha"] = sha
 
         put_resp = requests.put(api_url, headers=headers, json=payload, timeout=10)
         if put_resp.status_code in (200, 201):
-            log_info(f"Commit GitHub OK: {path}")
+            log_info("Commit fondi_nav.csv su GitHub completato")
         else:
             log_error(f"Errore commit GitHub: {put_resp.status_code} – {put_resp.text}")
+
     except Exception as e:
-        log_error(f"Errore commit fondi_nav.csv: {e}")
+        log_error(f"Errore durante commit GitHub: {e}")
 
 # -----------------------------
 # Main
@@ -143,5 +151,5 @@ def main():
             status = nav_text or "N/D"
             log_info(f"{nome} ({isin}): {status}")
 
-    commit_csv_to_github("data/fondi_nav.csv", "fix")
+    commit_to_github()
     log_info("=== FINE aggiornamento fondi ===")

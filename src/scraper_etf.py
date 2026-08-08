@@ -12,9 +12,17 @@ from src import bot_telegram
 from src import report_annuale
 from src.supabase_client import get_supabase, upsert_previous_close
 from src.config import is_market_open
+
 from utils.logger import log_info, log_error
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data"))
+CONFIG_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "config"))
+etfs_path = os.path.join(DATA_DIR, "etfs.json")
+market_path = os.path.join(DATA_DIR, "market.json")
+variations_path = os.path.join(CONFIG_DIR, "variations.conf")
 
 # ---------------------------------------------------------
 # PERIODI MULTI-VARIAZIONE
@@ -34,10 +42,8 @@ PERIODS = {
 # CARICAMENTO ETF
 # ---------------------------------------------------------
 def load_etfs():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(base_dir, "..", "data", "etfs.json")
     try:
-        with open(path, "r", encoding="utf-8") as f:
+        with open(etfs_path, "r", encoding="utf-8") as f:
             etfs = json.load(f)
         log_info(f"Caricati {len(etfs)} ETF da data/etfs.json")
         return etfs
@@ -51,14 +57,11 @@ def load_etfs():
 def load_variation_config():
     config = {}
     try:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        path = os.path.join(base_dir, "config", "variations.conf")
-
-        if not os.path.exists(path):
-            log_error(f"File variazioni non trovato: {path}")
+        if not os.path.exists(variations_path):
+            log_error(f"File variazioni non trovato: {variations_path}")
             return {"v1": "D", "v2": "W", "v3": "M", "v_led": "M", "v_alert": "M", "v_bot": "M"}
 
-        with open(path, "r", encoding="utf-8") as f:
+        with open(variations_path, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith("#"):
@@ -156,8 +159,7 @@ def compute_all_variations(symbol, price_today, today_date, supabase):
 # ---------------------------------------------------------
 def save_market_json(results, market_open):
     try:
-        os.makedirs("../data", exist_ok=True)
-        path = os.path.join("..", "data", "market.json")
+        os.makedirs(DATA_DIR, exist_ok=True)
 
         now = datetime.now(ZoneInfo("Europe/Rome"))
         readable = now.strftime("%H:%M %d-%m-%Y")
@@ -195,7 +197,7 @@ def save_market_json(results, market_open):
             }
         }
 
-        with open(path, "w", encoding="utf-8") as f:
+        with open(market_path, "w", encoding="utf-8") as f:
             json.dump(json_output, f, indent=2, ensure_ascii=False)
 
         log_info(f"market.json salvato con {len(data_array)} ETF")
@@ -207,7 +209,6 @@ def save_market_json(results, market_open):
 # COMMIT GITHUB
 # ---------------------------------------------------------
 def commit_to_github():
-    path = "../data/market.json"
     try:
         token = os.environ.get("GITHUB_TOKEN")
         if not token:
@@ -215,9 +216,10 @@ def commit_to_github():
             return
 
         repo = "Marchino1978/portfolio"
-        api_url = f"https://api.github.com/repos/{repo}/contents/{path}"
+        repo_path = "data/market.json"
+        api_url = f"https://api.github.com/repos/{repo}/contents/{repo_path}"
 
-        with open(path, "rb") as f:
+        with open(market_path, "rb") as f:
             content = base64.b64encode(f.read()).decode("utf-8")
 
         sha = None
