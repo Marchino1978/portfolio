@@ -23,7 +23,8 @@
 │   ├── case.gif
 │   ├── case.png
 │   ├── report_annuale.png
-│   └── report_mensile.png
+│   ├── report_mensile.png
+│   └── splash.png
 ├── old/
 │   ├── fondi.html
 │   ├── index.html
@@ -63,4 +64,4 @@
 ├── project-tree.txt
 └── requirements.txt
 
-11 directories, 52 files
+11 directories, 53 files
