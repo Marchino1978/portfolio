@@ -153,6 +153,3 @@ def main():
 
     commit_to_github()
     log_info("=== FINE aggiornamento fondi ===")
-
-if __name__ == "__main__":
-    main()
