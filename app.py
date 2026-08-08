@@ -92,7 +92,7 @@ def update_fondi():
 @app.route("/api/market-status")
 def market_status():
     """
-    Legge SOLO data/market.json scritto da scraper_etf.update_all_etf().
+    Legge SOLO data/market.json scritto da scraper_etf.main().
     Non fa scraping né aggiornamenti.
     """
     market_path = os.path.join("data", "market.json")
