@@ -22,7 +22,7 @@ def send_monthly_report():
     """
     # Costruisce il percorso del file market.json (cartella data nella root)
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    market_path = os.path.join(base_dir, "data", "market.json")
+    market_path = os.path.join(base_dir, "..", "data", "market.json")
     
     if not os.path.exists(market_path):
         log_error(f"Bot Telegram: file non trovato in {market_path}")

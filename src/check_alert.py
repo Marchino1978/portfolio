@@ -37,7 +37,7 @@ def check_alert():
             os.getenv("URL_ALERT_6")
         ]
 
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "market.json")
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "market.json")
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 

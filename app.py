@@ -4,8 +4,8 @@ from flask import Flask, jsonify, send_from_directory
 import os
 import json
 
-import scraper_etf
-import scraper_fondi
+from src import scraper_etf
+from src import scraper_fondi
 
 from utils.logger import log_info, log_error
 

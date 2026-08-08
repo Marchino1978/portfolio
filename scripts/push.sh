@@ -2,6 +2,8 @@
 
 cd "$(dirname "$0")" || exit 1
 
+cd ..
+
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 echo "➡️  Pull dal remoto (merge, no rebase)..."

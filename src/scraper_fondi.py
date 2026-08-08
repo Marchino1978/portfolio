@@ -14,7 +14,7 @@ HEADERS = {
 }
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data")
+DATA_DIR = os.path.join(BASE_DIR, "..", "data")
 fondi_path = os.path.join(DATA_DIR, "fondi.csv")
 fondi_nav_path = os.path.join(DATA_DIR, "fondi_nav.csv")
 
@@ -143,5 +143,5 @@ def main():
             status = nav_text or "N/D"
             log_info(f"{nome} ({isin}): {status}")
 
-    commit_csv_to_github("data/fondi_nav.csv", "fix")
+    commit_csv_to_github("../data/fondi_nav.csv", "fix")
     log_info("=== FINE aggiornamento fondi ===")

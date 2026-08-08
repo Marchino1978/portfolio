@@ -15,7 +15,7 @@ bot = telebot.TeleBot(TOKEN)
 
 def genera_grafico_e_report(is_test=False):
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    market_path = os.path.join(base_dir, "data", "market.json")
+    market_path = os.path.join(base_dir, "..", "data", "market.json")
 
     if not os.path.exists(market_path):
         log_error("Report Annuale: market.json locale non trovato.")

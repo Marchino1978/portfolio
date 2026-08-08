@@ -35,11 +35,11 @@ PERIODS = {
 # ---------------------------------------------------------
 def load_etfs():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(base_dir, "etfs.json")
+    path = os.path.join(base_dir, "..", "data", "etfs.json")
     try:
         with open(path, "r", encoding="utf-8") as f:
             etfs = json.load(f)
-        log_info(f"Caricati {len(etfs)} ETF da etfs.json")
+        log_info(f"Caricati {len(etfs)} ETF da data/etfs.json")
         return etfs
     except Exception as e:
         log_error(f"Errore lettura etfs.json: {e}")
@@ -156,8 +156,8 @@ def compute_all_variations(symbol, price_today, today_date, supabase):
 # ---------------------------------------------------------
 def save_market_json(results, market_open):
     try:
-        os.makedirs("data", exist_ok=True)
-        path = os.path.join("data", "market.json")
+        os.makedirs("../data", exist_ok=True)
+        path = os.path.join("..", "data", "market.json")
 
         now = datetime.now(ZoneInfo("Europe/Rome"))
         readable = now.strftime("%H:%M %d-%m-%Y")
@@ -207,7 +207,7 @@ def save_market_json(results, market_open):
 # COMMIT GITHUB
 # ---------------------------------------------------------
 def commit_to_github():
-    path = "data/market.json"
+    path = "../data/market.json"
     try:
         token = os.environ.get("GITHUB_TOKEN")
         if not token:

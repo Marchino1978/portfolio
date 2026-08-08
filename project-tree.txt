@@ -4,8 +4,10 @@
 │   ├── backup_supabase_2026_07_27.sql
 │   └── backup_supabase_2026_08_03.sql
 ├── config/
+│   ├── schema.sql
 │   └── variations.conf
 ├── data/
+│   ├── etfs.json
 │   ├── fondi.csv
 │   ├── fondi_nav.csv
 │   ├── market.json
@@ -32,31 +34,33 @@
 │   ├── market-live.html
 │   ├── money.html
 │   └── salvadanaio.html
+├── scripts/
+│   ├── push.sh*
+│   └── snapshot_all.sh*
+├── src/
+│   ├── backup_manager.py
+│   ├── bot_telegram.py
+│   ├── check_alert.py
+│   ├── config.py
+│   ├── __init__.py
+│   ├── report_annuale.py
+│   ├── scraper_etf.py
+│   ├── scraper_fondi.py
+│   └── supabase_client.py
 ├── tests/
 │   ├── testDateVar.py
 │   └── testEaster.py
 ├── utils/
 │   ├── colors.h
 │   ├── holidays.py
+│   ├── __init__.py
 │   └── logger.py
 ├── app.py
-├── backup_manager.py
-├── bot_telegram.py
-├── check_alert.py
-├── config.py
 ├── Dockerfile
 ├── .env
-├── etfs.json
 ├── fly.toml
 ├── .gitignore
 ├── project-tree.txt
-├── push.sh*
-├── report_annuale.py
-├── requirements.txt
-├── schema.sql
-├── scraper_etf.py
-├── scraper_fondi.py
-├── snapshot_all.sh*
-└── supabase_client.py
+└── requirements.txt
 
-9 directories, 50 files
+11 directories, 52 files
