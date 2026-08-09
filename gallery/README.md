@@ -1,17 +1,18 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,100:0072ff&fontColor=FFD700&height=100&section=header&text=GALLERY&fontSize=50"
+  <img src="https://vercel.app"
   alt="GALLERY- portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot" />
 </p>
+
 <table width="100%">
   <!-- MARKET live -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/MARKET live -open-.png" width="100%"><br>
-      <font color="#00c6ff"><b>MARKET live -open-</b></font>
+      <font color="gold"><b>MARKET live -open-</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/MARKET live -close-.png" width="100%"><br>
-      <font color="#0072ff"><b>MARKET live -close-</b></font>
+      <font color="gold"><b>MARKET live -close-</b></font>
     </td>
   </tr>
   
@@ -19,11 +20,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/ETF charts.png" width="100%"><br>
-      <font color="#FFD700"><b>ETF charts</b></font>
+      <font color="gold"><b>ETF charts</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/coin counter.png" width="100%"><br>
-      <font color="#FFD700"><b>Coin Counter</b></font>
+      <font color="gold"><b>Coin Counter</b></font>
     </td>
   </tr>
   
@@ -31,11 +32,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/report_mensile.png" width="100%"><br>
-      <font color="#00c6ff"><b>Monthly REPORT</b></font>
+      <font color="gold"><b>Monthly REPORT</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/report_annuale.png" width="100%"><br>
-      <font color="#0072ff"><b>Annual REPORT</b></font>
+      <font color="gold"><b>Annual REPORT</b></font>
     </td>
   </tr>
   
@@ -43,11 +44,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/case.png" width="100%"><br>
-      <font color="#FFD700"><b>ESP32 case (static)</b></font>
+      <font color="gold"><b>ESP32 case (static)</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/case.gif" width="100%"><br>
-      <font color="#FFD700"><b>ESP32 case (animated)</b></font>
+      <font color="gold"><b>ESP32 case (animated)</b></font>
     </td>
   </tr>
 </table>
@@ -55,4 +56,3 @@
 <!-- 
 portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot
 -->
-
