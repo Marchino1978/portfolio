@@ -28,14 +28,14 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>.
 
 <div align="center">
 
-For more product information, check the official <a href="https://www.waveshare.com/esp32-c6-lcd-1.47.htm" target="_blank" rel="noopener noreferrer">Waveshare product page</a>.
+For more product information, check the official <strong>Waveshare product page</strong>.
 
 </div>
 
 <br><br>
 
 <p align="center">
-  <strong>***DEMO and STL avaiable soon***</strong>
+  <strong>***DEMO and STL available soon***</strong>
 </p>
 
 
