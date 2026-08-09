@@ -8,11 +8,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/MARKET live -open-.png" width="100%"><br>
-      <font color="gold"><b>MARKET live (open)</b></font>
+      <font color="gold"><b>MARKET live (open) - [web]</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/MARKET live -close-.png" width="100%"><br>
-      <font color="gold"><b>MARKET live (close)</b></font>
+      <font color="gold"><b>MARKET live (close) - [web]</b></font>
     </td>
   </tr>
   
@@ -20,11 +20,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/work-in-progress.png" width="100%"><br>
-      <font color="gold"><b>ESP32 live (open)</b></font>
+      <font color="gold"><b>MARKET live (open) - [ESP32-C6 1,47"]</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/work-in-progress.png" width="100%"><br>
-      <font color="gold"><b>ESP32 live (close)</b></font>
+      <font color="gold"><b>MARKET live (close) - [ESP32-C6 1,47"]</b></font>
     </td>
   </tr>
 
@@ -33,7 +33,7 @@
     <td colspan="2" align="center" width="100%">
       <br>
       <img src="../img/work-in-progress.png" width="70%"><br>
-      <font color="gold"><b>ESP32+case</b></font>
+      <font color="gold"><b>ESP32-C6 1,47" + case</b></font>
       <br><br>
     </td>
   </tr>
@@ -42,11 +42,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/ETF charts.png" width="100%"><br>
-      <font color="gold"><b>ETF charts</b></font>
+      <font color="gold"><b>ETF charts [web]</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/coin counter.png" width="100%"><br>
-      <font color="gold"><b>coin counter</b></font>
+      <font color="gold"><b>coin counter [web]</b></font>
     </td>
   </tr>
 
@@ -54,11 +54,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/report_mensile.png" width="100%"><br>
-      <font color="gold"><b>monthly REPORT</b></font>
+      <font color="gold"><b>monthly REPORT [TELEGRAM]</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/report_annuale.png" width="100%"><br>
-      <font color="gold"><b>annual REPORT</b></font>
+      <font color="gold"><b>annual REPORT [TELEGRAM]</b></font>
     </td>
   </tr>
 
@@ -67,7 +67,7 @@
     <td colspan="2" align="center" width="100%">
       <br>
       <img src="../img/work-in-progress.png" width="70%"><br>
-      <font color="gold"><b>3D case</b></font>
+      <font color="gold"><b>3D case - LEGO TECHNIC style</b></font>
       <br><br>
     </td>
   </tr>
@@ -76,11 +76,11 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/case.png" width="100%"><br>
-      <font color="gold"><b>ESP32 case (static)</b></font>
+      <font color="gold"><b>ESP32-C6 1,47" case (static)</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/case.gif" width="100%"><br>
-      <font color="gold"><b>ESP32 case (animated)</b></font>
+      <font color="gold"><b>ESP32-C6 1,47" case (animated)</b></font>
     </td>
   </tr>
 </table>
