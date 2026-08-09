@@ -79,7 +79,7 @@
       <font color="gold"><b>ESP32-C6 1,47" case (static)</b></font>
     </td>
     <td width="50%" align="center">
-      <img src="../img/case.gif" width="100%"><br>
+      <img src="../img/_case_.gif" width="100%"><br>
       <font color="gold"><b>ESP32-C6 1,47" case (animated)</b></font>
     </td>
   </tr>
