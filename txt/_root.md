@@ -247,9 +247,10 @@ primary_region = "fra"
 ├── fly.toml
 ├── .gitignore
 ├── project-tree.txt
+├── README.md
 └── requirements.txt
 
-11 directories, 53 files
+11 directories, 54 files
 
 
 # ./README.md
