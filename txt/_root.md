@@ -276,7 +276,7 @@ Today it collects market data via web scraping, stores historical records in a S
 </div>
 
 <p align="center">
-  <img src="gallery/splash.png" alt="ESP32-C6 smart home and financial dashboard showing market charts, voice assistant notifications, and smart light control" width="600">
+  <img src="img/splash.png" alt="ESP32-C6 smart home and financial dashboard showing market charts, voice assistant notifications, and smart light control" width="600">
 </p>
 
 <p align="center">
