@@ -5,11 +5,9 @@
 
 <div align="center">
 
-Firmware and 3D enclosure (STL) for the financial ticker display.
+Firmware and 3D enclosure (STL) for my personal financial ticker display.
 <br><br>
 Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>.
-<br>
-For more product information, check the official <a href="https://www.waveshare.com/esp32-c6-lcd-1.47.htm" target="_blank" rel="noopener noreferrer">Waveshare product page</a>.
 
 </div>
 
@@ -27,6 +25,12 @@ For more product information, check the official <a href="https://www.waveshare.
   </tr>
  
 </table>
+
+<div align="center">
+
+For more product information, check the official <a href="https://www.waveshare.com/esp32-c6-lcd-1.47.htm" target="_blank" rel="noopener noreferrer">Waveshare product page</a>.
+
+</div>
 
 <p align="center">
   <strong>***DEMO and STL avaiable soon***</strong>
