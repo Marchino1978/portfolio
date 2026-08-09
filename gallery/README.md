@@ -6,18 +6,18 @@
 
 <table width="100%">
   <tr>
-    <td width="50%"><img src="../img/coin counter.png" width="100%"></td>
-    <td width="50%"><img src="../img/ETF charts.png" width="100%"></td>
-  </tr>
-    <tr>
     <td width="50%"><img src="../img/MARKET live -open-.png" width="100%"></td>
     <td width="50%"><img src="../img/MARKET live -close-.png" width="100%"></td>
   </tr>
-    <tr>
+  <tr>
+    <td width="50%"><img src="../img/ETF charts.png" width="100%"></td>
+    <td width="50%"><img src="../img/coin counter.png" width="100%"></td>
+  </tr>
+  <tr>
     <td width="50%"><img src="../img/report_mensile.png" width="100%"></td>
     <td width="50%"><img src="../img/report_annuale.png" width="100%"></td>
   </tr>
-    <tr>
+  <tr>
     <td width="50%"><img src="../img/case.png" width="100%"></td>
     <td width="50%"><img src="../img/case.gif" width="100%"></td>
   </tr>
