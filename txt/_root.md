@@ -209,7 +209,7 @@ primary_region = "fra"
 │   ├── case.png
 │   ├── coin counter.png
 │   ├── ETF charts.png
-│   ├── MARKET live [close].png
+│   ├── MARKET live -close-.png
 │   ├── report_annuale.png
 │   ├── report_mensile.png
 │   └── splash.png
