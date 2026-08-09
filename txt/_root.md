@@ -260,7 +260,7 @@ primary_region = "fra"
 
 12 directories, 61 files
 
-*** some files has been intentionally omitted end not included into the repo***
+*** NOTE: some files shown in this tree exist locally but are intentionally excluded from this repository ***
 
 
 # ./README.md

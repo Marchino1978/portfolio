@@ -75,4 +75,4 @@
 
 12 directories, 61 files
 
-*** NOTE: some local files have been intentionally omitted from this repository. ***
+*** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
