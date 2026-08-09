@@ -205,13 +205,14 @@ primary_region = "fra"
 │   ├── ETF.example.ino
 │   └── ETF.ino
 ├── gallery/
+│   └── README.md
+├── img/
 │   ├── case.gif
 │   ├── case.png
 │   ├── coin counter.png
 │   ├── ETF charts.png
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png
-│   ├── README.md
 │   ├── report_annuale.png
 │   ├── report_mensile.png
 │   └── splash.png
@@ -255,7 +256,7 @@ primary_region = "fra"
 ├── README.md
 └── requirements.txt
 
-11 directories, 59 files
+12 directories, 59 files
 
 
 # ./README.md
