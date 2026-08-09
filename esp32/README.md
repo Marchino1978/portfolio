@@ -13,6 +13,20 @@ For more product information, check the official <a href="https://www.waveshare.
 
 </div>
 
+<table width="100%">
+  <!-- ESP32-C6 -->
+  <tr>
+    <td width="50%" align="center">
+      <img src="../img/esp32-c6-front.jpg" width="100%"><br>
+      <font color="gold"><b>front</b></font>
+    </td>
+    <td width="50%" align="center">
+      <img src="../img/Mesp32-c6-rear.jpg" width="100%"><br>
+      <font color="gold"><b>rear</b></font>
+    </td>
+  </tr>
+ 
+</table>
 
 <p align="center">
   <strong>***DEMO and STL avaiable soon***</strong>

@@ -26,6 +26,8 @@
 │   ├── case.gif
 │   ├── case.png
 │   ├── coin counter.png
+│   ├── esp32-c6-front.jpg
+│   ├── esp32-c6-rear.jpg
 │   ├── ETF charts.png
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png
@@ -75,6 +77,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 63 files
+12 directories, 65 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
