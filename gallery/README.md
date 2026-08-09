@@ -7,18 +7,18 @@
 <table width="100%">
   <tr>
     <td width="50%"><img src="coin counter.png" width="100%"></td>
-    <td width="50%"><img src="gallery/ETF charts.png" width="100%"></td>
+    <td width="50%"><img src="ETF%20charts.png" width="100%"></td>
   </tr>
     <tr>
-    <td width="50%"><img src="gallery/MARKET live -open-.png" width="100%"></td>
-    <td width="50%"><img src="gallery/MARKET live -close-.png" width="100%"></td>
+    <td width="50%"><img src="MARKET live -open-.png" width="100%"></td>
+    <td width="50%"><img src="MARKET live -close-.png" width="100%"></td>
   </tr>
     <tr>
-    <td width="50%"><img src="gallery/report_mensile.png" width="100%"></td>
-    <td width="50%"><img src="gallery/report_annuale.png" width="100%"></td>
+    <td width="50%"><img src="report_mensile.png" width="100%"></td>
+    <td width="50%"><img src="report_annuale.png" width="100%"></td>
   </tr>
     <tr>
-    <td width="50%"><img src="gallery/case.png" width="100%"></td>
-    <td width="50%"><img src="gallery/case.gif" width="100%"></td>
+    <td width="50%"><img src="case.png" width="100%"></td>
+    <td width="50%"><img src="case.gif" width="100%"></td>
   </tr>
 </table>
