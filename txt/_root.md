@@ -207,6 +207,9 @@ primary_region = "fra"
 ├── gallery/
 │   ├── case.gif
 │   ├── case.png
+│   ├── coin counter.png
+│   ├── ETF charts.png
+│   ├── MARKET live.png
 │   ├── report_annuale.png
 │   ├── report_mensile.png
 │   └── splash.png
@@ -216,8 +219,8 @@ primary_region = "fra"
 │   ├── market.html
 │   └── market-mobile.html
 ├── public/
-│   ├── chart.html
-│   ├── market-live.html
+│   ├── ETF charts.html
+│   ├── MARKET live.html
 │   ├── money.html
 │   └── salvadanaio.html
 ├── scripts/
@@ -250,7 +253,7 @@ primary_region = "fra"
 ├── README.md
 └── requirements.txt
 
-11 directories, 54 files
+11 directories, 57 files
 
 
 # ./README.md
