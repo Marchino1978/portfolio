@@ -207,6 +207,7 @@ primary_region = "fra"
 ├── gallery/
 │   └── README.md
 ├── img/
+│   ├── _case_.gif
 │   ├── case.gif
 │   ├── case.png
 │   ├── coin counter.png
@@ -258,7 +259,7 @@ primary_region = "fra"
 ├── README.md
 └── requirements.txt
 
-12 directories, 61 files
+12 directories, 62 files
 
 
 # ./README.md
