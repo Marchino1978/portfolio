@@ -34,8 +34,10 @@
 │   ├── ETF charts.png
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png
+│   ├── README.md
 │   ├── report_annuale.png
 │   ├── report_mensile.png
+│   ├── _splash_.png
 │   ├── splash.png
 │   └── work-in-progress.png
 ├── old/
@@ -84,6 +86,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 72 files
+12 directories, 74 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
