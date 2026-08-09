@@ -8,39 +8,71 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/MARKET live -open-.png" width="100%"><br>
-      <font color="gold"><b>MARKET live -open-</b></font>
+      <font color="gold"><b>MARKET live (open)/<b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/MARKET live -close-.png" width="100%"><br>
-      <font color="gold"><b>MARKET live -close-</b></font>
+      <font color="gold"><b>MARKET live (close)</b></font>
     </td>
   </tr>
   
-  <!-- ETF charts & Coin Counter -->
+  <!-- EPS32 live -->
+  <tr>
+    <td width="50%" align="center">
+      <img src="../img/work-in-progress.png" width="100%"><br>
+      <font color="gold"><b>ESP32 live (open)</b></font>
+    </td>
+    <td width="50%" align="center">
+      <img src="../img/work-in-progress.png" width="100%"><br>
+      <font color="gold"><b>ESP32 live (close)</b></font>
+    </td>
+  </tr>
+
+  <!-- ESP32 & case -->
+  <tr>
+    <td colspan="2" align="center" width="100%">
+      <br>
+      <img src="../img/work-in-progress.png" width="70%"><br>
+      <font color="gold"><b>ESP32+case</b></font>
+      <br><br>
+    </td>
+  </tr>
+
+  <!-- ETF charts & coin counter -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/ETF charts.png" width="100%"><br>
-      <font color="gold"><b>ETF charts</b></font>
+      <font color="gold"><b>web chart</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/coin counter.png" width="100%"><br>
-      <font color="gold"><b>Coin Counter</b></font>
+      <font color="gold"><b>coin counter</b></font>
     </td>
   </tr>
-  
+
   <!-- REPORTS -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/report_mensile.png" width="100%"><br>
-      <font color="gold"><b>Monthly REPORT</b></font>
+      <font color="gold"><b>monthly REPORT</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/report_annuale.png" width="100%"><br>
-      <font color="gold"><b>Annual REPORT</b></font>
+      <font color="gold"><b>annual REPORT</b></font>
     </td>
   </tr>
-  
-  <!-- 3D printing -->
+
+  <!-- 3D PRINTING -->
+  <tr>
+    <td colspan="2" align="center" width="100%">
+      <br>
+      <img src="../img/work-in-progress.png" width="70%"><br>
+      <font color="gold"><b>3D case</b></font>
+      <br><br>
+    </td>
+  </tr>
+
+  <!-- 3D CASE -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/case.png" width="100%"><br>
