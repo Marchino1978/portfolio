@@ -44,6 +44,7 @@
 │   └── salvadanaio.html
 ├── scripts/
 │   ├── push.sh*
+│   ├── README.md
 │   └── snapshot_all.sh*
 ├── src/
 │   ├── backup_manager.py
@@ -73,6 +74,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 61 files
+12 directories, 62 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
