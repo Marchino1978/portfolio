@@ -7,7 +7,7 @@
 <table width="100%">
   <tr>
     <td width="50%"><img src="coin counter.png" width="100%"></td>
-    <td width="50%"><img src="ETF%20charts.png" width="100%"></td>
+    <td width="50%"><img src="ETF charts.png" width="100%"></td>
   </tr>
     <tr>
     <td width="50%"><img src="MARKET live -open-.png" width="100%"></td>
