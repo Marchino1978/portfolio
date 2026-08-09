@@ -4,51 +4,51 @@
 </p>
 
 <table width="100%">
-  <!-- Riga 1: Stato del Mercato -->
+  <!-- MARKET live -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/MARKET live -open-.png" width="100%"><br>
-      <font color="#00c6ff"><b>📈 Market Status (Open)</b></font>
+      <font color="#00c6ff"><b>MARKET live -open-</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/MARKET live -close-.png" width="100%"><br>
-      <font color="#0072ff"><b>📉 Market Status (Closed)</b></font>
+      <font color="#0072ff"><b>MARKET live -close-</b></font>
     </td>
   </tr>
   
-  <!-- Riga 2: Grafici ed Elettronica -->
+  <!-- ETF charts & Coin Counter -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/ETF charts.png" width="100%"><br>
-      <font color="#FFD700"><b>📊 Historical Performance Charts</b></font>
+      <font color="#FFD700"><b>ETF charts</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/coin counter.png" width="100%"><br>
-      <font color="#FFD700"><b>📟 Coin Counter Ticker Display</b></font>
+      <font color="#FFD700"><b>Coin Counter</b></font>
     </td>
   </tr>
   
-  <!-- Riga 3: Reportistica Periodica -->
+  <!-- REPORTS -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/report_mensile.png" width="100%"><br>
-      <font color="#00c6ff"><b>📅 Monthly Investment Report</b></font>
+      <font color="#00c6ff"><b>Monthly REPORT</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/report_annuale.png" width="100%"><br>
-      <font color="#0072ff"><b>🗓️ Annual Balance Report</b></font>
+      <font color="#0072ff"><b>Annual REPORT</b></font>
     </td>
   </tr>
   
-  <!-- Riga 4: Hardware Realizzazione -->
+  <!-- 3D printing -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/case.png" width="100%"><br>
-      <font color="#FFD700"><b>🔌 ESP32 Smart Case (Static)</b></font>
+      <font color="#FFD700"><b>ESP32 case (static)</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/case.gif" width="100%"><br>
-      <font color="#FFD700"><b>🔄 Hardware Device Update (Live GIF)</b></font>
+      <font color="#FFD700"><b>ESP32 case (animated)</b></font>
     </td>
   </tr>
 </table>
