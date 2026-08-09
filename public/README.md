@@ -5,7 +5,7 @@
 
 <div align="center">
 
-my personal web dashboard & utilities
+Personal web dashboard & utilities
 
 </div>
 
