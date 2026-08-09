@@ -66,6 +66,9 @@ done
 
 tree -a -F -I 'node_modules|.git|txt' --dirsfirst > project-tree.txt
 
+echo "" >> project-tree.txt
+echo "*** NOTE: some local files have been intentionally omitted from this repository. ***" >> project-tree.txt
+
 echo "Progetto mappato in project-tree.txt"
 echo "Snapshot .md generati in txt"
 
