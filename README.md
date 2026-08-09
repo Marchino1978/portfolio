@@ -6,9 +6,9 @@
 <div align="center">
 
 This project was born after Yahoo Finance discontinued its free API service for downloading market data into my spreadsheets.
-<br>
+<br><br>
 Instead of switching to a paid service, I decided to build my own solution using PYTHON, free services and an ESP32 display.
-<br>
+<br><br>
 Today it collects market data via web scraping, stores historical records in a SUPABASE PostgreSQL database, and updates JSON feeds on GITHUB — acting as the central data hub for the web dashboard, the ESP32 display, and spreadsheets. It also generates TELEGRAM reports and drives ALEXA notifications with SMART LIGHT control — all running on free-tier services.
 
 </div>
