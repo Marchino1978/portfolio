@@ -42,7 +42,7 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/ETF charts.png" width="100%"><br>
-      <font color="gold"><b>web chart</b></font>
+      <font color="gold"><b>ETF charts</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/coin counter.png" width="100%"><br>
