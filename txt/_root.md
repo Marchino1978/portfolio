@@ -249,6 +249,7 @@ primary_region = "fra"
 │   └── logger.py
 ├── app.py
 ├── Dockerfile
+├── .dockerignore
 ├── .env
 ├── fly.toml
 ├── .gitignore
@@ -256,7 +257,7 @@ primary_region = "fra"
 ├── README.md
 └── requirements.txt
 
-12 directories, 59 files
+12 directories, 60 files
 
 
 # ./README.md
