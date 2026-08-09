@@ -32,6 +32,8 @@ For more product information, check the official <a href="https://www.waveshare.
 
 </div>
 
+<br><br>
+
 <p align="center">
   <strong>***DEMO and STL avaiable soon***</strong>
 </p>
