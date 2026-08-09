@@ -8,7 +8,7 @@
   <tr>
     <td width="50%" align="center">
       <img src="../img/MARKET live -open-.png" width="100%"><br>
-      <font color="gold"><b>MARKET live (open)/</b></font>
+      <font color="gold"><b>MARKET live (open)</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/MARKET live -close-.png" width="100%"><br>
