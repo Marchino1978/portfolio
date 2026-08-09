@@ -3,22 +3,38 @@
   alt="PORTFOLIO TRACKER - Financial market dashboard, Telegram bot report, Alexa notifications, ESP32-C6 Waveshare 1.47 display, Python web-scraping, GitHub, Supabase, Fly.io, Raspberry Pi 400, CSV, HTML" />
 </p>
 
+<br>
 
-<table width="100%">
-  <tr>
-    <td width="50%"><img src="../img/coin counter.png" width="100%"></td>
-    <td width="50%"><img src="../img/ETF charts.png" width="100%"></td>
-  </tr>
-    <tr>
-    <td width="50%"><img src="../img/MARKET live -open-.png" width="100%"></td>
-    <td width="50%"><img src="../img/MARKET live -close-.png" width="100%"></td>
-  </tr>
-    <tr>
-    <td width="50%"><img src="../img/report_mensile.png" width="100%"></td>
-    <td width="50%"><img src="../img/report_annuale.png" width="100%"></td>
-  </tr>
-    <tr>
-    <td width="50%"><img src="../img/case.png" width="100%"></td>
-    <td width="50%"><img src="../img/case.gif" width="100%"></td>
-  </tr>
-</table>
+<!-- Riga 1: Coin Counter e ETF Charts -->
+<p align="center">
+  <img src="../img/coin counter.png" width="48%" />
+  &nbsp;&nbsp;
+  <img src="../img/ETF charts.png" width="48%" />
+</p>
+
+<br>
+
+<!-- Riga 2: Market Open e Market Close -->
+<p align="center">
+  <img src="../img/MARKET live -open-.png" width="48%" />
+  &nbsp;&nbsp;
+  <img src="../img/MARKET live -close-.png" width="48%" />
+</p>
+
+<br>
+
+<!-- Riga 3: Report Mensile e Report Annuale -->
+<p align="center">
+  <img src="../img/report_mensile.png" width="48%" />
+  &nbsp;&nbsp;
+  <img src="../img/report_annuale.png" width="48%" />
+</p>
+
+<br>
+
+<!-- Riga 4: Case hardware statico e GIF animata -->
+<p align="center">
+  <img src="../img/case.png" width="48%" />
+  &nbsp;&nbsp;
+  <img src="../img/case.gif" width="48%" />
+</p>
