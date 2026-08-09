@@ -16,6 +16,7 @@ dump_folder() {
     [[ "$(basename "$file")" == "case.stl" ]] && continue
     [[ "$(basename "$file")" == "case.gif" ]] && continue
     [[ "$(basename "$file")" == "case.png" ]] && continue
+    [[ "$(basename "$file")" == "README.md" ]] && continue
 
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
