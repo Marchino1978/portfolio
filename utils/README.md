@@ -5,7 +5,7 @@
 
 <div align="center">
 
-Helper utilities including system logging, holiday date logic, and RGB LED color definitions for ESP32
+Helper utilities including system logging, holiday date logic, and GRB LED color definitions for ESP32
 
 </div>
 
