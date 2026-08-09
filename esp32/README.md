@@ -5,8 +5,8 @@
 
 <div align="center">
 
-Firmware and 3D enclosure (STL) for my personal financial ticker display.
-<br><br>
+Firmware and 3D enclosure for my personal financial ticker.
+<br>
 Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>.
 
 </div>
@@ -28,17 +28,15 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>.
 
 <div align="center">
 
-For more product information, check the official <strong>Waveshare product page</strong>.
+For more nformation, check the official <strong>Waveshare product page</strong>.
 
 </div>
 
-<br><br>
+<br><br><br>
 
 <p align="center">
   <strong>***DEMO and STL available soon***</strong>
 </p>
-
-
 
 <!-- 
 portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot
