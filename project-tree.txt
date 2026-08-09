@@ -2,8 +2,10 @@
 ├── backup_SQL/
 │   ├── backup_supabase_2026_07_20.sql
 │   ├── backup_supabase_2026_07_27.sql
-│   └── backup_supabase_2026_08_03.sql
+│   ├── backup_supabase_2026_08_03.sql
+│   └── README.md
 ├── config/
+│   ├── README.md
 │   ├── schema.sql
 │   └── variations.conf
 ├── data/
@@ -12,6 +14,7 @@
 │   ├── fondi_nav.csv
 │   ├── market.json
 │   ├── money.csv
+│   ├── README.md
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── case.stl
@@ -56,18 +59,21 @@
 │   ├── check_alert.py
 │   ├── config.py
 │   ├── __init__.py
+│   ├── README.md
 │   ├── report_annuale.py
 │   ├── scraper_etf.py
 │   ├── scraper_fondi.py
 │   └── supabase_client.py
 ├── tests/
+│   ├── README.md
 │   ├── testDateVar.py
 │   └── testEaster.py
 ├── utils/
 │   ├── colors.h
 │   ├── holidays.py
 │   ├── __init__.py
-│   └── logger.py
+│   ├── logger.py
+│   └── README.md
 ├── app.py
 ├── Dockerfile
 ├── .dockerignore
@@ -78,6 +84,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 66 files
+12 directories, 72 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
