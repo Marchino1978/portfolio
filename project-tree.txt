@@ -44,6 +44,7 @@
 │   ├── ETF charts.html
 │   ├── MARKET live.html
 │   ├── money.html
+│   ├── README.md
 │   └── salvadanaio.html
 ├── scripts/
 │   ├── push.sh*
@@ -77,6 +78,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 65 files
+12 directories, 66 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
