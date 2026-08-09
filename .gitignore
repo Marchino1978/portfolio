@@ -56,6 +56,9 @@ backup_SQL/
 .goutputstream-*
 .nfs*
 
+# TXT/MD
+txt/
+
 # ESP32
 esp32/ETF.ino
 esp32/ETF.example.ino
