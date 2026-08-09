@@ -215,7 +215,8 @@ primary_region = "fra"
 │   ├── MARKET live -open-.png
 │   ├── report_annuale.png
 │   ├── report_mensile.png
-│   └── splash.png
+│   ├── splash.png
+│   └── work-in-progress.png
 ├── old/
 │   ├── fondi.html
 │   ├── index.html
@@ -257,7 +258,7 @@ primary_region = "fra"
 ├── README.md
 └── requirements.txt
 
-12 directories, 60 files
+12 directories, 61 files
 
 
 # ./README.md
