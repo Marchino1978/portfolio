@@ -1,8 +1,8 @@
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_07_20.sql
 │   ├── backup_supabase_2026_07_27.sql
 │   ├── backup_supabase_2026_08_03.sql
+│   ├── backup_supabase_2026_08_10.sql
 │   └── README.md
 ├── config/
 │   ├── README.md
@@ -26,6 +26,7 @@
 ├── gallery/
 │   └── README.md
 ├── img/
+│   ├── _case_.gif
 │   ├── case.gif
 │   ├── case.png
 │   ├── coin counter.png
@@ -86,6 +87,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 74 files
+12 directories, 75 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
