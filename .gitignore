@@ -23,6 +23,7 @@ ENV/
 # Fly.io
 .fly/
 fly.toml.bak
+fly.toml
 
 # Logs
 *.log
