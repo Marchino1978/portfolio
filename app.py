@@ -1,6 +1,6 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, request
 import os
 import json
 
@@ -10,6 +10,10 @@ from src import scraper_fondi
 from utils.logger import log_info, log_error
 
 app = Flask(__name__)
+CRONJOB_TOKEN = os.getenv("cronjob")
+
+def check_cronjob_token():
+    return request.args.get("key") == CRONJOB_TOKEN
 
 
 # ---------------------------------------------------------
@@ -26,6 +30,9 @@ def health():
 # ---------------------------------------------------------
 @app.route("/api/update-all")
 def update_etf():
+    if not check_cronjob_token():
+        return jsonify({"error": "Unauthorized"}), 401
+
     log_info("Richiesta /api/update-all ricevuta - avvio aggiornamento ETF SINCRONO")
     try:
         results, market_open = scraper_etf.main()  # Esecuzione bloccante
@@ -67,6 +74,9 @@ def get_fondi_csv():
 # ---------------------------------------------------------
 @app.route("/api/update-fondi")
 def update_fondi():
+    if not check_cronjob_token():
+        return jsonify({"error": "Unauthorized"}), 401
+
     log_info("Richiesta /api/update-fondi ricevuta - avvio aggiornamento fondi SINCRONO")
     try:
         scraper_fondi.main()
