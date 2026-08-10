@@ -5,7 +5,7 @@
 
 <div align="center">
 
-Dynamic data files (CSV/JSON) continuously read and updated by background scripts for ESP32 display, Web Dashboards, and Spreadsheets
+Dynamic data files (CSV/JSON) continuously read and updated by background scripts for ESP32 display, Web Dashboards and Spreadsheets
 
 </div>
 

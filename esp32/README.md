@@ -5,9 +5,9 @@
 
 <div align="center">
 
-Firmware and 3D enclosure for my personal financial ticker.
+Firmware and 3D enclosure for my personal financial ticker
 <br><br>
-Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>.
+Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>
 
 </div>
 
@@ -28,7 +28,7 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>.
 
 <div align="center">
 
-For more nformation, check the official <strong>Waveshare product page</strong>.
+For more information, check the official <strong>Waveshare product page</strong>
 
 </div>
 
