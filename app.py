@@ -10,6 +10,7 @@ from src import scraper_fondi
 from utils.logger import log_info, log_error
 
 app = Flask(__name__)
+
 CRONJOB_TOKEN = os.getenv("cronjob")
 
 def check_cronjob_token():
