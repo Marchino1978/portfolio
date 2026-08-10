@@ -26,7 +26,6 @@
 ├── gallery/
 │   └── README.md
 ├── img/
-│   ├── _case_.gif
 │   ├── case.gif
 │   ├── case.png
 │   ├── coin counter.png
@@ -42,6 +41,7 @@
 │   ├── splash.png
 │   └── work-in-progress.png
 ├── old/
+│   ├── _case_.gif
 │   ├── fondi.html
 │   ├── index.html
 │   ├── market.html

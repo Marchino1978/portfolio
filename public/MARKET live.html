@@ -23,8 +23,8 @@
             --btn-bg:    #221500;    /* SFONDO BOTTONI PREMUTI */
         }
 
-        .bloomberg-mode {
-            /* COLORI BLOOMBERG (MARKET CLOSED) */
+        .market-closed-mode {
+            /* COLORI MERCATO CHIUSO (MARKET CLOSED) */
             --color-pos: #ffb000;    /* AMBRA (Positivi) */
             --color-neg: #00ffff;    /* CIANO (Negativi) */
             --color-na:  #888888;    /* GRIGIO PERLA (N/A) */
@@ -179,10 +179,10 @@
         const alertBanner = document.getElementById('market-status-alert');
         
         if (isClosed) {
-            body.classList.add('bloomberg-mode');
+            body.classList.add('market-closed-mode');
             alertBanner.style.display = 'block';
         } else {
-            body.classList.remove('bloomberg-mode');
+            body.classList.remove('market-closed-mode');
             alertBanner.style.display = 'none';
         }
     }
