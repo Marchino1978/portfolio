@@ -34,6 +34,7 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <br><br>
 
+<p align="center">
 <strong><font color="red">***DEMO and STL available soon***</font></strong>
 </p>
 
