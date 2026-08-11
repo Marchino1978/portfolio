@@ -16,7 +16,7 @@
     </td>
   </tr>
   
-  <!-- EPS32 live -->
+  <!-- ESP32 live -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/work-in-progress.png" width="100%"><br>
@@ -72,7 +72,7 @@
     </td>
   </tr>
 
-  <!-- 3D CASE -->
+  <!-- 3D FRAME -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/frame.png" width="100%"><br>

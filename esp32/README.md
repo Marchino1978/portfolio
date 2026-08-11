@@ -72,9 +72,9 @@ For more information, check the official <strong>Waveshare product page</strong>
 <strong>Slicer Settings</strong><br>
 <strong>Orientation:</strong> Face-down (front side flat on the build plate for the best surface finish)<br>
 <strong>Layer Height:</strong> 0.20 mm<br>
-<strong>Wall Loops (Perimeters):</strong> 4 or 5 (Crucial for making the Technic hole walls 100% solid and durable)<br>
-<strong>Infill:</strong> 30% - 40% (Gyroid or Honeycomb)<br>
-<strong>Supports:</strong> Yes (Tree / Auto - only needed inside for the internal ESP32 mounting tabs)<br>
+<strong>Wall Loops (Perimeters):</strong> 4 or 5 (crucial for making the Technic hole walls 100% solid and durable)<br>
+<strong>Infill:</strong> 30%-40% (Gyroid or Honeycomb)<br>
+<strong>Supports:</strong> Yes (Tree / Auto - only needed for the internal ESP32 mounting tabs)<br>
 
 </div>
 
