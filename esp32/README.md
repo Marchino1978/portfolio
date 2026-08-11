@@ -35,13 +35,11 @@ For more information, check the official <strong>Waveshare product page</strong>
 <br><br>
 
 <p align="center">
-<strong><font color="red">***DEMO and STL available soon***</font></strong>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,100:000000&fontColor=FF0000&height=30&section=header&text=***DEMO%20and%20STL%20available%20soon***&fontSize=16"
+  alt="ESP32 - portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot" />
 </p>
 
-
-
 <br><br>
-
 
 <div align="center">
 
