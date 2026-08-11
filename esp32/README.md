@@ -34,9 +34,9 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <br><br>
 
-<p align="center">
-  <strong>***DEMO and STL available soon***</strong>
+<strong><font color="red">***DEMO and STL available soon***</font></strong>
 </p>
+
 
 
 <br><br>
@@ -49,7 +49,7 @@ CASE 3D PRINTING <strong>LEGO TECHNIC STYLE</strong>
 </div>
 
 <table width="100%">
-  <!-- CASE -->
+  <!-- CASE 3D  -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/ino.png" width="50%"><br>
