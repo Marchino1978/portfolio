@@ -38,6 +38,47 @@ For more information, check the official <strong>Waveshare product page</strong>
   <strong>***DEMO and STL available soon***</strong>
 </p>
 
+
+<br><br>
+
+
+<div align="center">
+
+CASE 3D PRINTING <strong>LEGO TECHNIC STYLE</strong>
+
+</div>
+
+<table width="100%">
+  <!-- CASE -->
+  <tr>
+    <td width="50%" align="center">
+      <img src="../img/ino.png" width="50%"><br>
+      <a href="../ESP32/ETF.ino"><strong>Download Demo Firmware (.ino)</strong></a>
+          </td>
+    <td width="50%" align="center">
+      <img src="../img/stl.png" width="50%"><br>
+      <a href="../ESP32/case.stl"><strong>Download 3D Case (.stl)</strong></a>
+          </td>
+  </tr>
+ 
+</table>
+
+<div align="center">
+
+<strong>Hardware & Materials</strong><br>
+<strong>3D Printer:</strong> Bambu Lab A1 / A1 Mini<br>
+<strong>Filament:</strong> Silk PLA Plus<br>
+<strong>Hardware Required:</strong> 4x M2 screws<br>
+<br>
+<strong>Slicer Settings</strong><br>
+<strong>Orientation:</strong> Face-down (front side flat on the build plate for the best surface finish)<br>
+<strong>Layer Height:</strong> 0.20 mm<br>
+<strong>Wall Loops (Perimeters):</strong> 4 or 5 (Crucial to make the Technic hole walls 100% solid and durable)<br>
+<strong>Infill:</strong> 30% - 40% (Gyroid or Honeycomb)<br>
+<strong>Supports:</strong> Yes (Tree / Auto - only needed inside for the internal ESP32 mounting tabs)<br>
+
+</div>
+
 <!-- 
 portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot
 -->
