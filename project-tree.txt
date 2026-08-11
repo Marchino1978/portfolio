@@ -26,12 +26,12 @@
 ├── gallery/
 │   └── README.md
 ├── img/
-│   ├── case.gif
-│   ├── case.png
 │   ├── coin counter.png
 │   ├── esp32-c6-front.jpg
 │   ├── esp32-c6-rear.jpg
 │   ├── ETF charts.png
+│   ├── frame.gif
+│   ├── frame.png
 │   ├── ino.png
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png

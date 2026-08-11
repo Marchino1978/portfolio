@@ -5,7 +5,7 @@
 
 <div align="center">
 
-Firmware and 3D enclosure for my personal financial ticker
+Firmware and 3D frame for my personal financial ticker
 <br><br>
 Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>
 
@@ -43,12 +43,12 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <div align="center">
 
-3D CASE PRINTED - <strong>LEGO TECHNIC STYLE</strong>
+3D PRINTED FRAME - <strong>LEGO TECHNIC STYLE</strong> - 100% compatible
 
 </div>
 
 <table width="100%">
-  <!-- 3D CASE  -->
+  <!-- 3D FRAME  -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/ino.png" width="50%"><br>
@@ -56,7 +56,7 @@ For more information, check the official <strong>Waveshare product page</strong>
           </td>
     <td width="50%" align="center">
       <img src="../img/stl.png" width="50%"><br>
-      <a href="../ESP32/case.stl"><strong>Download 3D Case (.stl)</strong></a>
+      <a href="../ESP32/frame.stl"><strong>Download 3D Frame (.stl)</strong></a>
           </td>
   </tr>
  

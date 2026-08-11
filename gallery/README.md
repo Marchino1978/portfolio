@@ -28,12 +28,12 @@
     </td>
   </tr>
 
-  <!-- ESP32 & case -->
+  <!-- ESP32 & frame -->
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
       <img src="../img/work-in-progress.png" width="70%"><br>
-      <font color="gold"><b>ESP32-C6 1,47" + case</b></font>
+      <font color="gold"><b>ESP32-C6 1,47" + frame</b></font>
       <br><br>
     </td>
   </tr>
@@ -67,7 +67,7 @@
     <td colspan="2" align="center" width="100%">
       <br>
       <img src="../img/work-in-progress.png" width="70%"><br>
-      <font color="gold"><b>3D case - LEGO TECHNIC style</b></font>
+      <font color="gold"><b>3D frame - LEGO TECHNIC style</b></font>
       <br><br>
     </td>
   </tr>
@@ -75,12 +75,12 @@
   <!-- 3D CASE -->
   <tr>
     <td width="50%" align="center">
-      <img src="../img/case.png" width="100%"><br>
-      <font color="gold"><b>ESP32-C6 1,47" case (static)</b></font>
+      <img src="../img/frame.png" width="100%"><br>
+      <font color="gold"><b>ESP32-C6 1,47" frame (static)</b></font>
     </td>
     <td width="50%" align="center">
-      <img src="../img/case.gif" width="100%"><br>
-      <font color="gold"><b>ESP32-C6 1,47" case (animated)</b></font>
+      <img src="../img/frame.gif" width="100%"><br>
+      <font color="gold"><b>ESP32-C6 1,47" frame (animated)</b></font>
     </td>
   </tr>
 </table>
