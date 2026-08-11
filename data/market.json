@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 129.5425,
-        "dailyChange": "-0.14",
-        "value": 129.5425,
-        "v1": "+1.05%M",
-        "v2": "+5.59%Q",
-        "v3": "+16.78%H",
-        "v_led": "+16.78%H",
-        "v_alert": "+1.05%M",
-        "v_bot": "+1.05%M"
+        "price": 129.4925,
+        "dailyChange": "-0.18",
+        "value": 129.4925,
+        "v1": "+1.01%M",
+        "v2": "+5.54%Q",
+        "v3": "+16.73%H",
+        "v_led": "+16.73%H",
+        "v_alert": "+1.01%M",
+        "v_bot": "+1.01%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 168.22,
-        "dailyChange": "-0.08",
-        "value": 168.22,
-        "v1": "+0.83%M",
-        "v2": "+5.18%Q",
-        "v3": "+13.87%H",
-        "v_led": "+13.87%H",
-        "v_alert": "+0.83%M",
-        "v_bot": "+0.83%M"
+        "price": 168.37,
+        "dailyChange": "+0.01",
+        "value": 168.37,
+        "v1": "+0.92%M",
+        "v2": "+5.28%Q",
+        "v3": "+13.97%H",
+        "v_led": "+13.97%H",
+        "v_alert": "+0.92%M",
+        "v_bot": "+0.92%M"
       },
       {
         "symbol": "EXUS",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-08-11T22:40:46.480837+02:00",
-    "readable": "22:40 11-08-2026"
+    "iso": "2026-08-11T22:55:35.885037+02:00",
+    "readable": "22:55 11-08-2026"
   }
 }
