@@ -43,12 +43,12 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <div align="center">
 
-CASE 3D PRINTING <strong>LEGO TECHNIC STYLE</strong>
+3D CASE PRINTED - <strong>LEGO TECHNIC STYLE</strong>
 
 </div>
 
 <table width="100%">
-  <!-- CASE 3D  -->
+  <!-- 3D CASE  -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/ino.png" width="50%"><br>
@@ -67,12 +67,12 @@ CASE 3D PRINTING <strong>LEGO TECHNIC STYLE</strong>
 <strong>Hardware & Materials</strong><br>
 <strong>3D Printer:</strong> Bambu Lab A1 / A1 Mini<br>
 <strong>Filament:</strong> Silk PLA Plus<br>
-<strong>Hardware Required:</strong> 4x M2 screws<br>
+<strong>Hardware Required:</strong> 4× M2 screws<br>
 <br>
 <strong>Slicer Settings</strong><br>
 <strong>Orientation:</strong> Face-down (front side flat on the build plate for the best surface finish)<br>
 <strong>Layer Height:</strong> 0.20 mm<br>
-<strong>Wall Loops (Perimeters):</strong> 4 or 5 (Crucial to make the Technic hole walls 100% solid and durable)<br>
+<strong>Wall Loops (Perimeters):</strong> 4 or 5 (Crucial for making the Technic hole walls 100% solid and durable)<br>
 <strong>Infill:</strong> 30% - 40% (Gyroid or Honeycomb)<br>
 <strong>Supports:</strong> Yes (Tree / Auto - only needed inside for the internal ESP32 mounting tabs)<br>
 
