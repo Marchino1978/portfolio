@@ -17,11 +17,11 @@
 │   ├── README.md
 │   └── salvadanaio.csv
 ├── esp32/
-│   ├── case.stl
 │   ├── config.example.h
 │   ├── config.h
 │   ├── ETF.example.ino
 │   ├── ETF.ino
+│   ├── frame.stl
 │   └── README.md
 ├── gallery/
 │   └── README.md
