@@ -19,11 +19,11 @@
   <!-- ESP32 live -->
   <tr>
     <td width="50%" align="center">
-      <img src="../img/work-in-progress.png" width="100%"><br>
+      <img src="../img/ESP32 live -open-.gif" width="100%"><br>
       <font color="gold"><b>MARKET live (open) - [ESP32-C6 1,47"]</b></font>
     </td>
     <td width="50%" align="center">
-      <img src="../img/work-in-progress.png" width="100%"><br>
+      <img src="../img/ESP32 live -close-.gif" width="100%"><br>
       <font color="gold"><b>MARKET live (close) - [ESP32-C6 1,47"]</b></font>
     </td>
   </tr>
