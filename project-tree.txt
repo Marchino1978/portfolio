@@ -26,6 +26,7 @@
 ├── gallery/
 │   └── README.md
 ├── img/
+│   ├── booting.mp4
 │   ├── coin counter.png
 │   ├── esp32-c6-front.jpg
 │   ├── esp32-c6-rear.jpg
@@ -41,6 +42,7 @@
 │   ├── _splash_.png
 │   ├── splash.png
 │   ├── stl.png
+│   ├── working.mp4
 │   └── work-in-progress.png
 ├── old/
 │   ├── _case_.gif
@@ -93,6 +95,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 81 files
+12 directories, 83 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***

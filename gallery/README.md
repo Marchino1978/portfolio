@@ -38,6 +38,24 @@
     </td>
   </tr>
 
+  <!-- Booting & Working -->
+  <tr>
+    <td width="50%" align="center">
+      <video width="100%" autoplay loop muted playsinline>
+        <source src="../img/booting.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+      </video><br>
+      <font color="gold"><b>Booting...</b></font>
+    </td>
+    <td width="50%" align="center">
+      <video width="100%" autoplay loop muted playsinline>
+        <source src="../img/Working.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+      </video><br>
+      <font color="gold"><b>Working...</b></font>
+    </td>
+  </tr>
+
   <!-- ETF charts & coin counter -->
   <tr>
     <td width="50%" align="center">
