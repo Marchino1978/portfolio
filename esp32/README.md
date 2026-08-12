@@ -38,16 +38,14 @@ For more information, check the official <strong>Waveshare product page</strong>
   <!-- Booting & Working -->
   <tr>
     <td width="50%" align="center">
-      <a href="../img/booting.mp4" target="_blank">
-        <img src="img/booting.png" width="100%" alt="Watch the Booting video">
-      </a><br>
-      <b>Booting... (Click to watch the video)</b>
+      <img src="../img/booting.png" width="50%" alt="Booting"><br>
+      <font color="gold"><b>Booting...</b></font><br>
+      <a href="../img/booting.mp4" target="_blank">▶ Guarda il video</a>
     </td>
     <td width="50%" align="center">
-      <a href="../img/working.mp4" target="_blank">
-        <img src="img/working.pmg" width="100%" alt="Watch the Working video">
-      </a><br>
-      <b>Working... (Click to watch the video)</b>
+      <img src="../img/working.png" width="50%" alt="Working"><br>
+      <font color="gold"><b>Working...</b></font><br>
+      <a href="../img/working.mp4" target="_blank">▶ Guarda il video</a>
     </td>
   </tr>
 </table>
