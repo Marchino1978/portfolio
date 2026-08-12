@@ -54,8 +54,6 @@ For more information, check the official <strong>Waveshare product page</strong>
       </a>
       <br>
       <font color="gold"><i>ETF pages cycle automatically at 15-sec intervals</i></font>
-      <font color="gold"><b>ETF pages cycle automatically at 15-sec intervals</b></font>
-      <font color="gold"><em>ETF pages cycle automatically at 15-sec intervals</em></font>
     </td>
   </tr>
 </table>
