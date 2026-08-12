@@ -53,7 +53,9 @@ For more information, check the official <strong>Waveshare product page</strong>
         <font color="gold"><b>▶ PLAY Working Video... [watch until the end]</b></font>
       </a>
       <br>
-      <font color="gold"><small>ETF pages cycle automatically at 15-sec intervals</small></font>
+      <font color="gold"><i>ETF pages cycle automatically at 15-sec intervals</i></font>
+      <font color="gold"><b>ETF pages cycle automatically at 15-sec intervals</b></font>
+      <font color="gold"><em>ETF pages cycle automatically at 15-sec intervals</em></font>
     </td>
   </tr>
 </table>
@@ -82,7 +84,7 @@ For more information, check the official <strong>Waveshare product page</strong>
           </td>
     <td width="50%" align="center">
       <img src="../img/stl.png" width="50%"><br>
-      <a href="../ESP32/frame.stl"><i>Download 3D Frame (.stl)</i></a>
+      <a href="../ESP32/frame.stl"><strong>Download 3D Frame (.stl)</strong></a>
           </td>
   </tr>
  
