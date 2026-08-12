@@ -55,18 +55,18 @@ For more information, check the official <strong>Waveshare product page</strong>
   <!-- Booting & Working -->
   <tr>
     <td width="50%" align="center">
-      <a href="https://raw.githubusercontent.com/TUO_UTENTE/TUO_REPO/main/img/booting.mp4" target="_blank">
+      <a href="https://github.com/user-attachments/assets/738c9ad9-f412-4684-9a8f-b2b9191bb80e" target="_blank">
         <img src="../img/booting.png" width="50%" alt="Booting">
       </a><br>
-      <a href="https://raw.githubusercontent.com/TUO_UTENTE/TUO_REPO/main/img/booting.mp4" target="_blank">
+      <a href="https://github.com/user-attachments/assets/738c9ad9-f412-4684-9a8f-b2b9191bb80e" target="_blank">
         <font color="gold"><b>▶ Apri video Booting</b></font>
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://raw.githubusercontent.com/TUO_UTENTE/TUO_REPO/main/img/working.mp4" target="_blank">
+      <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
         <img src="../img/working.png" width="50%" alt="Working">
       </a><br>
-      <a href="https://raw.githubusercontent.com/TUO_UTENTE/TUO_REPO/main/img/working.mp4" target="_blank">
+      <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
         <font color="gold"><b>▶ Apri video Working</b></font>
       </a>
     </td>
