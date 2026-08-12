@@ -82,7 +82,7 @@ For more information, check the official <strong>Waveshare product page</strong>
           </td>
     <td width="50%" align="center">
       <img src="../img/stl.png" width="50%"><br>
-      <a href="../ESP32/frame.stl"><strong>Download 3D Frame (.stl)</strong></a>
+      <a href="../ESP32/frame.stl"><i>Download 3D Frame (.stl)</i></a>
           </td>
   </tr>
  
