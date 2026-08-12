@@ -48,6 +48,8 @@
 │   ├── index.html
 │   ├── ino.png
 │   ├── market.html
+│   ├── MARKET live -close-.png
+│   ├── MARKET live -open-.png
 │   ├── market-mobile.html
 │   └── stl.png
 ├── public/
@@ -91,6 +93,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 79 files
+12 directories, 81 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
