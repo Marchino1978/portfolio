@@ -50,7 +50,7 @@ For more information, check the official <strong>Waveshare product page</strong>
         <img src="../img/working.png" width="50%" alt="Working">
       </a><br>
       <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
-        <font color="gold"><b>▶ Watch Working Video... [watch until the end]/b></font>
+        <font color="gold"><b>▶ Watch Working Video... [watch until the end]</b></font>
       </a>
     </td>
   </tr>
