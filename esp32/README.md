@@ -50,6 +50,48 @@ For more information, check the official <strong>Waveshare product page</strong>
   </tr>
 </table>
 
+
+<table width="100%">
+  <!-- Booting & Working -->
+  <tr>
+    <td width="50%" align="center">
+      <video src="../img/booting.mp4" width="100%" controls></video><br>
+      <font color="gold"><b>Booting...</b></font>
+    </td>
+    <td width="50%" align="center">
+      <video src="../img/working.mp4" width="100%" controls></video><br>
+      <font color="gold"><b>Working...</b></font>
+    </td>
+  </tr>
+</table>
+
+
+<table width="100%">
+  <!-- Booting & Working -->
+  <tr>
+    <td width="50%" align="center">
+      <a href="../img/booting.mp4?raw=true" target="_blank">
+        <img src="../img/booting.png" width="50%" alt="Booting">
+      </a><br>
+      <a href="../img/booting.mp4?raw=true" target="_blank">
+        <font color="gold"><b>▶ Riproduci Booting.mp4</b></font>
+      </a>
+    </td>
+    <td width="50%" align="center">
+      <a href="../img/working.mp4?raw=true" target="_blank">
+        <img src="../img/working.png" width="50%" alt="Working">
+      </a><br>
+      <a href="../img/working.mp4?raw=true" target="_blank">
+        <font color="gold"><b>▶ Riproduci Working.mp4</b></font>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
 <br><br>
 
 <p align="center">
