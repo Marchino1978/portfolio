@@ -52,6 +52,7 @@ For more information, check the official <strong>Waveshare product page</strong>
       <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
         <font color="gold"><b>▶ PLAY Working Video... [watch until the end]</b></font>
       </a>
+      <font color="gold"><b>ETF pages cycle automatically at 15-sec intervals</b></font>
     </td>
   </tr>
 </table>
