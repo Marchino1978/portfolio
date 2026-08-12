@@ -27,6 +27,7 @@
 │   └── README.md
 ├── img/
 │   ├── booting.mp4
+│   ├── booting.png
 │   ├── coin counter.png
 │   ├── esp32-c6-front.jpg
 │   ├── esp32-c6-rear.jpg
@@ -43,8 +44,10 @@
 │   ├── splash.png
 │   ├── stl.png
 │   ├── working.mp4
+│   ├── working.png
 │   └── work-in-progress.png
 ├── old/
+│   ├── booting.png
 │   ├── _case_.gif
 │   ├── fondi.html
 │   ├── index.html
@@ -53,7 +56,8 @@
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png
 │   ├── market-mobile.html
-│   └── stl.png
+│   ├── stl.png
+│   └── working.png
 ├── public/
 │   ├── ETF charts.html
 │   ├── MARKET live.html
@@ -95,6 +99,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 83 files
+12 directories, 87 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***

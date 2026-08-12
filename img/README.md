@@ -5,7 +5,7 @@
 
 <div align="center">
 
-Pictures, Photos & Screenshots
+Pictures, Photos, Videos & Screenshots
 
 </div>
 
