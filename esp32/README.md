@@ -38,28 +38,11 @@ For more information, check the official <strong>Waveshare product page</strong>
   <!-- Booting & Working -->
   <tr>
     <td width="50%" align="center">
-      <img src="../img/booting.png" width="50%" alt="Booting"><br>
-      <font color="gold"><b>Booting...</b></font><br>
-      <a href="../img/booting.mp4" target="_blank">▶ Guarda il video</a>
-    </td>
-    <td width="50%" align="center">
-      <img src="../img/working.png" width="50%" alt="Working"><br>
-      <font color="gold"><b>Working...</b></font><br>
-      <a href="../img/working.mp4" target="_blank">▶ Guarda il video</a>
-    </td>
-  </tr>
-</table>
-
-
-<table width="100%">
-  <!-- Booting & Working -->
-  <tr>
-    <td width="50%" align="center">
       <a href="https://github.com/user-attachments/assets/738c9ad9-f412-4684-9a8f-b2b9191bb80e" target="_blank">
         <img src="../img/booting.png" width="50%" alt="Booting">
       </a><br>
       <a href="https://github.com/user-attachments/assets/738c9ad9-f412-4684-9a8f-b2b9191bb80e" target="_blank">
-        <font color="gold"><b>▶ Apri video Booting</b></font>
+        <font color="gold"><b>▶ Watch Booting Video</b></font>
       </a>
     </td>
     <td width="50%" align="center">
@@ -67,15 +50,11 @@ For more information, check the official <strong>Waveshare product page</strong>
         <img src="../img/working.png" width="50%" alt="Working">
       </a><br>
       <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
-        <font color="gold"><b>▶ Apri video Working</b></font>
+        <font color="gold"><b>▶ Watch WorkingVideo/b></font>
       </a>
     </td>
   </tr>
 </table>
-
-
-
-
 
 <br><br>
 
