@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 // Enter your credentials here and rename this file to config.h
-// NOTE: if you only have 1 or 2 Wi-Fi networks, just enter the same credentials across the fields.
+// NOTE: if you only have 1 or 2 Wi-Fi networks, just enter the same credentials in the remaining fields.
 const char* ssid_home    = "YOUR_HOME_SSID";
 const char* pass_home    = "YOUR_HOME_PASSWORD";
 
