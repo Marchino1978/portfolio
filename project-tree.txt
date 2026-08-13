@@ -74,7 +74,8 @@
 ├── scripts/
 │   ├── push.sh*
 │   ├── README.md
-│   └── snapshot_all.sh*
+│   ├── snapshot_all.sh*
+│   └── zippa.sh*
 ├── src/
 │   ├── backup_manager.py
 │   ├── bot_telegram.py
@@ -106,6 +107,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 94 files
+12 directories, 95 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***

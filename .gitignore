@@ -70,3 +70,6 @@ esp32/frame.stl
 
 # OLD
 old/
+
+# ZIP
+/*.zip

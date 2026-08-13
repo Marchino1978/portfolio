@@ -10,13 +10,14 @@ dump_folder() {
   for file in "$folder"/*; do
     [ -f "$file" ] || continue
 
-    [[ "$(basename "$file")" == "ETF.ino" ]] && continue
-    [[ "$(basename "$file")" == "frame.stl" ]] && continue
-    [[ "$(basename "$file")" == "frame.gif" ]] && continue
-    [[ "$(basename "$file")" == "frame.png" ]] && continue
-    [[ "$(basename "$file")" == "README_FIRST.txt" ]] && continue
-    [[ "$(basename "$file")" == "README.md" ]] && continue
-    [[ "$(basename "$file")" == "TODO.md" ]] && continue
+    local nome_file="${file##*/}"
+
+    [[ "$nome_file" == *.zip ]] && continue
+    [[ "$nome_file" == "ETF.ino" ]] && continue
+    [[ "$nome_file" == "frame.stl" ]] && continue
+    [[ "$nome_file" == "README_FIRST.txt" ]] && continue
+    [[ "$nome_file" == "README.md" ]] && continue
+    [[ "$nome_file" == "TODO.md" ]] && continue
 
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
@@ -32,14 +33,15 @@ dump_folder "." "root"
 
 for dir in */; do
   [ -d "$dir" ] || continue
-  foldername=$(basename "$dir")
+  foldername="${dir%/}"
+  
   case "$foldername" in
     txt|.git|node_modules|data|public|old|gallery|img|backup_SQL|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done
 
-tree -a -F -I 'node_modules|.git|txt' --dirsfirst > project-tree.txt
+tree -a -F -I '*.zip|node_modules|.git|txt' --dirsfirst > project-tree.txt
 
 echo "" >> project-tree.txt
 echo "*** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***" >> project-tree.txt
