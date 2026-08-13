@@ -119,7 +119,29 @@ DOWNLOAD
 <strong>Supports:</strong> Yes (Tree / Auto - only needed for the internal ESP32 mounting tabs)<br>
 
 </div>
-
+<table width="100%">
+  <!-- Booting & Working Video con URL Pubblici -->
+  <tr>
+    <td width="50%" align="center">
+      <video src="https://github.com/Marchino1978/portfolio/raw/refs/heads/main/img/booting.mp4" width="100%" controls poster="../img/booting.png">
+        Il tuo browser non supporta il tag video.
+      </video><br>
+      <a href="https://1drv.ms" target="_blank">
+        <font color="gold"><b>▶ PLAY Booting Video on OneDrive...</b></font>
+      </a>
+    </td>
+    <td width="50%" align="center">
+      <video src="https://github.com/Marchino1978/portfolio/raw/refs/heads/main/img/working.mp4" width="100%" controls poster="../img/working.png">
+        Il tuo browser non supporta il tag video.
+      </video><br>
+      <a href="https://1drv.ms" target="_blank">
+        <font color="gold"><b>▶ PLAY Working Video on OneDrive...</b></font>
+      </a>
+      <br>
+      <font color="gold"><i>ETF pages cycle automatically at 15-sec intervals</i></font>
+    </td>
+  </tr>
+</table>
 <!-- 
 portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot
 -->
