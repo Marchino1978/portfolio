@@ -69,16 +69,17 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <div align="center">
 
+DEMO FIRMWARE
 3D PRINTED FRAME - <strong>LEGO TECHNIC STYLE</strong> - 100% compatible
 
 </div>
 
 <table width="100%">
-  <!-- 3D FRAME  -->
+  <!-- DEMO & 3D FRAME  -->
   <tr>
     <td width="50%" align="center">
       <img src="../img/ino.png" width="50%"><br>
-      <a href="../ESP32/ETF.ino"><strong>Download Demo Firmware (.ino)</strong></a>
+      <a href="../ESP32/DEMO.zip"><strong>Download Demo Firmware (.zip)</strong></a>
           </td>
     <td width="50%" align="center">
       <img src="../img/stl.png" width="50%"><br>
