@@ -86,7 +86,9 @@ DOWNLOAD
       <img src="../img/stl.png" width="50%"><br>
       <a href="../ESP32/frame.stl"><strong>Download 3D Frame (.stl)</strong></a>
       <br>
-      <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE - 100% compatible</i></font>
+      <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE</i></font>
+      <br>
+      <font color="gold"><i>100% compatible</i></font>
           </td>
   </tr>
  
