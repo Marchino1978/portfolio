@@ -61,9 +61,10 @@ txt/
 
 # ESP32
 esp32/ETF.ino
+esp32/config.h
+esp32/language.h
 esp32/ETF.example.ino
 esp32/frame.stl
-esp32/config.h
 esp32/TODO.md
 
 # OLD
