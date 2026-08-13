@@ -8,6 +8,7 @@ public/
 tests/
 txt/
 
+.env
 .gitignore
 project-tree.txt
 README.md
