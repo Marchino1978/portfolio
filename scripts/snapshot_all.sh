@@ -13,10 +13,11 @@ dump_folder() {
     [[ "$(basename "$file")" == "ETF.ino" ]] && continue
     [[ "$(basename "$file")" == "ETF.example.ino" ]] && continue
     [[ "$(basename "$file")" == "config.h" ]] && continue
-    [[ "$(basename "$file")" == "case.stl" ]] && continue
-    [[ "$(basename "$file")" == "case.gif" ]] && continue
-    [[ "$(basename "$file")" == "case.png" ]] && continue
+    [[ "$(basename "$file")" == "frame.stl" ]] && continue
+    [[ "$(basename "$file")" == "frame.gif" ]] && continue
+    [[ "$(basename "$file")" == "frame.png" ]] && continue
     [[ "$(basename "$file")" == "README.md" ]] && continue
+    [[ "$(basename "$file")" == "TODO.md" ]] && continue
 
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
