@@ -24,7 +24,7 @@ const char* pass_office  = "YOUR_OFFICE_PASSWORD";
 const char* ssid_hotspot = "YOUR_HOTSPOT_SSID";
 const char* pass_hotspot = "YOUR_HOTSPOT_PASSWORD";
 
-// Enter the raw URL of your hosted market.example.json file (GitHub, AWS, VPS, etc.)
-const char* serverUrl = "https://raw.githubusercontent.com/username/repo/main/folder/market.example.json";
+// Enter the raw URL of your hosted market.json file (GitHub, AWS, VPS, etc.)
+const char* serverUrl = "https://raw.githubusercontent.com/username/repo/main/folder/market.json";
 
 #endif

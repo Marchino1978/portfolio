@@ -11,7 +11,6 @@ dump_folder() {
     [ -f "$file" ] || continue
 
     [[ "$(basename "$file")" == "ETF.ino" ]] && continue
-    [[ "$(basename "$file")" == "config.h" ]] && continue
     [[ "$(basename "$file")" == "frame.stl" ]] && continue
     [[ "$(basename "$file")" == "frame.gif" ]] && continue
     [[ "$(basename "$file")" == "frame.png" ]] && continue

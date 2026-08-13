@@ -86,7 +86,9 @@ DOWNLOAD
       <img src="../img/ino.png" width="50%"><br>
       <a href="../ESP32/DEMO.zip"><strong>Download Demo Firmware (.zip)</strong></a>
       <br>
-      <font color="gold"><i>Includes: ETF.example.ino, config.example.h, market.example.json</i></font>
+      <font color="gold"><i>Includes: ETF.example.ino, config.example.h, market.example.json, language.example.h</i></font>
+      <br>
+      <font color="gold"><i>N.B.: rename them to: ETF.ino, config.h, market.json, language.h</i></font>
           </td>
     <td width="50%" align="center">
       <img src="../img/stl.png" width="50%"><br>
