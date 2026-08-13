@@ -109,4 +109,4 @@
 
 12 directories, 95 files
 
-*** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
+*** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
