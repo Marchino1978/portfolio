@@ -44,12 +44,18 @@ For more information, check the official <strong>Waveshare product page</strong>
       <a href="https://github.com/user-attachments/assets/738c9ad9-f412-4684-9a8f-b2b9191bb80e" target="_blank">
         <font color="gold"><b>▶ PLAY Booting Video... [watch until the end]</b></font>
       </a>
+      <a href="https://1drv.ms/v/c/2af802ae1015d527/IQBMCv45bPKxQ4iBKBVD3dlhAaqWxCWLC-DjPDl3iCRLWpI?e=Umt9kT" target="_blank">
+        <font color="gold"><b>▶ PLAY Booting Video... [watch until the end]</b></font>
+      </a>
     </td>
     <td width="50%" align="center">
       <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
         <img src="../img/working.png" width="50%" alt="Working">
       </a><br>
       <a href="https://github.com/user-attachments/assets/057b2e25-3e56-4fce-8193-bf2e7917ea21" target="_blank">
+        <font color="gold"><b>▶ PLAY Working Video... [watch until the end]</b></font>
+      </a>
+      <a href="https://1drv.ms/v/c/2af802ae1015d527/IQCNhCipOP6-Sp099fotOHFBAT1yOzM8O2MOebKPvtlrQGk?e=xRzW33" target="_blank">
         <font color="gold"><b>▶ PLAY Working Video... [watch until the end]</b></font>
       </a>
       <br>
