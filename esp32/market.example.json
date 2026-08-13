@@ -1,0 +1,52 @@
+{
+  "status": "APERTO",
+  "open": true,
+  "values": {
+    "source": "DEMO",
+    "data": [
+      {
+        "symbol": "ETF 1",
+        "label": "ISIN 1",
+        "price": 150.0000,
+        "dailyChange": "+0.50",
+        "value": 150.0000,
+        "v1": "+5.00%M",
+        "v2": "+10.00%Q",
+        "v3": "+15.00%H",
+        "v_led": "+15.00%H",
+        "v_alert": "+5.00%M",
+        "v_bot": "+5.00%M"
+      },
+      {
+        "symbol": "ETF 2",
+        "label": "ISIN 2",
+        "price": 50.0000,
+        "dailyChange": "+0.05",
+        "value": 50.0000,
+        "v1": "+2.50%M",
+        "v2": "+5.00%Q",
+        "v3": "+7.50%H",
+        "v_led": "+7.50%H",
+        "v_alert": "+2.50%M",
+        "v_bot": "+2.50%M"
+      },
+      {
+        "symbol": "ETF 3",
+        "label": "ISIN 3",
+        "price": 100.000,
+        "dailyChange": "-2.50",
+        "value": 100.000,
+        "v1": "-1.00%M",
+        "v2": "-2.00%Q",
+        "v3": "-3.00%H",
+        "v_led": "-3.00%H",
+        "v_alert": "-1.00%M",
+        "v_bot": "-1.00%M"
+      }
+    ]
+  },
+  "last_updated": {
+    "iso": "2026-01-01T00:00:00.000000+02:00",
+    "readable": "00:00 01-01-2026"
+  }
+}

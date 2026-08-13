@@ -2,14 +2,17 @@
 #define CONFIG_H
 
 // Enter your credentials here and rename this file to config.h
-const char* ssid_office  = "IL_TUO_SSID_UFFICIO";
-const char* pass_office  = "LA_TUA_PASSWORD_UFFICIO";
-const char* ssid_home    = "IL_TUO_SSID_CASA";
-const char* pass_home    = "LA_TUA_PASSWORD_CASA";
-const char* ssid_hotspot = "IL_TUO_SSID_HOTSPOT";
-const char* pass_hotspot = "LA_TUA_PASSWORD_HOTSPOT";
+// NOTE: if you only have 1 or 2 Wi-Fi networks, just enter the same credentials across the fields.
+const char* ssid_home    = "YOUR_HOME_SSID";
+const char* pass_home    = "YOUR_HOME_PASSWORD";
 
-// Enter the URL to your JSON file (GitHub or private server)
-const char* serverUrl = "https://raw.githubusercontent.com/username/repo/main/folder/file.json";
+const char* ssid_office  = "YOUR_OFFICE_SSID";
+const char* pass_office  = "YOUR_OFFICE_PASSWORD";
+
+const char* ssid_hotspot = "YOUR_HOTSPOT_SSID";
+const char* pass_hotspot = "YOUR_HOTSPOT_PASSWORD";
+
+// Enter the raw URL of your hosted market.example.json file (GitHub, AWS, VPS, etc.)
+const char* serverUrl = "https://raw.githubusercontent.com/username/repo/main/folder/market.example.json";
 
 #endif

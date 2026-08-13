@@ -22,6 +22,7 @@
 │   ├── ETF.example.ino
 │   ├── ETF.ino
 │   ├── frame.stl
+│   ├── market.example.json
 │   └── README.md
 ├── gallery/
 │   └── README.md
@@ -101,6 +102,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 89 files
+12 directories, 90 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
