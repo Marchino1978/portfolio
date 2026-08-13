@@ -62,6 +62,7 @@
 │   ├── stl.png
 │   └── working.png
 ├── public/
+│   ├── booting.html
 │   ├── ETF charts.html
 │   ├── MARKET live.html
 │   ├── money.html
@@ -102,6 +103,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 90 files
+12 directories, 91 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
