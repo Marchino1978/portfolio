@@ -94,6 +94,8 @@ DOWNLOAD
  
 </table>
 
+<br>
+
 <div align="center">
 
 <strong>Hardware & Materials</strong><br>
