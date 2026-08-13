@@ -5,8 +5,8 @@
     "source": "DEMO",
     "data": [
       {
-        "symbol": "ETF 1",
-        "label": "ISIN 1",
+        "symbol": "ISIN 1",
+        "label": "ETF 1",
         "price": 150.0000,
         "dailyChange": "+0.50",
         "value": 150.0000,
@@ -16,8 +16,8 @@
         "v_led": "+15.00%H",
       },
       {
-        "symbol": "ETF 2",
-        "label": "ISIN 2",
+        "symbol": "ISIN 2",
+        "label": "ETF 2",
         "price": 50.0000,
         "dailyChange": "+0.05",
         "value": 50.0000,
@@ -27,8 +27,8 @@
         "v_led": "+7.50%H",
       },
       {
-        "symbol": "ETF 3",
-        "label": "ISIN 3",
+        "symbol": "ISIN 3",
+        "label": "ETF 3",
         "price": 100.000,
         "dailyChange": "-2.50",
         "value": 100.000,
