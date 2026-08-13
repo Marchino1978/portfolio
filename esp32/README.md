@@ -58,6 +58,12 @@ For more information, check the official <strong>Waveshare product page</strong>
   </tr>
 </table>
 
+<div align="center">
+
+(Tip: use Ctrl+Click or Middle-Click to open VIDEO in a new tab)
+
+</div>
+
 <br><br>
 
 <p align="center">
