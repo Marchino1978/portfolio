@@ -18,12 +18,15 @@
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── config.example.h
+│   ├── config.example.language.h
 │   ├── config.h
 │   ├── ETF.example.ino
 │   ├── ETF.ino
 │   ├── frame.stl
+│   ├── language.h
 │   ├── market.example.json
-│   └── README.md
+│   ├── README.md
+│   └── TODO.md
 ├── gallery/
 │   └── README.md
 ├── img/
@@ -102,6 +105,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 90 files
+12 directories, 93 files
 
 *** NOTE: some local files listed in this tree have been intentionally omitted from the repository ***
