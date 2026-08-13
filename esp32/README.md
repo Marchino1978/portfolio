@@ -44,7 +44,7 @@ For more information, check the official <strong>Waveshare product page</strong>
       <a href="https://github.com/user-attachments/assets/738c9ad9-f412-4684-9a8f-b2b9191bb80e" target="_blank">
         <font color="gold"><b>▶ PLAY Booting Video... [watch until the end]</b></font>
       </a>
-      <a href="https://1drv.ms/v/c/2af802ae1015d527/IQBMCv45bPKxQ4iBKBVD3dlhAaqWxCWLC-DjPDl3iCRLWpI?e=Umt9kT" target="_blank">
+      <a href="https://1drv.ms/v/c/2af802ae1015d527/IQBMCv45bPKxQ4iBKBVD3dlhAaqWxCWLC-DjPDl3iCRLWpI?e=Umt9kT" target="_blank" rel="noopener noreferrer">
         <font color="gold"><b>▶ PLAY Booting Video... [watch until the end]</b></font>
       </a>
     </td>
