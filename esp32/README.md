@@ -79,7 +79,7 @@ DOWNLOAD
     <td width="50%" align="center">
       <img src="../img/ino.png" width="50%"><br>
       <a href="../ESP32/DEMO.zip"><strong>Download Demo Firmware (.zip)</strong></a>
-      <br><
+      <br>
       <font color="gold"><i>Includes: ETF.example.ino, config.example.h, market.example.json</i></font>
           </td>
     <td width="50%" align="center">
