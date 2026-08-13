@@ -14,6 +14,7 @@ dump_folder() {
     [[ "$(basename "$file")" == "frame.stl" ]] && continue
     [[ "$(basename "$file")" == "frame.gif" ]] && continue
     [[ "$(basename "$file")" == "frame.png" ]] && continue
+    [[ "$(basename "$file")" == "README_FIRST.txt" ]] && continue
     [[ "$(basename "$file")" == "README.md" ]] && continue
     [[ "$(basename "$file")" == "TODO.md" ]] && continue
 

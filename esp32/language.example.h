@@ -21,7 +21,7 @@
   #define TXT_NTP_FAIL        "NTP FAIL"
   #define TXT_NTP_OK          "Connessione NTP OK"
   #define TXT_TIME_LABEL      "Sono le ore: %02d:%02d"
-
+ 
 // ======================================================
 // 2. EN
 // ======================================================
@@ -69,18 +69,18 @@
 // ======================================================
 #elif CURRENT_LANG == LANG_DE
 
-  #define TXT_WIFI_CONN       "WLAN Verbinden..."
-  #define TXT_TRY_HOME        "Verbinde ZUHAUSE..."
-  #define TXT_TRY_OFFICE      "Verbinde BURO..."
-  #define TXT_TRY_HOTSPOT     "Verbinde HOTSPOT..."
+  #define TXT_WIFI_CONN       "WLAN verbinden..."
+  #define TXT_TRY_HOME        "Suche ZUHAUSE..."
+  #define TXT_TRY_OFFICE      "Suche BUERO..."
+  #define TXT_TRY_HOTSPOT     "Suche HOTSPOT..."
   
   #define TXT_WIFI_OK_HOME    "WLAN OK (ZUHAUSE)"
-  #define TXT_WIFI_OK_OFFICE  "WLAN OK (BURO)"
+  #define TXT_WIFI_OK_OFFICE  "WLAN OK (BUERO)"
   #define TXT_WIFI_OK_HOTSPOT "WLAN OK (HOTSPOT)"
   #define TXT_WIFI_FAIL       "WLAN FEHLER"
   #define TXT_WIFI_LOST       "Verbindung getrennt"
 
-  #define TXT_NTP_CONN        "NTP-Server Verbinden..."
+  #define TXT_NTP_CONN        "NTP-Server verbinden..."
   #define TXT_NTP_FAIL        "NTP FEHLER"
   #define TXT_NTP_OK          "NTP Zeit Sync OK"
   #define TXT_TIME_LABEL      "Uhrzeit: %02d:%02d"
@@ -101,10 +101,10 @@
   #define TXT_WIFI_FAIL       "WiFi ERREUR"
   #define TXT_WIFI_LOST       "Connexion perdue"
 
-  #define TXT_NTP_CONN        "Connexion serv. NTP..."
+  #define TXT_NTP_CONN        "Connexion serveur NTP..."
   #define TXT_NTP_FAIL        "NTP ERREUR"
   #define TXT_NTP_OK          "NTP Synchronise"
-  #define TXT_TIME_LABEL      "Il est: %02d:%02d"
+  #define TXT_TIME_LABEL      "Heure: %02d:%02d"
 
 // ======================================================
 // FALLBACK: IT
