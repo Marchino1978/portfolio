@@ -38,7 +38,7 @@ For more information, check the official <strong>Waveshare product page</strong>
   <!-- Booting & Working -->
   <tr>
     <td width="50%" align="center">
-      <a href="https://1drv.ms/v/c/2af802ae1015d527/IQBMCv45bPKxQ4iBKBVD3dlhAaqWxCWLC-DjPDl3iCRLWpI?e=Umt9kT" target="_blank">
+      <a href="https://youtu.be/pCoAHTuKA4s" target="_blank">
         <img src="../img/booting.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di avvio del firmware | Illustration of an ESP32 character on breadboard for firmware booting video preview" width="50%">
       </a><br>
       <a href="https://1drv.ms/v/c/2af802ae1015d527/IQBMCv45bPKxQ4iBKBVD3dlhAaqWxCWLC-DjPDl3iCRLWpI?e=Umt9kT" target="_blank">
@@ -46,7 +46,7 @@ For more information, check the official <strong>Waveshare product page</strong>
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://1drv.ms/v/c/2af802ae1015d527/IQCNhCipOP6-Sp099fotOHFBAT1yOzM8O2MOebKPvtlrQGk?e=xRzW33" target="_blank">
+      <a href="https://youtu.be/Nyc_KBYyzig" target="_blank">
         <img src="../img/working.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di ciclo dati | Illustration of an ESP32 character on breadboard for data cycle video preview" width="50%">
       </a><br>
       <a href="https://1drv.ms/v/c/2af802ae1015d527/IQCNhCipOP6-Sp099fotOHFBAT1yOzM8O2MOebKPvtlrQGk?e=xRzW33" target="_blank">
