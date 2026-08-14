@@ -7,4 +7,4 @@ python-dotenv==1.0.1
 python-dateutil==2.9.0.post0
 pytest==8.3.3
 pendulum==3.2.0
-pyTelegramBotAPI=4.36.1
+pyTelegramBotAPI==4.36.1
