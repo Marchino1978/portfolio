@@ -11,7 +11,7 @@ load_dotenv()
 
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(TOKEN)  # type: ignore
 
 def genera_grafico_e_report(is_test=False):
     base_dir = os.path.dirname(os.path.abspath(__file__))

@@ -22,7 +22,7 @@ FIXED_HOLIDAYS = [
 ]
 
 # Festività mobili (cache interna)
-_cached_easter = {}
+_cached_easter: dict[int, pendulum.Date] = {}
 
 def easter_date(year):
     """Calcolo data di Pasqua (algoritmo di Meeus) con cache interna."""

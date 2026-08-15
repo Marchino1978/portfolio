@@ -9,7 +9,7 @@ def get_supabase() -> Client:
     load_dotenv()
     url = os.environ.get("SUPABASE_URL")
     key = os.environ.get("SUPABASE_ANON_KEY")
-    return create_client(url, key)
+    return create_client(url, key)  # type: ignore
 
 # ---------------------------------------------------------
 # UPSERT PREVIOUS CLOSE

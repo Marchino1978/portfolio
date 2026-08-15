@@ -13,7 +13,7 @@ TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # Inizializza il bot
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(TOKEN)  # type: ignore
 
 def send_monthly_report():
     """
