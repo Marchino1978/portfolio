@@ -16,11 +16,11 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>
   <tr>
     <td width="50%" align="center">
       <img src="../img/esp32-c6-front.jpg" alt="Vista frontale della scheda Waveshare ESP32-C6 LCD da 1,47 pollici | Front view of Waveshare ESP32-C6 1.47-inch LCD board" width="50%">
-      <font color="gold"><b>front</b></font>
+      <font color="gold"><br><b>front</b></font>
     </td>
     <td width="50%" align="center">
       <img src="../img/esp32-c6-rear.jpg" alt="Vista posteriore della scheda Waveshare ESP32-C6 LCD da 1,47 pollici | Rear view of Waveshare ESP32-C6 1.47-inch LCD board" width="50%">
-      <font color="gold"><b>rear</b></font>
+      <font color="gold"><br><b>rear</b></font>
     </td>
   </tr>
  
