@@ -60,6 +60,7 @@ backup_SQL/
 txt/
 
 # ESP32
+esp32/64179.png
 esp32/ETF.ino
 esp32/config.h
 esp32/language.h
