@@ -23,7 +23,7 @@ Today it collects market data via web scraping, stores historical records in a S
 
 <br><br>
 
-<table align="center" cellspacing="0" cellpadding="0" border="0">
+<table align="center" border="0">
   <tr>
     <td>
       <a href="./gallery/">
