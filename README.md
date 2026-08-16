@@ -23,17 +23,20 @@ Today it collects market data via web scraping, stores historical records in a S
 
 <br><br>
 
-<p align="center">
-  <a href="./gallery/">
-    <img src="https://capsule-render.vercel.app/api?type=pulse&height=100&color=0072ff&text=go%20to%20GALLERY&section=header&reversal=false&animation=twinkling&fontSize=25&fontColor=FFD700&textBg=false"
-  alt="go to GALLERY" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="./esp32/">
-    <img src="https://capsule-render.vercel.app/api?type=pulse&height=100&color=0072ff&text=go%20to%20ESP32&section=header&reversal=false&animation=twinkling&fontSize=25&fontColor=FFD700&textBg=false"
-  alt="go to ESP32" />
-  </a>
-</p>
+<table align="center" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <a href="./gallery/">
+        <img src="https://capsule-render.vercel.app/api?type=pulse&height=500&width=500&color=0072ff&text=go%20%to%20GALLERY&fontSize=50&fontColor=FFD700" width="250">
+      </a>
+    </td>
+    <td>
+      <a href="./esp32/">
+        <img src="https://capsule-render.vercel.app/api?type=pulse&height=500&width=500&color=0072ff&text=go%20to%20ESP32&fontSize=50&fontColor=FFD700" width="250">
+      </a>
+    </td>
+  </tr>
+</table>
 
 <!-- 
 portfolio, finance, ETF, BTP, certificates, CSV, HTML, python, supabase, fly.io, github, raspberry, esp32, alexa, telegram, report, notification, alert, dashboard, web-scraping, sql, 3d printing, charts, iot, mutual funds, portfolio-tracker, spreadsheet, financial-dashboard, automated-web-scraping, portfolio-automation, personal-finance-tracker, personal-finance-dashboard, wealth-management, asset-allocation-tracker, stock-market-scraper, investing-automation, python-automation, serverless-scraping, free-tier-hosting, docker-microservice, smarthome-iot, esp32-display-case, esp32-financial-ticker, home-automation-trigger, alexa-smart-home, telegram-financial-bot, telegram-update-report, supabase-postgresql-integration, database-backup-automation, yahoo-finance-api-alternative, python-finance-script, telegram-investment-bot, alexa-home-automation, raspberry-pi-400-project, gunicorn-flask-deploy, fly-io-free-tier, automation-framework, btp-tracker, investment-tracking-system, realtime-market-data, smart-light-trigger, hardware-wallet-display, financial-ticker-iot
