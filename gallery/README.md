@@ -90,7 +90,7 @@
 <table align="center" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      <a href="../ESP32/">
+      <a href="../esp32/">
         <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20%to%20ESP32&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
