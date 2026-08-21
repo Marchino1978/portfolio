@@ -28,10 +28,6 @@ fly.toml.bak
 *.log
 logs/
 
-# Data locali
-data/*.csv.bak
-data/*.json.bak
-
 # IDE / Editor
 .vscode/
 .idea/
@@ -48,9 +44,6 @@ build/
 .pytest_cache/
 .coverage
 htmlcov/
-
-# SQL backups
-backup_SQL/
 
 # System / Temp
 .goutputstream-*
@@ -74,3 +67,10 @@ old/
 
 # ZIP
 /*.zip
+
+# SQL backups
+backup_SQL/
+
+# Data locali
+data/*.csv.bak
+data/*.json.bak
