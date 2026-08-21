@@ -136,7 +136,7 @@ DOWNLOAD
 <table align="center" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      <a href="./">
+      <a href="../">
         <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20%to%20HOME&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
