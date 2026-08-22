@@ -18,6 +18,7 @@ dump_folder() {
 # ESCLUDE FILE SPECIFICI DALLO SNAPSHOT .md
     [[ "$nome_file" == "ETF.ino" ]] && continue
     [[ "$nome_file" == "frame.stl" ]] && continue
+    [[ "$nome_file" == "64179.png" ]] && continue
     [[ "$nome_file" == "README_FIRST.txt" ]] && continue
     [[ "$nome_file" == "README.md" ]] && continue
     [[ "$nome_file" == "TODO.md" ]] && continue
