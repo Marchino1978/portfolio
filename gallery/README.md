@@ -91,12 +91,12 @@
   <tr>
     <td>
       <a href="https://github.com/Marchino1978/portfolio">
-        <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20to%20HOME&fontSize=75&fontColor=FFD700" width="250">
+        <img src="https://capsule-render.vercel.app/api?type=pulse&height=750&width=750&color=0072ff&text=go%20to%20HOME&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
     <td>
       <a href="../esp32/">
-        <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20to%20ESP32&fontSize=75&fontColor=FFD700" width="250">
+        <img src="https://capsule-render.vercel.app/api?type=pulse&height=750&width=750&color=0072ff&text=go%20to%20ESP32&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
   </tr>
