@@ -136,12 +136,12 @@ DOWNLOAD
   <tr>
     <td>
       <a href="https://github.com/Marchino1978/portfolio">
-        <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20%to%20HOME&fontSize=75&fontColor=FFD700" width="250">
+        <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20to%20HOME&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
     <td>
       <a href="../gallery/">
-        <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20%to%20GALLERY&fontSize=75&fontColor=FFD700" width="250">
+        <img src="https://capsule-render.vercel.app/api?type=pulse&height=600&width=600&color=0072ff&text=go%20to%20GALLERY&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
   </tr>
