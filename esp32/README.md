@@ -14,11 +14,11 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>
 <table width="100%">
   <!-- ESP32-C6 -->
   <tr>
-    <td width="50%" align="center">
+    <td width="50%" align="center" valign="top">
       <img src="../img/esp32-c6-front.jpg" alt="Vista frontale della scheda Waveshare ESP32-C6 LCD da 1,47 pollici | Front view of Waveshare ESP32-C6 1.47-inch LCD board" width="50%">
       <font color="gold"><br><b>front</b></font>
     </td>
-    <td width="50%" align="center">
+    <td width="50%" align="center" valign="top">
       <img src="../img/esp32-c6-rear.jpg" alt="Vista posteriore della scheda Waveshare ESP32-C6 LCD da 1,47 pollici | Rear view of Waveshare ESP32-C6 1.47-inch LCD board" width="50%">
       <font color="gold"><br><b>rear</b></font>
     </td>
@@ -37,7 +37,7 @@ For more information, check the official <strong>Waveshare product page</strong>
 <table width="100%">
   <!-- Booting & Working -->
   <tr>
-    <td width="50%" align="center">
+    <td width="50%" align="center" valign="top">
       <a href="https://youtu.be/pCoAHTuKA4s" target="_blank">
         <img src="../img/booting.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di avvio del firmware | Illustration of an ESP32 character on breadboard for firmware booting video preview" width="50%">
       </a><br>
@@ -50,7 +50,7 @@ For more information, check the official <strong>Waveshare product page</strong>
       </a>
       -->
     </td>
-    <td width="50%" align="center">
+    <td width="50%" align="center" valign="top">
       <a href="https://youtu.be/Nyc_KBYyzig" target="_blank">
         <img src="../img/working.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di ciclo dati | Illustration of an ESP32 character on breadboard for data cycle video preview" width="50%">
       </a><br>
@@ -92,7 +92,7 @@ DOWNLOAD
 <table width="100%">
   <!-- DOWNLOAD  -->
   <tr>
-    <td width="50%" align="center">
+    <td width="50%" align="center" valign="top">
       <img src="../img/ino.png" alt="Icona con codice sorgente Arduino e file .ino per il download del firmware demo | Icon representing Arduino source code and .ino file for downloading demo firmware for ESP32" width="50%"><br>
       <a href="../ESP32/DEMO.zip"><strong>Download Demo Firmware (.zip)</strong></a>
       <br>
@@ -100,7 +100,7 @@ DOWNLOAD
       <br>
       <font color="gold"><i>N.B.: rename them to: ETF.ino, config.h, market.json, language.h</i></font>
           </td>
-    <td width="50%" align="center">
+    <td width="50%" align="center" valign="top">
       <img src="../img/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
       <a href="../ESP32/frame.stl"><strong>Download 3D Frame (.stl)</strong></a>
       <br>
