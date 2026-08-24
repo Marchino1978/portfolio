@@ -108,7 +108,7 @@ DOWNLOAD
       <br>
       <font color="gold"><i>100% compatible</i></font>
       <br>
-      <a href="https://https://marchino1978.github.io/portfolio/esp32/clearance_test.stl" download><strong>Download Clearance Test (.stl)</strong></a>
+      <a href="https://https://Marchino1978.github.io/portfolio/esp32/clearance_test.stl" download><strong>Download Clearance Test (.stl)</strong></a>
           </td>
   </tr>
  
