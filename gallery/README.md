@@ -32,7 +32,7 @@
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
-      <img src="../img/work-in-progress.png" alt="Illustrazione di un laboratorio maker con stampante 3D, microcontrollore ESP32 e cartello Work in Progress | Illustration of a maker workshop with 3D printer, ESP32 board, and Work in Progress sign" width="70%"><br>
+      <img src="../img/work-in-progress.png" alt="Illustrazione di un laboratorio maker con stampante 3D, microcontrollore ESP32 e cartello Work in Progress | Illustration of a maker workshop with 3D printer, ESP32 board, and Work in Progress sign" width="75%"><br>
       <font color="gold"><b>ESP32-C6 1,47" + frame</b></font>
       <br><br>
     </td>
@@ -66,7 +66,7 @@
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
-      <img src="../img/work-in-progress.png" alt="Illustrazione di un laboratorio maker con stampante 3D, microcontrollore ESP32 e cartello Work in Progress | Illustration of a maker workshop with 3D printer, ESP32 board, and Work in Progress sign" width="70%"><br>
+      <img src="../img/work-in-progress.png" alt="Illustrazione di un laboratorio maker con stampante 3D, microcontrollore ESP32 e cartello Work in Progress | Illustration of a maker workshop with 3D printer, ESP32 board, and Work in Progress sign" width="75%"><br>
       <font color="gold"><b>3D frame - LEGO TECHNIC style</b></font>
       <br><br>
     </td>
