@@ -94,7 +94,7 @@ DOWNLOAD
   <tr>
     <td width="50%" align="center" valign="top">
       <img src="../img/ino.png" alt="Icona con codice sorgente Arduino e file .ino per il download del firmware demo | Icon representing Arduino source code and .ino file for downloading demo firmware for ESP32" width="50%"><br>
-      <a href="../ESP32/DEMO.zip" download><strong>Download Demo Firmware (.zip)</strong></a>
+      <a href="../esp32/DEMO.zip" download><strong>Download Demo Firmware (.zip)</strong></a>
       <br>
       <font color="gold"><i>Includes: ETF.example.ino, config.example.h, market.example.json, language.example.h</i></font>
       <br>
@@ -102,13 +102,13 @@ DOWNLOAD
           </td>
     <td width="50%" align="center" valign="top">
       <img src="../img/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
-      <a href="../ESP32/frame.stl" download><strong>Download 3D Frame (.stl)</strong></a>
+      <a href="../esp32/frame.stl" download><strong>Download 3D Frame (.stl)</strong></a>
       <br>
       <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE</i></font>
       <br>
       <font color="gold"><i>100% compatible</i></font>
       <br>
-      <a href="../ESP32/clearance_test.stl" download><strong>Download Clearance Test (.stl)</strong></a>
+      <a href="../esp32/clearance_test.stl" download><strong>Download Clearance Test (.stl)</strong></a>
           </td>
   </tr>
  
