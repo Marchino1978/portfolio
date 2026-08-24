@@ -107,6 +107,8 @@ DOWNLOAD
       <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE</i></font>
       <br>
       <font color="gold"><i>100% compatible</i></font>
+      <br>
+      <a href="../ESP32/clearance_test.stl"><strong>Download Clearance Test (.stl)</strong></a>
           </td>
   </tr>
  
