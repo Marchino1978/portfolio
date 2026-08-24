@@ -101,8 +101,8 @@ DOWNLOAD
       <font color="gold"><i>N.B.: rename them to: ETF.ino, config.h, market.json, language.h</i></font>
           </td>
     <td width="50%" align="center" valign="top">
-      <img src="https://marchino1978.github.io/portfolio/esp32/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
-      <a href="../esp32/frame.stl" download><strong>Download 3D Frame (.stl)</strong></a>
+      <img src="../img/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
+      <a href="https://marchino1978.github.io/portfolio/esp32/frame.stl" download><strong>Download 3D Frame (.stl)</strong></a>
       <br>
       <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE</i></font>
       <br>
@@ -137,7 +137,7 @@ DOWNLOAD
 <table align="center" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      <a href="https://marchino1978.github.io/portfolio/">
+      <a href="../index.html">
         <img src="https://capsule-render.vercel.app/api?type=pulse&height=750&width=750&color=0072ff&text=go%20to%20HOME&fontSize=75&fontColor=FFD700" width="250">
       </a>
     </td>
