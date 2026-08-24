@@ -94,14 +94,14 @@ DOWNLOAD
   <tr>
     <td width="50%" align="center" valign="top">
       <img src="../img/ino.png" alt="Icona con codice sorgente Arduino e file .ino per il download del firmware demo | Icon representing Arduino source code and .ino file for downloading demo firmware for ESP32" width="50%"><br>
-      <a href="../esp32/DEMO.zip" download><strong>Download Demo Firmware (.zip)</strong></a>
+      <a href="https://marchino1978.github.io/portfolio/esp32/DEMO.zip" download><strong>Download Demo Firmware (.zip)</strong></a>
       <br>
       <font color="gold"><i>Includes: ETF.example.ino, config.example.h, market.example.json, language.example.h</i></font>
       <br>
       <font color="gold"><i>N.B.: rename them to: ETF.ino, config.h, market.json, language.h</i></font>
           </td>
     <td width="50%" align="center" valign="top">
-      <img src="../img/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
+      <img src="https://marchino1978.github.io/portfolio/esp32/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
       <a href="../esp32/frame.stl" download><strong>Download 3D Frame (.stl)</strong></a>
       <br>
       <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE</i></font>
