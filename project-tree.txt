@@ -18,6 +18,7 @@
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── 64179.png
+│   ├── clearance_test.stl
 │   ├── config.example.h
 │   ├── config.h
 │   ├── ETF.example.ino
@@ -34,6 +35,7 @@
 ├── img/
 │   ├── booting.mp4
 │   ├── booting.png
+│   ├── clearance_test.png
 │   ├── coin counter.png
 │   ├── esp32-c6-front.jpg
 │   ├── esp32-c6-rear.jpg
@@ -111,6 +113,6 @@
 ├── README.md
 └── requirements.txt
 
-12 directories, 99 files
+12 directories, 101 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
