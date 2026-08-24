@@ -39,7 +39,7 @@ For more information, check the official <strong>Waveshare product page</strong>
   <tr>
     <td width="50%" align="center" valign="top">
       <a href="https://youtu.be/pCoAHTuKA4s" target="_blank">
-        <img src="../img/booting.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di avvio del firmware | Illustration of an ESP32 character on breadboard for firmware booting video preview" width="100%">
+        <img src="../img/booting.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di avvio del firmware | Illustration of an ESP32 character on breadboard for firmware booting video preview" width="50%">
       </a><br>
       <a href="https://youtu.be/pCoAHTuKA4s" target="_blank">
         <font color="gold"><b>▶ PLAY Booting Video... [watch until the end]</b></font>
@@ -52,7 +52,7 @@ For more information, check the official <strong>Waveshare product page</strong>
     </td>
     <td width="50%" align="center" valign="top">
       <a href="https://youtu.be/Nyc_KBYyzig" target="_blank">
-        <img src="../img/working.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di ciclo dati | Illustration of an ESP32 character on breadboard for data cycle video preview" width="100%">
+        <img src="../img/working.png" alt="Illustrazione di una scheda ESP32 animata su breadboard per il video di ciclo dati | Illustration of an ESP32 character on breadboard for data cycle video preview" width="50%">
       </a><br>
       <a href="https://youtu.be/Nyc_KBYyzig" target="_blank">
         <font color="gold"><b>▶ PLAY Working Video... [watch until the end]</b></font>
@@ -93,7 +93,7 @@ DOWNLOAD
   <!-- DOWNLOAD  -->
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="../img/ino.png" alt="Icona con codice sorgente Arduino e file .ino per il download del firmware demo | Icon representing Arduino source code and .ino file for downloading demo firmware for ESP32" width="100%"><br>
+      <img src="../img/ino.png" alt="Icona con codice sorgente Arduino e file .ino per il download del firmware demo | Icon representing Arduino source code and .ino file for downloading demo firmware for ESP32" width="50%"><br>
       <a href="../ESP32/DEMO.zip"><strong>Download Demo Firmware (.zip)</strong></a>
       <br>
       <font color="gold"><i>Includes: ETF.example.ino, config.example.h, market.example.json, language.example.h</i></font>
@@ -101,7 +101,7 @@ DOWNLOAD
       <font color="gold"><i>N.B.: rename them to: ETF.ino, config.h, market.json, language.h</i></font>
           </td>
     <td width="50%" align="center" valign="top">
-      <img src="../img/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="100%"><br>
+      <img src="../img/stl.png" alt="Icona con stampante 3D e file .stl per il download del frame per ESP32 in stile Lego Technic | Icon representing 3D printer and .stl file for downloading ESP32 Lego Technic style frame" width="50%"><br>
       <a href="../ESP32/frame.stl"><strong>Download 3D Frame (.stl)</strong></a>
       <br>
       <font color="gold"><i>3D PRINTED FRAME - LEGO TECHNIC STYLE</i></font>
