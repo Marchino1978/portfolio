@@ -54,13 +54,13 @@ txt/
 
 # ESP32
 esp32/64179.png
-esp32/ETF.ino
+esp32/esp32.ino
 esp32/config.h
 esp32/language.h
 esp32/TODO.md
 esp32/README_FIRST.txt
-esp32/ETF.example.ino
-esp32/frame.stl
+esp32/esp32.example.ino
+stl/frame.stl
 
 # OLD
 old/
