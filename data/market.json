@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 127.1125,
-        "dailyChange": "+0.21",
-        "value": 127.1125,
-        "v1": "+1.04%M",
-        "v2": "+1.76%Q",
-        "v3": "+12.95%H",
-        "v_led": "+12.95%H",
-        "v_alert": "+1.04%M",
-        "v_bot": "+1.04%M"
+        "price": 127.0875,
+        "dailyChange": "+0.19",
+        "value": 127.0875,
+        "v1": "+1.02%M",
+        "v2": "+1.74%Q",
+        "v3": "+12.93%H",
+        "v_led": "+12.93%H",
+        "v_alert": "+1.02%M",
+        "v_bot": "+1.02%M"
       },
       {
         "symbol": "VNGA80",
@@ -72,15 +72,15 @@
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 40.5675,
-        "dailyChange": "+0.56",
-        "value": 40.5675,
-        "v1": "+2.70%M",
-        "v2": "+4.93%Q",
-        "v3": "+5.98%H",
-        "v_led": "+5.98%H",
-        "v_alert": "+2.70%M",
-        "v_bot": "+2.70%M"
+        "price": 40.5575,
+        "dailyChange": "+0.54",
+        "value": 40.5575,
+        "v1": "+2.68%M",
+        "v2": "+4.91%Q",
+        "v3": "+5.95%H",
+        "v_led": "+5.95%H",
+        "v_alert": "+2.68%M",
+        "v_bot": "+2.68%M"
       },
       {
         "symbol": "EIMI",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-08-25T22:40:38.620172+02:00",
-    "readable": "22:40 25-08-2026"
+    "iso": "2026-08-25T22:55:24.049163+02:00",
+    "readable": "22:55 25-08-2026"
   }
 }
