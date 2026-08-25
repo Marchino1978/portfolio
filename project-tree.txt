@@ -20,6 +20,8 @@
 │   ├── 64179.png
 │   ├── config.example.h
 │   ├── config.h
+│   ├── esp32.example.ino
+│   ├── esp32.ino
 │   ├── language.example.h
 │   ├── language.h
 │   ├── market.example.json
@@ -89,6 +91,8 @@
 │   ├── scraper_fondi.py
 │   └── supabase_client.py
 ├── stl/
+│   ├── clearance_test.stl
+│   └── frame.stl
 ├── tests/
 │   ├── README.md
 │   ├── testDateVar.py
@@ -110,6 +114,6 @@
 ├── README.md
 └── requirements.txt
 
-13 directories, 97 files
+13 directories, 101 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
