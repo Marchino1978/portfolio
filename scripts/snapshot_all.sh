@@ -42,7 +42,7 @@ for dir in */; do
   case "$foldername" in
 
 # ESCLUDE INTERAMENTE QUESTE CARTELLE DALLO SNAPSHOT .md
-    txt|.git|node_modules|data|public|old|gallery|img|backup_SQL|backup_LOG|.venv|__pycache__) continue ;;
+    txt|.git|node_modules|data|public|old|stl|gallery|img|backup_SQL|backup_LOG|.venv|__pycache__) continue ;;
     *) dump_folder "$dir" "$foldername" ;;
   esac
 done

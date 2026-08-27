@@ -85,7 +85,7 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <div align="center">
 
-DOWNLOAD
+<strong>DOWNLOAD</strong>
 
 </div>
 
