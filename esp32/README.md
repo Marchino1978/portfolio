@@ -23,7 +23,6 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>
       <font color="gold"><br><b>rear</b></font>
     </td>
   </tr>
- 
 </table>
 
 <div align="center">
@@ -111,7 +110,6 @@ For more information, check the official <strong>Waveshare product page</strong>
       <a href="https://marchino1978.github.io/portfolio/stl/clearance_test.stl" download><strong>Download Clearance Test (.stl)</strong></a>
           </td>
   </tr>
- 
 </table>
 
 <br><br>
