@@ -53,11 +53,11 @@
   <!-- REPORTS -->
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="../img/report_mensile.png" alt="Messaggio del bot Telegram portfolio-python con report mensile ETF | Telegram bot message displaying monthly ETF portfolio performance report" width="100%"><br>
+      <img src="../img/report_mensile.jpeg" alt="Messaggio del bot Telegram portfolio-python con report mensile ETF | Telegram bot message displaying monthly ETF portfolio performance report" width="100%"><br>
       <font color="gold"><b>monthly REPORT [TELEGRAM]</b></font>
     </td>
     <td width="50%" align="center" valign="top">
-      <img src="../img/report_annuale.png" alt="Messaggio del bot Telegram portfolio-python con report annuale ETF | Telegram bot message displaying annual ETF portfolio performance report" width="100%"><br>
+      <img src="../img/report_annuale.jpeg" alt="Messaggio del bot Telegram portfolio-python con report annuale ETF | Telegram bot message displaying annual ETF portfolio performance report" width="100%"><br>
       <font color="gold"><b>annual REPORT [TELEGRAM]</b></font>
     </td>
   </tr>

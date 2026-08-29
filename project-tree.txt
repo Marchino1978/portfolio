@@ -46,8 +46,8 @@
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png
 │   ├── README.md
-│   ├── report_annuale.png
-│   ├── report_mensile.png
+│   ├── report_annuale.jpeg
+│   ├── report_mensile.jpeg
 │   ├── _splash_.png
 │   ├── splash.png
 │   ├── stl.png
