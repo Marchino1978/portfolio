@@ -14,7 +14,7 @@ Today it collects market data via web scraping, stores historical records in a S
 </div>
 
 <p align="center">
-  <img src="img/splash.png" alt="Illustrazione di una postazione maker con microcontrollore ESP32 su breadboard, display con grafici finanziari, monitor di mercato, monete e dispositivi smart | Illustration of a maker workstation featuring an ESP32 board on breadboard, display with financial charts, market monitors, coins, and smart IoT devices" width="600">
+  <img src="img/splash.png" alt="Postazione di lavoro con microcontrollore ESP32 su breadboard e un piccolo schermo touch che mostra grafici finanziari, circondato da un quaderno, una tazza di caffè e una pila di monete Euro. Sullo sfondo, una matrice di monitor multipli visualizza grafici di borsa in tempo reale | Workstation featuring an ESP32 microcontroller on a breadboard and a small touch screen displaying financial charts, surrounded by a notebook, a coffee mug, and a stack of Euro coins. In the background, an array of multiple monitors displays live stock market charts" width="600">
 </p>
 
 <p align="center">

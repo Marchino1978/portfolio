@@ -32,7 +32,7 @@
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
-      <img src="../img/work-in-progress.png" alt="Illustrazione di un laboratorio maker con stampante 3D, microcontrollore ESP32 e cartello Work in Progress | Illustration of a maker workshop with 3D printer, ESP32 board, and Work in Progress sign" width="75%"><br>
+      <img src="../img/work-in-progress.png" alt="Illustrazione in stile fumetto di un laboratorio maker con stampante 3D, microcontrollore ESP32 su breadboard, saldatore e laptop con codice, sormontata da un cartello di legno 'WORK IN PROGRESS' | Comic-style illustration of a maker workshop with a 3D printer, ESP32 breadboard setup, soldering iron, and code on a laptop, topped with a wooden 'WORK IN PROGRESS' sign" width="75%"><br>
       <font color="gold"><b>ESP32-C6 1,47" + frame</b></font>
       <br><br>
     </td>
@@ -53,11 +53,11 @@
   <!-- REPORTS -->
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="../img/report_mensile.jpeg" alt="Messaggio del bot Telegram portfolio-python con report mensile ETF | Telegram bot message displaying monthly ETF portfolio performance report" width="100%"><br>
+      <img src="../img/report_mensile.jpeg" alt="Messaggio del bot Telegram portfolio con report mensile ETF | Telegram bot portfolio message displaying monthly ETF performance report" width="100%"><br>
       <font color="gold"><b>monthly REPORT [TELEGRAM]</b></font>
     </td>
     <td width="50%" align="center" valign="top">
-      <img src="../img/report_annuale.jpeg" alt="Messaggio del bot Telegram portfolio-python con report annuale ETF | Telegram bot message displaying annual ETF portfolio performance report" width="100%"><br>
+      <img src="../img/report_annuale.jpeg" alt="Messaggio del bot Telegram portfolio con report annuale ETF | Telegram bot portfolio message displaying annual ETF performance report" width="100%"><br>
       <font color="gold"><b>annual REPORT [TELEGRAM]</b></font>
     </td>
   </tr>
@@ -66,7 +66,7 @@
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
-      <img src="../img/work-in-progress.png" alt="Illustrazione di un laboratorio maker con stampante 3D, microcontrollore ESP32 e cartello Work in Progress | Illustration of a maker workshop with 3D printer, ESP32 board, and Work in Progress sign" width="75%"><br>
+      <img src="../img/work-in-progress.png" alt="Illustrazione in stile fumetto di un laboratorio maker con stampante 3D, microcontrollore ESP32 su breadboard, saldatore e laptop con codice, sormontata da un cartello di legno 'WORK IN PROGRESS' | Comic-style illustration of a maker workshop with a 3D printer, ESP32 breadboard setup, soldering iron, and code on a laptop, topped with a wooden 'WORK IN PROGRESS' sign" width="75%"><br>
       <font color="gold"><b>3D frame - LEGO TECHNIC style</b></font>
       <br><br>
     </td>
