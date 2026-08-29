@@ -112,11 +112,10 @@
 ├── .env
 ├── fly.toml
 ├── .gitignore
-├── LOG.png
 ├── project-tree.txt
 ├── README.md
 └── requirements.txt
 
-13 directories, 104 files
+13 directories, 103 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
