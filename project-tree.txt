@@ -40,6 +40,7 @@
 │   ├── ESP32 live -close-.gif
 │   ├── ESP32 live -open-.gif
 │   ├── ETF charts.png
+│   ├── ETF_charts.png
 │   ├── frame.gif
 │   ├── frame.png
 │   ├── ino.png
@@ -111,10 +112,11 @@
 ├── .env
 ├── fly.toml
 ├── .gitignore
+├── LOG.png
 ├── project-tree.txt
 ├── README.md
 └── requirements.txt
 
-13 directories, 102 files
+13 directories, 104 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***

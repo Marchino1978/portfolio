@@ -41,7 +41,7 @@
   <!-- ETF charts & coin counter -->
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="../img/ETF charts.png" alt="Dashboard web dark mode con grafici di andamento per vari ETF | Dark mode web dashboard showing performance charts for various ETFs" width="100%"><br>
+      <img src="../img/ETF_charts.png" alt="Dashboard web dark mode con grafici di andamento per vari ETF | Dark mode web dashboard showing performance charts for various ETFs" width="100%"><br>
       <font color="gold"><b>ETF charts [web]</b></font>
     </td>
     <td width="50%" align="center" valign="top">
