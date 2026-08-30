@@ -62,11 +62,11 @@
     </td>
   </tr>
 
-  <!-- 3D PRINTING -->
+  <!-- PROJECT -->
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
-      <img src="../img/work-in-progress.png" alt="Illustrazione in stile fumetto di un laboratorio maker con stampante 3D, microcontrollore ESP32 su breadboard, saldatore e laptop con codice, sormontata da un cartello di legno 'WORK IN PROGRESS' | Comic-style illustration of a maker workshop with a 3D printer, ESP32 breadboard setup, soldering iron, and code on a laptop, topped with a wooden 'WORK IN PROGRESS' sign" width="75%"><br>
+      <img src="../img/work-in-progress.png" alt="GIF animata che mostra il display ESP32-C6 acceso e funzionante montato nel frame stampato in 3D | Animated GIF showing the ESP32-C6 display powered on and working inside the 3D printed frame" width="75%"><br>
       <font color="gold"><b>3D frame - LEGO TECHNIC style</b></font>
       <br><br>
     </td>
@@ -81,6 +81,18 @@
     <td width="50%" align="center" valign="top">
       <img src="../img/frame.gif" alt="Rendering animato di un frame per display ESP32-C6 da 1,47 pollici | Animated rendering of a frame for 1.47-inch ESP32-C6 display" width="100%"><br>
       <font color="gold"><b>ESP32-C6 1,47" frame (animated)</b></font>
+    </td>
+  </tr>
+
+  <!-- 3D PRINTING -->
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="../img/frame_print.png" alt="Fotografia reale del frame per display ESP32-C6 stampato in 3D | Real photograph of the 3D printed frame for ESP32-C6 display" width="100%"><br>
+      <font color="gold"><b>3D frame print</b></font>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="../img/frame_mount.png" alt="Foto del frame stampato in 3D assemblato con elementi originali Lego Technic | Photo of the 3D printed frame assembled with original Lego Technic elements" width="100%"><br>
+      <font color="gold"><b>3D frame mount</b></font>
     </td>
   </tr>
 </table>
