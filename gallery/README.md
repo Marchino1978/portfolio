@@ -66,8 +66,8 @@
   <tr>
     <td colspan="2" align="center" width="100%">
       <br>
-      <img src="../img/work-in-progress.png" alt="GIF animata che mostra il display ESP32-C6 acceso e funzionante montato nel frame stampato in 3D | Animated GIF showing the ESP32-C6 display powered on and working inside the 3D printed frame" width="75%"><br>
-      <font color="gold"><b>ESP32-C6 1,47" + 3D frame LEGO TECHNIC style</b></font>
+      <img src="../img/work-in-progress.png" alt="Foto che mostra il display ESP32-C6 acceso montato nel frame stampato in 3D | Photo showing the ESP32-C6 display powered on inside the 3D printed frame" width="75%"><br>
+      <font color="gold"><b>PROJECT</b></font>
       <br><br>
     </td>
   </tr>
