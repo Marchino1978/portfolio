@@ -87,11 +87,11 @@
   <!-- 3D PRINTING -->
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="../img/frame_print.png" alt="Fotografia reale del frame per display ESP32-C6 stampato in 3D | Real photograph of the 3D printed frame for ESP32-C6 display" width="100%"><br>
+      <img src="../img/work-in-progress.png" alt="Fotografia reale del frame per display ESP32-C6 stampato in 3D | Real photograph of the 3D printed frame for ESP32-C6 display" width="100%"><br>
       <font color="gold"><b>3D frame print</b></font>
     </td>
     <td width="50%" align="center" valign="top">
-      <img src="../img/frame_mount.png" alt="Foto del frame stampato in 3D assemblato con elementi originali Lego Technic | Photo of the 3D printed frame assembled with original Lego Technic elements" width="100%"><br>
+      <img src="../img/work-in-progress.png" alt="Foto del frame stampato in 3D assemblato con elementi originali Lego Technic | Photo of the 3D printed frame assembled with original Lego Technic elements" width="100%"><br>
       <font color="gold"><b>3D frame mount</b></font>
     </td>
   </tr>
