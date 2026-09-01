@@ -5,7 +5,7 @@
 
 <div align="center">
 
-This project was born after Yahoo Finance discontinued its free API service for downloading market data into my spreadsheets.
+This project was born after Yahoo Finance discontinued its free API service for downloading market data into my spreadsheets..
 <br><br>
 Instead of switching to a paid service, I decided to build my own solution using PYTHON, free services and an ESP32 display.
 <br><br>

@@ -60,6 +60,8 @@
 │   ├── booting.wav
 │   ├── _case_.gif
 │   ├── fondi.html
+│   ├── frame.png
+│   ├── frame.stl
 │   ├── index.html
 │   ├── ino.png
 │   ├── market.html
@@ -116,6 +118,6 @@
 ├── README.md
 └── requirements.txt
 
-13 directories, 103 files
+13 directories, 105 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
