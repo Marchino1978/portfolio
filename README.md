@@ -39,7 +39,7 @@ Today it collects market data via web scraping, stores historical records in a S
 </table>
 
 <a href="https://github.com/Marchino1978/Marchino1978"><img src="https://img.shields.io/badge/%20https%3A%2F%2Fgithub.com%2FMarchino1978%2FMarchino1978%20-%20link?logo=github&logoColor=ffffff&label=Marchino1978&labelColor=000000&color=b30000&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2FMarchino1978" alt="Marchino1978 GitHub Link"></a><a href="https://marchino1978.github.io/Marchino1978/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Marchino1978-marchino1978.github.io%2Fportfolio%2F-00ff00?logo=googlechrome&logoColor=ffffff&labelColor=000000" alt="Marchino1978 Pages"></a>
-<br>
+<br><br>
 <a href="https://github.com/Marchino1978/dom-US"><img src="https://img.shields.io/badge/%20https%3A%2F%2Fgithub.com%2FMarchino1978%2Fdom--US%20-%20link?logo=github&logoColor=ffffff&label=dom-US&labelColor=000000&color=b30000&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2Fdom-US" alt="dom-US GitHub Link"></a><a href="https://marchino1978.github.io/dom-US/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/dom--US-marchino1978.github.io%2Fdom--US%2F-ff2400?logo=googlechrome&logoColor=ffffff&labelColor=000000" alt="dom-US Pages"></a>
 
 <!-- 
