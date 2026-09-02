@@ -39,7 +39,7 @@ Today it collects market data via web scraping, stores historical records in a S
 </table>
 
 <a href="https://github.com/Marchino1978/dom-US">
-  <img src="https://img.shields.io/badge/%20https%3A%2F%2Fgithub.com%2FMarchino1978%2Fdom-US%20-%20link?logo=github&logoColor=ffffff&label=dom-US&labelColor=000000&color=ff2400&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2Fdom-US" alt="dom-US badge">
+  <img src="https://img.shields.io/badge/%20https%3A%2F%2Fgithub.com%2FMarchino1978%2Fdom--US%20-%20link?logo=github&logoColor=ffffff&label=dom-US&labelColor=000000&color=ff2400&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2Fdom-US" alt="dom-US GitHub Link">            
 </a>
 
 <!-- 
