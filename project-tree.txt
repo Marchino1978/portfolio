@@ -83,6 +83,10 @@
 │   ├── snapshot_all.sh*
 │   └── zippa.sh*
 ├── src/
+│   ├── __pycache__/
+│   │   ├── backup_manager.cpython-39.pyc
+│   │   ├── __init__.cpython-39.pyc
+│   │   └── supabase_client.cpython-39.pyc
 │   ├── backup_manager.py
 │   ├── backup_manager.py.old
 │   ├── bot_telegram.py
@@ -103,6 +107,9 @@
 │   ├── testDateVar.py
 │   └── testEaster.py
 ├── utils/
+│   ├── __pycache__/
+│   │   ├── __init__.cpython-39.pyc
+│   │   └── logger.cpython-39.pyc
 │   ├── colors.h
 │   ├── holidays.py
 │   ├── __init__.py
@@ -119,6 +126,6 @@
 ├── README.md
 └── requirements.txt
 
-13 directories, 106 files
+15 directories, 111 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
