@@ -1,8 +1,8 @@
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_08_17.sql
 │   ├── backup_supabase_2026_08_24.sql
 │   ├── backup_supabase_2026_08_31.sql
+│   ├── backup_supabase_2026_09_07.sql
 │   └── README.md
 ├── config/
 │   ├── README.md
@@ -84,6 +84,7 @@
 │   └── zippa.sh*
 ├── src/
 │   ├── backup_manager.py
+│   ├── backup_manager.py.old
 │   ├── bot_telegram.py
 │   ├── check_alert.py
 │   ├── config.py
@@ -118,6 +119,6 @@
 ├── README.md
 └── requirements.txt
 
-13 directories, 105 files
+13 directories, 106 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***

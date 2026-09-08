@@ -14,36 +14,13 @@ def run_supabase_backup():
     log_info(f"Inizio generazione backup SQL: {filename}")
     
     try:
+        # Recupero dati da Supabase
         supabase = get_supabase()
-
-        # Conta quante righe ci sono davvero, PRIMA di scaricarle
-        count_resp = supabase.table(table_name).select("*", count="exact").execute()
-        total_expected = count_resp.count
-        if not total_expected:
+        resp = supabase.table(table_name).select("*").order("snapshot_date", desc=True).execute()
+        rows = resp.data
+        if not rows: 
             return None
-
-        # Scarica tutto a pagine di 1000, finché non hai preso tutte le righe attese
-        rows = []
-        page_size = 1000
-        offset = 0
-        while len(rows) < total_expected:
-            page_resp = supabase.table(table_name) \
-                .select("*") \
-                .order("snapshot_date", desc=True) \
-                .range(offset, offset + page_size - 1) \
-                .execute()
-            page_rows = page_resp.data
-            if not page_rows:
-                break  # sicurezza anti-loop infinito
-            rows.extend(page_rows)
-            offset += page_size
-
-        # Controllo di sicurezza: se manca qualcosa, non genero un backup incompleto
-        if len(rows) != total_expected:
-            log_error(f"Attese {total_expected} righe, scaricate {len(rows)}. Backup ANNULLATO per sicurezza.")
-            return None
-
-        log_info(f"Scaricate correttamente {len(rows)} righe su {total_expected} attese.")
+        
         os.makedirs(folder, exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(f"-- BACKUP AUTOMATICO: {table_name}\n\n")
