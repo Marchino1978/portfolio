@@ -22,6 +22,7 @@ dump_folder() {
     [[ "$nome_file" == "README_FIRST.txt" ]] && continue
     [[ "$nome_file" == "README.md" ]] && continue
     [[ "$nome_file" == "TODO.md" ]] && continue
+    [[ "$nome_file" == "config.h" ]] && continue
 
     echo "# $file" >> "$output"
     echo "----------------------------------------" >> "$output"
