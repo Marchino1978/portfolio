@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marchino1978.github.io/portfolio/sitemap.xml
