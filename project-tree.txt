@@ -17,6 +17,7 @@
 │   ├── README.md
 │   └── salvadanaio.csv
 ├── esp32/
+│   ├── lib/
 │   ├── 64179.png
 │   ├── config.example.h
 │   ├── config.h
@@ -72,8 +73,8 @@
 │   ├── working.png
 │   └── working.wav
 ├── public/
-│   ├── ETF charts.html
-│   ├── MARKET live.html
+│   ├── ETF-charts.html
+│   ├── MARKET-live.html
 │   ├── money.html
 │   ├── README.md
 │   └── salvadanaio.html
@@ -83,10 +84,6 @@
 │   ├── snapshot_all.sh*
 │   └── zippa.sh*
 ├── src/
-│   ├── __pycache__/
-│   │   ├── backup_manager.cpython-39.pyc
-│   │   ├── __init__.cpython-39.pyc
-│   │   └── supabase_client.cpython-39.pyc
 │   ├── backup_manager.py
 │   ├── backup_manager.py.old
 │   ├── bot_telegram.py
@@ -107,9 +104,6 @@
 │   ├── testDateVar.py
 │   └── testEaster.py
 ├── utils/
-│   ├── __pycache__/
-│   │   ├── __init__.cpython-39.pyc
-│   │   └── logger.cpython-39.pyc
 │   ├── colors.h
 │   ├── holidays.py
 │   ├── __init__.py
@@ -127,6 +121,6 @@
 ├── requirements.txt
 └── robots.txt
 
-15 directories, 112 files
+14 directories, 107 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
