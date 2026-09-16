@@ -14,7 +14,6 @@ exclude:
   - config/
   - data/
   - old/
-  - public/
   - scripts/
   - src/
   - tests/
@@ -29,6 +28,9 @@ defaults:
     values:
       sitemap: false
   - scope:
+      path: "public"
+    values:
+      sitemap: false
       path: "stl"
     values:
       sitemap: false
