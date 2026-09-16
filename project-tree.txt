@@ -48,6 +48,7 @@
 │   ├── ETF_charts.png
 │   ├── frame.gif
 │   ├── frame.png
+│   ├── index.html
 │   ├── ino.png
 │   ├── MARKET live -close-.png
 │   ├── MARKET live -open-.png
@@ -102,6 +103,7 @@
 ├── stl/
 │   ├── clearance_test.stl
 │   ├── frame.stl
+│   ├── index.html
 │   └── README.md
 ├── tests/
 │   ├── README.md
@@ -125,6 +127,6 @@
 ├── requirements.txt
 └── robots.txt
 
-14 directories, 111 files
+14 directories, 113 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
