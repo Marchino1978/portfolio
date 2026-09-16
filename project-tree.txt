@@ -1,8 +1,8 @@
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_08_31.sql
 │   ├── backup_supabase_2026_09_07.sql
 │   ├── backup_supabase_2026_09_09.sql
+│   ├── backup_supabase_2026_09_14.sql
 │   └── README.md
 ├── config/
 │   ├── README.md
@@ -18,6 +18,10 @@
 │   └── salvadanaio.csv
 ├── esp32/
 │   ├── lib/
+│   │   ├── language.h
+│   │   ├── ntp_sync.h
+│   │   ├── state_machine.h
+│   │   └── wifi_manager.h
 │   ├── 64179.png
 │   ├── config.example.h
 │   ├── config.h
@@ -121,6 +125,6 @@
 ├── requirements.txt
 └── robots.txt
 
-14 directories, 107 files
+14 directories, 111 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***

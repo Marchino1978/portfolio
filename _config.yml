@@ -1,10 +1,32 @@
 theme: jekyll-theme-hacker
 
 title: "Python portfolio tracker (ETFs, funds, BTPs, certificates)"
-description: "description: with Supabase, Telegram reports, Alexa alerts, ESP32 smart display, and home automation triggers."
+description: "with Supabase, Telegram reports, Alexa alerts, ESP32 smart display, and home automation triggers."
 url: "https://marchino1978.github.io"
 baseurl: "/portfolio"
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+exclude:
+  - backup_SQL/
+  - config/
+  - data/
+  - old/
+  - public/
+  - scripts/
+  - src/
+  - tests/
+  - txt/
+  - utils/
+
+defaults:
+  - scope:
+      path: "img"
+    values:
+      sitemap: false
+  - scope:
+      path: "stl"
+    values:
+      sitemap: false
