@@ -20,6 +20,8 @@ exclude:
   - tests/
   - txt/
   - utils/
+  - "img/README.md"
+  - "stl/README.md"
 
 defaults:
   - scope:
