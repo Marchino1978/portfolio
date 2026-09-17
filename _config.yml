@@ -35,3 +35,5 @@ defaults:
       path: "stl"
     values:
       sitemap: false
+
+permalink: /:basenamehtml
