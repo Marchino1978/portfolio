@@ -13,6 +13,7 @@ exclude:
   - backup_SQL/
   - config/
   - data/
+  - diagrams/
   - old/
   - scripts/
   - src/
