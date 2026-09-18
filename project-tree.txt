@@ -16,6 +16,8 @@
 │   ├── money.csv
 │   ├── README.md
 │   └── salvadanaio.csv
+├── diagrams/
+│   └── README.md
 ├── esp32/
 │   ├── lib/
 │   │   ├── language.h
@@ -103,6 +105,7 @@
 │   └── supabase_client.py
 ├── stl/
 │   ├── clearance_test.stl
+│   ├── clearance_test.txt
 │   ├── frame.stl
 │   ├── index.md
 │   └── README.md
@@ -129,6 +132,6 @@
 ├── requirements.txt
 └── robots.txt
 
-14 directories, 115 files
+15 directories, 117 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***

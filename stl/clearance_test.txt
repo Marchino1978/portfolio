@@ -1,0 +1,14 @@
+Filament: Silk PLA Plus
+
+Slicer Settings
+Orientation: Face-down (front side flat on the build plate for the best surface finish)
+Layer Height: 0.20 mm
+Wall Loops (Perimeters): 4 or 5 
+Infill: 30%-40% (Gyroid or Honeycomb)
+Supports: Yes (Tree / Auto )
+
+  .-----------------------------------------------------------------------------\
+ |    .----.     .----.     .----.     .----.     .----.     .----.     .----.   \
+ |   ( 4.70 )   ( 4.75 )   ( 4.80 )   ( 4.85 )   ( 4.90 )   ( 4.95 )   ( 5.00 )   >
+ |    '----'     '----'     '----'     '----'     '----'     '----'     '----'   /
+  '-----------------------------------------------------------------------------/
