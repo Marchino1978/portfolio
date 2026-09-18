@@ -17,8 +17,11 @@
 │   ├── README.md
 │   └── salvadanaio.csv
 ├── diagrams/
+│   ├── led.txt
 │   ├── logic_diagrams.txt
-│   └── README.md
+│   ├── README.md
+│   ├── schematics.txt
+│   └── wiring.txt
 ├── esp32/
 │   ├── lib/
 │   │   ├── language.h
@@ -133,6 +136,6 @@
 ├── requirements.txt
 └── robots.txt
 
-15 directories, 118 files
+15 directories, 121 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***
