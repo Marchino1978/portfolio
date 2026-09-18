@@ -12,7 +12,10 @@ Logic Diagrams, Schematics and Wiring
 {% raw %}
 ```text
 
-
+                           ┌─────────────────────┐
+                           │                     │
+                           │                     │
+                           └─────────────────────┘
 
 ```
 {% endraw %}
