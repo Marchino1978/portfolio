@@ -1,8 +1,8 @@
 .
 ├── backup_SQL/
-│   ├── backup_supabase_2026_09_07.sql
 │   ├── backup_supabase_2026_09_09.sql
 │   ├── backup_supabase_2026_09_14.sql
+│   ├── backup_supabase_2026_09_21.sql
 │   └── README.md
 ├── config/
 │   ├── README.md
@@ -65,6 +65,7 @@
 │   ├── _splash_.png
 │   ├── splash.png
 │   ├── stl.png
+│   ├── UNAUTHORIZED.jpeg
 │   ├── working.mp4
 │   ├── working.png
 │   └── work-in-progress.png
@@ -136,6 +137,6 @@
 ├── requirements.txt
 └── robots.txt
 
-15 directories, 121 files
+15 directories, 122 files
 
 *** NOTE: some local files shown in this tree have been intentionally omitted from the repository ***

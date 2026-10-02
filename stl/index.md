@@ -6,12 +6,14 @@ sitemap: false
 
 # 🚫ACCESS UNAUTHORIZED🚫
 
-### You are being redirected to the 🏠HOME PAGE🏠 in 3 seconds...
+### You are being redirected to the 🏠HOME PAGE🏠 in 5 seconds...
 
-<meta http-equiv="refresh" content="3; url={{ '/' | relative_url }}">
+![ACCESS UNAUTHORIZED - Lab CLOSED]({{ '/img/UNAUTHORIZED.jpeg' | relative_url }})
+
+<meta http-equiv="refresh" content="5; url={{ '/' | relative_url }}">
 
 <script>
     setTimeout(function() {
         window.location.href = "{{ '/' | relative_url }}";
-    }, 3000);
+    }, 5000);
 </script>
