@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 134.1075,
-        "dailyChange": "-0.47",
-        "value": 134.1075,
-        "v1": "+5.12%M",
-        "v2": "+4.61%Q",
-        "v3": "+19.67%H",
-        "v_led": "+19.67%H",
-        "v_alert": "+5.12%M",
-        "v_bot": "+5.12%M"
+        "price": 134.1175,
+        "dailyChange": "-0.46",
+        "value": 134.1175,
+        "v1": "+5.13%M",
+        "v2": "+4.62%Q",
+        "v3": "+19.68%H",
+        "v_led": "+19.68%H",
+        "v_alert": "+5.13%M",
+        "v_bot": "+5.13%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,22 +59,22 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 171.89,
+        "price": 171.9,
         "dailyChange": "-0.68",
-        "value": 171.89,
-        "v1": "+2.84%M",
+        "value": 171.9,
+        "v1": "+2.85%M",
         "v2": "+3.03%Q",
-        "v3": "+15.69%H",
-        "v_led": "+15.69%H",
-        "v_alert": "+2.84%M",
-        "v_bot": "+2.84%M"
+        "v3": "+15.70%H",
+        "v_led": "+15.70%H",
+        "v_alert": "+2.85%M",
+        "v_bot": "+2.85%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 39.85,
+        "price": 39.8525,
         "dailyChange": "-0.37",
-        "value": 39.85,
+        "value": 39.8525,
         "v1": "-1.31%M",
         "v2": "+0.18%Q",
         "v3": "+6.81%H",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-10-08T22:40:39.540990+02:00",
-    "readable": "22:40 08-10-2026"
+    "iso": "2026-10-08T22:55:27.560644+02:00",
+    "readable": "22:55 08-10-2026"
   }
 }
