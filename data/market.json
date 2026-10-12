@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 135.4,
-        "dailyChange": "+0.30",
-        "value": 135.4,
-        "v1": "+6.03%M",
-        "v2": "+6.18%Q",
-        "v3": "+18.16%H",
-        "v_led": "+18.16%H",
-        "v_alert": "+6.03%M",
-        "v_bot": "+6.03%M"
+        "price": 135.4225,
+        "dailyChange": "+0.31",
+        "value": 135.4225,
+        "v1": "+6.05%M",
+        "v2": "+6.20%Q",
+        "v3": "+18.18%H",
+        "v_led": "+18.18%H",
+        "v_alert": "+6.05%M",
+        "v_bot": "+6.05%M"
       },
       {
         "symbol": "VNGA80",
@@ -59,28 +59,28 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 173.54,
-        "dailyChange": "+0.23",
-        "value": 173.54,
-        "v1": "+4.13%M",
-        "v2": "+4.54%Q",
-        "v3": "+14.75%H",
-        "v_led": "+14.75%H",
-        "v_alert": "+4.13%M",
-        "v_bot": "+4.13%M"
+        "price": 173.58,
+        "dailyChange": "+0.25",
+        "value": 173.58,
+        "v1": "+4.15%M",
+        "v2": "+4.57%Q",
+        "v3": "+14.78%H",
+        "v_led": "+14.78%H",
+        "v_alert": "+4.15%M",
+        "v_bot": "+4.15%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 40.265,
-        "dailyChange": "+0.36",
-        "value": 40.265,
-        "v1": "+0.79%M",
-        "v2": "+1.27%Q",
-        "v3": "+7.55%H",
-        "v_led": "+7.55%H",
-        "v_alert": "+0.79%M",
-        "v_bot": "+0.79%M"
+        "price": 40.2725,
+        "dailyChange": "+0.38",
+        "value": 40.2725,
+        "v1": "+0.81%M",
+        "v2": "+1.29%Q",
+        "v3": "+7.57%H",
+        "v_led": "+7.57%H",
+        "v_alert": "+0.81%M",
+        "v_bot": "+0.81%M"
       },
       {
         "symbol": "EIMI",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-10-12T22:40:40.662909+02:00",
-    "readable": "22:40 12-10-2026"
+    "iso": "2026-10-12T22:55:29.481361+02:00",
+    "readable": "22:55 12-10-2026"
   }
 }
