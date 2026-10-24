@@ -11,14 +11,14 @@ Built for the <strong>Waveshare ESP32-C6 LCD 1.47"</strong>
 
 </div>
 
-<table width="100%">
+<table align="center" width="100%">
   <!-- ESP32-C6 -->
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="middle">
       <img src="../img/esp32-c6-front.jpg" alt="Vista frontale della scheda Waveshare ESP32-C6 LCD da 1,47 pollici | Front view of Waveshare ESP32-C6 1.47-inch LCD board" width="100%">
       <font color="gold"><br><b>front</b></font>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="middle">
       <img src="../img/esp32-c6-rear.jpg" alt="Vista posteriore della scheda Waveshare ESP32-C6 LCD da 1,47 pollici | Rear view of Waveshare ESP32-C6 1.47-inch LCD board" width="100%">
       <font color="gold"><br><b>rear</b></font>
     </td>
@@ -33,7 +33,7 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 <br><br>
 
-<table width="100%">
+<table align="center" width="100%">
   <!-- Booting & Working -->
   <tr>
     <td width="50%" align="center" valign="top">
@@ -88,7 +88,7 @@ For more information, check the official <strong>Waveshare product page</strong>
 
 </div>
 
-<table width="100%">
+<table align="center" width="100%">
   <!-- DOWNLOAD  -->
   <tr>
     <td width="50%" align="center" valign="top">
