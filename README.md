@@ -48,7 +48,7 @@ Today it collects market data via web scraping, stores historical records in a S
 <br>
 <a href="https://github.com/Marchino1978/blastIRohm"><img src="https://img.shields.io/badge/%20GitHub%20Repository%20-%20link?logo=github&logoColor=ffffff&label=blastIRohm&labelColor=000000&color=b30000&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2FblastIRohm" alt="blastIRohm GitHub Link"></a><a href="https://marchino1978.github.io/blastIRohm/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project%20Website-00b300?logo=googlechrome&logoColor=ffffff&labelColor=000000" alt="blastIRohm Pages"></a>
 <br>
-<a href="https://github.com/Marchino1978/shuTVdown"><img src="https://img.shields.io/badge/%20GitHub%20Repository%20-%20link?logo=github&logoColor=ffffff&label=shuTVdown&labelColor=000000&color=b30000&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2FshuTVdown" alt="shuTVdown GitHub Link"></a><a href="https://marchino1978.github.io/shuTVdown/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project%20Website-#ffff00?logo=googlechrome&logoColor=ffffff&labelColor=000000" alt="shuTVdown Pages"></a>
+<a href="https://github.com/Marchino1978/shuTVdown"><img src="https://img.shields.io/badge/%20GitHub%20Repository%20-%20link?logo=github&logoColor=ffffff&label=shuTVdown&labelColor=000000&color=b30000&link=%20https%3A%2F%2Fgithub.com%2FMarchino1978%2FshuTVdown" alt="shuTVdown GitHub Link"></a><a href="https://marchino1978.github.io/shuTVdown/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project%20Website-ffff00?logo=googlechrome&logoColor=ffffff&labelColor=000000" alt="shuTVdown Pages"></a>
 -->
 
 <!-- 
