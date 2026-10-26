@@ -33,22 +33,22 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 142.265,
-        "dailyChange": "+0.53",
-        "value": 142.265,
-        "v1": "-4.61%M",
-        "v2": "+1.55%Q",
-        "v3": "-7.82%H",
-        "v_led": "-7.82%H",
-        "v_alert": "-4.61%M",
-        "v_bot": "-4.61%M"
+        "price": 142.25,
+        "dailyChange": "+0.52",
+        "value": 142.25,
+        "v1": "-4.62%M",
+        "v2": "+1.54%Q",
+        "v3": "-7.83%H",
+        "v_led": "-7.83%H",
+        "v_alert": "-4.62%M",
+        "v_bot": "-4.62%M"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 150.6025,
+        "price": 150.6015,
         "dailyChange": "-0.01",
-        "value": 150.6025,
+        "value": 150.6015,
         "v1": "+0.19%M",
         "v2": "+0.56%Q",
         "v3": "+1.10%H",
@@ -59,15 +59,15 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 170.12,
-        "dailyChange": "+0.64",
-        "value": 170.12,
-        "v1": "-0.11%M",
-        "v2": "+3.80%Q",
-        "v3": "+10.81%H",
-        "v_led": "+10.81%H",
-        "v_alert": "-0.11%M",
-        "v_bot": "-0.11%M"
+        "price": 170.09,
+        "dailyChange": "+0.62",
+        "value": 170.09,
+        "v1": "-0.13%M",
+        "v2": "+3.78%Q",
+        "v3": "+10.79%H",
+        "v_led": "+10.79%H",
+        "v_alert": "-0.13%M",
+        "v_bot": "-0.13%M"
       },
       {
         "symbol": "EXUS",
@@ -85,9 +85,9 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 45.355,
-        "dailyChange": "-0.27",
-        "value": 45.355,
+        "price": 45.3535,
+        "dailyChange": "-0.28",
+        "value": 45.3535,
         "v1": "-7.27%M",
         "v2": "+0.99%Q",
         "v3": "+3.31%H",
@@ -98,7 +98,7 @@
     ]
   },
   "last_updated": {
-    "iso": "2026-10-26T21:25:30.661615+01:00",
-    "readable": "21:25 26-10-2026"
+    "iso": "2026-10-26T21:40:42.926089+01:00",
+    "readable": "21:40 26-10-2026"
   }
 }
