@@ -20,35 +20,35 @@
       {
         "symbol": "VNGA80",
         "label": "LifeStrategy 80",
-        "price": 44.37,
-        "dailyChange": "-0.05",
-        "value": 44.37,
-        "v1": "-0.05%M",
-        "v2": "+3.16%Q",
-        "v3": "+7.41%H",
-        "v_led": "+7.41%H",
-        "v_alert": "-0.05%M",
-        "v_bot": "-0.05%M"
+        "price": 44.36,
+        "dailyChange": "-0.07",
+        "value": 44.36,
+        "v1": "-0.07%M",
+        "v2": "+3.14%Q",
+        "v3": "+7.38%H",
+        "v_led": "+7.38%H",
+        "v_alert": "-0.07%M",
+        "v_bot": "-0.07%M"
       },
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 142.175,
-        "dailyChange": "-0.14",
-        "value": 142.175,
-        "v1": "-4.67%M",
-        "v2": "+1.85%Q",
-        "v3": "-8.73%H",
-        "v_led": "-8.73%H",
-        "v_alert": "-4.67%M",
-        "v_bot": "-4.67%M"
+        "price": 142.08,
+        "dailyChange": "-0.21",
+        "value": 142.08,
+        "v1": "-4.73%M",
+        "v2": "+1.78%Q",
+        "v3": "-8.79%H",
+        "v_led": "-8.79%H",
+        "v_alert": "-4.73%M",
+        "v_bot": "-4.73%M"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 150.606,
+        "price": 150.607,
         "dailyChange": "+0.00",
-        "value": 150.606,
+        "value": 150.607,
         "v1": "+0.19%M",
         "v2": "+0.56%Q",
         "v3": "+1.06%H",
@@ -85,20 +85,20 @@
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 45.363,
-        "dailyChange": "+0.01",
-        "value": 45.363,
-        "v1": "-7.25%M",
-        "v2": "+3.45%Q",
-        "v3": "+1.48%H",
-        "v_led": "+1.48%H",
-        "v_alert": "-7.25%M",
-        "v_bot": "-7.25%M"
+        "price": 45.4535,
+        "dailyChange": "+0.21",
+        "value": 45.4535,
+        "v1": "-7.07%M",
+        "v2": "+3.66%Q",
+        "v3": "+1.69%H",
+        "v_led": "+1.69%H",
+        "v_alert": "-7.07%M",
+        "v_bot": "-7.07%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-10-27T08:25:32.224109+01:00",
-    "readable": "08:25 27-10-2026"
+    "iso": "2026-10-27T08:40:43.005885+01:00",
+    "readable": "08:40 27-10-2026"
   }
 }
