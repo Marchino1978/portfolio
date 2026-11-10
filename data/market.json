@@ -1,21 +1,21 @@
 {
-  "status": "APERTO",
-  "open": true,
+  "status": "CHIUSO",
+  "open": false,
   "values": {
     "source": "ls-tc.de",
     "data": [
       {
         "symbol": "VUAA",
         "label": "S&P 500",
-        "price": 130.55,
-        "dailyChange": "+0.20",
-        "value": 130.55,
-        "v1": "-3.30%M",
-        "v2": "+0.52%Q",
-        "v3": "+5.43%H",
-        "v_led": "+5.43%H",
-        "v_alert": "+5.43%H",
-        "v_bot": "-3.30%M"
+        "price": 130.61,
+        "dailyChange": "+0.25",
+        "value": 130.61,
+        "v1": "-3.25%M",
+        "v2": "+0.57%Q",
+        "v3": "+5.48%H",
+        "v_led": "+5.48%H",
+        "v_alert": "+5.48%H",
+        "v_bot": "-3.25%M"
       },
       {
         "symbol": "VNGA80",
@@ -33,22 +33,22 @@
       {
         "symbol": "GOLD",
         "label": "Physical Gold",
-        "price": 143.11,
-        "dailyChange": "-2.10",
-        "value": 143.11,
-        "v1": "-3.55%M",
-        "v2": "-5.66%Q",
-        "v3": "-9.46%H",
-        "v_led": "-9.46%H",
-        "v_alert": "-9.46%H",
-        "v_bot": "-3.55%M"
+        "price": 143.015,
+        "dailyChange": "-2.17",
+        "value": 143.015,
+        "v1": "-3.61%M",
+        "v2": "-5.72%Q",
+        "v3": "-9.52%H",
+        "v_led": "-9.52%H",
+        "v_alert": "-9.52%H",
+        "v_bot": "-3.61%M"
       },
       {
         "symbol": "XEON",
         "label": "XEON",
-        "price": 150.7345,
+        "price": 150.732,
         "dailyChange": "+0.01",
-        "value": 150.7345,
+        "value": 150.732,
         "v1": "+0.18%M",
         "v2": "+0.58%Q",
         "v3": "+1.06%H",
@@ -59,46 +59,46 @@
       {
         "symbol": "VWCE",
         "label": "FTSE All World",
-        "price": 168.16,
-        "dailyChange": "+0.17",
-        "value": 168.16,
-        "v1": "-2.88%M",
-        "v2": "-0.56%Q",
-        "v3": "+4.46%H",
-        "v_led": "+4.46%H",
-        "v_alert": "+4.46%H",
-        "v_bot": "-2.88%M"
+        "price": 168.22,
+        "dailyChange": "+0.20",
+        "value": 168.22,
+        "v1": "-2.84%M",
+        "v2": "-0.52%Q",
+        "v3": "+4.50%H",
+        "v_led": "+4.50%H",
+        "v_alert": "+4.50%H",
+        "v_bot": "-2.84%M"
       },
       {
         "symbol": "EXUS",
         "label": "MSCI World Ex-USA",
-        "price": 40.73,
-        "dailyChange": "+0.05",
-        "value": 40.73,
-        "v1": "+1.52%M",
-        "v2": "-0.22%Q",
-        "v3": "+7.44%H",
-        "v_led": "+7.44%H",
-        "v_alert": "+7.44%H",
-        "v_bot": "+1.52%M"
+        "price": 40.7625,
+        "dailyChange": "+0.13",
+        "value": 40.7625,
+        "v1": "+1.60%M",
+        "v2": "-0.14%Q",
+        "v3": "+7.52%H",
+        "v_led": "+7.52%H",
+        "v_alert": "+7.52%H",
+        "v_bot": "+1.60%M"
       },
       {
         "symbol": "EIMI",
         "label": "Emerging Markets",
-        "price": 44.4925,
-        "dailyChange": "-0.24",
-        "value": 44.4925,
-        "v1": "-9.22%M",
-        "v2": "-5.84%Q",
-        "v3": "-5.68%H",
-        "v_led": "-5.68%H",
-        "v_alert": "-5.68%H",
-        "v_bot": "-9.22%M"
+        "price": 44.501,
+        "dailyChange": "-0.22",
+        "value": 44.501,
+        "v1": "-9.20%M",
+        "v2": "-5.82%Q",
+        "v3": "-5.66%H",
+        "v_led": "-5.66%H",
+        "v_alert": "-5.66%H",
+        "v_bot": "-9.20%M"
       }
     ]
   },
   "last_updated": {
-    "iso": "2026-11-10T22:40:40.835559+01:00",
-    "readable": "22:40 10-11-2026"
+    "iso": "2026-11-10T22:55:29.142114+01:00",
+    "readable": "22:55 10-11-2026"
   }
 }
